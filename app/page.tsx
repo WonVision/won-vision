@@ -99,9 +99,10 @@ export default function HomePage() {
 
   /* Per-letter stagger via --i, left-to-right cascade in + out.
 
-     LOOP = 10.8s (was 12s). Per request, the A↔B swap is ~0.6s quicker
-     each way: the cut was taken from BOTH the holds and the empty pauses
-     (the fade shapes were left alone). 1% = 108ms.
+     LOOP = 5.5s ("Fast" preset, user-chosen from a 3-way live mockup).
+     Faster cadence: WV ~1.1s legible, slogan ~1.5s legible. The per-char
+     stagger was REDUCED (28/26 → 14/12ms) so the cascade tails stay short
+     enough to keep A and B disjoint at this shorter loop. 1% = 55ms.
 
      --hero-hold: one-time START offset (0ms normally). When the intro
      loader shows (html.wv-loader-active, set before paint) it becomes the
@@ -110,35 +111,35 @@ export default function HomePage() {
      normally. Applied equally to A and B, so it shifts the whole morph
      clock without disturbing the A↔B relationship.
 
-     A per-char delay 28ms → A tail = 9×28 = 252ms = 2.333% of 10.8s.
-     B per-char delay 26ms → B tail = 33×26 = 858ms = 7.944% of 10.8s.
+     A per-char delay 14ms → A tail = 9×14 = 126ms = 2.291% of 5.5s.
+     B per-char delay 12ms → B tail = 33×12 = 396ms = 7.200% of 5.5s.
 
      NO-OVERLAP INVARIANT (A-visible & B-visible disjoint, both handoffs):
-     A: opaque 0–22.222% (0–2400ms), fades out →31.852% (3440ms), hidden
-        to 88.889% (9600ms), fades back →100% (10800ms).
-        Last A char transparent at 31.852%+2.333% = 34.185% (3692ms).
-     B: hidden 0–35% (3780ms), fades in →40% (4320ms), holds to 75%
-        (8100ms), fades out →80% (8640ms), hidden to 100%.
-        Last B char transparent at 80%+7.944% = 87.944% (9498ms).
-       All B chars legible 47.944% (5178ms) → 75% (8100ms) ≈ 2.92s.
-     Handoff A→B: A gone 3692ms · B in starts 3780ms → +88ms gap. ✓
-     Handoff B→A: B gone 9498ms · A back starts 9600ms → +102ms gap. ✓ */
+     A: opaque 0–22% (0–1210ms), fades out →31% (1705ms), hidden to
+        89% (4895ms), fades back →100% (5500ms).
+        Last A char transparent at 31%+2.291% = 33.291% (1831ms).
+     B: hidden 0–35% (1925ms), fades in →40% (2200ms), holds to 75%
+        (4125ms), fades out →80% (4400ms), hidden to 100%.
+        Last B char transparent at 80%+7.200% = 87.200% (4796ms).
+       All B chars legible 47.200% (2596ms) → 75% (4125ms) ≈ 1.53s.
+     Handoff A→B: A gone 1831ms · B in starts 1925ms → +94ms gap. ✓
+     Handoff B→A: B gone 4796ms · A back starts 4895ms → +99ms gap. ✓ */
   .hero__morph__a .ch{
-    animation: heroMorphChA 10.8s cubic-bezier(.6,.05,.3,1) infinite both;
-    animation-delay: calc(var(--hero-hold, 0ms) + var(--i, 0) * 28ms);
+    animation: heroMorphChA 5.5s cubic-bezier(.6,.05,.3,1) infinite both;
+    animation-delay: calc(var(--hero-hold, 0ms) + var(--i, 0) * 14ms);
   }
   .hero__morph__b .ch{
-    animation: heroMorphChB 10.8s cubic-bezier(.6,.05,.3,1) infinite both;
-    animation-delay: calc(var(--hero-hold, 0ms) + var(--i, 0) * 26ms);
+    animation: heroMorphChB 5.5s cubic-bezier(.6,.05,.3,1) infinite both;
+    animation-delay: calc(var(--hero-hold, 0ms) + var(--i, 0) * 12ms);
   }
   html.wv-loader-active{ --hero-hold: 3000ms; }
 
   @keyframes heroMorphChA{
-    0%       { opacity:1; filter:blur(0);    transform:translateY(0)    scale(1); }
-    22.222%  { opacity:1; filter:blur(0);    transform:translateY(0)    scale(1); }
-    31.852%  { opacity:0; filter:blur(14px); transform:translateY(-10px) scale(1.04); }
-    88.889%  { opacity:0; filter:blur(14px); transform:translateY(10px)  scale(0.96); }
-    100%     { opacity:1; filter:blur(0);    transform:translateY(0)    scale(1); }
+    0%    { opacity:1; filter:blur(0);    transform:translateY(0)    scale(1); }
+    22%   { opacity:1; filter:blur(0);    transform:translateY(0)    scale(1); }
+    31%   { opacity:0; filter:blur(14px); transform:translateY(-10px) scale(1.04); }
+    89%   { opacity:0; filter:blur(14px); transform:translateY(10px)  scale(0.96); }
+    100%  { opacity:1; filter:blur(0);    transform:translateY(0)    scale(1); }
   }
   @keyframes heroMorphChB{
     0%   { opacity:0; filter:blur(14px); transform:translateY(8px)  scale(0.94); }

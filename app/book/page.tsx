@@ -534,18 +534,17 @@ export default function BookPage() {
   }
 
   /* ---------- Section-jump filter strip ---------- */
-  /* padding-top clears the fixed navbar (~77px unstuck / ~69 stuck) so it
-     never clips the chips. When the navbar auto-hides we lift the strip with
-     TRANSFORM (compositor-only — no reflow, so the old reflow ↔ scroll-anchor
-     ↔ nav-toggle oscillation cannot recur), letting the chips ride to the top
-     and reclaim the vacated navbar space. Box height stays constant. */
+  /* DECOUPLED from the navbar on purpose. The site nav toggles is-hidden on
+     any >6px scroll delta with no hysteresis/debounce, so it flaps on a
+     trackpad. Any strip movement that mirrors the nav (transform OR padding)
+     therefore visibly bounces. So: constant box, always pinned at top:0,
+     never chases the nav. padding-top clears the fixed navbar (~77px unstuck
+     / ~69 stuck) so it never clips the chips. Zero movement = zero glitch. */
   .svc-jump{
     position:sticky;top:0;z-index:90;background:var(--paper);
     max-width:var(--max);margin:0 auto;padding-top:84px;
     border-bottom:1px solid var(--border);
-    transition:transform .28s var(--ease);will-change:transform;
   }
-  .svc-jump.is-navhidden{transform:translateY(-72px)}
   .svc-jump__strip{
     display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
     -webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
@@ -565,7 +564,6 @@ export default function BookPage() {
   .cat{scroll-margin-top:140px}
   @media (max-width:760px){
     .svc-jump{padding-top:78px}
-    .svc-jump.is-navhidden{transform:translateY(-66px)}
     .cat{scroll-margin-top:128px}
     .svc-jump__chip{font-size:11px;padding:8px 13px}
   }
@@ -1448,18 +1446,8 @@ export default function BookPage() {
     }, { rootMargin:'-140px 0px -55% 0px', threshold:0 });
     cats.forEach(function(c){ io.observe(c); });
   }
-
-  // When the navbar auto-hides, lift the strip so the chips ride to the top.
-  // Toggles ONLY a CSS transform (compositor-only) — no layout reflow, so the
-  // old reflow/scroll-anchor/nav-toggle oscillation cannot recur.
-  var nav = document.querySelector('.nav');
-  if(nav){
-    var sync = function(){
-      strip.classList.toggle('is-navhidden', nav.classList.contains('is-hidden'));
-    };
-    sync();
-    new MutationObserver(sync).observe(nav, { attributes:true, attributeFilter:['class'] });
-  }
+  // Strip is intentionally decoupled from the navbar (CSS sticky;top:0,
+  // constant box). It never moves, so it cannot bounce when the nav flaps.
 })();
 `}</Script>
       <ServiceGalleryLightbox />
