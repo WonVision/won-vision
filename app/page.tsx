@@ -99,10 +99,10 @@ export default function HomePage() {
 
   /* Per-letter stagger via --i, left-to-right cascade in + out.
 
-     LOOP = 5.5s ("Fast" preset, user-chosen from a 3-way live mockup).
-     Faster cadence: WV ~1.1s legible, slogan ~1.5s legible. The per-char
-     stagger was REDUCED (28/26 → 14/12ms) so the cascade tails stay short
-     enough to keep A and B disjoint at this shorter loop. 1% = 55ms.
+     LOOP = 7s ("Snappy" preset, user-chosen from a 3-way live mockup).
+     Cadence: WV ~1.5s legible, slogan ~2.0s legible. The per-char stagger
+     is 16/14ms so the cascade tails stay short enough to keep A and B
+     disjoint at this loop. 1% = 70ms.
 
      --hero-hold: one-time START offset (0ms normally). When the intro
      loader shows (html.wv-loader-active, set before paint) it becomes the
@@ -111,26 +111,26 @@ export default function HomePage() {
      normally. Applied equally to A and B, so it shifts the whole morph
      clock without disturbing the A↔B relationship.
 
-     A per-char delay 14ms → A tail = 9×14 = 126ms = 2.291% of 5.5s.
-     B per-char delay 12ms → B tail = 33×12 = 396ms = 7.200% of 5.5s.
+     A per-char delay 16ms → A tail = 9×16 = 144ms = 2.057% of 7s.
+     B per-char delay 14ms → B tail = 33×14 = 462ms = 6.600% of 7s.
 
      NO-OVERLAP INVARIANT (A-visible & B-visible disjoint, both handoffs):
-     A: opaque 0–22% (0–1210ms), fades out →31% (1705ms), hidden to
-        89% (4895ms), fades back →100% (5500ms).
-        Last A char transparent at 31%+2.291% = 33.291% (1831ms).
-     B: hidden 0–35% (1925ms), fades in →40% (2200ms), holds to 75%
-        (4125ms), fades out →80% (4400ms), hidden to 100%.
-        Last B char transparent at 80%+7.200% = 87.200% (4796ms).
-       All B chars legible 47.200% (2596ms) → 75% (4125ms) ≈ 1.53s.
-     Handoff A→B: A gone 1831ms · B in starts 1925ms → +94ms gap. ✓
-     Handoff B→A: B gone 4796ms · A back starts 4895ms → +99ms gap. ✓ */
+     A: opaque 0–22% (0–1540ms), fades out →31% (2170ms), hidden to
+        89% (6230ms), fades back →100% (7000ms).
+        Last A char transparent at 31%+2.057% = 33.057% (2314ms).
+     B: hidden 0–35% (2450ms), fades in →40% (2800ms), holds to 75%
+        (5250ms), fades out →80% (5600ms), hidden to 100%.
+        Last B char transparent at 80%+6.600% = 86.600% (6062ms).
+       All B chars legible 46.600% (3262ms) → 75% (5250ms) ≈ 1.99s.
+     Handoff A→B: A gone 2314ms · B in starts 2450ms → +136ms gap. ✓
+     Handoff B→A: B gone 6062ms · A back starts 6230ms → +168ms gap. ✓ */
   .hero__morph__a .ch{
-    animation: heroMorphChA 5.5s cubic-bezier(.6,.05,.3,1) infinite both;
-    animation-delay: calc(var(--hero-hold, 0ms) + var(--i, 0) * 14ms);
+    animation: heroMorphChA 7s cubic-bezier(.6,.05,.3,1) infinite both;
+    animation-delay: calc(var(--hero-hold, 0ms) + var(--i, 0) * 16ms);
   }
   .hero__morph__b .ch{
-    animation: heroMorphChB 5.5s cubic-bezier(.6,.05,.3,1) infinite both;
-    animation-delay: calc(var(--hero-hold, 0ms) + var(--i, 0) * 12ms);
+    animation: heroMorphChB 7s cubic-bezier(.6,.05,.3,1) infinite both;
+    animation-delay: calc(var(--hero-hold, 0ms) + var(--i, 0) * 14ms);
   }
   html.wv-loader-active{ --hero-hold: 3000ms; }
 

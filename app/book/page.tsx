@@ -534,17 +534,21 @@ export default function BookPage() {
   }
 
   /* ---------- Section-jump filter strip ---------- */
-  /* DECOUPLED from the navbar on purpose. The site nav toggles is-hidden on
-     any >6px scroll delta with no hysteresis/debounce, so it flaps on a
-     trackpad. Any strip movement that mirrors the nav (transform OR padding)
-     therefore visibly bounces. So: constant box, always pinned at top:0,
-     never chases the nav. padding-top clears the fixed navbar (~77px unstuck
-     / ~69 stuck) so it never clips the chips. Zero movement = zero glitch. */
+  /* padding-top clears the fixed navbar (~77px unstuck / ~69 stuck) so it
+     never clips the chips. When the navbar is GENUINELY hidden the strip
+     lifts via transform so the chips rise to cover the vacated nav area
+     (no empty white band). The lift is DEBOUNCED in JS — it only toggles
+     after the nav has been continuously hidden >220ms and drops the instant
+     it returns — so the nav's trackpad-flapping (it toggles on any >6px
+     delta, no hysteresis) is collapsed to a no-op and the strip cannot
+     bounce. transform = compositor-only, so no reflow either. */
   .svc-jump{
     position:sticky;top:0;z-index:90;background:var(--paper);
     max-width:var(--max);margin:0 auto;padding-top:84px;
     border-bottom:1px solid var(--border);
+    transition:transform .28s var(--ease);
   }
+  .svc-jump.is-navhidden{transform:translateY(-72px)}
   .svc-jump__strip{
     display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
     -webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
@@ -564,6 +568,7 @@ export default function BookPage() {
   .cat{scroll-margin-top:140px}
   @media (max-width:760px){
     .svc-jump{padding-top:78px}
+    .svc-jump.is-navhidden{transform:translateY(-66px)}
     .cat{scroll-margin-top:128px}
     .svc-jump__chip{font-size:11px;padding:8px 13px}
   }
@@ -1446,8 +1451,34 @@ export default function BookPage() {
     }, { rootMargin:'-140px 0px -55% 0px', threshold:0 });
     cats.forEach(function(c){ io.observe(c); });
   }
-  // Strip is intentionally decoupled from the navbar (CSS sticky;top:0,
-  // constant box). It never moves, so it cannot bounce when the nav flaps.
+
+  // DEBOUNCED nav coupling. The site nav flaps is-hidden on tiny scroll
+  // deltas; mirroring it directly bounces the strip. So: only add
+  // .is-navhidden after the nav has stayed hidden continuously for HIDE_MS,
+  // and remove it the instant the nav reappears. Any flap shorter than
+  // HIDE_MS cancels the pending timer → no toggle → no bounce. Net effect:
+  // chips rise to cover the nav area once on a real sustained scroll, and
+  // never twitch on jitter.
+  var nav = document.querySelector('.nav');
+  if(nav){
+    var HIDE_MS = 220, pend = null;
+    var apply = function(){
+      var navHidden = nav.classList.contains('is-hidden');
+      if(navHidden){
+        if(strip.classList.contains('is-navhidden')) return;     // already lifted
+        if(pend) return;                                         // already waiting
+        pend = setTimeout(function(){
+          pend = null;
+          if(nav.classList.contains('is-hidden')) strip.classList.add('is-navhidden');
+        }, HIDE_MS);
+      } else {
+        if(pend){ clearTimeout(pend); pend = null; }              // cancel pending lift
+        strip.classList.remove('is-navhidden');                  // drop immediately
+      }
+    };
+    apply();
+    new MutationObserver(apply).observe(nav, { attributes:true, attributeFilter:['class'] });
+  }
 })();
 `}</Script>
       <ServiceGalleryLightbox />
