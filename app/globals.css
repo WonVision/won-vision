@@ -1141,6 +1141,21 @@ body.is-loading > :not(.loader){visibility:hidden}
 .work__item:hover .work__item__caption{transform:translateY(0)}
 .work__item__caption b{font-weight:500;color:var(--paper)}
 
+/* before/after slider occupying a work tile (Virtual staging preview) */
+.work__item--slider{cursor:default;background:var(--ink)}
+.work__item--slider .ba-slider,
+.work__item--slider .ba-slider__frame{height:100%;margin:0}
+.work__item--slider .ba-slider{display:flex;flex-direction:column;gap:0}
+.work__item--slider .ba-slider__frame{flex:1;min-height:0;aspect-ratio:auto;border:none}
+.work__item--slider .ba-slider__label{
+  position:absolute;left:0;right:0;bottom:0;margin:0;z-index:2;
+  padding:18px 22px;color:var(--paper);text-align:left;pointer-events:none;
+  background:linear-gradient(to top, rgba(10,10,10,0.7), transparent);
+  font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;
+  opacity:0;transform:translateY(100%);transition:transform .55s var(--ease), opacity .35s ease;
+}
+.work__item--slider:hover .ba-slider__label{opacity:1;transform:translateY(0)}
+
 /* clean editorial tile — 4 items, 2 balanced rows */
 .work__item.a{grid-column:span 7;aspect-ratio:7/4}
 .work__item.b{grid-column:span 5;aspect-ratio:5/4}

@@ -4,6 +4,7 @@ import { Wordmark } from './components/Wordmark';
 import LoaderGate from './components/LoaderGate';
 import ServicesEditorial from './components/ServicesEditorial';
 import ProcessStepper from './components/ProcessStepper';
+import BeforeAfterSlider from './components/BeforeAfterSlider';
 
 export const metadata: Metadata = {
   title: {
@@ -380,10 +381,15 @@ export default function HomePage() {
               <img src="/images/sales-standard.webp" alt="Fitzroy interior" />
               <div className="work__item__caption"><span><b>Fitzroy</b></span><span>Photography</span></div>
             </a>
-            <a className="work__item c" href="/gallery">
-              <img src="/images/rental-large.webp" alt="Brunswick interior" />
-              <div className="work__item__caption"><span><b>Brunswick</b></span><span>Photography</span></div>
-            </a>
+            <article className="work__item c work__item--slider">
+              <BeforeAfterSlider
+                beforeSrc="/images/staging-before.webp"
+                afterSrc="/images/staging-after.webp"
+                beforeAlt="Empty room before virtual staging"
+                afterAlt="Room after virtual staging"
+                label="Virtual staging — empty → furnished"
+              />
+            </article>
             <a className="work__item d" href="/gallery">
               <img src="/images/sales-premium.webp" alt="Northcote bedroom" />
               <div className="work__item__caption"><span><b>Northcote</b></span><span>Photography</span></div>
