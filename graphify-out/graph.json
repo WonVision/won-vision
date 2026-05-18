@@ -3086,9 +3086,9 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_spareveal_tsx",
-      "target": "components_spareveal_spareveal",
-      "confidence_score": 1.0
+      "target": "components_spareveal_spareveal"
     },
     {
       "relation": "contains",
@@ -6231,5 +6231,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e35835628a25dae4b05e56a8c1c9f8049c5d06f6"
+  "built_at_commit": "e4738dfc6284c5a87df29d3d61ed89470956cece"
 }

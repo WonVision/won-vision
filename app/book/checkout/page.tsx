@@ -468,6 +468,12 @@ export default function CheckoutPage() {
             .then(function(r){ return r.ok ? r.json() : null; })
             .then(function(j){
               if (!j) { window.WV_AGENCY_OFFICE = null; return; }
+              // AU-only: reject any office that isn't in Australia.
+              if (j.country && !/austral/i.test(j.country)) {
+                window.WV_AGENCY_OFFICE = null;
+                input.value = '';
+                return;
+              }
               window.WV_AGENCY_OFFICE = {
                 place_id: j.place_id,
                 label: j.name || '',
@@ -495,10 +501,19 @@ export default function CheckoutPage() {
       const reqId = ++activeReq;
       debounce = setTimeout(function(){
         fetch(OPS_BASE + '/api/public/' + TENANT_SLUG +
-              '/places/autocomplete?types=establishment&q=' + encodeURIComponent(q),
+              '/places/autocomplete?types=establishment&country=au&region=au&q=' + encodeURIComponent(q),
               { credentials: 'omit' })
           .then(function(r){ return r.ok ? r.json() : { predictions: [] }; })
-          .then(function(j){ if (reqId === activeReq) render(j.predictions || []); })
+          .then(function(j){
+            if (reqId !== activeReq) return;
+            // AU-only: even if the backend ignores the country hint, only
+            // surface Australian establishments (Google descriptions end
+            // with ", Australia").
+            var preds = (j.predictions || []).filter(function(p){
+              return /\\baustralia\\b/i.test(p.description || '');
+            });
+            render(preds);
+          })
           .catch(function(){ if (reqId === activeReq) close(); });
       }, 220);
     });
