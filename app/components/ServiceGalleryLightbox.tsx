@@ -6,40 +6,24 @@ type Photo = { src: string; caption?: string };
 
 const galleries: Record<string, Photo[]> = {
   photography: [
-    { src: 'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=1800&q=85', caption: 'Carlton North · Living' },
-    { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85', caption: 'Fitzroy · Kitchen' },
-    { src: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1800&q=85', caption: 'Northcote · Bedroom' },
-    { src: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1800&q=85', caption: 'Hawthorn · Twilight' },
-    { src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1800&q=85', caption: 'Brunswick · Detail' },
-    { src: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&q=85', caption: 'Carlton · Frontage' },
-  ],
-  video: [
-    { src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1800&q=85', caption: 'Walkthrough · Brunswick' },
-    { src: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1800&q=85', caption: 'Reel · Hawthorn' },
-    { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85', caption: 'Lifestyle · Fitzroy' },
-    { src: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1800&q=85', caption: 'Frame · Northcote' },
-  ],
-  drone: [
-    { src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1800&q=85', caption: 'Aerial · Brunswick' },
-    { src: 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1800&q=85', caption: 'Aerial · Yarra Valley' },
-    { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85', caption: 'Aerial · Mornington' },
-  ],
-  floorplans: [
-    { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1800&q=85', caption: '2D plan · Carlton' },
-    { src: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1800&q=85', caption: '3D plan · Fitzroy' },
+    { src: '/images/showcase.webp', caption: 'Showcase' },
+    { src: '/images/rental-compact.webp', caption: 'Rental · Compact' },
+    { src: '/images/rental-standard.webp', caption: 'Rental · Standard' },
+    { src: '/images/rental-large.webp', caption: 'Rental · Large' },
+    { src: '/images/sales-compact.webp', caption: 'Sales · Compact' },
+    { src: '/images/sales-standard.webp', caption: 'Sales · Standard' },
+    { src: '/images/sales-premium.webp', caption: 'Sales · Premium' },
+    { src: '/images/additional-photos.webp', caption: 'Additional photos' },
   ],
   staging: [
-    { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85', caption: 'Living · Restaged' },
-    { src: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1800&q=85', caption: 'Bedroom · Restaged' },
-    { src: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1800&q=85', caption: 'Dining · Restaged' },
+    { src: '/images/staging-after.webp', caption: 'Virtual staging' },
+    { src: '/images/dusk-after.webp', caption: 'Day-to-dusk' },
+    { src: '/images/declutter-after.webp', caption: 'Decluttering' },
   ],
 };
 
 const titles: Record<string, string> = {
   photography: 'Photography',
-  video: 'Video',
-  drone: 'Drone',
-  floorplans: 'Floor plans',
   staging: 'Virtual staging',
 };
 

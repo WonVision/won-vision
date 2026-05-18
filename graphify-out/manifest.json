@@ -28,16 +28,16 @@
     "hash": "3fa24897b9cd4b6e9f2e2f0ebefc2860"
   },
   "/Users/kiranc/Code/won-vision/app/layout.tsx": {
-    "mtime": 1778391284.0858319,
-    "hash": "61edd7b150dc0c5e104525ee7a59299a"
+    "mtime": 1779023765.736791,
+    "hash": "42ee694a1bf89ce23ca0c31f4db51661"
   },
   "/Users/kiranc/Code/won-vision/app/page.tsx": {
-    "mtime": 1778223040.08407,
-    "hash": "e9fe28c42531dbf8e8c930cd640339cd"
+    "mtime": 1779026680.4370368,
+    "hash": "f3ac0160c0157803ce93455770be8ba6"
   },
   "/Users/kiranc/Code/won-vision/app/gallery/page.tsx": {
-    "mtime": 1778215529.0478537,
-    "hash": "ce8cdb584261426c49b1184677011c50"
+    "mtime": 1778743036.6543663,
+    "hash": "154e9a33aed55ea1eda92fd12cf14ef0"
   },
   "/Users/kiranc/Code/won-vision/app/admin/layout.tsx": {
     "mtime": 1778415156.54716,
@@ -56,8 +56,8 @@
     "hash": "7906b15f2faa132d0bab679fb6f35c44"
   },
   "/Users/kiranc/Code/won-vision/app/components/ServiceGalleryLightbox.tsx": {
-    "mtime": 1778222198.2543576,
-    "hash": "1b0004be0947542c3d31ca4960fecd1d"
+    "mtime": 1779005486.0064487,
+    "hash": "0158e6640d53b929a8430cc92f97818a"
   },
   "/Users/kiranc/Code/won-vision/app/components/Wordmark.tsx": {
     "mtime": 1778217004.1980724,
@@ -75,6 +75,10 @@
     "mtime": 1778223051.403875,
     "hash": "54863ebf86ea82ee24f4f933d798215d"
   },
+  "/Users/kiranc/Code/won-vision/app/components/BeforeAfterSlider.tsx": {
+    "mtime": 1778823379.666319,
+    "hash": "423637473ebac4764fd482387c289882"
+  },
   "/Users/kiranc/Code/won-vision/app/components/ProcessStepper.tsx": {
     "mtime": 1778223715.999979,
     "hash": "2dba87e4b1ffa78b386259ad10f2b467"
@@ -84,20 +88,20 @@
     "hash": "c0c4432c700c501614370374ace30a3c"
   },
   "/Users/kiranc/Code/won-vision/app/book/page.tsx": {
-    "mtime": 1778222219.9166217,
-    "hash": "920662651274dc64c9d9475304fa9ab5"
+    "mtime": 1779026642.7190826,
+    "hash": "4423fa71d1702156b213dcb72ae9d83a"
   },
   "/Users/kiranc/Code/won-vision/app/book/schedule/page.tsx": {
-    "mtime": 1778483949.0165703,
-    "hash": "bacb4929cb3b84136def1669934fe9eb"
+    "mtime": 1778742526.3126197,
+    "hash": "3d8a04ba43347db0f3726d8a2e24c6e5"
   },
   "/Users/kiranc/Code/won-vision/app/book/confirmation/page.tsx": {
-    "mtime": 1778480938.0184476,
-    "hash": "25cde9b451b651ca7f7fc997757fbaab"
+    "mtime": 1778742526.3295977,
+    "hash": "6852a5c8bdf6dd753b3ec48ed5d6142c"
   },
   "/Users/kiranc/Code/won-vision/app/book/checkout/page.tsx": {
-    "mtime": 1778215586.784402,
-    "hash": "bcafc963ebd485daf199aa26c6f20c6c"
+    "mtime": 1778742526.3217182,
+    "hash": "73b820f9276a73301cc2c603cee9f15a"
   },
   "/Users/kiranc/Code/won-vision/app/api/places/autocomplete/route.ts": {
     "mtime": 1778414968.66935,
@@ -180,8 +184,8 @@
     "hash": "6cf506f5090efef8400c3f358b2984b3"
   },
   "/Users/kiranc/Code/won-vision/public/script.js": {
-    "mtime": 1778213433.9561846,
-    "hash": "ec285555fd372b2dfb771a11418b023f"
+    "mtime": 1779004577.2325048,
+    "hash": "deff3fdc654d97cab9b59c29aa3f4942"
   },
   "/Users/kiranc/Code/won-vision/scripts/seed-editor.ts": {
     "mtime": 1778391284.10048,
@@ -212,7 +216,7 @@
     "hash": "6677e01fb55cd0059f19030c82c10e6c"
   },
   "/Users/kiranc/Code/won-vision/lib/db/schema.ts": {
-    "mtime": 1778579119.3521426,
+    "mtime": 1778651318.9230406,
     "hash": "2c9c9a5fe9043b24e2cd27e27fd782da"
   },
   "/Users/kiranc/Code/won-vision/lib/db/index.ts": {

@@ -11,13 +11,15 @@ type Service = {
   caption: string;
 };
 
-const services: Service[] = [
+const SHOW_VIDEO = false;
+
+const allServices: Service[] = [
   {
     num: '01',
     name: 'Photography',
     meta: 'Stills · Twilight',
     href: '/book#cat-photography',
-    img: 'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=1800&q=85',
+    img: '/images/showcase.webp',
     caption: 'Photography · Carlton North',
   },
   {
@@ -25,7 +27,7 @@ const services: Service[] = [
     name: 'Video',
     meta: 'Walkthrough · Lifestyle',
     href: '/book#cat-video',
-    img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1800&q=85',
+    img: '',
     caption: 'Video · Fitzroy',
   },
   {
@@ -33,7 +35,7 @@ const services: Service[] = [
     name: 'Drone',
     meta: 'CASA-licensed',
     href: '/book#cat-photography',
-    img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1800&q=85',
+    img: '',
     caption: 'Drone · Brunswick',
   },
   {
@@ -41,7 +43,7 @@ const services: Service[] = [
     name: 'Floor plans',
     meta: '2D · 3D',
     href: '/book#cat-floorplans',
-    img: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1800&q=85',
+    img: '',
     caption: 'Floor plans · Northcote',
   },
   {
@@ -49,10 +51,14 @@ const services: Service[] = [
     name: 'Virtual staging',
     meta: 'Architectural',
     href: '/book#cat-staging',
-    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85',
+    img: '/images/staging-after.webp',
     caption: 'Virtual staging',
   },
 ];
+
+const services: Service[] = allServices.filter(
+  (s) => SHOW_VIDEO || s.name !== 'Video',
+);
 
 export default function ServicesEditorial() {
   const [active, setActive] = useState(0);
@@ -84,7 +90,7 @@ export default function ServicesEditorial() {
             key={s.num}
             className={'se__fig' + (i === active ? ' is-active' : '')}
           >
-            <img src={s.img} alt="" />
+            {s.img && <img src={s.img} alt="" />}
             <figcaption>{s.caption}</figcaption>
           </figure>
         ))}
@@ -94,7 +100,7 @@ export default function ServicesEditorial() {
       <div className="se__tiles">
         {services.map((s) => (
           <a key={s.num} href={s.href} className="se__tile" aria-label={`Book ${s.name}`}>
-            <img src={s.img} alt="" />
+            {s.img && <img src={s.img} alt="" />}
             <span className="se__tile__veil" aria-hidden="true" />
             <div className="se__tile__label">
               <div>

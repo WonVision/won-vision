@@ -61,13 +61,10 @@ export default function GalleryPage() {
           <div className="filters" role="tablist">
             <button className="filter is-active" data-filter="all">All</button>
             <button className="filter" data-filter="photography">Photography</button>
-            <button className="filter" data-filter="video">Video</button>
-            <button className="filter" data-filter="drone">Drone</button>
-            <button className="filter" data-filter="floorplan">Floor plans</button>
             <button className="filter" data-filter="staging">Virtual staging</button>
           </div>
           <div className="gallery-controls__view">
-            <span data-gallery-count>14</span>
+            <span data-gallery-count>11</span>
             <span>projects</span>
           </div>
         </div>
@@ -77,143 +74,113 @@ export default function GalleryPage() {
       <section className="gallery">
         <div className="gallery__grid">
 
-          <article className="gallery__item s8" data-tags="photography video"
-                   data-place="Carlton North · 12 Drummond Street"
-                   data-full="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=1600&q=85" alt="Carlton North living room" />
+          <article className="gallery__item s8" data-tags="photography"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/showcase.webp">
+            <img src="/images/showcase.webp" alt="Showcase listing" />
             <div className="gallery__item__caption">
-              <p className="place">Carlton North</p>
-              <p className="tags">Photography · Video</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s4" data-tags="photography"
-                   data-place="Fitzroy · 4 Argyle Place"
-                   data-full="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85" alt="Fitzroy interior" />
-            <div className="gallery__item__caption">
-              <p className="place">Fitzroy</p>
+              <p className="place">Showcase</p>
               <p className="tags">Photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="drone video"
-                   data-place="Brunswick · 118 Lygon Street"
-                   data-full="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=85" alt="Brunswick exterior aerial" />
-            <div className="gallery__item__caption">
-              <p className="place">Brunswick</p>
-              <p className="tags">Drone · Video</p>
-            </div>
-          </article>
-
           <article className="gallery__item s4" data-tags="photography"
-                   data-place="Northcote · 21 Westbourne Grove"
-                   data-full="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=85" alt="Northcote bedroom" />
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/rental-compact.webp">
+            <img src="/images/rental-compact.webp" alt="Rental compact interior" />
             <div className="gallery__item__caption">
-              <p className="place">Northcote</p>
+              <p className="place">Rental · Compact</p>
               <p className="tags">Photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="photography floorplan"
-                   data-place="Hawthorn · 9 Coppin Grove"
-                   data-full="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=85" alt="Hawthorn kitchen" />
-            <div className="gallery__item__caption">
-              <p className="place">Hawthorn</p>
-              <p className="tags">Photography · Floor plans</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-tags="video staging"
-                   data-place="Richmond · 76 Lennox Street"
-                   data-full="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1600&q=85" alt="Richmond stairwell" />
-            <div className="gallery__item__caption">
-              <p className="place">Richmond</p>
-              <p className="tags">Video · Virtual staging</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-tags="photography drone"
-                   data-place="South Yarra · 14 Davis Avenue"
-                   data-full="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85" alt="South Yarra house exterior" />
-            <div className="gallery__item__caption">
-              <p className="place">South Yarra</p>
-              <p className="tags">Photography · Drone</p>
-            </div>
-          </article>
-
           <article className="gallery__item s4" data-tags="photography"
-                   data-place="St Kilda · 8 Fitzroy Street"
-                   data-full="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=85" alt="St Kilda kitchen" />
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/rental-standard.webp">
+            <img src="/images/rental-standard.webp" alt="Rental standard interior" />
             <div className="gallery__item__caption">
-              <p className="place">St Kilda</p>
+              <p className="place">Rental · Standard</p>
               <p className="tags">Photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="staging photography"
-                   data-place="Collingwood · 38 Smith Street"
-                   data-full="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=85" alt="Collingwood bedroom" />
-            <div className="gallery__item__caption">
-              <p className="place">Collingwood</p>
-              <p className="tags">Virtual staging · Photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s4" data-tags="floorplan"
-                   data-place="Albert Park · 51 Bridport Street"
-                   data-full="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=85" alt="Albert Park kitchen island" />
-            <div className="gallery__item__caption">
-              <p className="place">Albert Park</p>
-              <p className="tags">Floor plans</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s8" data-tags="video drone"
-                   data-place="Williamstown · 2 Esplanade East"
-                   data-full="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1600&q=85" alt="Williamstown architecture" />
-            <div className="gallery__item__caption">
-              <p className="place">Williamstown</p>
-              <p className="tags">Video · Drone</p>
-            </div>
-          </article>
-
           <article className="gallery__item s4" data-tags="photography"
-                   data-place="Elwood · 15 Tennyson Street"
-                   data-full="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=85" alt="Elwood interior" />
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/rental-large.webp">
+            <img src="/images/rental-large.webp" alt="Rental large interior" />
             <div className="gallery__item__caption">
-              <p className="place">Elwood</p>
+              <p className="place">Rental · Large</p>
               <p className="tags">Photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="photography staging"
-                   data-place="Prahran · 22 Greville Street"
-                   data-full="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=85" alt="Prahran dining" />
+          <article className="gallery__item s4" data-tags="photography"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/sales-compact.webp">
+            <img src="/images/sales-compact.webp" alt="Sales compact interior" />
             <div className="gallery__item__caption">
-              <p className="place">Prahran</p>
-              <p className="tags">Photography · Virtual staging</p>
+              <p className="place">Sales · Compact</p>
+              <p className="tags">Photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="drone"
-                   data-place="Williamstown North · 7 The Avenue"
-                   data-full="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=2400&q=90">
-            <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=85" alt="Aerial home" />
+          <article className="gallery__item s6" data-tags="photography"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/sales-standard.webp">
+            <img src="/images/sales-standard.webp" alt="Sales standard interior" />
             <div className="gallery__item__caption">
-              <p className="place">Williamstown North</p>
-              <p className="tags">Drone</p>
+              <p className="place">Sales · Standard</p>
+              <p className="tags">Photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-tags="photography"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/sales-premium.webp">
+            <img src="/images/sales-premium.webp" alt="Sales premium interior" />
+            <div className="gallery__item__caption">
+              <p className="place">Sales · Premium</p>
+              <p className="tags">Photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-tags="photography"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/additional-photos.webp">
+            <img src="/images/additional-photos.webp" alt="Additional photos" />
+            <div className="gallery__item__caption">
+              <p className="place">Additional photos</p>
+              <p className="tags">Photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-tags="staging"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/staging-after.webp">
+            <img src="/images/staging-after.webp" alt="Virtual staging result" />
+            <div className="gallery__item__caption">
+              <p className="place">Virtual staging</p>
+              <p className="tags">Virtual staging</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-tags="staging"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/dusk-after.webp">
+            <img src="/images/dusk-after.webp" alt="Day-to-dusk result" />
+            <div className="gallery__item__caption">
+              <p className="place">Day-to-dusk</p>
+              <p className="tags">Virtual staging</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-tags="staging"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/declutter-after.webp">
+            <img src="/images/declutter-after.webp" alt="Decluttering result" />
+            <div className="gallery__item__caption">
+              <p className="place">Decluttering</p>
+              <p className="tags">Virtual staging</p>
             </div>
           </article>
 

@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const SHOW_VIDEO = false;
   return (
     <>
       <LoaderGate />
@@ -372,19 +373,19 @@ export default function HomePage() {
 
           <div className="work__grid reveal-stagger">
             <a className="work__item a" href="/gallery">
-              <img src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=1600&q=85" alt="Carlton North living" />
-              <div className="work__item__caption"><span><b>Carlton North</b><br />12 Drummond Street</span><span>Photography · Video</span></div>
+              <img src="/images/showcase.webp" alt="Carlton North living" />
+              <div className="work__item__caption"><span><b>Carlton North</b><br />12 Drummond Street</span><span>Photography</span></div>
             </a>
             <a className="work__item b" href="/gallery">
-              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85" alt="Fitzroy interior" />
+              <img src="/images/sales-standard.webp" alt="Fitzroy interior" />
               <div className="work__item__caption"><span><b>Fitzroy</b><br />4 Argyle Place</span><span>Photography</span></div>
             </a>
             <a className="work__item c" href="/gallery">
-              <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=85" alt="Brunswick exterior" />
-              <div className="work__item__caption"><span><b>Brunswick</b><br />118 Lygon Street</span><span>Drone · Video</span></div>
+              <img src="/images/rental-large.webp" alt="Brunswick interior" />
+              <div className="work__item__caption"><span><b>Brunswick</b><br />118 Lygon Street</span><span>Photography</span></div>
             </a>
             <a className="work__item d" href="/gallery">
-              <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=85" alt="Northcote bedroom" />
+              <img src="/images/sales-premium.webp" alt="Northcote bedroom" />
               <div className="work__item__caption"><span><b>Northcote</b><br />21 Westbourne Grove</span><span>Photography</span></div>
             </a>
           </div>
@@ -410,7 +411,7 @@ export default function HomePage() {
             <a className="home-pkg" href="/book?package=showcase#cat-packages">
               <div className="home-pkg__media">
                 <span className="home-pkg__tag">Most booked</span>
-                <div className="home-pkg__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=1200&q=85')" }}></div>
+                <div className="home-pkg__media__img" style={{ backgroundImage: "url('/images/showcase.webp')" }}></div>
               </div>
               <div className="home-pkg__body">
                 <h3 className="home-pkg__name">Showcase</h3>
@@ -428,6 +429,7 @@ export default function HomePage() {
               </div>
             </a>
 
+            {SHOW_VIDEO && (
             <a className="home-pkg home-pkg--featured" href="/book?package=signature#cat-packages">
               <div className="home-pkg__media">
                 <span className="home-pkg__tag">Complete deliverable</span>
@@ -448,7 +450,9 @@ export default function HomePage() {
                 </div>
               </div>
             </a>
+            )}
 
+            {SHOW_VIDEO && (
             <a className="home-pkg" href="/book?package=cinematic#cat-packages">
               <div className="home-pkg__media">
                 <span className="home-pkg__tag">Flagship</span>
@@ -469,6 +473,7 @@ export default function HomePage() {
                 </div>
               </div>
             </a>
+            )}
           </div>
         </div>
       </section>
@@ -492,10 +497,10 @@ export default function HomePage() {
             </details>
 
             <details className="home-faq__item">
-              <summary>How does the 20% launch promo work?</summary>
+              <summary>Do you offer an intro promo?</summary>
               <div>
-                <p>The launch promo applies 20% off every service — rental, sales, packages, drone, video, floor plans and add-ons — automatically at checkout, until 31 December 2026. No code required.</p>
-                <p>The promo stacks with our volume discounts on virtual staging.</p>
+                <p>There's no automatic discount. We hand out an intro promo manually to new clients — it applies to your first 3 jobs only. Ask us for a code and enter it at checkout.</p>
+                <p>Volume discounts on virtual staging still apply on their own.</p>
               </div>
             </details>
 
@@ -510,8 +515,8 @@ export default function HomePage() {
             <details className="home-faq__item">
               <summary>What's the difference between a package and à la carte?</summary>
               <div>
-                <p>Packages (Showcase, Signature, Cinematic) bundle our most-requested services together at 18–29% savings compared to buying each piece individually. Photo count scales automatically with property size.</p>
-                <p>À la carte lets you build a custom shoot — photography only, drone only, video only, or any combination. Both routes use the same booking form.</p>
+                <p>The Showcase package bundles our most-requested services together at a meaningful saving compared to buying each piece individually. Photo count scales automatically with property size.</p>
+                <p>À la carte lets you build a custom shoot — photography only, drone only, or any combination. Both routes use the same booking form.</p>
               </div>
             </details>
 

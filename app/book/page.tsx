@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function BookPage() {
+  const SHOW_VIDEO = false;
   return (
     <>
       <style>{`
@@ -626,7 +627,7 @@ export default function BookPage() {
             <a href="#cat-rental" className="svc-jump__chip">Rental photography</a>
             <a href="#cat-sales" className="svc-jump__chip">Sales photography</a>
             <a href="#cat-drone" className="svc-jump__chip">Aerial / drone</a>
-            <a href="#cat-video" className="svc-jump__chip">Video</a>
+            {SHOW_VIDEO && <a href="#cat-video" className="svc-jump__chip">Video</a>}
             <a href="#cat-staging" className="svc-jump__chip">Virtual editing</a>
             <a href="#cat-floorplans" className="svc-jump__chip">Floor plans</a>
             <a href="#cat-addons" className="svc-jump__chip">Add-ons</a>
@@ -635,9 +636,9 @@ export default function BookPage() {
 
         {/* PACKAGES */}
         <div className="cat" id="cat-packages" data-gallery="photography">
-          <div className="cat__head"><h3><em>Packages</em></h3><span className="cat__count">3 bundles · pick a tier</span></div>
+          <div className="cat__head"><h3><em>Packages</em></h3><span className="cat__count">pick a tier</span></div>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
-            Bundled offerings that combine our most-requested services at significant savings versus à la carte. Pick a package, choose the property tier — we handle the rest. <strong>20% launch promo applied at checkout</strong> until 31 December 2026.
+            Bundled offerings that combine our most-requested services at significant savings versus à la carte. Pick a package, choose the property tier — we handle the rest. New clients: ask us for an intro promo on your first 3 jobs — applied manually with your code at checkout. No automatic discount.
           </p>
 
           <div className="pkg-grid">
@@ -646,12 +647,12 @@ export default function BookPage() {
               className="pkg-card"
               data-pkg="showcase"
               data-pkg-name="Showcase"
-              data-pkg-img="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=1200&q=85"
+              data-pkg-img="/images/showcase.webp"
               data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":350,"promo":280},"standard":{"label":"Standard · 3–4 bed","price":450,"promo":360},"premium":{"label":"Premium · 5+ bed","price":550,"promo":440}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Most booked</span>
-                <div className="pkg-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=1200&q=85')" }}></div>
+                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/showcase.webp')" }}></div>
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Showcase</h4>
@@ -672,13 +673,14 @@ export default function BookPage() {
                 </div>
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
-                  <span className="pkg-card__price" data-pkg-price>$280</span>
-                  <span className="pkg-card__list" data-pkg-list>$350</span>
+                  <span className="pkg-card__price" data-pkg-price>$350</span>
+                  <span className="pkg-card__list" data-pkg-list hidden></span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
             </article>
 
+            {SHOW_VIDEO && (
             <article
               className="pkg-card"
               data-pkg="signature"
@@ -715,7 +717,9 @@ export default function BookPage() {
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
             </article>
+            )}
 
+            {SHOW_VIDEO && (
             <article
               className="pkg-card"
               data-pkg="cinematic"
@@ -752,6 +756,7 @@ export default function BookPage() {
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
             </article>
+            )}
 
           </div>
         </div>
@@ -761,8 +766,8 @@ export default function BookPage() {
           <div className="cat__head"><h3>Rental <em>photography</em></h3><span className="cat__count">3 tiers</span></div>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Rental Compact (Studio / 1BR)" data-price="180" data-desc="Studio or 1-bedroom rental — 8 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Rental Compact (Studio / 1BR)" data-price="180" data-desc="Studio or 1-bedroom rental — 8 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-compact.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-compact.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Compact</h4>
@@ -771,8 +776,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Rental Standard (2BR)" data-price="220" data-desc="2-bedroom rental — 10 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Rental Standard (2BR)" data-price="220" data-desc="2-bedroom rental — 10 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-standard.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-standard.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Standard</h4>
@@ -781,8 +786,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Rental Large (3BR+)" data-price="260" data-desc="3-bedroom-plus rental — 12 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Rental Large (3BR+)" data-price="260" data-desc="3-bedroom-plus rental — 12 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-large.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-large.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Large</h4>
@@ -802,8 +807,8 @@ export default function BookPage() {
           </p>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Sales Compact (1–2 bed)" data-price="195" data-desc="1–2 bed sales shoot — 15 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Sales Compact (1–2 bed)" data-price="195" data-desc="1–2 bed sales shoot — 15 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-compact.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-compact.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Sales Compact</h4>
@@ -812,8 +817,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Sales Standard (3–4 bed)" data-price="295" data-desc="3–4 bed sales shoot — 20 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Sales Standard (3–4 bed)" data-price="295" data-desc="3–4 bed sales shoot — 20 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-standard.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-standard.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Sales Standard</h4>
@@ -822,8 +827,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Sales Premium (5+ bed)" data-price="395" data-desc="5+ bed sales shoot — 25 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Sales Premium (5+ bed)" data-price="395" data-desc="5+ bed sales shoot — 25 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-premium.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-premium.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Sales Premium</h4>
@@ -840,8 +845,8 @@ export default function BookPage() {
           <div className="cat__head"><h3>Aerial <em>/ drone</em></h3><span className="cat__count">CASA-licensed</span></div>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="CASA-compliant drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview." data-img="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="CASA-compliant drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview." data-img="">
+              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Drone Set</h4>
@@ -850,8 +855,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Additional Drone Image" data-price="25" data-desc="Each drone image beyond the standard 5-image set." data-img="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Additional Drone Image" data-price="25" data-desc="Each drone image beyond the standard 5-image set." data-img="">
+              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Additional Drone Image</h4>
@@ -864,6 +869,7 @@ export default function BookPage() {
         </div>
 
         {/* VIDEO */}
+        {SHOW_VIDEO && (
         <div className="cat" id="cat-video" data-gallery="video">
           <div className="cat__head"><h3>Video</h3><span className="cat__count">4 products</span></div>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
@@ -913,6 +919,7 @@ export default function BookPage() {
 
           </div>
         </div>
+        )}
 
         {/* VIRTUAL EDITING — info only, handled in Vision Studio client portal */}
         <div className="cat" id="cat-staging" data-gallery="staging">
@@ -921,28 +928,28 @@ export default function BookPage() {
             Virtual staging, decluttering, day-to-dusk, sky replacement, grass enhancement and object removal are <strong>not booked here</strong>. Once the shoot is delivered, you'll review the gallery in the <strong>Vision Studio client portal</strong> and pick which photos need editing — pay only for what you choose. Volume rates apply automatically.
           </p>
 
-          {/* Before/after comparison sliders — placeholder Unsplash imagery, swap with real shots later */}
+          {/* Before/after comparison sliders — real Won Vision editing samples */}
           <div className="ba-row" style={{ marginTop: 16 }}>
             <BeforeAfterSlider
+              label="Virtual staging"
+              beforeAlt="Empty room before virtual staging"
+              afterAlt="Virtually staged room"
+              beforeSrc="/images/staging-before.webp"
+              afterSrc="/images/staging-after.webp"
+            />
+            <BeforeAfterSlider
+              label="Day-to-dusk"
+              beforeAlt="Exterior at day"
+              afterAlt="Exterior at dusk"
+              beforeSrc="/images/dusk-before.webp"
+              afterSrc="/images/dusk-after.webp"
+            />
+            <BeforeAfterSlider
               label="Decluttering"
-              beforeAlt="Cluttered living room (placeholder)"
-              afterAlt="Decluttered living room (placeholder)"
-              beforeSrc="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1200&q=80"
-              afterSrc="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=80"
-            />
-            <BeforeAfterSlider
-              label="Virtual Staging"
-              beforeAlt="Empty room (placeholder)"
-              afterAlt="Virtually staged room (placeholder)"
-              beforeSrc="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80"
-              afterSrc="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
-            />
-            <BeforeAfterSlider
-              label="Day to Dusk"
-              beforeAlt="Exterior at day (placeholder)"
-              afterAlt="Exterior at dusk (placeholder)"
-              beforeSrc="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80"
-              afterSrc="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80"
+              beforeAlt="Cluttered living room"
+              afterAlt="Decluttered living room"
+              beforeSrc="/images/declutter-before.webp"
+              afterSrc="/images/declutter-after.webp"
             />
           </div>
         </div>
@@ -953,7 +960,7 @@ export default function BookPage() {
 
           <div className="fp-config">
             <div className="fp-config__media">
-              <div className="fp-config__img" id="fpImg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80')" }}></div>
+              <div className="fp-config__img" id="fpImg"></div>
             </div>
             <div className="fp-config__body">
               <div className="fp-group">
@@ -1016,8 +1023,8 @@ export default function BookPage() {
           <h5 className="fp-sub">Redraws &amp; site plan · post-production add-ons</h5>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Basic Floorplan Redraw" data-price="30" data-desc="Redraw an existing plan in Won Vision linework. Per page." data-img="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Basic Floorplan Redraw" data-price="30" data-desc="Redraw an existing plan in Won Vision linework. Per page." data-img="">
+              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Floorplan Redraw</h4>
@@ -1026,8 +1033,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Floorplan Redraw with Site Plan" data-price="45" data-desc="Redraw plus matched site plan with boundaries and orientation." data-img="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Floorplan Redraw with Site Plan" data-price="45" data-desc="Redraw plus matched site plan with boundaries and orientation." data-img="">
+              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Redraw + Site Plan</h4>
@@ -1036,8 +1043,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Site Plan only" data-price="89" data-desc="Standalone site plan — boundaries, orientation, lot dimensions." data-img="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Site Plan only" data-price="89" data-desc="Standalone site plan — boundaries, orientation, lot dimensions." data-img="">
+              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Site Plan only</h4>
@@ -1057,8 +1064,8 @@ export default function BookPage() {
           </p>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Additional Photos" data-price="25" data-desc="Each photo delivered above the standard tier count." data-img="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Additional Photos" data-price="25" data-desc="Each photo delivered above the standard tier count." data-img="/images/additional-photos.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/additional-photos.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Additional Photos</h4>
@@ -1249,11 +1256,11 @@ export default function BookPage() {
     };
     const sizeLabel  = {small:'Small', medium:'Medium', large:'Large', xl:'XL'};
     const styleMap = {
-      '2d-basic':  { group:'linework', label:'Line work · Standard',  img:'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80' },
-      '2d-site':   { group:'linework', label:'Line work · With site', img:'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=80' },
-      '2d-colour': { group:'linework', label:'Line work · Coloured',  img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80' },
-      'render-2d': { group:'render2d', label:'Render · 2D',           img:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80' },
-      'render-3d': { group:'render3d', label:'Render · 3D dollhouse', img:'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=1200&q=80' },
+      '2d-basic':  { group:'linework', label:'Line work · Standard',  img:'' },
+      '2d-site':   { group:'linework', label:'Line work · With site', img:'' },
+      '2d-colour': { group:'linework', label:'Line work · Coloured',  img:'' },
+      'render-2d': { group:'render2d', label:'Render · 2D',           img:'' },
+      'render-3d': { group:'render3d', label:'Render · 3D dollhouse', img:'' },
     };
 
     const state = { size: 'medium', style: '2d-basic' };
@@ -1267,7 +1274,9 @@ export default function BookPage() {
       if(priceEl) priceEl.textContent = p === 0 ? 'POA' : '$' + Number(p).toLocaleString('en-AU');
     }
     function updateImg(){
-      if(imgEl) imgEl.style.backgroundImage = \`url('\${styleMap[state.style].img}')\`;
+      if(!imgEl) return;
+      const src = styleMap[state.style].img;
+      imgEl.style.backgroundImage = src ? \`url('\${src}')\` : 'none';
     }
 
     document.querySelectorAll('.fp-pills[data-fp="size"]').forEach(group => {
@@ -1353,8 +1362,8 @@ export default function BookPage() {
       function refresh(){
         const t = state.get(pkgKey);
         const tier = tiers[t];
-        if(priceEl) priceEl.textContent = fmtAud(tier.promo);
-        if(listEl)  listEl.textContent  = fmtAud(tier.price);
+        if(priceEl) priceEl.textContent = fmtAud(tier.price);
+        if(listEl){ listEl.textContent = ''; listEl.hidden = true; }
 
         // Reflect cart state: highlight card if any tier of this package is in cart
         const inCart = Array.from(items.keys()).some(k => k.startsWith(pkgName + ' — '));
