@@ -574,18 +574,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="section section--ink section--tight contact-band">
-        <div className="section__inner">
-          <span className="eyebrow">Contact</span>
-          <h2 className="h2" style={{ marginTop: 18 }}>Let&rsquo;s shoot your <em>next listing.</em></h2>
-          <p className="body-copy" style={{ maxWidth: 520, margin: '24px 0 36px' }}>
-            Tell us the property and the slot you need. We respond within one business day and turn around the same day we shoot.
-          </p>
-          <div className="contact-band__links">
-            <a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a>
-            <a href="tel:+61416894541">0416 894 541</a>
-            <a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a>
-            <a href="/book" className="nav__cta" style={{ padding: '16px 32px', fontSize: 12 }}>Book a shoot →</a>
+      {/* CTA — framed block (Option C), identical to /gallery. Keeps
+          id="contact" so the nav Contact link still lands here. */}
+      <section id="contact" className="cta-c" style={{ scrollMarginTop: 90 }}>
+        <div className="cta-c__box">
+          <div>
+            <span className="eyebrow">Book the studio</span>
+            <h2 className="cta-c__h">Bring your <em>next listing</em> to the studio.</h2>
+          </div>
+          <div className="cta-c__act">
+            <a href="/book" className="cta-c__btn cta-c__btn--solid">Book a shoot →</a>
           </div>
         </div>
       </section>
