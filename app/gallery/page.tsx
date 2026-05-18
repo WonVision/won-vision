@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Wordmark } from '../components/Wordmark';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
@@ -57,6 +58,7 @@ export default function GalleryPage() {
       </section>
 
       {/* FILTERS — two-level (top category + sub) */}
+      <span id="galCtlSentinel" aria-hidden="true" style={{ display: 'block', height: 1, marginBottom: -1 }} />
       <div className="gallery-controls">
         <div className="gallery-controls__inner">
           <div className="filters" role="tablist" data-filter-row="top">
@@ -197,7 +199,7 @@ export default function GalleryPage() {
               afterSrc="/images/dusk-after.webp"
               beforeAlt="Daytime exterior before day-to-dusk"
               afterAlt="Exterior after day-to-dusk conversion"
-              label="Day to dusk — twilight conversion"
+              label="Day to dusk — daylight → dusk"
             />
           </article>
 
@@ -256,6 +258,43 @@ export default function GalleryPage() {
           </div>
         </div>
       </footer>
+
+      {/* Filter bar: same pinned-gated + debounced nav-coupled lift as /book.
+          Lift ONLY when the bar is actually pinned (sentinel + IO) AND the
+          navbar has been hidden continuously >220ms (cancel-on-show). So it
+          rises to cover the vacated nav area on a real scroll, never overlaps
+          preceding content while unpinned, and never bounces on jitter. */}
+      <Script id="wv-gallery-ctl" strategy="afterInteractive">{`
+(function(){
+  var bar = document.querySelector('.gallery-controls');
+  var sentinel = document.getElementById('galCtlSentinel');
+  var nav = document.querySelector('.nav');
+  if(!bar || !nav) return;
+  var HIDE_MS = 220, pend = null, pinned = false;
+  var apply = function(){
+    var shouldLift = pinned && nav.classList.contains('is-hidden');
+    if(shouldLift){
+      if(bar.classList.contains('is-navhidden')) return;
+      if(pend) return;
+      pend = setTimeout(function(){
+        pend = null;
+        if(pinned && nav.classList.contains('is-hidden')) bar.classList.add('is-navhidden');
+      }, HIDE_MS);
+    } else {
+      if(pend){ clearTimeout(pend); pend = null; }
+      bar.classList.remove('is-navhidden');
+    }
+  };
+  if(sentinel && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      pinned = entries[0].boundingClientRect.top <= 0;
+      apply();
+    }, { threshold:[0,1] }).observe(sentinel);
+  }
+  apply();
+  new MutationObserver(apply).observe(nav, { attributes:true, attributeFilter:['class'] });
+})();
+`}</Script>
     </>
   );
 }

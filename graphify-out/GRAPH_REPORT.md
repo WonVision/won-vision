@@ -1,16 +1,16 @@
 # Graph Report - won-vision  (2026-05-18)
 
 ## Corpus Check
-- 68 files · ~187,004 words
+- 70 files · ~188,641 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 295 nodes · 334 edges · 80 communities (70 shown, 10 thin omitted)
+- 298 nodes · 337 edges · 80 communities (70 shown, 10 thin omitted)
 - Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `01d73e45`
+- Built from commit: `d74e6f61`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -41,7 +41,7 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `processPhoto()` - 17 edges
-2. `Wordmark()` - 14 edges
+2. `Wordmark()` - 16 edges
 3. `processProperty()` - 10 edges
 4. `createDraft()` - 9 edges
 5. `submitProperty()` - 9 edges
@@ -70,15 +70,15 @@ Cohesion: 0.15
 Nodes (8): attachPhoto(), createDraft(), requireEditor(), submitProperty(), isStylePreset(), handleSubmit(), onCreateDraft(), onSubmit()
 
 ### Community 1 - "Community 1"
-Cohesion: 0.17
-Nodes (13): buildIntakePath(), buildProcessingPath(), buildReviewPath(), slugifyAddress(), batch(), orderServices(), ensureDropboxFolders(), intakePhoto() (+5 more)
-
-### Community 2 - "Community 2"
 Cohesion: 0.18
 Nodes (20): ensureFolder(), getAccessToken(), getTemporaryLink(), move(), rpc(), uploadFromUrl(), qaVariant(), finalisePhotoStatus() (+12 more)
 
+### Community 2 - "Community 2"
+Cohesion: 0.17
+Nodes (13): buildIntakePath(), buildProcessingPath(), buildReviewPath(), slugifyAddress(), batch(), orderServices(), ensureDropboxFolders(), intakePhoto() (+5 more)
+
 ### Community 3 - "Community 3"
-Cohesion: 0.12
+Cohesion: 0.1
 Nodes (3): BookPage(), WonVisionMark(), Wordmark()
 
 ### Community 4 - "Community 4"
@@ -125,7 +125,7 @@ Nodes (3): exchangeAuthCode(), main(), refreshAccessToken()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `generate()` connect `Community 9` to `Community 2`?**
+- **Why does `generate()` connect `Community 9` to `Community 1`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Why does `createDraft()` connect `Community 0` to `Community 7`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
@@ -138,4 +138,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `Fill a table cell with a flat colour.` to the rest of the system?**
   _1 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
