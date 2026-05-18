@@ -1,16 +1,16 @@
 # Graph Report - won-vision  (2026-05-18)
 
 ## Corpus Check
-- 70 files · ~188,776 words
+- 71 files · ~189,052 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 298 nodes · 337 edges · 80 communities (70 shown, 10 thin omitted)
+- 300 nodes · 338 edges · 81 communities (71 shown, 10 thin omitted)
 - Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3e6e12b6`
+- Built from commit: `e3583562`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -63,19 +63,19 @@
 - `handleSubmit()` --calls--> `submitProperty()`  [INFERRED]
   app/admin/editor/new/ReviewScreen.tsx → lib/intake/actions.ts
 
-## Communities (80 total, 10 thin omitted)
+## Communities (81 total, 10 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.15
 Nodes (8): attachPhoto(), createDraft(), requireEditor(), submitProperty(), isStylePreset(), handleSubmit(), onCreateDraft(), onSubmit()
 
 ### Community 1 - "Community 1"
-Cohesion: 0.18
-Nodes (20): ensureFolder(), getAccessToken(), getTemporaryLink(), move(), rpc(), uploadFromUrl(), qaVariant(), finalisePhotoStatus() (+12 more)
-
-### Community 2 - "Community 2"
 Cohesion: 0.17
 Nodes (13): buildIntakePath(), buildProcessingPath(), buildReviewPath(), slugifyAddress(), batch(), orderServices(), ensureDropboxFolders(), intakePhoto() (+5 more)
+
+### Community 2 - "Community 2"
+Cohesion: 0.18
+Nodes (20): ensureFolder(), getAccessToken(), getTemporaryLink(), move(), rpc(), uploadFromUrl(), qaVariant(), finalisePhotoStatus() (+12 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.1
@@ -125,8 +125,8 @@ Nodes (3): exchangeAuthCode(), main(), refreshAccessToken()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `generate()` connect `Community 9` to `Community 1`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **Why does `generate()` connect `Community 9` to `Community 2`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Why does `createDraft()` connect `Community 0` to `Community 7`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `processPhoto()` (e.g. with `buildProcessingPath()` and `buildReviewPath()`) actually correct?**

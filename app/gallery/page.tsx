@@ -93,7 +93,6 @@ export default function GalleryPage() {
                    data-full="/images/showcase.webp">
             <img src="/images/showcase.webp" alt="Showcase listing" />
             <div className="gallery__item__caption">
-              <p className="place">Showcase</p>
               <p className="tags">Day photography</p>
             </div>
           </article>
@@ -103,7 +102,6 @@ export default function GalleryPage() {
                    data-full="/images/rental-compact.webp">
             <img src="/images/rental-compact.webp" alt="Rental compact interior" />
             <div className="gallery__item__caption">
-              <p className="place">Rental · Compact</p>
               <p className="tags">Day photography</p>
             </div>
           </article>
@@ -113,7 +111,6 @@ export default function GalleryPage() {
                    data-full="/images/rental-standard.webp">
             <img src="/images/rental-standard.webp" alt="Rental standard interior" />
             <div className="gallery__item__caption">
-              <p className="place">Rental · Standard</p>
               <p className="tags">Day photography</p>
             </div>
           </article>
@@ -123,7 +120,6 @@ export default function GalleryPage() {
                    data-full="/images/rental-large.webp">
             <img src="/images/rental-large.webp" alt="Rental large interior" />
             <div className="gallery__item__caption">
-              <p className="place">Rental · Large</p>
               <p className="tags">Day photography</p>
             </div>
           </article>
@@ -133,7 +129,6 @@ export default function GalleryPage() {
                    data-full="/images/sales-compact.webp">
             <img src="/images/sales-compact.webp" alt="Sales compact interior" />
             <div className="gallery__item__caption">
-              <p className="place">Sales · Compact</p>
               <p className="tags">Day photography</p>
             </div>
           </article>
@@ -143,7 +138,6 @@ export default function GalleryPage() {
                    data-full="/images/sales-standard.webp">
             <img src="/images/sales-standard.webp" alt="Sales standard interior" />
             <div className="gallery__item__caption">
-              <p className="place">Sales · Standard</p>
               <p className="tags">Day photography</p>
             </div>
           </article>
@@ -153,7 +147,6 @@ export default function GalleryPage() {
                    data-full="/images/sales-premium.webp">
             <img src="/images/sales-premium.webp" alt="Sales premium interior" />
             <div className="gallery__item__caption">
-              <p className="place">Sales · Premium</p>
               <p className="tags">Day photography</p>
             </div>
           </article>
@@ -163,7 +156,6 @@ export default function GalleryPage() {
                    data-full="/images/additional-photos.webp">
             <img src="/images/additional-photos.webp" alt="Additional photos" />
             <div className="gallery__item__caption">
-              <p className="place">Additional photos</p>
               <p className="tags">Day photography</p>
             </div>
           </article>
