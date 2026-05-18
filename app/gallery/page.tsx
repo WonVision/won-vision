@@ -207,13 +207,17 @@ export default function GalleryPage() {
         <p className="gallery__empty" data-gallery-empty hidden>Aerial work coming soon.</p>
       </section>
 
-      {/* CTA STRIP */}
-      <section className="section section--ink section--tight" style={{ textAlign: 'center', borderTop: '1px solid rgba(250,250,247,0.08)' }}>
-        <div className="section__inner">
-          <span className="eyebrow">Book the studio</span>
-          <h2 className="h2" style={{ marginTop: 18 }}>Bring your <em>next listing</em> to the practice.</h2>
-          <p className="body-copy" style={{ maxWidth: 520, margin: '24px auto 32px', color: 'rgba(250,250,247,0.78)' }}>Half-page brief, one-day response, considered work. Photography, video, drone, floor plans and virtual staging across Melbourne and Victoria.</p>
-          <Link href="/book" className="nav__cta" style={{ padding: '16px 32px', fontSize: 12 }}>Book now →</Link>
+      {/* CTA STRIP — framed block (Option C) */}
+      <section className="cta-c">
+        <div className="cta-c__box">
+          <div>
+            <span className="eyebrow">Book the studio</span>
+            <h2 className="cta-c__h">Bring your <em>next listing</em> to the studio.</h2>
+          </div>
+          <div className="cta-c__act">
+            <Link href="/book" className="cta-c__btn cta-c__btn--solid">Book a shoot →</Link>
+            <a href="mailto:hello@wonvision.com.au" className="cta-c__btn">Email us</a>
+          </div>
         </div>
       </section>
 

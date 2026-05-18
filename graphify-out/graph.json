@@ -2735,9 +2735,9 @@
       "source_file": "app/privacy/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_privacy_page_tsx",
-      "target": "components_wordmark_wordmark",
-      "confidence_score": 1.0
+      "target": "components_wordmark_wordmark"
     },
     {
       "relation": "imports",
@@ -2757,9 +2757,9 @@
       "source_file": "app/terms/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_terms_page_tsx",
-      "target": "components_wordmark_wordmark",
-      "confidence_score": 1.0
+      "target": "components_wordmark_wordmark"
     },
     {
       "relation": "contains",
@@ -2767,9 +2767,9 @@
       "source_file": "app/terms/page.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_terms_page_tsx",
-      "target": "terms_page_termspage",
-      "confidence_score": 1.0
+      "target": "terms_page_termspage"
     },
     {
       "relation": "contains",
@@ -6203,5 +6203,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d74e6f61a2fcfb7978ebd91974a469926cc78440"
+  "built_at_commit": "4539281f5e5d04db2bb8cc6f85b37bd18beef70d"
 }
