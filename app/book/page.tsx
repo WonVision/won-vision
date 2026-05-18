@@ -8,7 +8,7 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider';
 export const metadata: Metadata = {
   title: 'Book a shoot',
   description:
-    'Book a Melbourne real estate shoot with Won Vision — photography, listing video, CASA-licensed drone, floor plans, virtual staging and headshots. Flexible packages and add-ons across Melbourne and Victoria.',
+    'Book a Melbourne real estate shoot with Won Vision — photography, listing video, drone, floor plans, virtual staging and headshots. Flexible packages and add-ons across Melbourne and Victoria.',
 };
 
 export default function BookPage() {
@@ -621,6 +621,7 @@ export default function BookPage() {
           </div>
         </div>
 
+        <span id="svcJumpSentinel" aria-hidden="true" style={{ display: 'block', height: 1, marginBottom: -1 }} />
         <nav className="svc-jump" id="svcJump" aria-label="Jump to a service section">
           <div className="svc-jump__strip">
             <a href="#cat-packages" className="svc-jump__chip">Packages</a>
@@ -842,15 +843,15 @@ export default function BookPage() {
 
         {/* DRONE */}
         <div className="cat" id="cat-drone" data-gallery="drone">
-          <div className="cat__head"><h3>Aerial <em>/ drone</em></h3><span className="cat__count">CASA-licensed</span></div>
+          <div className="cat__head"><h3>Aerial <em>/ drone</em></h3><span className="cat__count">Aerial</span></div>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="CASA-compliant drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview." data-img="">
+            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="Professional drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview." data-img="">
               <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Drone Set</h4>
-                <p className="svc-card__desc">5 edited images — 2 hero, 2 POI, 1 plot overview. CASA RePL pilot.</p>
+                <p className="svc-card__desc">5 edited images — 2 hero, 2 POI, 1 plot overview.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$220</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
@@ -1134,14 +1135,18 @@ export default function BookPage() {
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
-                <li><a href="tel:+61000000000">+61 (0) 0000 0000</a></li>
+                <li><a href="tel:+61416894541">0416 894 541</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>
             <div>
               <h4>Operations</h4>
               <ul>
-                <li>Won Vision Pty Ltd</li>                <li>CASA-licensed drone ops</li>              </ul>
+                <li>Won Vision Pty Ltd</li>
+                <li>Drone operations</li>
+                <li><a href="/terms">Terms</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+              </ul>
             </div>
           </div>
           <div className="foot__rule"></div>
@@ -1461,30 +1466,43 @@ export default function BookPage() {
     cats.forEach(function(c){ io.observe(c); });
   }
 
-  // DEBOUNCED nav coupling. The site nav flaps is-hidden on tiny scroll
-  // deltas; mirroring it directly bounces the strip. So: only add
-  // .is-navhidden after the nav has stayed hidden continuously for HIDE_MS,
-  // and remove it the instant the nav reappears. Any flap shorter than
-  // HIDE_MS cancels the pending timer → no toggle → no bounce. Net effect:
-  // chips rise to cover the nav area once on a real sustained scroll, and
-  // never twitch on jitter.
+  // DEBOUNCED + PINNED-GATED nav coupling.
+  //  - DEBOUNCE: the site nav flaps is-hidden on tiny scroll deltas; only
+  //    lift after it has stayed hidden continuously for HIDE_MS, drop the
+  //    instant it returns. Sub-HIDE_MS flaps cancel the pending lift → no
+  //    bounce.
+  //  - PINNED GATE: the lift is a transform that pulls the strip UP. If
+  //    applied while the strip is still in normal flow (not yet stuck), it
+  //    rides up over the preceding intro heading and covers it. So only
+  //    ever lift when the strip is actually pinned at the top — detected
+  //    via a 1px sentinel placed immediately before it. When not pinned,
+  //    force-drop the lift (no transform → cannot overlap the heading).
   var nav = document.querySelector('.nav');
+  var sentinel = document.getElementById('svcJumpSentinel');
   if(nav){
-    var HIDE_MS = 220, pend = null;
+    var HIDE_MS = 220, pend = null, pinned = false;
     var apply = function(){
-      var navHidden = nav.classList.contains('is-hidden');
-      if(navHidden){
+      var shouldLift = pinned && nav.classList.contains('is-hidden');
+      if(shouldLift){
         if(strip.classList.contains('is-navhidden')) return;     // already lifted
         if(pend) return;                                         // already waiting
         pend = setTimeout(function(){
           pend = null;
-          if(nav.classList.contains('is-hidden')) strip.classList.add('is-navhidden');
+          if(pinned && nav.classList.contains('is-hidden')) strip.classList.add('is-navhidden');
         }, HIDE_MS);
       } else {
         if(pend){ clearTimeout(pend); pend = null; }              // cancel pending lift
         strip.classList.remove('is-navhidden');                  // drop immediately
       }
     };
+    if(sentinel && 'IntersectionObserver' in window){
+      new IntersectionObserver(function(entries){
+        // pinned once the sentinel (just above the strip) has scrolled to
+        // or above the viewport top.
+        pinned = entries[0].boundingClientRect.top <= 0;
+        apply();
+      }, { threshold:[0,1] }).observe(sentinel);
+    }
     apply();
     new MutationObserver(apply).observe(nav, { attributes:true, attributeFilter:['class'] });
   }

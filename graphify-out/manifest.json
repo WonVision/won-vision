@@ -32,12 +32,12 @@
     "hash": "42ee694a1bf89ce23ca0c31f4db51661"
   },
   "/Users/kiranc/Code/won-vision/app/page.tsx": {
-    "mtime": 1779026680.4370368,
-    "hash": "f3ac0160c0157803ce93455770be8ba6"
+    "mtime": 1779075951.2231064,
+    "hash": "aba0bf448e2e18dd19dcf99d284e8729"
   },
   "/Users/kiranc/Code/won-vision/app/gallery/page.tsx": {
-    "mtime": 1778743036.6543663,
-    "hash": "154e9a33aed55ea1eda92fd12cf14ef0"
+    "mtime": 1779075722.758228,
+    "hash": "9c8b81ebf75adb144a35791266c327df"
   },
   "/Users/kiranc/Code/won-vision/app/admin/layout.tsx": {
     "mtime": 1778415156.54716,
@@ -56,8 +56,8 @@
     "hash": "7906b15f2faa132d0bab679fb6f35c44"
   },
   "/Users/kiranc/Code/won-vision/app/components/ServiceGalleryLightbox.tsx": {
-    "mtime": 1779005486.0064487,
-    "hash": "0158e6640d53b929a8430cc92f97818a"
+    "mtime": 1779075722.7624166,
+    "hash": "d6664ed1cd175a70f5b11c734f4c7a82"
   },
   "/Users/kiranc/Code/won-vision/app/components/Wordmark.tsx": {
     "mtime": 1778217004.1980724,
@@ -72,8 +72,8 @@
     "hash": "f4f7bb10583cbe86bebaaefb900d5fad"
   },
   "/Users/kiranc/Code/won-vision/app/components/ServicesEditorial.tsx": {
-    "mtime": 1778223051.403875,
-    "hash": "54863ebf86ea82ee24f4f933d798215d"
+    "mtime": 1779075722.7660327,
+    "hash": "82b7e43f5500f58222c6ef0bd928998b"
   },
   "/Users/kiranc/Code/won-vision/app/components/BeforeAfterSlider.tsx": {
     "mtime": 1778823379.666319,
@@ -88,8 +88,8 @@
     "hash": "c0c4432c700c501614370374ace30a3c"
   },
   "/Users/kiranc/Code/won-vision/app/book/page.tsx": {
-    "mtime": 1779026642.7190826,
-    "hash": "4423fa71d1702156b213dcb72ae9d83a"
+    "mtime": 1779075932.8889167,
+    "hash": "f6857ee5de7e77c8767e51cfe0eac5bf"
   },
   "/Users/kiranc/Code/won-vision/app/book/schedule/page.tsx": {
     "mtime": 1778742526.3126197,
@@ -394,6 +394,70 @@
   "/Users/kiranc/Code/won-vision/public/won-vision-mark.svg": {
     "mtime": 1778215372.905924,
     "hash": "a8b1c3def261d410791cfb872383aca4"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/signature.webp": {
+    "mtime": 1779075708.6821773,
+    "hash": "a364030a21e422edc4cae39ef413661f"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/showcase.webp": {
+    "mtime": 1779075708.2814538,
+    "hash": "56e1a8791fee801ffe24bc9d75eddc24"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/dusk-before.webp": {
+    "mtime": 1779075705.2863586,
+    "hash": "8874b5a3146f9cc0cd3be3d196b7ecfe"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/rental-compact.webp": {
+    "mtime": 1779075705.7057688,
+    "hash": "4c1ab21bfd004f6c38dc3ec570c6fe44"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/sales-compact.webp": {
+    "mtime": 1779075706.9766874,
+    "hash": "5dadbd09a6e3adb6f854b29b6a4ba432"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/staging-before.webp": {
+    "mtime": 1779075709.4752357,
+    "hash": "ba2a27cc779d6dda48512f158b997f73"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/declutter-after.webp": {
+    "mtime": 1779075704.0657406,
+    "hash": "f8ed75424b6f4af0fb6cbea3e1a10be0"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/dusk-after.webp": {
+    "mtime": 1779075704.859248,
+    "hash": "9be60cd426e7d6136fa15788d9aaeab2"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/declutter-before.webp": {
+    "mtime": 1779075704.439594,
+    "hash": "b6d45b2612aaaa057fbc5c4abb68a113"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/sales-standard.webp": {
+    "mtime": 1779075707.844828,
+    "hash": "cfa83e3872d8edd26aba07810fd7e57e"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/cinematic.webp": {
+    "mtime": 1779075703.661003,
+    "hash": "eabb028c7148bc02b047a6ea67b62a36"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/sales-premium.webp": {
+    "mtime": 1779075707.414464,
+    "hash": "4aca007f30369fa05cb7cd2a6bef2998"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/staging-after.webp": {
+    "mtime": 1779075709.1021163,
+    "hash": "b4d77d6a5513852470235c5c013e10ae"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/rental-standard.webp": {
+    "mtime": 1779075706.5489168,
+    "hash": "aa2b77cc5bca2cbbcdcef89406585270"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/rental-large.webp": {
+    "mtime": 1779075706.1672819,
+    "hash": "64cfd4749393a2e4270326cfa69113c3"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/additional-photos.webp": {
+    "mtime": 1779075703.242367,
+    "hash": "75bdca55057cb3f58fca6379ccc077eb"
   },
   "/Users/kiranc/Code/won-vision/public/assets/favicon-source.png": {
     "mtime": 1778213433.9548926,

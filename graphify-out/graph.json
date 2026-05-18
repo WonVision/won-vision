@@ -151,7 +151,7 @@
       "label": "inject()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L62",
+      "source_location": "L46",
       "id": "components_servicegallerylightbox_inject",
       "community": 13,
       "norm_label": "inject()"
@@ -160,7 +160,7 @@
       "label": "handler()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L96",
+      "source_location": "L80",
       "id": "components_servicegallerylightbox_handler",
       "community": 13,
       "norm_label": "handler()"
@@ -169,7 +169,7 @@
       "label": "esc()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L106",
+      "source_location": "L90",
       "id": "components_servicegallerylightbox_esc",
       "community": 13,
       "norm_label": "esc()"
@@ -222,9 +222,9 @@
     {
       "label": "ServicesEditorial.tsx",
       "file_type": "code",
-      "source_file": "/Users/kiranc/Code/won-media/app/components/ServicesEditorial.tsx",
+      "source_file": "app/components/ServicesEditorial.tsx",
       "source_location": "L1",
-      "id": "users_kiranc_code_won_media_app_components_serviceseditorial_tsx",
+      "id": "app_components_serviceseditorial_tsx",
       "community": 38,
       "norm_label": "serviceseditorial.tsx"
     },
@@ -1021,6 +1021,15 @@
       "norm_label": "getpreset()"
     },
     {
+      "label": "ServicesEditorial.tsx",
+      "file_type": "code",
+      "source_file": "/Users/kiranc/Code/won-media/app/components/ServicesEditorial.tsx",
+      "source_location": "L1",
+      "community": 54,
+      "norm_label": "serviceseditorial.tsx",
+      "id": "users_kiranc_code_won_media_app_components_serviceseditorial_tsx"
+    },
+    {
       "label": "layout.tsx",
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/app/layout.tsx",
@@ -1313,7 +1322,7 @@
       "file_type": "code",
       "source_file": "app/admin/editor/new/types.ts",
       "source_location": "L1",
-      "community": 54,
+      "community": 55,
       "norm_label": "types.ts",
       "id": "app_admin_editor_new_types_ts"
     },
@@ -1403,7 +1412,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/tests/intake.spec.ts",
       "source_location": "L1",
-      "community": 55,
+      "community": 56,
       "norm_label": "intake.spec.ts",
       "id": "users_kiranc_code_won_media_tests_intake_spec_ts"
     },
@@ -1484,7 +1493,7 @@
       "file_type": "code",
       "source_file": "proxy.ts",
       "source_location": "L1",
-      "community": 56,
+      "community": 57,
       "norm_label": "proxy.ts",
       "id": "proxy_ts"
     },
@@ -1493,7 +1502,7 @@
       "file_type": "code",
       "source_file": "next.config.ts",
       "source_location": "L1",
-      "community": 57,
+      "community": 58,
       "norm_label": "next.config.ts",
       "id": "next_config_ts"
     },
@@ -1898,7 +1907,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/lib/db/schema.ts",
       "source_location": "L1",
-      "community": 58,
+      "community": 59,
       "norm_label": "schema.ts",
       "id": "users_kiranc_code_won_media_lib_db_schema_ts"
     },
@@ -1907,7 +1916,7 @@
       "file_type": "code",
       "source_file": "next-env.d.ts",
       "source_location": "L1",
-      "community": 59,
+      "community": 60,
       "norm_label": "next-env.d.ts",
       "id": "next_env_d_ts"
     },
@@ -1916,7 +1925,7 @@
       "file_type": "code",
       "source_file": "playwright.config.ts",
       "source_location": "L1",
-      "community": 60,
+      "community": 61,
       "norm_label": "playwright.config.ts",
       "id": "playwright_config_ts"
     },
@@ -1925,7 +1934,7 @@
       "file_type": "code",
       "source_file": "drizzle.config.ts",
       "source_location": "L1",
-      "community": 61,
+      "community": 62,
       "norm_label": "drizzle.config.ts",
       "id": "drizzle_config_ts"
     },
@@ -1934,7 +1943,7 @@
       "file_type": "code",
       "source_file": "vitest.config.ts",
       "source_location": "L1",
-      "community": 62,
+      "community": 63,
       "norm_label": "vitest.config.ts",
       "id": "vitest_config_ts"
     },
@@ -1943,7 +1952,7 @@
       "file_type": "code",
       "source_file": "app/fonts.ts",
       "source_location": "L1",
-      "community": 63,
+      "community": 64,
       "norm_label": "fonts.ts",
       "id": "app_fonts_ts"
     },
@@ -1952,7 +1961,7 @@
       "file_type": "code",
       "source_file": "app/admin/sign-up/[[...sign-up]]/page.tsx",
       "source_location": "L1",
-      "community": 64,
+      "community": 65,
       "norm_label": "page.tsx",
       "id": "app_admin_sign_up_sign_up_page_tsx"
     },
@@ -1961,7 +1970,7 @@
       "file_type": "code",
       "source_file": "app/admin/sign-in/[[...sign-in]]/page.tsx",
       "source_location": "L1",
-      "community": 65,
+      "community": 66,
       "norm_label": "page.tsx",
       "id": "app_admin_sign_in_sign_in_page_tsx"
     },
@@ -2006,7 +2015,7 @@
       "file_type": "code",
       "source_file": "app/components/WonVisionLoader.tsx",
       "source_location": "L1",
-      "community": 66,
+      "community": 67,
       "norm_label": "wonvisionloader.tsx",
       "id": "app_components_wonvisionloader_tsx"
     },
@@ -2018,15 +2027,6 @@
       "community": 19,
       "norm_label": "loadergate.tsx",
       "id": "app_components_loadergate_tsx"
-    },
-    {
-      "label": "ServicesEditorial.tsx",
-      "file_type": "code",
-      "source_file": "app/components/ServicesEditorial.tsx",
-      "source_location": "L1",
-      "community": 67,
-      "norm_label": "serviceseditorial.tsx",
-      "id": "app_components_serviceseditorial_tsx"
     },
     {
       "label": "ProcessStepper.tsx",
@@ -6144,5 +6144,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2e4ca35e4572667a962d4119625f5ced006dcaf5"
+  "built_at_commit": "01d73e45cae38d77d0cea1c8b461e4fbcb7b5ba7"
 }

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: 'Won Vision — Same day turn around.',
   },
   description:
-    'Melbourne real estate photography by Won Vision — a property media studio offering listing photography, video, CASA-licensed drone, floor plans, virtual staging, agent headshots and day-to-dusk conversions. Flexible packages and add-ons built to sell premium property faster.',
+    'Melbourne real estate photography by Won Vision — a property media studio offering listing photography, video, drone, floor plans, virtual staging, agent headshots and day-to-dusk conversions. Flexible packages and add-ons built to sell premium property faster.',
   alternates: {
     canonical: 'https://wonvision.com.au/',
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: 'https://wonvision.com.au/',
     title: 'Won Vision — Melbourne Real Estate Photography Studio',
     description:
-      'Melbourne real estate photography studio. Photography, video, CASA-licensed drone, floor plans, virtual staging, headshots and day-to-dusk. Built to sell premium property faster.',
+      'Melbourne real estate photography studio. Photography, video, drone, floor plans, virtual staging, headshots and day-to-dusk. Built to sell premium property faster.',
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -554,7 +554,7 @@ export default function HomePage() {
             <details className="home-faq__item">
               <summary>Is the drone work licensed and insured?</summary>
               <div>
-                <p>All aerial work is performed by CASA-licensed operators with PPIB / Coverdrone public liability insurance. We file flight notifications where required and operate within all CASA regulations.</p>
+                <p>All aerial work is flown by experienced, insured drone operators. We file flight notifications where required and operate to all applicable regulations.</p>
               </div>
             </details>
 
@@ -568,7 +568,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer id="contact" className="foot">
+      <section id="contact" className="section section--ink section--tight contact-band">
+        <div className="section__inner">
+          <span className="eyebrow">Contact</span>
+          <h2 className="h2" style={{ marginTop: 18 }}>Let&rsquo;s shoot your <em>next listing.</em></h2>
+          <p className="body-copy" style={{ maxWidth: 520, margin: '24px 0 36px' }}>
+            Tell us the property and the slot you need. We respond within one business day and turn around the same day we shoot.
+          </p>
+          <div className="contact-band__links">
+            <a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a>
+            <a href="tel:+61416894541">0416 894 541</a>
+            <a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a>
+            <a href="/book" className="nav__cta" style={{ padding: '16px 32px', fontSize: 12 }}>Book a shoot →</a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="foot">
         <div className="foot__inner">
           <div className="foot__top reveal-stagger">
             <div>
@@ -587,14 +603,18 @@ export default function HomePage() {
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
-                <li><a href="tel:+61000000000">+61 (0) 0000 0000</a></li>
+                <li><a href="tel:+61416894541">0416 894 541</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>
             <div>
               <h4>Operations</h4>
               <ul>
-                <li>Won Vision Pty Ltd</li>                <li>CASA-licensed drone ops</li>              </ul>
+                <li>Won Vision Pty Ltd</li>
+                <li>Drone operations</li>
+                <li><a href="/terms">Terms</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+              </ul>
             </div>
           </div>
           <div className="foot__rule"></div>

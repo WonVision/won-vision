@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Wordmark } from '../components/Wordmark';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
 export const metadata: Metadata = {
   title: 'Gallery',
@@ -55,17 +56,32 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* FILTERS */}
+      {/* FILTERS — two-level (top category + sub) */}
       <div className="gallery-controls">
         <div className="gallery-controls__inner">
-          <div className="filters" role="tablist">
-            <button className="filter is-active" data-filter="all">All</button>
-            <button className="filter" data-filter="photography">Photography</button>
-            <button className="filter" data-filter="staging">Virtual staging</button>
+          <div className="filters" role="tablist" data-filter-row="top">
+            <button className="filter is-active" data-cat="all">All</button>
+            <button className="filter" data-cat="photography">Photography</button>
+            <button className="filter" data-cat="virtual-editing">Virtual editing</button>
           </div>
           <div className="gallery-controls__view">
-            <span data-gallery-count>11</span>
+            <span data-gallery-count>11</span>{' '}
             <span>projects</span>
+          </div>
+        </div>
+        <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="photography" hidden>
+          <div className="filters" role="tablist" data-filter-row="sub">
+            <button className="filter is-active" data-sub="all">All</button>
+            <button className="filter" data-sub="day">Day photography</button>
+            <button className="filter" data-sub="aerial">Aerials</button>
+          </div>
+        </div>
+        <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="virtual-editing" hidden>
+          <div className="filters" role="tablist" data-filter-row="sub">
+            <button className="filter is-active" data-sub="all">All</button>
+            <button className="filter" data-sub="staging">Virtual staging</button>
+            <button className="filter" data-sub="declutter">Decluttering</button>
+            <button className="filter" data-sub="dusk">Day to dusk</button>
           </div>
         </div>
       </div>
@@ -74,117 +90,119 @@ export default function GalleryPage() {
       <section className="gallery">
         <div className="gallery__grid">
 
-          <article className="gallery__item s8" data-tags="photography"
+          <article className="gallery__item s8" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/showcase.webp">
             <img src="/images/showcase.webp" alt="Showcase listing" />
             <div className="gallery__item__caption">
               <p className="place">Showcase</p>
-              <p className="tags">Photography</p>
+              <p className="tags">Day photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="photography"
+          <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-compact.webp">
             <img src="/images/rental-compact.webp" alt="Rental compact interior" />
             <div className="gallery__item__caption">
               <p className="place">Rental · Compact</p>
-              <p className="tags">Photography</p>
+              <p className="tags">Day photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="photography"
+          <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-standard.webp">
             <img src="/images/rental-standard.webp" alt="Rental standard interior" />
             <div className="gallery__item__caption">
               <p className="place">Rental · Standard</p>
-              <p className="tags">Photography</p>
+              <p className="tags">Day photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="photography"
+          <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-large.webp">
             <img src="/images/rental-large.webp" alt="Rental large interior" />
             <div className="gallery__item__caption">
               <p className="place">Rental · Large</p>
-              <p className="tags">Photography</p>
+              <p className="tags">Day photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="photography"
+          <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-compact.webp">
             <img src="/images/sales-compact.webp" alt="Sales compact interior" />
             <div className="gallery__item__caption">
               <p className="place">Sales · Compact</p>
-              <p className="tags">Photography</p>
+              <p className="tags">Day photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s6" data-tags="photography"
+          <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-standard.webp">
             <img src="/images/sales-standard.webp" alt="Sales standard interior" />
             <div className="gallery__item__caption">
               <p className="place">Sales · Standard</p>
-              <p className="tags">Photography</p>
+              <p className="tags">Day photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s6" data-tags="photography"
+          <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-premium.webp">
             <img src="/images/sales-premium.webp" alt="Sales premium interior" />
             <div className="gallery__item__caption">
               <p className="place">Sales · Premium</p>
-              <p className="tags">Photography</p>
+              <p className="tags">Day photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="photography"
+          <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/additional-photos.webp">
             <img src="/images/additional-photos.webp" alt="Additional photos" />
             <div className="gallery__item__caption">
               <p className="place">Additional photos</p>
-              <p className="tags">Photography</p>
+              <p className="tags">Day photography</p>
             </div>
           </article>
 
-          <article className="gallery__item s4" data-tags="staging"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/staging-after.webp">
-            <img src="/images/staging-after.webp" alt="Virtual staging result" />
-            <div className="gallery__item__caption">
-              <p className="place">Virtual staging</p>
-              <p className="tags">Virtual staging</p>
-            </div>
+          {/* Virtual editing — before/after sliders */}
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="staging">
+            <BeforeAfterSlider
+              beforeSrc="/images/staging-before.webp"
+              afterSrc="/images/staging-after.webp"
+              beforeAlt="Empty room before virtual staging"
+              afterAlt="Room after virtual staging"
+              label="Virtual staging — empty → furnished"
+            />
           </article>
 
-          <article className="gallery__item s4" data-tags="staging"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/dusk-after.webp">
-            <img src="/images/dusk-after.webp" alt="Day-to-dusk result" />
-            <div className="gallery__item__caption">
-              <p className="place">Day-to-dusk</p>
-              <p className="tags">Virtual staging</p>
-            </div>
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="declutter">
+            <BeforeAfterSlider
+              beforeSrc="/images/declutter-before.webp"
+              afterSrc="/images/declutter-after.webp"
+              beforeAlt="Cluttered room before decluttering"
+              afterAlt="Room after decluttering"
+              label="Decluttering — cleared & tidied"
+            />
           </article>
 
-          <article className="gallery__item s4" data-tags="staging"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/declutter-after.webp">
-            <img src="/images/declutter-after.webp" alt="Decluttering result" />
-            <div className="gallery__item__caption">
-              <p className="place">Decluttering</p>
-              <p className="tags">Virtual staging</p>
-            </div>
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="dusk">
+            <BeforeAfterSlider
+              beforeSrc="/images/dusk-before.webp"
+              afterSrc="/images/dusk-after.webp"
+              beforeAlt="Daytime exterior before day-to-dusk"
+              afterAlt="Exterior after day-to-dusk conversion"
+              label="Day to dusk — twilight conversion"
+            />
           </article>
 
         </div>
+        <p className="gallery__empty" data-gallery-empty hidden>Aerial work coming soon.</p>
       </section>
 
       {/* CTA STRIP */}
@@ -216,14 +234,18 @@ export default function GalleryPage() {
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
-                <li><a href="tel:+61000000000">+61 (0) 0000 0000</a></li>
+                <li><a href="tel:+61416894541">0416 894 541</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>
             <div>
               <h4>Operations</h4>
               <ul>
-                <li>Won Vision Pty Ltd</li>                <li>CASA-licensed drone ops</li>              </ul>
+                <li>Won Vision Pty Ltd</li>
+                <li>Drone operations</li>
+                <li><Link href="/terms">Terms</Link></li>
+                <li><Link href="/privacy">Privacy</Link></li>
+              </ul>
             </div>
           </div>
           <div className="foot__rule"></div>

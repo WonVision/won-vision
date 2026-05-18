@@ -308,11 +308,13 @@ export default function SchedulePage() {
             </ul></div>
             <div><h4>Contact</h4><ul>
               <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
-              <li><a href="tel:+61000000000">+61 (0) 0000 0000</a></li>
+              <li><a href="tel:+61416894541">0416 894 541</a></li>
             </ul></div>
             <div><h4>Operations</h4><ul>
               <li>Won Vision Pty Ltd</li>
-              <li>CASA-licensed drone ops</li>
+              <li>Drone operations</li>
+              <li><Link href="/terms">Terms</Link></li>
+              <li><Link href="/privacy">Privacy</Link></li>
             </ul></div>
           </div>
           <div className="foot__rule"></div>

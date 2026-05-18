@@ -33,7 +33,7 @@ const allServices: Service[] = [
   {
     num: '03',
     name: 'Drone',
-    meta: 'CASA-licensed',
+    meta: 'Aerial',
     href: '/book#cat-photography',
     img: '',
     caption: 'Drone · Brunswick',

@@ -277,35 +277,78 @@ function __wvBoot(){
     els.forEach(el => io.observe(el));
   })();
 
-  // ---------- GALLERY: filters ----------
+  // ---------- GALLERY: two-level filters ----------
   (function(){
-    const filters = document.querySelectorAll('.filter');
+    const topRow = document.querySelector('[data-filter-row="top"]');
     const items = document.querySelectorAll('.gallery__item');
     const counter = document.querySelector('[data-gallery-count]');
-    if(!filters.length || !items.length) return;
+    const emptyMsg = document.querySelector('[data-gallery-empty]');
+    if(!topRow || !items.length) return;
 
-    function apply(tag){
+    const subPanels = document.querySelectorAll('.gallery-controls__sub');
+    let curCat = 'all';
+    let curSub = 'all';
+
+    function apply(){
       let n = 0;
       items.forEach(it => {
-        const tags = (it.dataset.tags || '').split(' ');
-        const show = tag === 'all' || tags.includes(tag);
+        const cat = it.dataset.cat || '';
+        const sub = it.dataset.sub || '';
+        const catOk = curCat === 'all' || cat === curCat;
+        const subOk = curSub === 'all' || sub === curSub;
+        const show = catOk && subOk;
         it.classList.toggle('is-hidden', !show);
         if(show) n++;
       });
       if(counter) counter.textContent = String(n).padStart(2,'0');
+      if(emptyMsg) emptyMsg.hidden = n !== 0;
     }
-    filters.forEach(f => {
-      f.addEventListener('click', () => {
-        filters.forEach(x => x.classList.remove('is-active'));
-        f.classList.add('is-active');
-        apply(f.dataset.filter);
+
+    function showSubPanel(cat){
+      let activePanel = null;
+      subPanels.forEach(p => {
+        const match = p.dataset.subFor === cat;
+        p.hidden = !match;
+        if(match) activePanel = p;
+      });
+      // reset the visible sub row to ALL
+      if(activePanel){
+        const subBtns = activePanel.querySelectorAll('.filter');
+        subBtns.forEach((b, i) => b.classList.toggle('is-active', i === 0));
+      }
+    }
+
+    // top row
+    topRow.querySelectorAll('.filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        topRow.querySelectorAll('.filter').forEach(x => x.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        curCat = btn.dataset.cat;
+        curSub = 'all';
+        showSubPanel(curCat);
+        apply();
       });
     });
+
+    // sub rows (event-delegated so reset stays simple)
+    subPanels.forEach(panel => {
+      panel.querySelectorAll('.filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          panel.querySelectorAll('.filter').forEach(x => x.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          curSub = btn.dataset.sub;
+          apply();
+        });
+      });
+    });
+
+    apply();
   })();
 
   // ---------- GALLERY: lightbox ----------
   (function(){
-    const items = document.querySelectorAll('.gallery__item');
+    // slider tiles are interactive in-place — exclude from lightbox
+    const items = document.querySelectorAll('.gallery__item:not(.gallery__item--slider)');
     if(!items.length) return;
 
     const lb = document.createElement('div');
