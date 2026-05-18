@@ -374,19 +374,19 @@ export default function HomePage() {
           <div className="work__grid reveal-stagger">
             <a className="work__item a" href="/gallery">
               <img src="/images/showcase.webp" alt="Carlton North living" />
-              <div className="work__item__caption"><span><b>Carlton North</b><br />12 Drummond Street</span><span>Photography</span></div>
+              <div className="work__item__caption"><span><b>Carlton North</b></span><span>Photography</span></div>
             </a>
             <a className="work__item b" href="/gallery">
               <img src="/images/sales-standard.webp" alt="Fitzroy interior" />
-              <div className="work__item__caption"><span><b>Fitzroy</b><br />4 Argyle Place</span><span>Photography</span></div>
+              <div className="work__item__caption"><span><b>Fitzroy</b></span><span>Photography</span></div>
             </a>
             <a className="work__item c" href="/gallery">
               <img src="/images/rental-large.webp" alt="Brunswick interior" />
-              <div className="work__item__caption"><span><b>Brunswick</b><br />118 Lygon Street</span><span>Photography</span></div>
+              <div className="work__item__caption"><span><b>Brunswick</b></span><span>Photography</span></div>
             </a>
             <a className="work__item d" href="/gallery">
               <img src="/images/sales-premium.webp" alt="Northcote bedroom" />
-              <div className="work__item__caption"><span><b>Northcote</b><br />21 Westbourne Grove</span><span>Photography</span></div>
+              <div className="work__item__caption"><span><b>Northcote</b></span><span>Photography</span></div>
             </a>
           </div>
 
