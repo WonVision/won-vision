@@ -257,7 +257,7 @@ export default function HomePage() {
 
       <header className="nav" data-start-light="true">
         <div className="nav__brand">
-          <a href="#top" aria-label="Won Vision — home" data-home>
+          <a href="#top" aria-label="Won Vision" data-home>
             <Wordmark />
           </a>
         </div>
@@ -293,7 +293,7 @@ export default function HomePage() {
 
         <div className="hero__layer">
           <div className="hero__copy fonts-ready">
-            <div className="hero__morph" aria-label="Won Vision — Shot, edited and delivered same day.">
+            <div className="hero__morph" aria-label="Won Vision">
               <h1 className="hero__hed hero__hed--wordmark hero__morph__a" aria-hidden="false">
                 {[
                   { c: 'W' }, { c: 'o' }, { c: 'n' }, { c: ' ' },
@@ -387,7 +387,7 @@ export default function HomePage() {
                 afterSrc="/images/staging-after.webp"
                 beforeAlt="Empty room before virtual staging"
                 afterAlt="Room after virtual staging"
-                label="Virtual staging — empty → furnished"
+                label="Virtual staging"
               />
             </article>
             <a className="work__item d" href="/gallery">
@@ -594,7 +594,7 @@ export default function HomePage() {
         <div className="foot__inner">
           <div className="foot__top reveal-stagger">
             <div>
-              <a href="#top" data-home aria-label="Won Vision — home"><Wordmark /></a>
+              <a href="#top" data-home aria-label="Won Vision"><Wordmark /></a>
               <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day turn around.</p>
             </div>
             <div>

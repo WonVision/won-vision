@@ -15,7 +15,7 @@ export default function GalleryPage() {
     <>
       <header className="nav">
         <div className="nav__brand">
-          <Link href="/#top" aria-label="Won Vision — home">
+          <Link href="/#top" aria-label="Won Vision">
             <Wordmark />
           </Link>
         </div>
@@ -167,7 +167,7 @@ export default function GalleryPage() {
               afterSrc="/images/staging-after.webp"
               beforeAlt="Empty room before virtual staging"
               afterAlt="Room after virtual staging"
-              label="Virtual staging — empty → furnished"
+              label="Virtual staging"
             />
           </article>
 
@@ -177,7 +177,7 @@ export default function GalleryPage() {
               afterSrc="/images/declutter-after.webp"
               beforeAlt="Cluttered room before decluttering"
               afterAlt="Room after decluttering"
-              label="Decluttering — cleared & tidied"
+              label="Decluttering"
             />
           </article>
 
@@ -187,7 +187,7 @@ export default function GalleryPage() {
               afterSrc="/images/dusk-after.webp"
               beforeAlt="Daytime exterior before day-to-dusk"
               afterAlt="Exterior after day-to-dusk conversion"
-              label="Day to dusk — daylight → dusk"
+              label="Day to dusk"
             />
           </article>
 
@@ -212,7 +212,7 @@ export default function GalleryPage() {
         <div className="foot__inner">
           <div className="foot__top">
             <div>
-              <Link href="/#top" aria-label="Won Vision — home"><Wordmark /></Link>
+              <Link href="/#top" aria-label="Won Vision"><Wordmark /></Link>
               <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day turn around.</p>
             </div>
             <div>
