@@ -55,22 +55,25 @@ function __wvBoot(){
 
   // ---------- NAV: scroll lock + light/dark + hide on scroll-down ----------
   (function(){
-    const nav = document.querySelector('.nav');
-    if(!nav) return;
-    const heroHero = document.querySelector('.hero, .gallery-hero');
-    const isLightOverride = nav.dataset.startLight === 'true';
-
-    const filterBar = document.querySelector('.gallery-controls');
-    let lastY = window.scrollY;
     const hideThreshold = 120;
     const deltaThreshold = 6;
+    let lastY = window.scrollY;
 
-    function setHidden(state){
+    function setHidden(nav, state){
       nav.classList.toggle('is-hidden', state);
-      if(filterBar) filterBar.classList.toggle('is-hidden', state);
+      const fb = document.querySelector('.gallery-controls');
+      if(fb) fb.classList.toggle('is-hidden', state);
     }
 
+    // Re-query every call: Next.js client navigation (e.g. gallery → home,
+    // browser back) swaps the <header.nav> node, so a cached reference goes
+    // stale and the new nav never gets .is-light → dark text on the dark
+    // hero. Reading fresh each time keeps light/dark correct after any nav.
     function update(){
+      const nav = document.querySelector('.nav');
+      if(!nav) return;
+      const heroHero = document.querySelector('.hero, .gallery-hero');
+      const isLightOverride = nav.dataset.startLight === 'true';
       const y = window.scrollY;
       const delta = y - lastY;
 
@@ -80,19 +83,33 @@ function __wvBoot(){
         const r = heroHero.getBoundingClientRect();
         const overHero = r.bottom > 80;
         nav.classList.toggle('is-light', overHero && isLightOverride);
+      } else {
+        nav.classList.remove('is-light');
       }
 
       if(Math.abs(delta) > deltaThreshold){
         if(delta > 0 && y > hideThreshold){
-          setHidden(true);
+          setHidden(nav, true);
         } else if(delta < 0){
-          setHidden(false);
+          setHidden(nav, false);
         }
         lastY = y;
       }
-      if(y <= hideThreshold) setHidden(false);
+      if(y <= hideThreshold) setHidden(nav, false);
     }
+
     window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update, {passive:true});
+    window.addEventListener('pageshow', function(){ lastY = window.scrollY; update(); });
+    window.addEventListener('popstate', update);
+    // SPA route changes replace the nav/hero DOM with no native event —
+    // re-apply on body mutations (rAF-debounced, cheap).
+    let raf = null;
+    new MutationObserver(function(){
+      if(raf) return;
+      raf = requestAnimationFrame(function(){ raf = null; update(); });
+    }).observe(document.body, { childList:true, subtree:true });
+
     update();
   })();
 

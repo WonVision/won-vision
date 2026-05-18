@@ -66,10 +66,6 @@ export default function GalleryPage() {
             <button className="filter" data-cat="photography">Photography</button>
             <button className="filter" data-cat="virtual-editing">Virtual editing</button>
           </div>
-          <div className="gallery-controls__view">
-            <span data-gallery-count>11</span>{' '}
-            <span>projects</span>
-          </div>
         </div>
         <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="photography" hidden>
           <div className="filters" role="tablist" data-filter-row="sub">
@@ -216,7 +212,6 @@ export default function GalleryPage() {
           </div>
           <div className="cta-c__act">
             <Link href="/book" className="cta-c__btn cta-c__btn--solid">Book a shoot →</Link>
-            <a href="mailto:hello@wonvision.com.au" className="cta-c__btn">Email us</a>
           </div>
         </div>
       </section>

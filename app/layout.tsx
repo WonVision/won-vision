@@ -3,6 +3,7 @@ import './globals.css';
 import Script from 'next/script';
 import { ClerkProvider } from '@clerk/nextjs';
 import { sora } from './fonts';
+import SpaReveal from './components/SpaReveal';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wonvision.com.au'),
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Script id="wv-loader-class" strategy="beforeInteractive">{`
 try{if(sessionStorage.getItem('wv-entered')!=='1'){document.documentElement.classList.add('wv-loader-active')}}catch(e){}
 `}</Script>
+          <SpaReveal />
           {children}
           <Script src="/script.js" strategy="afterInteractive" />
           <Script
