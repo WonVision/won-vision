@@ -164,10 +164,10 @@ function __wvBoot(){
 
   // ---------- HERO aperture (desktop) / parallax (mobile) + small cursor ----------
   (function(){
-    const hero = document.querySelector('.hero');
-    const lens = hero && hero.querySelector('.hero__lens');
-    const base = hero && hero.querySelector('.hero__base');
-
+    // Re-query .hero/.hero__lens on every event: Next.js client navigation
+    // (gallery/book → home) swaps the hero DOM, so a cached reference goes
+    // stale and the spotlight stops working after a soft nav. The cursor
+    // element lives on <body> (persists across soft nav) so create it once.
     let cur = document.querySelector('.hero__cursor');
     if(!cur){
       cur = document.createElement('div');
@@ -175,25 +175,20 @@ function __wvBoot(){
       document.body.appendChild(cur);
     }
 
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
 
-    // ===== Mobile: static hero — no parallax, no device-tilt, no Ken Burns =====
-    if (isMobile) {
-      if (!hero || !base) return;
-      // Kill Ken Burns and pin the background to a fixed transform.
-      base.style.animation = 'none';
-      base.style.transform = 'scale(1.12)';
-      return;
+    // Mobile: kill Ken Burns + pin the hero base. Re-applied whenever a
+    // hero (re)appears via soft nav.
+    function pinMobileBase(){
+      if(!isMobile()) return;
+      const base = document.querySelector('.hero .hero__base');
+      if(base){ base.style.animation = 'none'; base.style.transform = 'scale(1.12)'; }
     }
-
-    // ===== Desktop: aperture cursor lens + global small-circle cursor =====
-    if (lens) {
-      lens.style.setProperty('--mx', '50%');
-      lens.style.setProperty('--my', '55%');
-    }
+    pinMobileBase();
 
     let raf = null, mx = 50, my = 55, cx = 0, cy = 0;
     function paint(){
+      const lens = document.querySelector('.hero .hero__lens');
       if(lens){
         lens.style.setProperty('--mx', mx + '%');
         lens.style.setProperty('--my', my + '%');
@@ -204,8 +199,11 @@ function __wvBoot(){
     }
 
     window.addEventListener('mousemove', (e) => {
+      if(isMobile()) return;
       cx = e.clientX; cy = e.clientY;
       cur.style.opacity = 1;
+      const hero = document.querySelector('.hero');
+      const lens = hero && hero.querySelector('.hero__lens');
       if(hero && lens){
         const r = hero.getBoundingClientRect();
         const overHero = e.clientY >= r.top && e.clientY <= r.bottom;
@@ -213,6 +211,9 @@ function __wvBoot(){
         if(overHero){
           mx = ((e.clientX - r.left) / r.width) * 100;
           my = ((e.clientY - r.top) / r.height) * 100;
+        } else {
+          // recenter the aperture when the pointer leaves the hero
+          mx = 50; my = 55;
         }
       } else {
         cur.classList.remove('over-hero');
@@ -224,14 +225,12 @@ function __wvBoot(){
       if(!e.relatedTarget && !e.toElement) cur.style.opacity = 0;
     });
 
-    if(hero){
-      hero.addEventListener('mouseleave', () => {
-        if(!lens) return;
-        mx = 50; my = 55;
-        lens.style.setProperty('--mx', '50%');
-        lens.style.setProperty('--my', '55%');
-      });
-    }
+    // Soft nav swaps the hero DOM with no native event — re-pin mobile base.
+    let mraf = null;
+    new MutationObserver(() => {
+      if(mraf) return;
+      mraf = requestAnimationFrame(() => { mraf = null; pinMobileBase(); });
+    }).observe(document.body, { childList:true, subtree:true });
   })();
 
   // ---------- PROCESS: accordion + count-up numbers ----------
