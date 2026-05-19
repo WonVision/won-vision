@@ -34,7 +34,7 @@ const galleries: Record<string, Media[]> = {
       src: '/video/cinematic-demo.mp4',
       type: 'video',
       poster: '/images/cinematic.webp',
-      caption: 'Premium Cinematic · 90s',
+      caption: 'Listing Video · 90s',
     },
   ],
 };
