@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function BookPage() {
-  const SHOW_VIDEO = false;
+  const SHOW_VIDEO = true;
   return (
     <>
       <style>{`

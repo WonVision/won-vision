@@ -363,8 +363,8 @@ function __wvBoot(){
 
   // ---------- GALLERY: lightbox ----------
   (function(){
-    // slider tiles are interactive in-place — exclude from lightbox
-    const items = document.querySelectorAll('.gallery__item:not(.gallery__item--slider)');
+    // slider + video tiles are interactive in-place — exclude from lightbox
+    const items = document.querySelectorAll('.gallery__item:not(.gallery__item--slider):not(.gallery__item--video)');
     if(!items.length) return;
 
     const lb = document.createElement('div');

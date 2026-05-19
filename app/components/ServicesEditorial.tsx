@@ -11,7 +11,7 @@ type Service = {
   caption: string;
 };
 
-const SHOW_VIDEO = false;
+const SHOW_VIDEO = true;
 
 const allServices: Service[] = [
   {
@@ -25,9 +25,9 @@ const allServices: Service[] = [
   {
     num: '02',
     name: 'Video',
-    meta: 'Walkthrough · Lifestyle',
+    meta: 'Walkthrough · Cinematic',
     href: '/book#cat-video',
-    img: '',
+    img: '/images/cinematic.webp',
     caption: 'Video · Fitzroy',
   },
   {

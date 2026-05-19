@@ -65,6 +65,7 @@ export default function GalleryPage() {
             <button className="filter is-active" data-cat="all">All</button>
             <button className="filter" data-cat="photography">Photography</button>
             <button className="filter" data-cat="virtual-editing">Virtual editing</button>
+            <button className="filter" data-cat="video">Video</button>
           </div>
         </div>
         <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="photography" hidden>
@@ -80,6 +81,12 @@ export default function GalleryPage() {
             <button className="filter" data-sub="staging">Virtual staging</button>
             <button className="filter" data-sub="declutter">Decluttering</button>
             <button className="filter" data-sub="dusk">Day to dusk</button>
+          </div>
+        </div>
+        <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="video" hidden>
+          <div className="filters" role="tablist" data-filter-row="sub">
+            <button className="filter is-active" data-sub="all">All</button>
+            <button className="filter" data-sub="cinematic">Cinematic video</button>
           </div>
         </div>
       </div>
@@ -191,8 +198,23 @@ export default function GalleryPage() {
             />
           </article>
 
+          {/* Video — cinematic listing film, plays inline */}
+          <article className="gallery__item gallery__item--video s12" data-cat="video" data-sub="cinematic"
+                   data-place="Won Vision · Cinematic">
+            <video
+              src="/video/cinematic-demo.mp4"
+              poster="/images/cinematic.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Cinematic video</p>
+            </div>
+          </article>
+
         </div>
-        <p className="gallery__empty" data-gallery-empty hidden>Aerial work coming soon.</p>
+        <p className="gallery__empty" data-gallery-empty hidden>Work coming soon.</p>
       </section>
 
       {/* CTA STRIP — framed block (Option C) */}
