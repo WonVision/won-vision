@@ -557,12 +557,6 @@ export default function HomePage() {
               </div>
             </details>
 
-            <details className="home-faq__item">
-              <summary>Is the drone work licensed and insured?</summary>
-              <div>
-                <p>All aerial work is flown by experienced, insured drone operators. We file flight notifications where required and operate to all applicable regulations.</p>
-              </div>
-            </details>
 
             <details className="home-faq__item">
               <summary>How do I pay?</summary>
@@ -615,7 +609,6 @@ export default function HomePage() {
               <h4>Operations</h4>
               <ul>
                 <li>Won Vision Pty Ltd</li>
-                <li>Drone operations</li>
                 <li><a href="/terms">Terms</a></li>
                 <li><a href="/privacy">Privacy</a></li>
               </ul>

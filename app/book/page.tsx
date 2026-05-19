@@ -1143,7 +1143,6 @@ export default function BookPage() {
               <h4>Operations</h4>
               <ul>
                 <li>Won Vision Pty Ltd</li>
-                <li>Drone operations</li>
                 <li><a href="/terms">Terms</a></li>
                 <li><a href="/privacy">Privacy</a></li>
               </ul>

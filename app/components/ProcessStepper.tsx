@@ -12,7 +12,7 @@ const steps = [
   {
     num: '02',
     name: 'Plan',
-    desc: 'Site walk and shot list. Light timing locked, drone permissions filed before the shoot day.',
+    desc: 'Site walk and shot list. Light timing and access locked in before the shoot day.',
   },
   {
     num: '03',

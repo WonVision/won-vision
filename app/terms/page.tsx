@@ -155,7 +155,6 @@ export default function TermsPage() {
               <h4>Operations</h4>
               <ul>
                 <li>Won Vision Pty Ltd</li>
-                <li>Drone operations</li>
                 <li><Link href="/terms">Terms</Link></li>
                 <li><Link href="/privacy">Privacy</Link></li>
               </ul>
