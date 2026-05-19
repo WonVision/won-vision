@@ -1459,7 +1459,15 @@ body.is-loading > :not(.loader){visibility:hidden}
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;display:block;background:var(--ink);
 }
-.gallery__item--video .gallery__item__caption{z-index:2}
+/* Label must never intercept clicks on the native video controls, and
+   sits at the top so it doesn't fight the control bar. */
+.gallery__item--video .gallery__item__caption{
+  pointer-events:none;
+  inset:0 0 auto 0;
+  justify-content:flex-start;
+  background:linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, transparent 100%);
+  padding:18px 24px;
+}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .filter{
   font-family:var(--body);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;

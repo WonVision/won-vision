@@ -144,7 +144,7 @@
       "source_file": "app/admin/page.tsx",
       "source_location": "L1",
       "id": "app_admin_page_tsx",
-      "community": 19,
+      "community": 23,
       "norm_label": "page.tsx"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_loadergate_tsx",
-      "community": 20,
+      "community": 19,
       "norm_label": "loadergate.tsx"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
       "source_location": "L8",
       "id": "components_loadergate_loadergate",
-      "community": 20,
+      "community": 19,
       "norm_label": "loadergate()"
     },
     {
@@ -303,19 +303,19 @@
     {
       "label": "ProcessStepper.tsx",
       "file_type": "code",
-      "source_file": "/Users/kiranc/Code/won-media/app/components/ProcessStepper.tsx",
+      "source_file": "app/components/ProcessStepper.tsx",
       "source_location": "L1",
-      "id": "users_kiranc_code_won_media_app_components_processstepper_tsx",
-      "community": 21,
+      "id": "app_components_processstepper_tsx",
+      "community": 20,
       "norm_label": "processstepper.tsx"
     },
     {
       "label": "ProcessStepper()",
       "file_type": "code",
-      "source_file": "/Users/kiranc/Code/won-media/app/components/ProcessStepper.tsx",
+      "source_file": "app/components/ProcessStepper.tsx",
       "source_location": "L29",
       "id": "components_processstepper_processstepper",
-      "community": 21,
+      "community": 20,
       "norm_label": "processstepper()"
     },
     {
@@ -486,7 +486,7 @@
       "source_file": "tests/editor-presets.test.ts",
       "source_location": "L1",
       "id": "tests_editor_presets_test_ts",
-      "community": 23,
+      "community": 22,
       "norm_label": "editor-presets.test.ts"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_scripts_seed_editor_ts",
-      "community": 22,
+      "community": 21,
       "norm_label": "seed-editor.ts"
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L3",
       "id": "scripts_seed_editor_main",
-      "community": 22,
+      "community": 21,
       "norm_label": "main()"
     },
     {
@@ -1053,7 +1053,7 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L1",
       "id": "lib_editor_presets_ts",
-      "community": 23,
+      "community": 22,
       "norm_label": "presets.ts"
     },
     {
@@ -1062,8 +1062,17 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L51",
       "id": "editor_presets_getpreset",
-      "community": 23,
+      "community": 22,
       "norm_label": "getpreset()"
+    },
+    {
+      "label": "ProcessStepper.tsx",
+      "file_type": "code",
+      "source_file": "/Users/kiranc/Code/won-media/app/components/ProcessStepper.tsx",
+      "source_location": "L1",
+      "community": 20,
+      "norm_label": "processstepper.tsx",
+      "id": "users_kiranc_code_won_media_app_components_processstepper_tsx"
     },
     {
       "label": "ServicesEditorial.tsx",
@@ -1853,7 +1862,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/app/admin/page.tsx",
       "source_location": "L1",
-      "community": 19,
+      "community": 23,
       "norm_label": "page.tsx",
       "id": "users_kiranc_code_won_media_app_admin_page_tsx"
     },
@@ -1862,7 +1871,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/app/admin/page.tsx",
       "source_location": "L6",
-      "community": 19,
+      "community": 23,
       "norm_label": "admindashboard()",
       "id": "admin_page_admindashboard"
     },
@@ -2069,18 +2078,9 @@
       "file_type": "code",
       "source_file": "app/components/LoaderGate.tsx",
       "source_location": "L1",
-      "community": 20,
+      "community": 19,
       "norm_label": "loadergate.tsx",
       "id": "app_components_loadergate_tsx"
-    },
-    {
-      "label": "ProcessStepper.tsx",
-      "file_type": "code",
-      "source_file": "app/components/ProcessStepper.tsx",
-      "source_location": "L1",
-      "community": 21,
-      "norm_label": "processstepper.tsx",
-      "id": "app_components_processstepper_tsx"
     },
     {
       "label": "WonVisionMark.tsx",
@@ -2222,7 +2222,7 @@
       "file_type": "code",
       "source_file": "scripts/seed-editor.ts",
       "source_location": "L1",
-      "community": 22,
+      "community": 21,
       "norm_label": "seed-editor.ts",
       "id": "scripts_seed_editor_ts"
     },
@@ -3063,21 +3063,21 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/kiranc/Code/won-media/app/components/ProcessStepper.tsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_kiranc_code_won_media_app_components_processstepper_tsx",
-      "target": "components_processstepper_processstepper"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/components/ProcessStepper.tsx",
       "source_location": "L29",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_components_processstepper_tsx",
+      "target": "components_processstepper_processstepper"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/kiranc/Code/won-media/app/components/ProcessStepper.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_kiranc_code_won_media_app_components_processstepper_tsx",
       "target": "components_processstepper_processstepper"
     },
     {
@@ -6231,5 +6231,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bed8f96835b34c7b9b9a3a8358b9f04576c768d9"
+  "built_at_commit": "d660531178de1c1dfffa742c663de4dc4e57ef01"
 }
