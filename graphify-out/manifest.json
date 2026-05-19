@@ -64,8 +64,8 @@
     "hash": "7906b15f2faa132d0bab679fb6f35c44"
   },
   "/Users/kiranc/Code/won-vision/app/components/ServiceGalleryLightbox.tsx": {
-    "mtime": 1779075722.7624166,
-    "hash": "d6664ed1cd175a70f5b11c734f4c7a82"
+    "mtime": 1779167688.3324838,
+    "hash": "62635532b2a6a881a8156d9112d6f7b8"
   },
   "/Users/kiranc/Code/won-vision/app/components/Wordmark.tsx": {
     "mtime": 1778217004.1980724,
@@ -78,6 +78,10 @@
   "/Users/kiranc/Code/won-vision/app/components/LoaderGate.tsx": {
     "mtime": 1778218281.263273,
     "hash": "f4f7bb10583cbe86bebaaefb900d5fad"
+  },
+  "/Users/kiranc/Code/won-vision/app/components/ServiceVideoPreview.tsx": {
+    "mtime": 1779167638.537046,
+    "hash": "499fcdf282c414580ec5040f6cb3a007"
   },
   "/Users/kiranc/Code/won-vision/app/components/ServicesEditorial.tsx": {
     "mtime": 1779164422.2787466,
@@ -100,8 +104,8 @@
     "hash": "58b5b0ed8bccaf29260130f78b7d89fb"
   },
   "/Users/kiranc/Code/won-vision/app/book/page.tsx": {
-    "mtime": 1779165459.092843,
-    "hash": "a76b736bd0183ad51529c51814f0e50d"
+    "mtime": 1779167660.9173634,
+    "hash": "715f95e332f5081dcab4a73ae7897c89"
   },
   "/Users/kiranc/Code/won-vision/app/book/schedule/page.tsx": {
     "mtime": 1779165459.0900247,
@@ -406,6 +410,14 @@
   "/Users/kiranc/Code/won-vision/email/post-call-followup.html": {
     "mtime": 1779166493.456543,
     "hash": "5f0c9a004cd74a7beb911d23791a30f9"
+  },
+  "/Users/kiranc/Code/won-vision/email/post-call-followup-gmail-template.html": {
+    "mtime": 1779166872.105799,
+    "hash": "cf6b5420f851e8900468f4e22afe953f"
+  },
+  "/Users/kiranc/Code/won-vision/email/cold-outreach-gmail-template.html": {
+    "mtime": 1779166836.8669338,
+    "hash": "b2f0ffd73909aeabd0168e2672d0f1b1"
   },
   "/Users/kiranc/Code/won-vision/app/icon.svg": {
     "mtime": 1778219096.1711087,

@@ -1,16 +1,16 @@
 # Graph Report - won-vision  (2026-05-19)
 
 ## Corpus Check
-- 71 files · ~201,260 words
+- 72 files · ~202,921 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 300 nodes · 338 edges · 81 communities (71 shown, 10 thin omitted)
+- 302 nodes · 339 edges · 82 communities (72 shown, 10 thin omitted)
 - Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3804f032`
+- Built from commit: `ea995951`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -63,7 +63,7 @@
 - `handleSubmit()` --calls--> `submitProperty()`  [INFERRED]
   app/admin/editor/new/ReviewScreen.tsx → lib/intake/actions.ts
 
-## Communities (81 total, 10 thin omitted)
+## Communities (82 total, 10 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.15

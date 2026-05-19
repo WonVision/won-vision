@@ -374,12 +374,12 @@ export default function HomePage() {
 
           <div className="work__grid reveal-stagger">
             <a className="work__item a" href="/gallery">
-              <img src="/images/showcase.webp" alt="Carlton North living" />
-              <div className="work__item__caption"><span><b>Carlton North</b></span><span>Photography</span></div>
+              <img src="/images/showcase.webp" alt="Listing living room" />
+              <div className="work__item__caption"><span><b>Photography</b></span></div>
             </a>
             <a className="work__item b" href="/gallery">
-              <img src="/images/sales-standard.webp" alt="Fitzroy interior" />
-              <div className="work__item__caption"><span><b>Fitzroy</b></span><span>Photography</span></div>
+              <img src="/images/sales-standard.webp" alt="Listing interior" />
+              <div className="work__item__caption"><span><b>Photography</b></span></div>
             </a>
             <article className="work__item c work__item--slider">
               <BeforeAfterSlider
@@ -391,8 +391,8 @@ export default function HomePage() {
               />
             </article>
             <a className="work__item d" href="/gallery">
-              <img src="/images/sales-premium.webp" alt="Northcote bedroom" />
-              <div className="work__item__caption"><span><b>Northcote</b></span><span>Photography</span></div>
+              <img src="/images/sales-premium.webp" alt="Listing bedroom" />
+              <div className="work__item__caption"><span><b>Photography</b></span></div>
             </a>
           </div>
 

@@ -20,7 +20,7 @@ const allServices: Service[] = [
     meta: 'Stills · Twilight',
     href: '/book#cat-photography',
     img: '/images/showcase.webp',
-    caption: 'Photography · Carlton North',
+    caption: 'Photography',
   },
   {
     num: '02',
@@ -28,7 +28,7 @@ const allServices: Service[] = [
     meta: 'Walkthrough · Cinematic',
     href: '/book#cat-video',
     img: '/images/cinematic.webp',
-    caption: 'Video · Fitzroy',
+    caption: 'Video',
   },
   {
     num: '03',
@@ -36,7 +36,7 @@ const allServices: Service[] = [
     meta: 'Aerial',
     href: '/book#cat-photography',
     img: '',
-    caption: 'Drone · Brunswick',
+    caption: 'Drone',
   },
   {
     num: '04',
@@ -44,7 +44,7 @@ const allServices: Service[] = [
     meta: '2D · 3D',
     href: '/book#cat-floorplans',
     img: '',
-    caption: 'Floor plans · Northcote',
+    caption: 'Floor plans',
   },
   {
     num: '05',

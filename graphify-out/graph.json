@@ -9,7 +9,7 @@
       "source_file": "/Users/kiranc/Code/won-media/next-env.d.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_next_env_d_ts",
-      "community": 28,
+      "community": 29,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "/Users/kiranc/Code/won-media/proxy.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_proxy_ts",
-      "community": 29,
+      "community": 30,
       "norm_label": "proxy.ts"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "/Users/kiranc/Code/won-media/playwright.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_playwright_config_ts",
-      "community": 30,
+      "community": 31,
       "norm_label": "playwright.config.ts"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "/Users/kiranc/Code/won-media/drizzle.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_drizzle_config_ts",
-      "community": 31,
+      "community": 32,
       "norm_label": "drizzle.config.ts"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "/Users/kiranc/Code/won-media/vitest.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_vitest_config_ts",
-      "community": 32,
+      "community": 33,
       "norm_label": "vitest.config.ts"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "/Users/kiranc/Code/won-media/next.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_next_config_ts",
-      "community": 33,
+      "community": 34,
       "norm_label": "next.config.ts"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/fonts.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_fonts_ts",
-      "community": 34,
+      "community": 35,
       "norm_label": "fonts.ts"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "app/admin/layout.tsx",
       "source_location": "L1",
       "id": "app_admin_layout_tsx",
-      "community": 35,
+      "community": 36,
       "norm_label": "layout.tsx"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "app/admin/page.tsx",
       "source_location": "L1",
       "id": "app_admin_page_tsx",
-      "community": 23,
+      "community": 19,
       "norm_label": "page.tsx"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/admin/sign-up/[[...sign-up]]/page.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_admin_sign_up_sign_up_page_tsx",
-      "community": 36,
+      "community": 37,
       "norm_label": "page.tsx"
     },
     {
@@ -162,7 +162,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/admin/sign-in/[[...sign-in]]/page.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_admin_sign_in_sign_in_page_tsx",
-      "community": 37,
+      "community": 38,
       "norm_label": "page.tsx"
     },
     {
@@ -187,7 +187,7 @@
       "label": "handler()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L80",
+      "source_location": "L82",
       "id": "components_servicegallerylightbox_handler",
       "community": 13,
       "norm_label": "handler()"
@@ -196,7 +196,7 @@
       "label": "esc()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L90",
+      "source_location": "L92",
       "id": "components_servicegallerylightbox_esc",
       "community": 13,
       "norm_label": "esc()"
@@ -225,7 +225,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/WonVisionLoader.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_wonvisionloader_tsx",
-      "community": 38,
+      "community": 39,
       "norm_label": "wonvisionloader.tsx"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_loadergate_tsx",
-      "community": 19,
+      "community": 20,
       "norm_label": "loadergate.tsx"
     },
     {
@@ -243,8 +243,26 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
       "source_location": "L8",
       "id": "components_loadergate_loadergate",
-      "community": 19,
+      "community": 20,
       "norm_label": "loadergate()"
+    },
+    {
+      "label": "ServiceVideoPreview.tsx",
+      "file_type": "code",
+      "source_file": "app/components/ServiceVideoPreview.tsx",
+      "source_location": "L1",
+      "id": "app_components_servicevideopreview_tsx",
+      "community": 24,
+      "norm_label": "servicevideopreview.tsx"
+    },
+    {
+      "label": "ServiceVideoPreview()",
+      "file_type": "code",
+      "source_file": "app/components/ServiceVideoPreview.tsx",
+      "source_location": "L17",
+      "id": "components_servicevideopreview_servicevideopreview",
+      "community": 24,
+      "norm_label": "servicevideopreview()"
     },
     {
       "label": "ServicesEditorial.tsx",
@@ -252,7 +270,7 @@
       "source_file": "app/components/ServicesEditorial.tsx",
       "source_location": "L1",
       "id": "app_components_serviceseditorial_tsx",
-      "community": 39,
+      "community": 40,
       "norm_label": "serviceseditorial.tsx"
     },
     {
@@ -306,7 +324,7 @@
       "source_file": "app/components/ProcessStepper.tsx",
       "source_location": "L1",
       "id": "app_components_processstepper_tsx",
-      "community": 20,
+      "community": 21,
       "norm_label": "processstepper.tsx"
     },
     {
@@ -315,7 +333,7 @@
       "source_file": "app/components/ProcessStepper.tsx",
       "source_location": "L29",
       "id": "components_processstepper_processstepper",
-      "community": 20,
+      "community": 21,
       "norm_label": "processstepper()"
     },
     {
@@ -324,7 +342,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/WonVisionMark.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_wonvisionmark_tsx",
-      "community": 40,
+      "community": 41,
       "norm_label": "wonvisionmark.tsx"
     },
     {
@@ -333,7 +351,7 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L1",
       "id": "app_components_spareveal_tsx",
-      "community": 24,
+      "community": 25,
       "norm_label": "spareveal.tsx"
     },
     {
@@ -342,7 +360,7 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L18",
       "id": "components_spareveal_spareveal",
-      "community": 24,
+      "community": 25,
       "norm_label": "spareveal()"
     },
     {
@@ -387,7 +405,7 @@
       "source_file": "app/api/places/autocomplete/route.ts",
       "source_location": "L1",
       "id": "app_api_places_autocomplete_route_ts",
-      "community": 25,
+      "community": 26,
       "norm_label": "route.ts"
     },
     {
@@ -396,7 +414,7 @@
       "source_file": "app/api/places/autocomplete/route.ts",
       "source_location": "L19",
       "id": "autocomplete_route_get",
-      "community": 25,
+      "community": 26,
       "norm_label": "get()"
     },
     {
@@ -405,7 +423,7 @@
       "source_file": "app/api/places/details/route.ts",
       "source_location": "L1",
       "id": "app_api_places_details_route_ts",
-      "community": 26,
+      "community": 27,
       "norm_label": "route.ts"
     },
     {
@@ -414,7 +432,7 @@
       "source_file": "app/api/places/details/route.ts",
       "source_location": "L7",
       "id": "details_route_get",
-      "community": 26,
+      "community": 27,
       "norm_label": "get()"
     },
     {
@@ -450,7 +468,7 @@
       "source_file": "tests/editor-adjustments.test.ts",
       "source_location": "L1",
       "id": "tests_editor_adjustments_test_ts",
-      "community": 41,
+      "community": 42,
       "norm_label": "editor-adjustments.test.ts"
     },
     {
@@ -486,7 +504,7 @@
       "source_file": "tests/editor-presets.test.ts",
       "source_location": "L1",
       "id": "tests_editor_presets_test_ts",
-      "community": 22,
+      "community": 23,
       "norm_label": "editor-presets.test.ts"
     },
     {
@@ -495,7 +513,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/admin/auth.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_admin_auth_spec_ts",
-      "community": 42,
+      "community": 43,
       "norm_label": "auth.spec.ts"
     },
     {
@@ -504,7 +522,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/redirects.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_redirects_spec_ts",
-      "community": 43,
+      "community": 44,
       "norm_label": "redirects.spec.ts"
     },
     {
@@ -513,7 +531,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/smoke.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_smoke_spec_ts",
-      "community": 44,
+      "community": 45,
       "norm_label": "smoke.spec.ts"
     },
     {
@@ -522,7 +540,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-confirmation.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_confirmation_spec_ts",
-      "community": 45,
+      "community": 46,
       "norm_label": "book-confirmation.spec.ts"
     },
     {
@@ -531,7 +549,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-schedule.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_schedule_spec_ts",
-      "community": 46,
+      "community": 47,
       "norm_label": "book-schedule.spec.ts"
     },
     {
@@ -540,7 +558,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/home.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_home_spec_ts",
-      "community": 47,
+      "community": 48,
       "norm_label": "home.spec.ts"
     },
     {
@@ -549,7 +567,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-checkout.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_checkout_spec_ts",
-      "community": 48,
+      "community": 49,
       "norm_label": "book-checkout.spec.ts"
     },
     {
@@ -558,7 +576,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/gallery.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_gallery_spec_ts",
-      "community": 49,
+      "community": 50,
       "norm_label": "gallery.spec.ts"
     },
     {
@@ -567,7 +585,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_spec_ts",
-      "community": 50,
+      "community": 51,
       "norm_label": "book.spec.ts"
     },
     {
@@ -576,7 +594,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/db/schema.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_db_schema_spec_ts",
-      "community": 51,
+      "community": 52,
       "norm_label": "schema.spec.ts"
     },
     {
@@ -702,7 +720,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_scripts_seed_editor_ts",
-      "community": 21,
+      "community": 22,
       "norm_label": "seed-editor.ts"
     },
     {
@@ -711,7 +729,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L3",
       "id": "scripts_seed_editor_main",
-      "community": 21,
+      "community": 22,
       "norm_label": "main()"
     },
     {
@@ -864,7 +882,7 @@
       "source_file": "lib/db/schema.ts",
       "source_location": "L1",
       "id": "lib_db_schema_ts",
-      "community": 52,
+      "community": 53,
       "norm_label": "schema.ts"
     },
     {
@@ -873,7 +891,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/db/index.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_lib_db_index_ts",
-      "community": 53,
+      "community": 54,
       "norm_label": "index.ts"
     },
     {
@@ -1026,7 +1044,7 @@
       "source_file": "lib/editor/adjustments.ts",
       "source_location": "L1",
       "id": "lib_editor_adjustments_ts",
-      "community": 27,
+      "community": 28,
       "norm_label": "adjustments.ts"
     },
     {
@@ -1035,7 +1053,7 @@
       "source_file": "lib/editor/adjustments.ts",
       "source_location": "L4",
       "id": "editor_adjustments_slider",
-      "community": 27,
+      "community": 28,
       "norm_label": "slider()"
     },
     {
@@ -1044,7 +1062,7 @@
       "source_file": "lib/editor/staging-styles.ts",
       "source_location": "L1",
       "id": "lib_editor_staging_styles_ts",
-      "community": 54,
+      "community": 55,
       "norm_label": "staging-styles.ts"
     },
     {
@@ -1053,7 +1071,7 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L1",
       "id": "lib_editor_presets_ts",
-      "community": 22,
+      "community": 23,
       "norm_label": "presets.ts"
     },
     {
@@ -1062,7 +1080,7 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L51",
       "id": "editor_presets_getpreset",
-      "community": 22,
+      "community": 23,
       "norm_label": "getpreset()"
     },
     {
@@ -1070,7 +1088,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/app/components/ProcessStepper.tsx",
       "source_location": "L1",
-      "community": 20,
+      "community": 21,
       "norm_label": "processstepper.tsx",
       "id": "users_kiranc_code_won_media_app_components_processstepper_tsx"
     },
@@ -1079,7 +1097,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/app/components/ServicesEditorial.tsx",
       "source_location": "L1",
-      "community": 55,
+      "community": 56,
       "norm_label": "serviceseditorial.tsx",
       "id": "users_kiranc_code_won_media_app_components_serviceseditorial_tsx"
     },
@@ -1376,7 +1394,7 @@
       "file_type": "code",
       "source_file": "app/admin/editor/new/types.ts",
       "source_location": "L1",
-      "community": 56,
+      "community": 57,
       "norm_label": "types.ts",
       "id": "app_admin_editor_new_types_ts"
     },
@@ -1466,7 +1484,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/tests/intake.spec.ts",
       "source_location": "L1",
-      "community": 57,
+      "community": 58,
       "norm_label": "intake.spec.ts",
       "id": "users_kiranc_code_won_media_tests_intake_spec_ts"
     },
@@ -1547,7 +1565,7 @@
       "file_type": "code",
       "source_file": "proxy.ts",
       "source_location": "L1",
-      "community": 58,
+      "community": 59,
       "norm_label": "proxy.ts",
       "id": "proxy_ts"
     },
@@ -1556,7 +1574,7 @@
       "file_type": "code",
       "source_file": "next.config.ts",
       "source_location": "L1",
-      "community": 59,
+      "community": 60,
       "norm_label": "next.config.ts",
       "id": "next_config_ts"
     },
@@ -1862,7 +1880,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/app/admin/page.tsx",
       "source_location": "L1",
-      "community": 23,
+      "community": 19,
       "norm_label": "page.tsx",
       "id": "users_kiranc_code_won_media_app_admin_page_tsx"
     },
@@ -1871,7 +1889,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/app/admin/page.tsx",
       "source_location": "L6",
-      "community": 23,
+      "community": 19,
       "norm_label": "admindashboard()",
       "id": "admin_page_admindashboard"
     },
@@ -1961,7 +1979,7 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/lib/db/schema.ts",
       "source_location": "L1",
-      "community": 60,
+      "community": 61,
       "norm_label": "schema.ts",
       "id": "users_kiranc_code_won_media_lib_db_schema_ts"
     },
@@ -1970,7 +1988,7 @@
       "file_type": "code",
       "source_file": "next-env.d.ts",
       "source_location": "L1",
-      "community": 61,
+      "community": 62,
       "norm_label": "next-env.d.ts",
       "id": "next_env_d_ts"
     },
@@ -1979,7 +1997,7 @@
       "file_type": "code",
       "source_file": "playwright.config.ts",
       "source_location": "L1",
-      "community": 62,
+      "community": 63,
       "norm_label": "playwright.config.ts",
       "id": "playwright_config_ts"
     },
@@ -1988,7 +2006,7 @@
       "file_type": "code",
       "source_file": "drizzle.config.ts",
       "source_location": "L1",
-      "community": 63,
+      "community": 64,
       "norm_label": "drizzle.config.ts",
       "id": "drizzle_config_ts"
     },
@@ -1997,7 +2015,7 @@
       "file_type": "code",
       "source_file": "vitest.config.ts",
       "source_location": "L1",
-      "community": 64,
+      "community": 65,
       "norm_label": "vitest.config.ts",
       "id": "vitest_config_ts"
     },
@@ -2006,7 +2024,7 @@
       "file_type": "code",
       "source_file": "app/fonts.ts",
       "source_location": "L1",
-      "community": 65,
+      "community": 66,
       "norm_label": "fonts.ts",
       "id": "app_fonts_ts"
     },
@@ -2015,7 +2033,7 @@
       "file_type": "code",
       "source_file": "app/admin/sign-up/[[...sign-up]]/page.tsx",
       "source_location": "L1",
-      "community": 66,
+      "community": 67,
       "norm_label": "page.tsx",
       "id": "app_admin_sign_up_sign_up_page_tsx"
     },
@@ -2024,7 +2042,7 @@
       "file_type": "code",
       "source_file": "app/admin/sign-in/[[...sign-in]]/page.tsx",
       "source_location": "L1",
-      "community": 67,
+      "community": 68,
       "norm_label": "page.tsx",
       "id": "app_admin_sign_in_sign_in_page_tsx"
     },
@@ -2069,7 +2087,7 @@
       "file_type": "code",
       "source_file": "app/components/WonVisionLoader.tsx",
       "source_location": "L1",
-      "community": 68,
+      "community": 69,
       "norm_label": "wonvisionloader.tsx",
       "id": "app_components_wonvisionloader_tsx"
     },
@@ -2078,7 +2096,7 @@
       "file_type": "code",
       "source_file": "app/components/LoaderGate.tsx",
       "source_location": "L1",
-      "community": 19,
+      "community": 20,
       "norm_label": "loadergate.tsx",
       "id": "app_components_loadergate_tsx"
     },
@@ -2105,7 +2123,7 @@
       "file_type": "code",
       "source_file": "tests/intake.spec.ts",
       "source_location": "L1",
-      "community": 69,
+      "community": 70,
       "norm_label": "intake.spec.ts",
       "id": "tests_intake_spec_ts"
     },
@@ -2123,7 +2141,7 @@
       "file_type": "code",
       "source_file": "tests/admin/auth.spec.ts",
       "source_location": "L1",
-      "community": 70,
+      "community": 71,
       "norm_label": "auth.spec.ts",
       "id": "tests_admin_auth_spec_ts"
     },
@@ -2132,7 +2150,7 @@
       "file_type": "code",
       "source_file": "tests/visual/redirects.spec.ts",
       "source_location": "L1",
-      "community": 71,
+      "community": 72,
       "norm_label": "redirects.spec.ts",
       "id": "tests_visual_redirects_spec_ts"
     },
@@ -2141,7 +2159,7 @@
       "file_type": "code",
       "source_file": "tests/visual/smoke.spec.ts",
       "source_location": "L1",
-      "community": 72,
+      "community": 73,
       "norm_label": "smoke.spec.ts",
       "id": "tests_visual_smoke_spec_ts"
     },
@@ -2150,7 +2168,7 @@
       "file_type": "code",
       "source_file": "tests/visual/book-confirmation.spec.ts",
       "source_location": "L1",
-      "community": 73,
+      "community": 74,
       "norm_label": "book-confirmation.spec.ts",
       "id": "tests_visual_book_confirmation_spec_ts"
     },
@@ -2159,7 +2177,7 @@
       "file_type": "code",
       "source_file": "tests/visual/book-schedule.spec.ts",
       "source_location": "L1",
-      "community": 74,
+      "community": 75,
       "norm_label": "book-schedule.spec.ts",
       "id": "tests_visual_book_schedule_spec_ts"
     },
@@ -2168,7 +2186,7 @@
       "file_type": "code",
       "source_file": "tests/visual/home.spec.ts",
       "source_location": "L1",
-      "community": 75,
+      "community": 76,
       "norm_label": "home.spec.ts",
       "id": "tests_visual_home_spec_ts"
     },
@@ -2177,7 +2195,7 @@
       "file_type": "code",
       "source_file": "tests/visual/book-checkout.spec.ts",
       "source_location": "L1",
-      "community": 76,
+      "community": 77,
       "norm_label": "book-checkout.spec.ts",
       "id": "tests_visual_book_checkout_spec_ts"
     },
@@ -2186,7 +2204,7 @@
       "file_type": "code",
       "source_file": "tests/visual/gallery.spec.ts",
       "source_location": "L1",
-      "community": 77,
+      "community": 78,
       "norm_label": "gallery.spec.ts",
       "id": "tests_visual_gallery_spec_ts"
     },
@@ -2195,7 +2213,7 @@
       "file_type": "code",
       "source_file": "tests/visual/book.spec.ts",
       "source_location": "L1",
-      "community": 78,
+      "community": 79,
       "norm_label": "book.spec.ts",
       "id": "tests_visual_book_spec_ts"
     },
@@ -2204,7 +2222,7 @@
       "file_type": "code",
       "source_file": "tests/db/schema.spec.ts",
       "source_location": "L1",
-      "community": 79,
+      "community": 80,
       "norm_label": "schema.spec.ts",
       "id": "tests_db_schema_spec_ts"
     },
@@ -2222,7 +2240,7 @@
       "file_type": "code",
       "source_file": "scripts/seed-editor.ts",
       "source_location": "L1",
-      "community": 21,
+      "community": 22,
       "norm_label": "seed-editor.ts",
       "id": "scripts_seed_editor_ts"
     },
@@ -2258,7 +2276,7 @@
       "file_type": "code",
       "source_file": "lib/db/index.ts",
       "source_location": "L1",
-      "community": 80,
+      "community": 81,
       "norm_label": "index.ts",
       "id": "lib_db_index_ts"
     },
@@ -3019,6 +3037,16 @@
       "confidence_score": 1.0,
       "source": "app_components_loadergate_tsx",
       "target": "components_loadergate_loadergate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/ServiceVideoPreview.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "app_components_servicevideopreview_tsx",
+      "target": "components_servicevideopreview_servicevideopreview",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6231,5 +6259,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3804f0325bc6a01f01a0d05cfccf90578a63a4f8"
+  "built_at_commit": "ea995951441248b804346a0761bf624975e09375"
 }
