@@ -178,7 +178,7 @@
       "label": "inject()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L46",
+      "source_location": "L66",
       "id": "components_servicegallerylightbox_inject",
       "community": 13,
       "norm_label": "inject()"
@@ -187,7 +187,7 @@
       "label": "handler()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L82",
+      "source_location": "L102",
       "id": "components_servicegallerylightbox_handler",
       "community": 13,
       "norm_label": "handler()"
@@ -196,7 +196,7 @@
       "label": "esc()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L92",
+      "source_location": "L112",
       "id": "components_servicegallerylightbox_esc",
       "community": 13,
       "norm_label": "esc()"
@@ -245,24 +245,6 @@
       "id": "components_loadergate_loadergate",
       "community": 20,
       "norm_label": "loadergate()"
-    },
-    {
-      "label": "ServiceVideoPreview.tsx",
-      "file_type": "code",
-      "source_file": "app/components/ServiceVideoPreview.tsx",
-      "source_location": "L1",
-      "id": "app_components_servicevideopreview_tsx",
-      "community": 24,
-      "norm_label": "servicevideopreview.tsx"
-    },
-    {
-      "label": "ServiceVideoPreview()",
-      "file_type": "code",
-      "source_file": "app/components/ServiceVideoPreview.tsx",
-      "source_location": "L17",
-      "id": "components_servicevideopreview_servicevideopreview",
-      "community": 24,
-      "norm_label": "servicevideopreview()"
     },
     {
       "label": "ServicesEditorial.tsx",
@@ -351,7 +333,7 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L1",
       "id": "app_components_spareveal_tsx",
-      "community": 25,
+      "community": 24,
       "norm_label": "spareveal.tsx"
     },
     {
@@ -360,7 +342,7 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L18",
       "id": "components_spareveal_spareveal",
-      "community": 25,
+      "community": 24,
       "norm_label": "spareveal()"
     },
     {
@@ -405,7 +387,7 @@
       "source_file": "app/api/places/autocomplete/route.ts",
       "source_location": "L1",
       "id": "app_api_places_autocomplete_route_ts",
-      "community": 26,
+      "community": 25,
       "norm_label": "route.ts"
     },
     {
@@ -414,7 +396,7 @@
       "source_file": "app/api/places/autocomplete/route.ts",
       "source_location": "L19",
       "id": "autocomplete_route_get",
-      "community": 26,
+      "community": 25,
       "norm_label": "get()"
     },
     {
@@ -423,7 +405,7 @@
       "source_file": "app/api/places/details/route.ts",
       "source_location": "L1",
       "id": "app_api_places_details_route_ts",
-      "community": 27,
+      "community": 26,
       "norm_label": "route.ts"
     },
     {
@@ -432,7 +414,7 @@
       "source_file": "app/api/places/details/route.ts",
       "source_location": "L7",
       "id": "details_route_get",
-      "community": 27,
+      "community": 26,
       "norm_label": "get()"
     },
     {
@@ -459,7 +441,7 @@
       "source_file": "tests/dropbox-paths.test.ts",
       "source_location": "L1",
       "id": "tests_dropbox_paths_test_ts",
-      "community": 1,
+      "community": 2,
       "norm_label": "dropbox-paths.test.ts"
     },
     {
@@ -504,7 +486,7 @@
       "source_file": "tests/editor-presets.test.ts",
       "source_location": "L1",
       "id": "tests_editor_presets_test_ts",
-      "community": 23,
+      "community": 22,
       "norm_label": "editor-presets.test.ts"
     },
     {
@@ -720,7 +702,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_scripts_seed_editor_ts",
-      "community": 22,
+      "community": 23,
       "norm_label": "seed-editor.ts"
     },
     {
@@ -729,7 +711,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L3",
       "id": "scripts_seed_editor_main",
-      "community": 22,
+      "community": 23,
       "norm_label": "main()"
     },
     {
@@ -810,7 +792,7 @@
       "source_file": "lib/gemini/qa.ts",
       "source_location": "L1",
       "id": "lib_gemini_qa_ts",
-      "community": 2,
+      "community": 1,
       "norm_label": "qa.ts"
     },
     {
@@ -819,7 +801,7 @@
       "source_file": "lib/gemini/qa.ts",
       "source_location": "L29",
       "id": "gemini_qa_qavariant",
-      "community": 2,
+      "community": 1,
       "norm_label": "qavariant()"
     },
     {
@@ -900,7 +882,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L1",
       "id": "lib_dropbox_client_ts",
-      "community": 2,
+      "community": 1,
       "norm_label": "client.ts"
     },
     {
@@ -909,7 +891,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L7",
       "id": "dropbox_client_getaccesstoken",
-      "community": 2,
+      "community": 1,
       "norm_label": "getaccesstoken()"
     },
     {
@@ -918,7 +900,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L24",
       "id": "dropbox_client_rpc",
-      "community": 2,
+      "community": 1,
       "norm_label": "rpc()"
     },
     {
@@ -927,7 +909,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L35",
       "id": "dropbox_client_ensurefolder",
-      "community": 2,
+      "community": 1,
       "norm_label": "ensurefolder()"
     },
     {
@@ -936,7 +918,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L45",
       "id": "dropbox_client_uploadfromurl",
-      "community": 2,
+      "community": 1,
       "norm_label": "uploadfromurl()"
     },
     {
@@ -945,7 +927,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L67",
       "id": "dropbox_client_move",
-      "community": 2,
+      "community": 1,
       "norm_label": "move()"
     },
     {
@@ -954,7 +936,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L71",
       "id": "dropbox_client_gettemporarylink",
-      "community": 2,
+      "community": 1,
       "norm_label": "gettemporarylink()"
     },
     {
@@ -963,7 +945,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L1",
       "id": "lib_dropbox_paths_ts",
-      "community": 1,
+      "community": 2,
       "norm_label": "paths.ts"
     },
     {
@@ -972,7 +954,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L4",
       "id": "dropbox_paths_slugifyaddress",
-      "community": 1,
+      "community": 2,
       "norm_label": "slugifyaddress()"
     },
     {
@@ -981,7 +963,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L13",
       "id": "dropbox_paths_buildintakepath",
-      "community": 1,
+      "community": 2,
       "norm_label": "buildintakepath()"
     },
     {
@@ -990,7 +972,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L16",
       "id": "dropbox_paths_buildprocessingpath",
-      "community": 1,
+      "community": 2,
       "norm_label": "buildprocessingpath()"
     },
     {
@@ -999,7 +981,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L19",
       "id": "dropbox_paths_buildreviewpath",
-      "community": 1,
+      "community": 2,
       "norm_label": "buildreviewpath()"
     },
     {
@@ -1044,7 +1026,7 @@
       "source_file": "lib/editor/adjustments.ts",
       "source_location": "L1",
       "id": "lib_editor_adjustments_ts",
-      "community": 28,
+      "community": 27,
       "norm_label": "adjustments.ts"
     },
     {
@@ -1053,7 +1035,7 @@
       "source_file": "lib/editor/adjustments.ts",
       "source_location": "L4",
       "id": "editor_adjustments_slider",
-      "community": 28,
+      "community": 27,
       "norm_label": "slider()"
     },
     {
@@ -1071,7 +1053,7 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L1",
       "id": "lib_editor_presets_ts",
-      "community": 23,
+      "community": 22,
       "norm_label": "presets.ts"
     },
     {
@@ -1080,8 +1062,26 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L51",
       "id": "editor_presets_getpreset",
-      "community": 23,
+      "community": 22,
       "norm_label": "getpreset()"
+    },
+    {
+      "label": "ServiceVideoPreview.tsx",
+      "file_type": "code",
+      "source_file": "app/components/ServiceVideoPreview.tsx",
+      "source_location": "L1",
+      "community": 28,
+      "norm_label": "servicevideopreview.tsx",
+      "id": "app_components_servicevideopreview_tsx"
+    },
+    {
+      "label": "ServiceVideoPreview()",
+      "file_type": "code",
+      "source_file": "app/components/ServiceVideoPreview.tsx",
+      "source_location": "L17",
+      "community": 28,
+      "norm_label": "servicevideopreview()",
+      "id": "components_servicevideopreview_servicevideopreview"
     },
     {
       "label": "ProcessStepper.tsx",
@@ -1583,7 +1583,7 @@
       "file_type": "code",
       "source_file": "app/api/workflow/trigger/route.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 2,
       "norm_label": "route.ts",
       "id": "app_api_workflow_trigger_route_ts"
     },
@@ -1592,7 +1592,7 @@
       "file_type": "code",
       "source_file": "app/api/workflow/trigger/route.ts",
       "source_location": "L11",
-      "community": 1,
+      "community": 2,
       "norm_label": "post()",
       "id": "trigger_route_post"
     },
@@ -1601,7 +1601,7 @@
       "file_type": "code",
       "source_file": "app/api/cron/queue-backstop/route.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 2,
       "norm_label": "route.ts",
       "id": "app_api_cron_queue_backstop_route_ts"
     },
@@ -1610,7 +1610,7 @@
       "file_type": "code",
       "source_file": "app/api/cron/queue-backstop/route.ts",
       "source_location": "L12",
-      "community": 1,
+      "community": 2,
       "norm_label": "get()",
       "id": "queue_backstop_route_get"
     },
@@ -1619,7 +1619,7 @@
       "file_type": "code",
       "source_file": "tests/workflow-helpers.test.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 2,
       "norm_label": "workflow-helpers.test.ts",
       "id": "tests_workflow_helpers_test_ts"
     },
@@ -1628,7 +1628,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/helpers.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 2,
       "norm_label": "helpers.ts",
       "id": "lib_workflow_helpers_ts"
     },
@@ -1637,7 +1637,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/helpers.ts",
       "source_location": "L6",
-      "community": 1,
+      "community": 2,
       "norm_label": "orderservices()",
       "id": "workflow_helpers_orderservices"
     },
@@ -1646,7 +1646,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/helpers.ts",
       "source_location": "L10",
-      "community": 1,
+      "community": 2,
       "norm_label": "batch()",
       "id": "workflow_helpers_batch"
     },
@@ -1655,7 +1655,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 2,
       "norm_label": "process-property.ts",
       "id": "lib_workflow_process_property_ts"
     },
@@ -1664,7 +1664,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L46",
-      "community": 1,
+      "community": 2,
       "norm_label": "loadproperty()",
       "id": "workflow_process_property_loadproperty"
     },
@@ -1673,7 +1673,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L55",
-      "community": 1,
+      "community": 2,
       "norm_label": "loadphotos()",
       "id": "workflow_process_property_loadphotos"
     },
@@ -1682,7 +1682,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L68",
-      "community": 1,
+      "community": 2,
       "norm_label": "markpropertyprocessing()",
       "id": "workflow_process_property_markpropertyprocessing"
     },
@@ -1691,7 +1691,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L76",
-      "community": 1,
+      "community": 2,
       "norm_label": "markpropertyreview()",
       "id": "workflow_process_property_markpropertyreview"
     },
@@ -1700,7 +1700,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L81",
-      "community": 1,
+      "community": 2,
       "norm_label": "ensuredropboxfolders()",
       "id": "workflow_process_property_ensuredropboxfolders"
     },
@@ -1709,7 +1709,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L88",
-      "community": 1,
+      "community": 2,
       "norm_label": "intakephoto()",
       "id": "workflow_process_property_intakephoto"
     },
@@ -1718,7 +1718,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L108",
-      "community": 1,
+      "community": 2,
       "norm_label": "runphotoworkflow()",
       "id": "workflow_process_property_runphotoworkflow"
     },
@@ -1727,7 +1727,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-property.ts",
       "source_location": "L125",
-      "community": 1,
+      "community": 2,
       "norm_label": "processproperty()",
       "id": "workflow_process_property_processproperty"
     },
@@ -1736,7 +1736,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L1",
-      "community": 2,
+      "community": 1,
       "norm_label": "process-photo.ts",
       "id": "lib_workflow_process_photo_ts"
     },
@@ -1745,7 +1745,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L27",
-      "community": 2,
+      "community": 1,
       "norm_label": "markphotoprocessing()",
       "id": "workflow_process_photo_markphotoprocessing"
     },
@@ -1754,7 +1754,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L32",
-      "community": 2,
+      "community": 1,
       "norm_label": "markphotoapproved()",
       "id": "workflow_process_photo_markphotoapproved"
     },
@@ -1763,7 +1763,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L37",
-      "community": 2,
+      "community": 1,
       "norm_label": "generateintermediate()",
       "id": "workflow_process_photo_generateintermediate"
     },
@@ -1772,7 +1772,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L47",
-      "community": 2,
+      "community": 1,
       "norm_label": "uploadintermediate()",
       "id": "workflow_process_photo_uploadintermediate"
     },
@@ -1781,7 +1781,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L52",
-      "community": 2,
+      "community": 1,
       "norm_label": "gettemplink()",
       "id": "workflow_process_photo_gettemplink"
     },
@@ -1790,7 +1790,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L57",
-      "community": 2,
+      "community": 1,
       "norm_label": "generateanduploadvariant()",
       "id": "workflow_process_photo_generateanduploadvariant"
     },
@@ -1799,7 +1799,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L70",
-      "community": 2,
+      "community": 1,
       "norm_label": "runqa()",
       "id": "workflow_process_photo_runqa"
     },
@@ -1808,7 +1808,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L75",
-      "community": 2,
+      "community": 1,
       "norm_label": "recordqaattempt()",
       "id": "workflow_process_photo_recordqaattempt"
     },
@@ -1817,7 +1817,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L80",
-      "community": 2,
+      "community": 1,
       "norm_label": "promotevariant()",
       "id": "workflow_process_photo_promotevariant"
     },
@@ -1826,7 +1826,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L85",
-      "community": 2,
+      "community": 1,
       "norm_label": "recordvariantpass()",
       "id": "workflow_process_photo_recordvariantpass"
     },
@@ -1835,7 +1835,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L100",
-      "community": 2,
+      "community": 1,
       "norm_label": "recordvariantfail()",
       "id": "workflow_process_photo_recordvariantfail"
     },
@@ -1844,7 +1844,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L108",
-      "community": 2,
+      "community": 1,
       "norm_label": "finalisephotostatus()",
       "id": "workflow_process_photo_finalisephotostatus"
     },
@@ -1853,7 +1853,7 @@
       "file_type": "code",
       "source_file": "lib/workflow/process-photo.ts",
       "source_location": "L122",
-      "community": 2,
+      "community": 1,
       "norm_label": "processphoto()",
       "id": "workflow_process_photo_processphoto"
     },
@@ -2240,7 +2240,7 @@
       "file_type": "code",
       "source_file": "scripts/seed-editor.ts",
       "source_location": "L1",
-      "community": 22,
+      "community": 23,
       "norm_label": "seed-editor.ts",
       "id": "scripts_seed_editor_ts"
     },
@@ -3037,16 +3037,6 @@
       "confidence_score": 1.0,
       "source": "app_components_loadergate_tsx",
       "target": "components_loadergate_loadergate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/ServiceVideoPreview.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_servicevideopreview_tsx",
-      "target": "components_servicevideopreview_servicevideopreview"
     },
     {
       "relation": "contains",
@@ -4522,6 +4512,16 @@
       "confidence_score": 1.0,
       "source": "lib_editor_presets_ts",
       "target": "editor_presets_getpreset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/ServiceVideoPreview.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_components_servicevideopreview_tsx",
+      "target": "components_servicevideopreview_servicevideopreview"
     },
     {
       "relation": "imports",
@@ -6259,5 +6259,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d249b0e8aa96d63c225a9a19e2d3f17121a90c80"
+  "built_at_commit": "7cbb3fb08a1561c76380a346ec045545a3022bbf"
 }

@@ -1,7 +1,7 @@
 # Graph Report - won-vision  (2026-05-19)
 
 ## Corpus Check
-- 72 files · ~227,923 words
+- 71 files · ~227,633 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d249b0e8`
+- Built from commit: `7cbb3fb0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -70,12 +70,12 @@ Cohesion: 0.15
 Nodes (8): attachPhoto(), createDraft(), requireEditor(), submitProperty(), isStylePreset(), handleSubmit(), onCreateDraft(), onSubmit()
 
 ### Community 1 - "Community 1"
-Cohesion: 0.17
-Nodes (13): buildIntakePath(), buildProcessingPath(), buildReviewPath(), slugifyAddress(), batch(), orderServices(), ensureDropboxFolders(), intakePhoto() (+5 more)
-
-### Community 2 - "Community 2"
 Cohesion: 0.18
 Nodes (20): ensureFolder(), getAccessToken(), getTemporaryLink(), move(), rpc(), uploadFromUrl(), qaVariant(), finalisePhotoStatus() (+12 more)
+
+### Community 2 - "Community 2"
+Cohesion: 0.17
+Nodes (13): buildIntakePath(), buildProcessingPath(), buildReviewPath(), slugifyAddress(), batch(), orderServices(), ensureDropboxFolders(), intakePhoto() (+5 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.1
@@ -125,7 +125,7 @@ Nodes (3): exchangeAuthCode(), main(), refreshAccessToken()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `generate()` connect `Community 9` to `Community 2`?**
+- **Why does `generate()` connect `Community 9` to `Community 1`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Why does `createDraft()` connect `Community 0` to `Community 7`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
