@@ -847,8 +847,8 @@ export default function BookPage() {
           <div className="cat__head"><h3>Aerial <em>/ drone</em></h3><span className="cat__count">Aerial</span></div>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="Professional drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview." data-img="">
-              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
+            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="Professional drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview." data-img="/images/drone-set.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Drone Set</h4>
@@ -857,8 +857,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Additional Drone Image" data-price="25" data-desc="Each drone image beyond the standard 5-image set." data-img="">
-              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
+            <article className="svc-card" data-svc="Additional Drone Image" data-price="25" data-desc="Each drone image beyond the standard 5-image set." data-img="/images/drone-additional.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/drone-additional.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Additional Drone Image</h4>
