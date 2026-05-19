@@ -48,6 +48,8 @@ export default function ServiceGalleryLightbox() {
         '.svc-card, .pkg-card',
       );
       cards.forEach((card) => {
+        // Video cards get a "Watch film" button instead (ServiceVideoPreview).
+        if (card.dataset.video) return;
         const media = card.querySelector(
           '.svc-card__media, .pkg-card__media',
         );

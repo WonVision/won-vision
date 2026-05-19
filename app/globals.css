@@ -2564,6 +2564,54 @@ a{color:inherit}
   .svc-card__gallery-btn span{display:none}
 }
 
+/* "Watch film" button — centred over the poster on video svc-cards */
+.svc-card__video-btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:5;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 20px;
+  background:rgba(255,255,255,0.92);
+  color:var(--fg);
+  border:1px solid var(--fg);
+  border-radius:0;
+  font-family:var(--body);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  cursor:pointer;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  transition:background .25s ease, color .25s ease, transform .25s var(--ease);
+}
+.svc-card__video-btn svg{display:block}
+.svc-card__video-btn:hover,
+.svc-card__video-btn:focus-visible{
+  background:var(--fg);
+  color:var(--bg);
+  transform:translate(-50%,-50%) scale(1.04);
+  outline:none;
+}
+
+/* Film modal — reuses .svc-lb overlay, centred 16:9 player */
+.svc-lb__video{
+  margin:auto;
+  width:100%;
+  max-width:1280px;
+}
+.svc-lb__video video{
+  width:100%;
+  height:auto;
+  max-height:80vh;
+  display:block;
+  background:#000;
+}
+
 /* Lightbox overlay */
 .svc-lb{
   position:fixed;

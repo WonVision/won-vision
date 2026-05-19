@@ -400,12 +400,12 @@
     "hash": "5e94fd72f31582da5baf5dd2a44538a3"
   },
   "/Users/kiranc/Code/won-vision/email/cold-outreach.html": {
-    "mtime": 1779165526.292385,
-    "hash": "41fe902c00653eba309038e0083b028a"
+    "mtime": 1779166455.9568439,
+    "hash": "8ca892afb15ab63e6b13f81db8d3dc28"
   },
   "/Users/kiranc/Code/won-vision/email/post-call-followup.html": {
-    "mtime": 1779165532.4602928,
-    "hash": "091498f91c58ba9ce9d29c3dfbe4612e"
+    "mtime": 1779166493.456543,
+    "hash": "5f0c9a004cd74a7beb911d23791a30f9"
   },
   "/Users/kiranc/Code/won-vision/app/icon.svg": {
     "mtime": 1778219096.1711087,
@@ -474,6 +474,14 @@
   "/Users/kiranc/Code/won-vision/public/images/rental-standard.webp": {
     "mtime": 1779075706.5489168,
     "hash": "aa2b77cc5bca2cbbcdcef89406585270"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/email-logo.png": {
+    "mtime": 1779166382.3037834,
+    "hash": "32a952a9e5a6223b10ff59d275deb3f7"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/won-vision-loader.gif": {
+    "mtime": 1779166274.8195217,
+    "hash": "cd2ffb0233ab7dd9ddd39b203e28bce9"
   },
   "/Users/kiranc/Code/won-vision/public/images/rental-large.webp": {
     "mtime": 1779075706.1672819,
