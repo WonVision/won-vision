@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Wordmark } from '../components/Wordmark';
 import ServiceGalleryLightbox from '../components/ServiceGalleryLightbox';
-import ServiceVideoPreview from '../components/ServiceVideoPreview';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
 export const metadata: Metadata = {
@@ -899,7 +898,7 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Premium Cinematic (90s · 16:9)" data-price="595" data-desc="90-second cinematic listing video for luxury homes — drone B-roll integrated, full musical score." data-img="/images/cinematic.webp" data-video="/video/cinematic-demo.mp4">
+            <article className="svc-card" data-svc="Premium Cinematic (90s · 16:9)" data-price="595" data-desc="90-second cinematic listing video for luxury homes — drone B-roll integrated, full musical score." data-img="/images/cinematic.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
@@ -1509,7 +1508,6 @@ export default function BookPage() {
 })();
 `}</Script>
       <ServiceGalleryLightbox />
-      <ServiceVideoPreview />
     </>
   );
 }

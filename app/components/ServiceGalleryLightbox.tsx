@@ -2,9 +2,14 @@
 
 import { useEffect, useState } from 'react';
 
-type Photo = { src: string; caption?: string };
+type Media = {
+  src: string;
+  caption?: string;
+  type?: 'image' | 'video';
+  poster?: string;
+};
 
-const galleries: Record<string, Photo[]> = {
+const galleries: Record<string, Media[]> = {
   photography: [
     { src: '/images/showcase.webp', caption: 'Showcase' },
     { src: '/images/rental-compact.webp', caption: 'Rental · Compact' },
@@ -20,11 +25,25 @@ const galleries: Record<string, Photo[]> = {
     { src: '/images/dusk-after.webp', caption: 'Day-to-dusk' },
     { src: '/images/declutter-after.webp', caption: 'Decluttering' },
   ],
+  drone: [
+    { src: '/images/drone-set.webp', caption: 'Drone set' },
+    { src: '/images/drone-additional.webp', caption: 'Additional aerial' },
+  ],
+  video: [
+    {
+      src: '/video/cinematic-demo.mp4',
+      type: 'video',
+      poster: '/images/cinematic.webp',
+      caption: 'Premium Cinematic · 90s',
+    },
+  ],
 };
 
 const titles: Record<string, string> = {
   photography: 'Photography',
   staging: 'Virtual staging',
+  drone: 'Aerial / drone',
+  video: 'Video',
 };
 
 const ICON_SVG =
@@ -38,18 +57,17 @@ const ICON_SVG =
 export default function ServiceGalleryLightbox() {
   const [active, setActive] = useState<string | null>(null);
 
-  // Inject a "View gallery" button into every .svc-card on mount, keyed by
-  // either the card's own data-gallery override or its parent .cat's
-  // data-gallery. Uses a MutationObserver so cards added later (e.g. by the
-  // booking flow's dynamic re-renders) still get a button.
+  // Inject an "Examples" button into every .svc-card / .pkg-card whose
+  // resolved gallery key actually has media. Keyed by the card's own
+  // data-gallery override or its parent .cat's data-gallery. Uses a
+  // MutationObserver so cards added later (booking flow re-renders) still
+  // get a button.
   useEffect(() => {
     const inject = (root: ParentNode = document) => {
       const cards = root.querySelectorAll<HTMLElement>(
         '.svc-card, .pkg-card',
       );
       cards.forEach((card) => {
-        // Video cards get a "Watch film" button instead (ServiceVideoPreview).
-        if (card.dataset.video) return;
         const media = card.querySelector(
           '.svc-card__media, .pkg-card__media',
         );
@@ -57,7 +75,9 @@ export default function ServiceGalleryLightbox() {
         const cardOverride = card.dataset.gallery;
         const cat = card.closest('.cat') as HTMLElement | null;
         const catKey = cat?.dataset.gallery;
-        const key = cardOverride || catKey || 'photography';
+        const key = cardOverride || catKey;
+        // Only inject where a gallery exists — no dead buttons.
+        if (!key || !galleries[key]) return;
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'svc-card__gallery-btn';
@@ -113,7 +133,7 @@ export default function ServiceGalleryLightbox() {
 
   if (!active) return null;
 
-  const photos = galleries[active] ?? [];
+  const items = galleries[active] ?? [];
 
   return (
     <div
@@ -124,7 +144,7 @@ export default function ServiceGalleryLightbox() {
       onClick={() => setActive(null)}
     >
       <div className="svc-lb__bar">
-        <span className="svc-lb__title">{titles[active] ?? active} — gallery</span>
+        <span className="svc-lb__title">{titles[active] ?? active} — examples</span>
         <button
           className="svc-lb__close"
           type="button"
@@ -138,12 +158,25 @@ export default function ServiceGalleryLightbox() {
         </button>
       </div>
       <div className="svc-lb__grid" onClick={(e) => e.stopPropagation()}>
-        {photos.map((p, i) => (
-          <figure key={i} className="svc-lb__fig">
-            <img src={p.src} alt={p.caption ?? ''} loading="lazy" />
-            {p.caption && <figcaption>{p.caption}</figcaption>}
-          </figure>
-        ))}
+        {items.map((m, i) =>
+          m.type === 'video' ? (
+            <figure key={i} className="svc-lb__fig svc-lb__fig--video">
+              <video
+                src={m.src}
+                poster={m.poster}
+                controls
+                playsInline
+                preload="metadata"
+              />
+              {m.caption && <figcaption>{m.caption}</figcaption>}
+            </figure>
+          ) : (
+            <figure key={i} className="svc-lb__fig">
+              <img src={m.src} alt={m.caption ?? ''} loading="lazy" />
+              {m.caption && <figcaption>{m.caption}</figcaption>}
+            </figure>
+          ),
+        )}
       </div>
     </div>
   );

@@ -104,8 +104,8 @@
     "hash": "58b5b0ed8bccaf29260130f78b7d89fb"
   },
   "/Users/kiranc/Code/won-vision/app/book/page.tsx": {
-    "mtime": 1779167660.9173634,
-    "hash": "715f95e332f5081dcab4a73ae7897c89"
+    "mtime": 1779176107.0031862,
+    "hash": "80507a8d06838ef1f9f07b48ff3bc585"
   },
   "/Users/kiranc/Code/won-vision/app/book/schedule/page.tsx": {
     "mtime": 1779165459.0900247,
@@ -483,6 +483,10 @@
     "mtime": 1779075709.1021163,
     "hash": "b4d77d6a5513852470235c5c013e10ae"
   },
+  "/Users/kiranc/Code/won-vision/public/images/drone-additional.webp": {
+    "mtime": 1779176091.4158516,
+    "hash": "764bf01159a1ff736727dcac75e9cdfe"
+  },
   "/Users/kiranc/Code/won-vision/public/images/rental-standard.webp": {
     "mtime": 1779075706.5489168,
     "hash": "aa2b77cc5bca2cbbcdcef89406585270"
@@ -498,6 +502,10 @@
   "/Users/kiranc/Code/won-vision/public/images/rental-large.webp": {
     "mtime": 1779075706.1672819,
     "hash": "64cfd4749393a2e4270326cfa69113c3"
+  },
+  "/Users/kiranc/Code/won-vision/public/images/drone-set.webp": {
+    "mtime": 1779176090.9053168,
+    "hash": "99b2977be08077632ddf6bc9b66d2e40"
   },
   "/Users/kiranc/Code/won-vision/public/images/additional-photos.webp": {
     "mtime": 1779075703.242367,
