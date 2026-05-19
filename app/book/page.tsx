@@ -872,10 +872,50 @@ export default function BookPage() {
         {/* VIDEO */}
         {SHOW_VIDEO && (
         <div className="cat" id="cat-video" data-gallery="video">
-          <div className="cat__head"><h3>Video</h3><span className="cat__count">4 products</span></div>
+          <div className="cat__head"><h3>Video</h3><span className="cat__count">3 products</span></div>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
-            Listing Video length scales with property size: 40s (1–2 bed), 50s (3–4 bed), 60s (5+ bed). Optional +30s extended cut on any video for $100.
+            One listing video, priced by property size — just like the packages. Length scales with the home: 40s (1–2 bed), 50s (3–4 bed), 60s (5+ bed). Optional +30s extended cut for $100.
           </p>
+
+          <div className="pkg-grid" style={{ gridTemplateColumns: '1fr', maxWidth: 440, marginBottom: 18 }}>
+            <article
+              className="pkg-card"
+              data-pkg="listing-video"
+              data-pkg-name="Listing Video"
+              data-pkg-img="/images/cinematic.webp"
+              data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":349},"standard":{"label":"Standard · 3–4 bed","price":499},"premium":{"label":"Premium · 5+ bed","price":649}}'
+            >
+              <div className="pkg-card__media">
+                <span className="pkg-card__tag">Listing video</span>
+                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div>
+              </div>
+              <div className="pkg-card__body">
+                <h4 className="pkg-card__name">Listing Video</h4>
+                <p className="pkg-card__desc">A cinematic 16:9 listing film — music-bedded gimbal walkthrough plus exterior and drone B-roll. Length and edit scale with the property size you choose.</p>
+                <ul className="pkg-card__incl">
+                  <li>Landscape 16:9 · 40 / 50 / 60s by tier</li>
+                  <li>Gimbal walkthrough + exterior coverage</li>
+                  <li>Drone B-roll integrated · full musical score</li>
+                  <li>2-business-day delivery</li>
+                </ul>
+                <div className="pkg-card__tiers">
+                  <label>Property size</label>
+                  <div className="pkg-card__pills" data-pkg-tiers>
+                    <button type="button" data-tier="compact" className="is-active">Compact<small>1–2 bed</small></button>
+                    <button type="button" data-tier="standard">Standard<small>3–4 bed</small></button>
+                    <button type="button" data-tier="premium">Premium<small>5+ bed</small></button>
+                  </div>
+                </div>
+                <div className="pkg-card__pricerow">
+                  <span className="pkg-card__from">From</span>
+                  <span className="pkg-card__price" data-pkg-price>$349</span>
+                  <span className="pkg-card__list" data-pkg-list hidden></span>
+                </div>
+                <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
+              </div>
+            </article>
+          </div>
+
           <div className="svc-grid">
 
             <article className="svc-card" data-svc="Social Reel (30s · 9:16)" data-price="195" data-desc="30-second vertical reel cut for Instagram and TikTok with music and captions." data-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80">
@@ -885,26 +925,6 @@ export default function BookPage() {
                 <h4 className="svc-card__name">Social Reel</h4>
                 <p className="svc-card__desc">30s portrait 9:16 cut for Instagram and TikTok.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$195</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Listing Video (40–60s · 16:9)" data-price="395" data-desc="Landscape 16:9 listing video, length scales with property size. Music-bedded, gimbal walkthrough plus exterior." data-img="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?w=900&q=80')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Listing Video</h4>
-                <p className="svc-card__desc">40–60s landscape — covers most agent listing needs.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$395</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Premium Cinematic (90s · 16:9)" data-price="595" data-desc="90-second cinematic listing video for luxury homes — drone B-roll integrated, full musical score." data-img="/images/cinematic.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Premium Cinematic</h4>
-                <p className="svc-card__desc">90s landscape · drone B-roll integrated · luxury homes.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$595</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
