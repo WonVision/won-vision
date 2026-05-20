@@ -1059,23 +1059,13 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Floorplan Redraw with Site Plan" data-price="45" data-desc="Redraw plus matched site plan with boundaries and orientation." data-img="">
-              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Redraw + Site Plan</h4>
-                <p className="svc-card__desc">Redraw plus matched site plan with boundaries and orientation.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$45</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Site Plan only" data-price="89" data-desc="Standalone site plan — boundaries, orientation, lot dimensions." data-img="">
+            <article className="svc-card" data-svc="Site Plan only" data-price="49" data-desc="Standalone site plan — boundaries, orientation, lot dimensions." data-img="">
               <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Site Plan only</h4>
                 <p className="svc-card__desc">Standalone site plan — boundaries, orientation, lot dimensions.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$89</span><span className="svc-card__add">Add +</span></div>
+                <div className="svc-card__foot"><span className="svc-card__price">$49</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
