@@ -413,14 +413,29 @@ export default function SchedulePage() {
       apply.disabled = true;
       setMsg('Checking…', '');
       try {
-        // Single-package validation when the cart has one line (most bookings);
-        // for multi-line carts, validate against the total and let the server
-        // re-check applicable_packages for each line.
-        const pkg = (cart[0] && cart[0].name) || undefined;
+        // Send the full cart so the server can honour category-scoped codes
+        // (e.g. a "photography only" code that should only discount photography
+        // line items). The server is authoritative — for package lines it uses
+        // the org's catalogue categories, not the ones we send here.
+        const cartPayload = (cart || []).map(function (it) {
+          return {
+            name: it.name,
+            price: Number(it.price) || 0,
+            qty: 1,
+            categories: Array.isArray(it.categories) ? it.categories : [],
+          };
+        });
         const res = await fetch(OPS_BASE + '/api/public/' + TENANT_SLUG + '/validate-discount', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ code: code, package_type: pkg, package_price: total }),
+          body: JSON.stringify({
+            code: code,
+            cart: cartPayload,
+            // Kept for the legacy single-line path / older servers that
+            // haven't picked up the cart-aware contract yet.
+            package_type: (cart[0] && cart[0].name) || undefined,
+            package_price: total,
+          }),
         });
         const j = await res.json();
         if (!res.ok || !j.valid){

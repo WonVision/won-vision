@@ -647,6 +647,7 @@ export default function BookPage() {
             <article
               className="pkg-card"
               data-pkg="showcase"
+              data-cats="photography,floorplan,drone"
               data-pkg-name="Showcase"
               data-pkg-img="/images/showcase.webp"
               data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":350,"promo":280},"standard":{"label":"Standard · 3–4 bed","price":450,"promo":360},"premium":{"label":"Premium · 5+ bed","price":550,"promo":440}}'
@@ -685,6 +686,7 @@ export default function BookPage() {
             <article
               className="pkg-card"
               data-pkg="signature"
+              data-cats="photography,floorplan,drone,video"
               data-pkg-name="Signature"
               data-pkg-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85"
               data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":675,"promo":540},"standard":{"label":"Standard · 3–4 bed","price":750,"promo":600},"premium":{"label":"Premium · 5+ bed","price":825,"promo":660}}'
@@ -724,6 +726,7 @@ export default function BookPage() {
             <article
               className="pkg-card"
               data-pkg="cinematic"
+              data-cats="photography,floorplan,drone,video"
               data-pkg-name="Cinematic"
               data-pkg-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85"
               data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":1100,"promo":880},"standard":{"label":"Standard · 3–4 bed","price":1200,"promo":960},"premium":{"label":"Premium · 5+ bed","price":1300,"promo":1040}}'
@@ -763,7 +766,7 @@ export default function BookPage() {
         </div>
 
         {/* RENTAL PHOTOGRAPHY */}
-        <div className="cat" id="cat-rental" data-gallery="photography">
+        <div className="cat" id="cat-rental" data-gallery="photography" data-cats="photography">
           <div className="cat__head"><h3>Rental <em>photography</em></h3><span className="cat__count">3 tiers</span></div>
           <div className="svc-grid">
 
@@ -801,7 +804,7 @@ export default function BookPage() {
         </div>
 
         {/* SALES PHOTOGRAPHY */}
-        <div className="cat" id="cat-sales" data-gallery="photography">
+        <div className="cat" id="cat-sales" data-gallery="photography" data-cats="photography">
           <div className="cat__head"><h3>Sales <em>photography</em></h3><span className="cat__count">3 tiers · photo-only</span></div>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
             Pure photography pricing by property size. Full HDR retouching, sky replacement and agent-facing licensing included. Floor plan, drone, twilight and video available as add-ons below — or bundle them at 18–29% off via Packages above.
@@ -842,7 +845,7 @@ export default function BookPage() {
         </div>
 
         {/* DRONE */}
-        <div className="cat" id="cat-drone" data-gallery="drone">
+        <div className="cat" id="cat-drone" data-gallery="drone" data-cats="drone">
           <div className="cat__head"><h3>Aerial <em>/ drone</em></h3><span className="cat__count">Aerial</span></div>
           <div className="svc-grid">
 
@@ -871,7 +874,7 @@ export default function BookPage() {
 
         {/* VIDEO */}
         {SHOW_VIDEO && (
-        <div className="cat" id="cat-video" data-gallery="video">
+        <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
           <div className="cat__head"><h3>Video</h3><span className="cat__count">3 products</span></div>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
             One listing video, priced by property size — just like the packages. Length scales with the home: 40s (1–2 bed), 50s (3–4 bed), 60s (5+ bed). Optional +30s extended cut for $100.
@@ -881,6 +884,7 @@ export default function BookPage() {
             <article
               className="pkg-card"
               data-pkg="listing-video"
+              data-cats="video"
               data-pkg-name="Listing Video"
               data-pkg-img="/images/cinematic.webp"
               data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":349},"standard":{"label":"Standard · 3–4 bed","price":499},"premium":{"label":"Premium · 5+ bed","price":649}}'
@@ -943,7 +947,7 @@ export default function BookPage() {
         )}
 
         {/* VIRTUAL EDITING — info only, handled in Vision Studio client portal */}
-        <div className="cat" id="cat-staging" data-gallery="staging">
+        <div className="cat" id="cat-staging" data-gallery="staging" data-cats="virtual-editing">
           <div className="cat__head"><h3>Virtual <em>editing</em></h3><span className="cat__count">Vision Studio · post-shoot</span></div>
           <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--graphite)', maxWidth: 720, marginBottom: 8 }}>
             Virtual staging, decluttering, day-to-dusk, sky replacement, grass enhancement and object removal are <strong>not booked here</strong>. Once the shoot is delivered, you'll review the gallery in the <strong>Vision Studio client portal</strong> and pick which photos need editing — pay only for what you choose. Volume rates apply automatically.
@@ -976,7 +980,7 @@ export default function BookPage() {
         </div>
 
         {/* FLOORPLANS */}
-        <div className="cat" id="cat-floorplans" data-gallery="floorplans">
+        <div className="cat" id="cat-floorplans" data-gallery="floorplans" data-cats="floorplan">
           <div className="cat__head"><h3>Floor <em>plans</em></h3><span className="cat__count">Customisable</span></div>
 
           <div className="fp-config">
@@ -1058,7 +1062,7 @@ export default function BookPage() {
         </div>
 
         {/* ADD-ONS */}
-        <div className="cat" id="cat-addons" data-gallery="photography">
+        <div className="cat" id="cat-addons" data-gallery="photography" data-cats="addon">
           <div className="cat__head"><h3>Add-ons</h3><span className="cat__count">À la carte</span></div>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
             Standard delivery is next business day for photos, 2 business days for video. Distance surcharge of $20 per 5km block applies automatically to properties beyond 20km from Melbourne CBD.
@@ -1174,10 +1178,26 @@ export default function BookPage() {
 
   const items = new Map();
 
+  // Resolve the categories array for a card element. Cards may declare an
+  // explicit \`data-cats\` (used by packages spanning multiple categories);
+  // otherwise the closest .cat[data-cats] ancestor wins. This is what powers
+  // category-scoped promo codes server-side.
+  function readCats(el){
+    if (!el) return [];
+    const own = el.getAttribute && el.getAttribute('data-cats');
+    const fromCat = !own && el.closest ? (el.closest('.cat')?.getAttribute('data-cats') || '') : '';
+    const raw = own || fromCat || '';
+    return raw.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  }
+
   try {
     const saved = JSON.parse(sessionStorage.getItem('wv-cart') || '[]');
     saved.forEach(it => {
-      items.set(it.name, {price: String(it.price), img: it.img});
+      items.set(it.name, {
+        price: String(it.price),
+        img: it.img,
+        categories: Array.isArray(it.categories) ? it.categories : [],
+      });
       const card = Array.from(cards).find(c => c.dataset.svc === it.name);
       if (card) card.classList.add('is-added');
     });
@@ -1186,7 +1206,10 @@ export default function BookPage() {
   function persist(){
     try {
       const payload = Array.from(items.entries()).map(([name, data]) => ({
-        name, price: Number(data.price) || 0, img: data.img,
+        name,
+        price: Number(data.price) || 0,
+        img: data.img,
+        categories: Array.isArray(data.categories) ? data.categories : [],
       }));
       sessionStorage.setItem('wv-cart', JSON.stringify(payload));
     } catch (_) {}
@@ -1236,7 +1259,11 @@ export default function BookPage() {
     const isAdded = items.has(name);
     const nextState = (typeof force === 'boolean') ? force : !isAdded;
     if(nextState && card){
-      items.set(name, {price: card.dataset.price, img: card.dataset.img});
+      items.set(name, {
+        price: card.dataset.price,
+        img: card.dataset.img,
+        categories: readCats(card),
+      });
       card.classList.add('is-added');
       openCart();
     } else {
@@ -1313,7 +1340,7 @@ export default function BookPage() {
         const styleInfo = styleMap[state.style];
         const name = \`Floor plan — \${sizeLabel[state.size]} · \${styleInfo.label}\`;
         const price = priceMatrix[state.size][styleInfo.group];
-        items.set(name, { price: String(price), img: styleInfo.img });
+        items.set(name, { price: String(price), img: styleInfo.img, categories: ['floorplan'] });
         render();
         openCart();
       });
@@ -1391,7 +1418,11 @@ export default function BookPage() {
           });
           const t = state.get(pkgKey);
           const tier = tiers[t];
-          items.set(currentName(), { price: String(tier.price), img: pkgImg });
+          items.set(currentName(), {
+            price: String(tier.price),
+            img: pkgImg,
+            categories: readCats(card),
+          });
           render();
           openCart();
           refresh();
