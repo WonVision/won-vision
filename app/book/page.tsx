@@ -116,7 +116,8 @@ export default function BookPage() {
     .svc-card__price{font-size:17px}
   }
   @media (max-width:440px){
-    .svc-grid{grid-template-columns:1fr;gap:12px}
+    .svc-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .svc-grid--single{grid-template-columns:1fr;gap:12px}
   }
 
   /* ---------- Before/after comparison sliders ---------- */
@@ -920,7 +921,7 @@ export default function BookPage() {
             </article>
           </div>
 
-          <div className="svc-grid">
+          <div className="svc-grid svc-grid--single">
 
             <article className="svc-card" data-svc="Social Reel (30s · 9:16)" data-price="195" data-desc="30-second vertical reel cut for Instagram and TikTok with music and captions." data-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80')" }}></div></div>
@@ -1045,7 +1046,7 @@ export default function BookPage() {
             </div>
           </div>
 
-          <h5 className="fp-sub">Redraws · post-production add-ons</h5>
+          <h5 className="fp-sub">Redraws &amp; site plan · post-production add-ons</h5>
           <div className="svc-grid">
 
             <article className="svc-card" data-svc="Basic Floorplan Redraw" data-price="30" data-desc="Redraw an existing plan in Won Vision linework. Per page." data-img="">
@@ -1055,6 +1056,26 @@ export default function BookPage() {
                 <h4 className="svc-card__name">Floorplan Redraw</h4>
                 <p className="svc-card__desc">Redraw an existing plan in Won Vision linework. Per page.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$30</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card" data-svc="Floorplan Redraw with Site Plan" data-price="45" data-desc="Redraw plus matched site plan with boundaries and orientation." data-img="">
+              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Redraw + Site Plan</h4>
+                <p className="svc-card__desc">Redraw plus matched site plan with boundaries and orientation.</p>
+                <div className="svc-card__foot"><span className="svc-card__price">$45</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card" data-svc="Site Plan only" data-price="89" data-desc="Standalone site plan — boundaries, orientation, lot dimensions." data-img="">
+              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Site Plan only</h4>
+                <p className="svc-card__desc">Standalone site plan — boundaries, orientation, lot dimensions.</p>
+                <div className="svc-card__foot"><span className="svc-card__price">$89</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
