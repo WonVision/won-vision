@@ -214,7 +214,7 @@ export default function CheckoutPage() {
                              listStyle: 'none', margin: 0, padding: 0, background: '#fff', border: '1px solid rgba(0,0,0,.18)',
                              borderRadius: 6, boxShadow: '0 6px 18px rgba(0,0,0,.08)', maxHeight: 240, overflow: 'auto',
                              display: 'none' }}></ul>
-                <small className="hint">Existing brands appear as you type — pick one or type a new agency.</small>
+                <small className="hint">So your shoots, invoices and delivered galleries all sit under the right brand — and your teammates can find them too. Start typing and pick yours, or add a new one.</small>
               </div>
               <div className="row" style={{ position: 'relative' }}>
                 <label htmlFor="agencyOffice">Agency office location</label>
@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                              listStyle: 'none', margin: 0, padding: 0, background: '#fff', border: '1px solid rgba(0,0,0,.18)',
                              borderRadius: 6, boxShadow: '0 6px 18px rgba(0,0,0,.08)', maxHeight: 240, overflow: 'auto',
                              display: 'none' }}></ul>
-                <small className="hint">Pick the specific office. Two agents from the same brand at different offices stay distinct.</small>
+                <small className="hint">So the right office gets the call sheet, gallery link and invoice — different branches of the same brand are billed and contacted separately.</small>
               </div>
             </section>
 

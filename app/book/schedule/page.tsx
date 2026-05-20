@@ -117,20 +117,29 @@ export default function SchedulePage() {
                 </button>
               </div>
 
+              {/*
+                Date + windows must share an identical column layout so the
+                control tops line up exactly. Earlier versions inherited
+                .row spacing on one side and not the other and the input
+                drifted ~6px below the buttons. The fix: same explicit
+                flex column, same gap, and box-sizing:border-box on every
+                control so a 52px input visually equals a 52px button
+                regardless of the user agent's input chrome.
+              */}
               <div className="datetime-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, alignItems: 'start' }}>
-                <div className="row datetime-row__date" style={{ margin: 0 }}>
-                  <label htmlFor="selectedDate">Preferred date</label>
+                <div className="datetime-row__date" style={{ display: 'flex', flexDirection: 'column', gap: 8, margin: 0 }}>
+                  <label htmlFor="selectedDate" style={{ margin: 0 }}>Preferred date</label>
                   <input id="selectedDate" name="selectedDate" type="date" required
-                         style={{ height: 52, padding: '0 14px', font: 'inherit' }} />
+                         style={{ height: 52, padding: '0 14px', font: 'inherit', boxSizing: 'border-box', margin: 0 }} />
                 </div>
-                <div className="row datetime-row__time" style={{ margin: 0 }}>
-                  <label>Or pick a window</label>
+                <div className="datetime-row__time" style={{ display: 'flex', flexDirection: 'column', gap: 8, margin: 0 }}>
+                  <label style={{ margin: 0 }}>Or pick a window</label>
                   <div className="slots" id="windows"
-                       style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
-                    <button type="button" className="slot" data-window="morning"   style={{ height: 52 }}>Morning</button>
-                    <button type="button" className="slot" data-window="midday"    style={{ height: 52 }}>Midday</button>
-                    <button type="button" className="slot" data-window="afternoon" style={{ height: 52 }}>Afternoon</button>
-                    <button type="button" className="slot" data-window="twilight"  style={{ height: 52 }}>Twilight</button>
+                       style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8, margin: 0 }}>
+                    <button type="button" className="slot" data-window="morning"   style={{ height: 52, boxSizing: 'border-box' }}>Morning</button>
+                    <button type="button" className="slot" data-window="midday"    style={{ height: 52, boxSizing: 'border-box' }}>Midday</button>
+                    <button type="button" className="slot" data-window="afternoon" style={{ height: 52, boxSizing: 'border-box' }}>Afternoon</button>
+                    <button type="button" className="slot" data-window="twilight"  style={{ height: 52, boxSizing: 'border-box' }}>Twilight</button>
                   </div>
                   <input type="hidden" id="selectedWindow" name="selectedWindow" />
                   <input type="hidden" id="selectedTime" name="selectedTime" required />
@@ -283,7 +292,8 @@ export default function SchedulePage() {
               }}
             >
               <span id="summaryDiscountLabel">Discount</span>
-              <span id="summaryDiscountAmt">-$0</span>
+              {/* Discount amount in green so the saving reads as a win, not a debit. */}
+              <span id="summaryDiscountAmt" style={{ color: '#1F8F4E', fontWeight: 600 }}>-$0</span>
             </div>
             <div className="step-summary__total">
               <span className="step-summary__total__label">Total · GST inc.</span>
