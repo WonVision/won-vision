@@ -381,6 +381,14 @@ export default function BookPage() {
     .pkg-card__name{font-size:19px}
     .pkg-card__price{font-size:22px}
   }
+  /* Stack tier pills vertically when the pkg-card lives inside a multi-col svc-grid on phone */
+  @media (max-width:440px){
+    .svc-grid .pkg-card__pills{flex-direction:column;align-items:stretch}
+    .svc-grid .pkg-card__pills button{width:100%;justify-content:center;padding:8px 10px}
+    .svc-grid .pkg-card__name{font-size:17px}
+    .svc-grid .pkg-card__price{font-size:20px}
+    .svc-grid .pkg-card__body{padding:14px 14px 16px;gap:10px}
+  }
 
   /* ---------- Floating cart toggle (FAB) ---------- */
   .cart-fab{
