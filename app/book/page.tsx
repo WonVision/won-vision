@@ -631,15 +631,14 @@ export default function BookPage() {
             <a href="#cat-drone" className="svc-jump__chip">Aerial / drone</a>
             {SHOW_VIDEO && <a href="#cat-video" className="svc-jump__chip">Video</a>}
             <a href="#cat-staging" className="svc-jump__chip">Virtual editing</a>
-            <a href="#cat-floorplans" className="svc-jump__chip">Floor plans</a>
-            <a href="#cat-addons" className="svc-jump__chip">Add-ons</a>
+            <a href="#cat-floorplans" className="svc-jump__chip">Floor plans &amp; site plan</a>
           </div>
         </nav>
 
         {/* PACKAGES */}
         <div className="cat" id="cat-packages" data-gallery="photography">
           <div className="cat__head"><h3><em>Packages</em></h3><span className="cat__count">pick a tier</span></div>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
+          <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
             Bundled offerings that combine our most-requested services at significant savings versus à la carte. Pick a package, choose the property tier — we handle the rest. New clients: ask us for an intro promo on your first 3 jobs — applied manually with your code at checkout. No automatic discount.
           </p>
 
@@ -807,7 +806,7 @@ export default function BookPage() {
         {/* SALES PHOTOGRAPHY */}
         <div className="cat" id="cat-sales" data-gallery="photography" data-cats="photography">
           <div className="cat__head"><h3>Sales <em>photography</em></h3><span className="cat__count">3 tiers · photo-only</span></div>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
+          <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
             Pure photography pricing by property size. Full HDR retouching, sky replacement and agent-facing licensing included. Floor plan, drone, twilight and video available as add-ons below — or bundle them at 18–29% off via Packages above.
           </p>
           <div className="svc-grid">
@@ -877,11 +876,12 @@ export default function BookPage() {
         {SHOW_VIDEO && (
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
           <div className="cat__head"><h3>Video</h3><span className="cat__count">3 products</span></div>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
+          <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
             One listing video, priced by property size — just like the packages. Length scales with the home: 40s (1–2 bed), 50s (3–4 bed), 60s (5+ bed). Optional +30s extended cut for $100.
           </p>
 
-          <div className="pkg-grid" style={{ gridTemplateColumns: '1fr', maxWidth: 440, marginBottom: 18 }}>
+          <div className="svc-grid">
+
             <article
               className="pkg-card"
               data-pkg="listing-video"
@@ -896,13 +896,7 @@ export default function BookPage() {
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Listing Video</h4>
-                <p className="pkg-card__desc">A cinematic 16:9 listing film — music-bedded gimbal walkthrough plus exterior and drone B-roll. Length and edit scale with the property size you choose.</p>
-                <ul className="pkg-card__incl">
-                  <li>Landscape 16:9 · 40 / 50 / 60s by tier</li>
-                  <li>Gimbal walkthrough + exterior coverage</li>
-                  <li>Drone B-roll integrated · full musical score</li>
-                  <li>2-business-day delivery</li>
-                </ul>
+                <p className="pkg-card__desc">A cinematic 16:9 listing film — music-bedded gimbal walkthrough plus exterior and drone B-roll. Length and edit scale with the property size.</p>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
@@ -919,9 +913,6 @@ export default function BookPage() {
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
             </article>
-          </div>
-
-          <div className="svc-grid svc-grid--single">
 
             <article className="svc-card" data-svc="Social Reel (30s · 9:16)" data-price="195" data-desc="30-second vertical reel cut for Instagram and TikTok with music and captions." data-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80')" }}></div></div>
@@ -947,15 +938,15 @@ export default function BookPage() {
         </div>
         )}
 
-        {/* VIRTUAL EDITING — info only, handled in Vision Studio client portal */}
+        {/* VIRTUAL EDITING */}
         <div className="cat" id="cat-staging" data-gallery="staging" data-cats="virtual-editing">
-          <div className="cat__head"><h3>Virtual <em>editing</em></h3><span className="cat__count">Vision Studio · post-shoot</span></div>
-          <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--graphite)', maxWidth: 720, marginBottom: 8 }}>
-            Virtual staging, decluttering, day-to-dusk, sky replacement, grass enhancement and object removal are <strong>not booked here</strong>. Once the shoot is delivered, you'll review the gallery in the <strong>Vision Studio client portal</strong> and pick which photos need editing — pay only for what you choose. Volume rates apply automatically.
+          <div className="cat__head"><h3>Virtual <em>editing</em></h3><span className="cat__count">Per image · post-shoot</span></div>
+          <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 8 }}>
+            Add virtual editing to your shoot — priced per image. After delivery you'll review the gallery in the Vision Studio client portal and confirm which photos to apply each treatment to.
           </p>
 
           {/* Before/after comparison sliders — real Won Vision editing samples */}
-          <div className="ba-row" style={{ marginTop: 16 }}>
+          <div className="ba-row" style={{ marginTop: 16, marginBottom: 22 }}>
             <BeforeAfterSlider
               label="Virtual staging"
               beforeAlt="Empty room before virtual staging"
@@ -978,84 +969,79 @@ export default function BookPage() {
               afterSrc="/images/declutter-after.webp"
             />
           </div>
-        </div>
 
-        {/* FLOORPLANS */}
-        <div className="cat" id="cat-floorplans" data-gallery="floorplans" data-cats="floorplan">
-          <div className="cat__head"><h3>Floor <em>plans</em></h3><span className="cat__count">Customisable</span></div>
-
-          <div className="fp-config">
-            <div className="fp-config__media">
-              <div className="fp-config__img" id="fpImg"></div>
-            </div>
-            <div className="fp-config__body">
-              <div className="fp-group">
-                <label>Size</label>
-                <div className="fp-pills" data-fp="size">
-                  <button type="button" data-value="small">Small<small>up to 200m²</small></button>
-                  <button type="button" data-value="medium" className="is-active">Medium<small>200–300m²</small></button>
-                  <button type="button" data-value="large">Large<small>300–500m²</small></button>
-                  <button type="button" data-value="xl">XL<small>500m²+</small></button>
-                </div>
-              </div>
-
-              <div className="fp-group">
-                <label>Style</label>
-
-                <div className="fp-style-section">
-                  <div className="fp-style-section__head">
-                    <span className="fp-style-section__name">Line work</span>
-                    <span className="fp-style-section__from">From $159</span>
-                  </div>
-                  <div className="fp-style-grid" data-fp="style">
-                    <button type="button" className="fp-style-card is-active" data-value="2d-basic">
-                      <span className="fp-style-card__label">Standard <small>Black &amp; white</small></span>
-                    </button>
-                    <button type="button" className="fp-style-card" data-value="2d-site">
-                      <span className="fp-style-card__label">With site <small>Landscape context</small></span>
-                    </button>
-                    <button type="button" className="fp-style-card" data-value="2d-colour">
-                      <span className="fp-style-card__label">Coloured <small>Subtle wash</small></span>
-                    </button>
-                  </div>
-                </div>
-
-                <div className="fp-style-section">
-                  <div className="fp-style-section__head">
-                    <span className="fp-style-section__name">Render</span>
-                    <span className="fp-style-section__from">From $199</span>
-                  </div>
-                  <div className="fp-style-grid fp-style-grid--two" data-fp="style">
-                    <button type="button" className="fp-style-card" data-value="render-2d">
-                      <span className="fp-style-card__label">2D <small>Shaded plan view</small></span>
-                    </button>
-                    <button type="button" className="fp-style-card" data-value="render-3d">
-                      <span className="fp-style-card__label">3D <small>Dollhouse · photoreal</small></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="fp-foot">
-                <div>
-                  <span className="fp-foot__label">Subtotal · ex-GST</span>
-                  <span className="fp-foot__price" id="fpPrice">$199</span>
-                </div>
-                <button type="button" className="fp-add" id="fpAdd">Add to booking →</button>
-              </div>
-            </div>
-          </div>
-
-          <h5 className="fp-sub">Redraws &amp; site plan · post-production add-ons</h5>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Basic Floorplan Redraw" data-price="30" data-desc="Redraw an existing plan in Won Vision linework. Per page." data-img="">
-              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
+            <article className="svc-card" data-svc="Virtual Staging" data-price="20" data-desc="Add virtual furniture and styling to an empty room — per image." data-img="/images/staging-after.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/staging-after.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Floorplan Redraw</h4>
-                <p className="svc-card__desc">Redraw an existing plan in Won Vision linework. Per page.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$30</span><span className="svc-card__add">Add +</span></div>
+                <h4 className="svc-card__name">Virtual Staging</h4>
+                <p className="svc-card__desc">Add furniture &amp; styling to an empty room.</p>
+                <div className="svc-card__foot"><span className="svc-card__price">$20 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card" data-svc="Declutter" data-price="10" data-desc="Remove clutter, personal items and distractions from photos — per image." data-img="/images/declutter-after.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/declutter-after.webp')" }}></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Declutter</h4>
+                <p className="svc-card__desc">Remove clutter and distractions from any photo.</p>
+                <div className="svc-card__foot"><span className="svc-card__price">$10 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card" data-svc="Day-to-Dusk" data-price="10" data-desc="Convert a daytime exterior into a warm dusk scene — per image." data-img="/images/dusk-after.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/dusk-after.webp')" }}></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Day-to-Dusk</h4>
+                <p className="svc-card__desc">Convert a daytime exterior into a warm dusk scene.</p>
+                <div className="svc-card__foot"><span className="svc-card__price">$10 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        {/* FLOORPLANS & SITE PLAN */}
+        <div className="cat" id="cat-floorplans" data-gallery="floorplans" data-cats="floorplan">
+          <div className="cat__head"><h3>Floor <em>plans &amp; site plan</em></h3><span className="cat__count">2D · 3D · Site plan</span></div>
+          <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
+            Pick 2D for a clean black &amp; white plan view, or 3D for a photoreal dollhouse render. Add a standalone site plan with boundaries, orientation and lot dimensions.
+          </p>
+
+          <div className="svc-grid">
+
+            <article
+              className="pkg-card"
+              data-pkg="floor-plan"
+              data-cats="floorplan"
+              data-pkg-name="Floor Plan"
+              data-pkg-img=""
+              data-tiers='{"twod":{"label":"2D · Plan view","price":129},"threed":{"label":"3D · Dollhouse","price":219}}'
+            >
+              <div className="pkg-card__media">
+                <span className="pkg-card__tag">Floor plan</span>
+                <div className="pkg-card__media__img"></div>
+              </div>
+              <div className="pkg-card__body">
+                <h4 className="pkg-card__name">Floor Plan</h4>
+                <p className="pkg-card__desc">Pick your style — 2D shaded plan or 3D photoreal dollhouse render. Includes dimensions, room labels and a north arrow.</p>
+                <div className="pkg-card__tiers">
+                  <label>Style</label>
+                  <div className="pkg-card__pills" data-pkg-tiers>
+                    <button type="button" data-tier="twod" className="is-active">2D<small>Plan view</small></button>
+                    <button type="button" data-tier="threed">3D<small>Dollhouse</small></button>
+                  </div>
+                </div>
+                <div className="pkg-card__pricerow">
+                  <span className="pkg-card__from">From</span>
+                  <span className="pkg-card__price" data-pkg-price>$129</span>
+                  <span className="pkg-card__list" data-pkg-list hidden></span>
+                </div>
+                <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
             </article>
 
@@ -1066,27 +1052,6 @@ export default function BookPage() {
                 <h4 className="svc-card__name">Site Plan only</h4>
                 <p className="svc-card__desc">Standalone site plan — boundaries, orientation, lot dimensions.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$49</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        {/* ADD-ONS */}
-        <div className="cat" id="cat-addons" data-gallery="photography" data-cats="addon">
-          <div className="cat__head"><h3>Add-ons</h3><span className="cat__count">À la carte</span></div>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--graphite)', maxWidth: 640, marginBottom: 18 }}>
-            Standard delivery is next business day for photos, 2 business days for video. Distance surcharge of $20 per 5km block applies automatically to properties beyond 20km from Melbourne CBD.
-          </p>
-          <div className="svc-grid">
-
-            <article className="svc-card" data-svc="Additional Photos" data-price="25" data-desc="Each photo delivered above the standard tier count." data-img="/images/additional-photos.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/additional-photos.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Additional Photos</h4>
-                <p className="svc-card__desc">Each photo above the standard tier count.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$25 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
@@ -1288,76 +1253,6 @@ export default function BookPage() {
     card.addEventListener('click', () => toggleCard(card.dataset.svc));
   });
 
-  // Floor-plan customiser
-  (function(){
-    const priceMatrix = {
-      small:  {linework: 159, render2d: 199, render3d: 239},
-      medium: {linework: 199, render2d: 249, render3d: 299},
-      large:  {linework: 239, render2d: 299, render3d: 359},
-      xl:     {linework: 0,   render2d: 0,   render3d: 0},
-    };
-    const sizeLabel  = {small:'Small', medium:'Medium', large:'Large', xl:'XL'};
-    const styleMap = {
-      '2d-basic':  { group:'linework', label:'Line work · Standard',  img:'' },
-      '2d-site':   { group:'linework', label:'Line work · With site', img:'' },
-      '2d-colour': { group:'linework', label:'Line work · Coloured',  img:'' },
-      'render-2d': { group:'render2d', label:'Render · 2D',           img:'' },
-      'render-3d': { group:'render3d', label:'Render · 3D dollhouse', img:'' },
-    };
-
-    const state = { size: 'medium', style: '2d-basic' };
-    const priceEl = document.getElementById('fpPrice');
-    const imgEl   = document.getElementById('fpImg');
-    const addBtn  = document.getElementById('fpAdd');
-
-    function updatePrice(){
-      const group = styleMap[state.style].group;
-      const p = priceMatrix[state.size][group];
-      if(priceEl) priceEl.textContent = p === 0 ? 'POA' : '$' + Number(p).toLocaleString('en-AU');
-    }
-    function updateImg(){
-      if(!imgEl) return;
-      const src = styleMap[state.style].img;
-      imgEl.style.backgroundImage = src ? \`url('\${src}')\` : 'none';
-    }
-
-    document.querySelectorAll('.fp-pills[data-fp="size"]').forEach(group => {
-      group.querySelectorAll('button').forEach(btn => {
-        btn.addEventListener('click', () => {
-          group.querySelectorAll('button').forEach(b => b.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          state.size = btn.dataset.value;
-          updatePrice();
-        });
-      });
-    });
-
-    const allStyleCards = document.querySelectorAll('.fp-style-card');
-    allStyleCards.forEach(card => {
-      card.addEventListener('click', () => {
-        allStyleCards.forEach(c => c.classList.remove('is-active'));
-        card.classList.add('is-active');
-        state.style = card.dataset.value;
-        updatePrice();
-        updateImg();
-      });
-    });
-
-    if(addBtn){
-      addBtn.addEventListener('click', () => {
-        Array.from(items.keys()).forEach(k => {
-          if(k.startsWith('Floor plan —')) items.delete(k);
-        });
-        const styleInfo = styleMap[state.style];
-        const name = \`Floor plan — \${sizeLabel[state.size]} · \${styleInfo.label}\`;
-        const price = priceMatrix[state.size][styleInfo.group];
-        items.set(name, { price: String(price), img: styleInfo.img, categories: ['floorplan'] });
-        render();
-        openCart();
-      });
-    }
-  })();
-
   function openCart(){ cart.classList.add('is-open'); cart.setAttribute('aria-hidden','false'); fab.classList.add('is-open'); }
   function closeCart(){ cart.classList.remove('is-open'); cart.setAttribute('aria-hidden','true'); fab.classList.remove('is-open'); }
 
@@ -1389,7 +1284,9 @@ export default function BookPage() {
       const pkgImg = card.dataset.pkgImg;
       let tiers;
       try { tiers = JSON.parse(card.dataset.tiers || '{}'); } catch (_) { tiers = {}; }
-      state.set(pkgKey, 'compact');
+      const initialPill = card.querySelector('[data-pkg-tiers] button.is-active');
+      const initialTier = initialPill ? initialPill.dataset.tier : Object.keys(tiers)[0];
+      state.set(pkgKey, initialTier || 'compact');
 
       const priceEl = card.querySelector('[data-pkg-price]');
       const listEl  = card.querySelector('[data-pkg-list]');
