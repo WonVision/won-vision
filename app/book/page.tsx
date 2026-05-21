@@ -658,7 +658,7 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone"
               data-pkg-name="Showcase"
               data-pkg-img="/images/showcase.webp"
-              data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":350,"promo":280},"standard":{"label":"Standard · 3–4 bed","price":450,"promo":360},"premium":{"label":"Premium · 5+ bed","price":550,"promo":440}}'
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":350,"promo":280},"standard":{"label":"Standard · 20 photos","price":450,"promo":360},"premium":{"label":"Premium · 25 photos","price":550,"promo":440}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Most booked</span>
@@ -676,9 +676,9 @@ export default function BookPage() {
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
-                    <button type="button" data-tier="compact" className="is-active">Compact<small>1–2 bed</small></button>
-                    <button type="button" data-tier="standard">Standard<small>3–4 bed</small></button>
-                    <button type="button" data-tier="premium">Premium<small>5+ bed</small></button>
+                    <button type="button" data-tier="compact" className="is-active">Compact<small>15 photos</small></button>
+                    <button type="button" data-tier="standard">Standard<small>20 photos</small></button>
+                    <button type="button" data-tier="premium">Premium<small>25 photos</small></button>
                   </div>
                 </div>
                 <div className="pkg-card__pricerow">
@@ -697,7 +697,7 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone,video"
               data-pkg-name="Signature"
               data-pkg-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85"
-              data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":675,"promo":540},"standard":{"label":"Standard · 3–4 bed","price":750,"promo":600},"premium":{"label":"Premium · 5+ bed","price":825,"promo":660}}'
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":675,"promo":540},"standard":{"label":"Standard · 20 photos","price":750,"promo":600},"premium":{"label":"Premium · 25 photos","price":825,"promo":660}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Complete deliverable</span>
@@ -715,9 +715,9 @@ export default function BookPage() {
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
-                    <button type="button" data-tier="compact" className="is-active">Compact<small>1–2 bed</small></button>
-                    <button type="button" data-tier="standard">Standard<small>3–4 bed</small></button>
-                    <button type="button" data-tier="premium">Premium<small>5+ bed</small></button>
+                    <button type="button" data-tier="compact" className="is-active">Compact<small>15 photos</small></button>
+                    <button type="button" data-tier="standard">Standard<small>20 photos</small></button>
+                    <button type="button" data-tier="premium">Premium<small>25 photos</small></button>
                   </div>
                 </div>
                 <div className="pkg-card__pricerow">
@@ -737,7 +737,7 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone,video"
               data-pkg-name="Cinematic"
               data-pkg-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85"
-              data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":1100,"promo":880},"standard":{"label":"Standard · 3–4 bed","price":1200,"promo":960},"premium":{"label":"Premium · 5+ bed","price":1300,"promo":1040}}'
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":1100,"promo":880},"standard":{"label":"Standard · 20 photos","price":1200,"promo":960},"premium":{"label":"Premium · 25 photos","price":1300,"promo":1040}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Flagship</span>
@@ -755,9 +755,9 @@ export default function BookPage() {
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
-                    <button type="button" data-tier="compact" className="is-active">Compact<small>1–2 bed</small></button>
-                    <button type="button" data-tier="standard">Standard<small>3–4 bed</small></button>
-                    <button type="button" data-tier="premium">Premium<small>5+ bed</small></button>
+                    <button type="button" data-tier="compact" className="is-active">Compact<small>15 photos</small></button>
+                    <button type="button" data-tier="standard">Standard<small>20 photos</small></button>
+                    <button type="button" data-tier="premium">Premium<small>25 photos</small></button>
                   </div>
                 </div>
                 <div className="pkg-card__pricerow">
@@ -778,32 +778,32 @@ export default function BookPage() {
           <div className="cat__head"><h3>Rental <em>photography</em></h3><span className="cat__count">3 tiers</span></div>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Rental Compact (Studio / 1BR)" data-price="180" data-desc="Studio or 1-bedroom rental — 8 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-compact.webp">
+            <article className="svc-card" data-svc="Rental Compact (8 photos)" data-price="180" data-desc="Rental — 8 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-compact.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-compact.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Compact</h4>
-                <p className="svc-card__desc">Studio / 1BR — 8 HDR photos, sky correction, next-day delivery.</p>
+                <p className="svc-card__desc">8 HDR photos · sky correction · next-day delivery.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$180</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Rental Standard (2BR)" data-price="220" data-desc="2-bedroom rental — 10 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-standard.webp">
+            <article className="svc-card" data-svc="Rental Standard (10 photos)" data-price="220" data-desc="Rental — 10 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-standard.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-standard.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Standard</h4>
-                <p className="svc-card__desc">2BR — 10 HDR photos, sky correction, next-day delivery.</p>
+                <p className="svc-card__desc">10 HDR photos · sky correction · next-day delivery.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$220</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Rental Large (3BR+)" data-price="260" data-desc="3-bedroom-plus rental — 12 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-large.webp">
+            <article className="svc-card" data-svc="Rental Large (12 photos)" data-price="260" data-desc="Rental — 12 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-large.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-large.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Large</h4>
-                <p className="svc-card__desc">3BR+ — 12 HDR photos, sky correction, next-day delivery.</p>
+                <p className="svc-card__desc">12 HDR photos · sky correction · next-day delivery.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$260</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
@@ -819,32 +819,32 @@ export default function BookPage() {
           </p>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Sales Compact (1–2 bed)" data-price="195" data-desc="1–2 bed sales shoot — 15 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-compact.webp">
+            <article className="svc-card" data-svc="Sales Compact (15 photos)" data-price="195" data-desc="Sales shoot — 15 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-compact.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-compact.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Sales Compact</h4>
-                <p className="svc-card__desc">1–2 bed · 15 HDR photos · full retouching · sky replacement.</p>
+                <p className="svc-card__desc">15 HDR photos · full retouching · sky replacement.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$195</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Sales Standard (3–4 bed)" data-price="295" data-desc="3–4 bed sales shoot — 20 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-standard.webp">
+            <article className="svc-card" data-svc="Sales Standard (20 photos)" data-price="295" data-desc="Sales shoot — 20 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-standard.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-standard.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Sales Standard</h4>
-                <p className="svc-card__desc">3–4 bed · 20 HDR photos · full retouching · sky replacement.</p>
+                <p className="svc-card__desc">20 HDR photos · full retouching · sky replacement.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$295</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Sales Premium (5+ bed)" data-price="395" data-desc="5+ bed sales shoot — 25 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-premium.webp">
+            <article className="svc-card" data-svc="Sales Premium (25 photos)" data-price="395" data-desc="Sales shoot — 25 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-premium.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-premium.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Sales Premium</h4>
-                <p className="svc-card__desc">5+ bed · 25 HDR photos · full retouching · sky replacement.</p>
+                <p className="svc-card__desc">25 HDR photos · full retouching · sky replacement.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$395</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
@@ -885,7 +885,7 @@ export default function BookPage() {
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
           <div className="cat__head"><h3>Video</h3><span className="cat__count">3 products</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            One listing video, priced by property size — just like the packages. Length scales with the home: 40s (1–2 bed), 50s (3–4 bed), 60s (5+ bed). Optional +30s extended cut for $100.
+            One listing video, priced by tier — just like the packages. Length scales with the tier: 40s (Compact), 50s (Standard), 60s (Premium). Optional +30s extended cut for $100.
           </p>
 
           <div className="svc-grid">
@@ -896,7 +896,7 @@ export default function BookPage() {
               data-cats="video"
               data-pkg-name="Listing Video"
               data-pkg-img="/images/cinematic.webp"
-              data-tiers='{"compact":{"label":"Compact · 1–2 bed","price":349},"standard":{"label":"Standard · 3–4 bed","price":499},"premium":{"label":"Premium · 5+ bed","price":649}}'
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":349},"standard":{"label":"Standard · 20 photos","price":499},"premium":{"label":"Premium · 25 photos","price":649}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Listing video</span>
@@ -904,13 +904,13 @@ export default function BookPage() {
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Listing Video</h4>
-                <p className="pkg-card__desc">A cinematic 16:9 listing film — music-bedded gimbal walkthrough plus exterior and drone B-roll. Length and edit scale with the property size.</p>
+                <p className="pkg-card__desc">A cinematic 16:9 listing film — gimbal walkthrough plus exterior and drone B-roll, music-bedded. Length and edit scale with the tier.</p>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
-                    <button type="button" data-tier="compact" className="is-active">Compact<small>1–2 bed</small></button>
-                    <button type="button" data-tier="standard">Standard<small>3–4 bed</small></button>
-                    <button type="button" data-tier="premium">Premium<small>5+ bed</small></button>
+                    <button type="button" data-tier="compact" className="is-active">Compact<small>15 photos</small></button>
+                    <button type="button" data-tier="standard">Standard<small>20 photos</small></button>
+                    <button type="button" data-tier="premium">Premium<small>25 photos</small></button>
                   </div>
                 </div>
                 <div className="pkg-card__pricerow">
