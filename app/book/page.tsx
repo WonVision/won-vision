@@ -938,70 +938,36 @@ export default function BookPage() {
         </div>
         )}
 
-        {/* VIRTUAL EDITING */}
+        {/* VIRTUAL EDITING — info only, paid per image in Vision Studio client portal */}
         <div className="cat" id="cat-staging" data-gallery="staging" data-cats="virtual-editing">
-          <div className="cat__head"><h3>Virtual <em>editing</em></h3><span className="cat__count">Per image · post-shoot</span></div>
+          <div className="cat__head"><h3>Virtual <em>editing</em></h3><span className="cat__count">Per image · client portal</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 8 }}>
-            Add virtual editing to your shoot — priced per image. After delivery you'll review the gallery in the Vision Studio client portal and confirm which photos to apply each treatment to.
+            Virtual staging, decluttering and day-to-dusk are <strong>not booked here</strong>. After delivery you'll review the gallery in the <strong>Vision Studio client portal</strong> and pay per image — only for the photos you choose.
           </p>
 
           {/* Before/after comparison sliders — real Won Vision editing samples */}
-          <div className="ba-row" style={{ marginTop: 16, marginBottom: 22 }}>
+          <div className="ba-row" style={{ marginTop: 16 }}>
             <BeforeAfterSlider
-              label="Virtual staging"
+              label="Virtual staging · $20 / img"
               beforeAlt="Empty room before virtual staging"
               afterAlt="Virtually staged room"
               beforeSrc="/images/staging-before.webp"
               afterSrc="/images/staging-after.webp"
             />
             <BeforeAfterSlider
-              label="Day-to-dusk"
+              label="Day-to-dusk · $10 / img"
               beforeAlt="Exterior at day"
               afterAlt="Exterior at dusk"
               beforeSrc="/images/dusk-before.webp"
               afterSrc="/images/dusk-after.webp"
             />
             <BeforeAfterSlider
-              label="Decluttering"
+              label="Declutter · $10 / img"
               beforeAlt="Cluttered living room"
               afterAlt="Decluttered living room"
               beforeSrc="/images/declutter-before.webp"
               afterSrc="/images/declutter-after.webp"
             />
-          </div>
-
-          <div className="svc-grid">
-
-            <article className="svc-card" data-svc="Virtual Staging" data-price="20" data-desc="Add virtual furniture and styling to an empty room — per image." data-img="/images/staging-after.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/staging-after.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Virtual Staging</h4>
-                <p className="svc-card__desc">Add furniture &amp; styling to an empty room.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$20 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Declutter" data-price="10" data-desc="Remove clutter, personal items and distractions from photos — per image." data-img="/images/declutter-after.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/declutter-after.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Declutter</h4>
-                <p className="svc-card__desc">Remove clutter and distractions from any photo.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$10 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Day-to-Dusk" data-price="10" data-desc="Convert a daytime exterior into a warm dusk scene — per image." data-img="/images/dusk-after.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/dusk-after.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Day-to-Dusk</h4>
-                <p className="svc-card__desc">Convert a daytime exterior into a warm dusk scene.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$10 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
           </div>
         </div>
 
@@ -1045,13 +1011,23 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Site Plan only" data-price="49" data-desc="Standalone site plan — boundaries, orientation, lot dimensions." data-img="">
+            <article className="svc-card" data-svc="Site Plan" data-price="49" data-desc="Standalone site plan — boundaries, orientation, lot dimensions." data-img="">
               <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Site Plan only</h4>
+                <h4 className="svc-card__name">Site Plan</h4>
                 <p className="svc-card__desc">Standalone site plan — boundaries, orientation, lot dimensions.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$49</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card" data-svc="Floorplan Redraw" data-price="30" data-desc="Redraw an existing plan in Won Vision linework. Per page." data-img="">
+              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Floorplan Redraw</h4>
+                <p className="svc-card__desc">Redraw an existing plan in Won Vision linework. Per page.</p>
+                <div className="svc-card__foot"><span className="svc-card__price">$30</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
