@@ -778,32 +778,32 @@ export default function BookPage() {
           <div className="cat__head"><h3>Rental <em>photography</em></h3><span className="cat__count">3 tiers</span></div>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Rental Compact (8 photos)" data-price="180" data-desc="Rental — 8 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-compact.webp">
+            <article className="svc-card" data-svc="Rental Compact (8 photos)" data-price="180" data-desc="Rental — 8 HDR photos, basic editing, sky correction, same-day delivery." data-img="/images/rental-compact.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-compact.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Compact</h4>
-                <p className="svc-card__desc">8 HDR photos · sky correction · next-day delivery.</p>
+                <p className="svc-card__desc">8 HDR photos · sky correction · same-day delivery.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$180</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Rental Standard (10 photos)" data-price="220" data-desc="Rental — 10 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-standard.webp">
+            <article className="svc-card" data-svc="Rental Standard (10 photos)" data-price="220" data-desc="Rental — 10 HDR photos, basic editing, sky correction, same-day delivery." data-img="/images/rental-standard.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-standard.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Standard</h4>
-                <p className="svc-card__desc">10 HDR photos · sky correction · next-day delivery.</p>
+                <p className="svc-card__desc">10 HDR photos · sky correction · same-day delivery.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$220</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Rental Large (12 photos)" data-price="260" data-desc="Rental — 12 HDR photos, basic editing, sky correction, next-business-day delivery." data-img="/images/rental-large.webp">
+            <article className="svc-card" data-svc="Rental Large (12 photos)" data-price="260" data-desc="Rental — 12 HDR photos, basic editing, sky correction, same-day delivery." data-img="/images/rental-large.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-large.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Rental Large</h4>
-                <p className="svc-card__desc">12 HDR photos · sky correction · next-day delivery.</p>
+                <p className="svc-card__desc">12 HDR photos · sky correction · same-day delivery.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$260</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
@@ -819,7 +819,7 @@ export default function BookPage() {
           </p>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Sales Compact (15 photos)" data-price="195" data-desc="Sales shoot — 15 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-compact.webp">
+            <article className="svc-card" data-svc="Sales Compact (15 photos)" data-price="195" data-desc="Sales shoot — 15 HDR photos, full retouching, sky replacement, same-day delivery, agent-facing licensing." data-img="/images/sales-compact.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-compact.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
@@ -829,7 +829,7 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Sales Standard (20 photos)" data-price="295" data-desc="Sales shoot — 20 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-standard.webp">
+            <article className="svc-card" data-svc="Sales Standard (20 photos)" data-price="295" data-desc="Sales shoot — 20 HDR photos, full retouching, sky replacement, same-day delivery, agent-facing licensing." data-img="/images/sales-standard.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-standard.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
@@ -839,7 +839,7 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Sales Premium (25 photos)" data-price="395" data-desc="Sales shoot — 25 HDR photos, full retouching, sky replacement, next-business-day delivery, agent-facing licensing." data-img="/images/sales-premium.webp">
+            <article className="svc-card" data-svc="Sales Premium (25 photos)" data-price="395" data-desc="Sales shoot — 25 HDR photos, full retouching, sky replacement, same-day delivery, agent-facing licensing." data-img="/images/sales-premium.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-premium.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
@@ -857,22 +857,22 @@ export default function BookPage() {
           <div className="cat__head"><h3>Aerial <em>/ drone</em></h3><span className="cat__count">Aerial</span></div>
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="Professional drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview." data-img="/images/drone-set.webp">
+            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="Professional drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview. Same-day delivery." data-img="/images/drone-set.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Drone Set</h4>
-                <p className="svc-card__desc">5 edited images — 2 hero, 2 POI, 1 plot overview.</p>
+                <p className="svc-card__desc">5 edited images — 2 hero, 2 POI, 1 plot overview · same-day delivery.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$220</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Additional Drone Image" data-price="25" data-desc="Each drone image beyond the standard 5-image set." data-img="/images/drone-additional.webp">
+            <article className="svc-card" data-svc="Additional Drone Image" data-price="25" data-desc="Each drone image beyond the standard 5-image set. Same-day delivery." data-img="/images/drone-additional.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/drone-additional.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Additional Drone Image</h4>
-                <p className="svc-card__desc">Each image beyond the standard 5-image set.</p>
+                <p className="svc-card__desc">Each image beyond the standard 5-image set · same-day delivery.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$25 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
