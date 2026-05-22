@@ -895,7 +895,12 @@ export default function BookPage() {
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Compact Listing Video</h4>
-                <p className="svc-card__desc">30–60s · no agent footage · drone footage included.</p>
+                <ul className="pkg-card__incl">
+                  <li>30–60s edit · 16:9 cinematic</li>
+                  <li>Exterior + drone footage</li>
+                  <li>No agent on camera</li>
+                  <li>Music-bedded, full grade</li>
+                </ul>
                 <div className="svc-card__foot"><span className="svc-card__price">$349</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
@@ -914,7 +919,13 @@ export default function BookPage() {
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Listing Video</h4>
-                <p className="pkg-card__desc">A cinematic 16:9 listing film with agent footage and drone footage — music-bedded, full grade. Standard runs 30–60s; Premium extends to 60–90s.</p>
+                <ul className="pkg-card__incl">
+                  <li>Cinematic 16:9 listing film</li>
+                  <li>Agent footage on camera</li>
+                  <li>Drone footage included</li>
+                  <li>Music-bedded · full grade</li>
+                  <li>Standard 30–60s · Premium 60–90s</li>
+                </ul>
                 <div className="pkg-card__tiers">
                   <label>Edit length</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
