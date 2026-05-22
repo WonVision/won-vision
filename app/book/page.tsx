@@ -909,6 +909,7 @@ export default function BookPage() {
               className="pkg-card"
               data-pkg="listing-video"
               data-cats="video"
+              data-gallery="none"
               data-pkg-name="Listing Video"
               data-pkg-img="/images/cinematic.webp"
               data-tiers='{"standard":{"label":"Standard · 30–60s","price":499},"premium":{"label":"Premium · 60–90s","price":649}}'
