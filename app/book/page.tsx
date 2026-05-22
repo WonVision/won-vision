@@ -705,12 +705,12 @@ export default function BookPage() {
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Signature</h4>
-                <p className="pkg-card__desc">Photo + plan + drone + a full listing video — the complete agent deliverable.</p>
+                <p className="pkg-card__desc">Photo + plan + drone + Standard Listing Video — agent footage and drone footage included.</p>
                 <ul className="pkg-card__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
                   <li>2D floor plan + 5-image drone set</li>
-                  <li>Listing Video 16:9 · 40 / 50 / 60s</li>
-                  <li>2-business-day video delivery</li>
+                  <li>Standard Listing Video · 30–60s</li>
+                  <li>Includes agent footage + drone footage</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -745,12 +745,12 @@ export default function BookPage() {
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Cinematic</h4>
-                <p className="pkg-card__desc">Luxury listing presentation — twilight imagery and a 90-second cinematic film.</p>
+                <p className="pkg-card__desc">Photo + plan + drone + Premium Listing Video — the flagship luxury deliverable.</p>
                 <ul className="pkg-card__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
                   <li>2D floor plan + 5-image drone set</li>
-                  <li>90s premium cinematic, full grade</li>
-                  <li>5 twilight images · priority editing</li>
+                  <li>Premium Listing Video · 60–90s</li>
+                  <li>Includes agent footage + drone footage</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -885,10 +885,20 @@ export default function BookPage() {
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
           <div className="cat__head"><h3>Video</h3><span className="cat__count">3 products</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            One listing video, priced by tier — just like the packages. Length scales with the tier: 40s (Compact), 50s (Standard), 60s (Premium). Optional +30s extended cut for $100.
+            Compact Listing Video is exterior + drone footage only — no agent on camera. Standard and Premium Listing Video both include agent footage and drone footage; Premium extends to a 60–90s edit.
           </p>
 
           <div className="svc-grid">
+
+            <article className="svc-card" data-svc="Compact Listing Video (30–60s · no agent)" data-price="349" data-desc="Compact Listing Video · 30–60s. Exterior and drone footage only, no agent on camera. 16:9, music-bedded." data-img="/images/cinematic.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Compact Listing Video</h4>
+                <p className="svc-card__desc">30–60s · no agent footage · drone footage included.</p>
+                <div className="svc-card__foot"><span className="svc-card__price">$349</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
 
             <article
               className="pkg-card"
@@ -896,7 +906,7 @@ export default function BookPage() {
               data-cats="video"
               data-pkg-name="Listing Video"
               data-pkg-img="/images/cinematic.webp"
-              data-tiers='{"compact":{"label":"Compact · 15 photos","price":349},"standard":{"label":"Standard · 20 photos","price":499},"premium":{"label":"Premium · 25 photos","price":649}}'
+              data-tiers='{"standard":{"label":"Standard · 30–60s","price":499},"premium":{"label":"Premium · 60–90s","price":649}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Listing video</span>
@@ -904,18 +914,17 @@ export default function BookPage() {
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Listing Video</h4>
-                <p className="pkg-card__desc">A cinematic 16:9 listing film — gimbal walkthrough plus exterior and drone B-roll, music-bedded. Length and edit scale with the tier.</p>
+                <p className="pkg-card__desc">A cinematic 16:9 listing film with agent footage and drone footage — music-bedded, full grade. Standard runs 30–60s; Premium extends to 60–90s.</p>
                 <div className="pkg-card__tiers">
-                  <label>Property size</label>
+                  <label>Edit length</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
-                    <button type="button" data-tier="compact" className="is-active">Compact<small>15 photos</small></button>
-                    <button type="button" data-tier="standard">Standard<small>20 photos</small></button>
-                    <button type="button" data-tier="premium">Premium<small>25 photos</small></button>
+                    <button type="button" data-tier="standard" className="is-active">Standard<small>30–60s</small></button>
+                    <button type="button" data-tier="premium">Premium<small>60–90s</small></button>
                   </div>
                 </div>
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
-                  <span className="pkg-card__price" data-pkg-price>$349</span>
+                  <span className="pkg-card__price" data-pkg-price>$499</span>
                   <span className="pkg-card__list" data-pkg-list hidden></span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
@@ -929,16 +938,6 @@ export default function BookPage() {
                 <h4 className="svc-card__name">Social Reel</h4>
                 <p className="svc-card__desc">30s portrait 9:16 cut for Instagram and TikTok.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$195</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Walk-through Video (2–3 min)" data-price="295" data-desc="Handheld stabilised room-by-room walk-through, 2–3 minutes — the buyer-facing remote inspection format." data-img="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Walk-through</h4>
-                <p className="svc-card__desc">2–3 min handheld · buyer-facing remote inspection format.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$295</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 

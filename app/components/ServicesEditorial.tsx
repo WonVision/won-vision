@@ -25,7 +25,7 @@ const allServices: Service[] = [
   {
     num: '02',
     name: 'Video',
-    meta: 'Walkthrough · Cinematic',
+    meta: 'Listing Video · Cinematic',
     href: '/book#cat-video',
     img: '/images/cinematic.webp',
     caption: 'Video',

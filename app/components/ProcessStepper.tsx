@@ -22,7 +22,7 @@ const steps = [
   {
     num: '04',
     name: 'Deliver',
-    desc: 'Edited files within 48 hours — high-res, web set, walkthrough cut, brand-aligned plans.',
+    desc: 'Edited files within 48 hours — high-res, web set, listing video cut, brand-aligned plans.',
   },
 ];
 

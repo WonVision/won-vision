@@ -443,15 +443,15 @@ export default function HomePage() {
               </div>
               <div className="home-pkg__body">
                 <h3 className="home-pkg__name">Signature</h3>
-                <p className="home-pkg__desc">Photo + plan + drone + a full listing video — the complete agent deliverable.</p>
+                <p className="home-pkg__desc">Photo + plan + drone + Standard Listing Video — agent footage and drone footage included.</p>
                 <ul className="home-pkg__incl">
                   <li>15 / 20 / 25 HDR photos by tier</li>
                   <li>2D floor plan + 5-image drone set</li>
-                  <li>Listing video 16:9 · 40 / 50 / 60s</li>
-                  <li>2-business-day video delivery</li>
+                  <li>Standard Listing Video · 30–60s</li>
+                  <li>Includes agent footage + drone footage</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$540</span>
+                  <span className="home-pkg__price"><small>From</small>$499</span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
@@ -466,15 +466,15 @@ export default function HomePage() {
               </div>
               <div className="home-pkg__body">
                 <h3 className="home-pkg__name">Cinematic</h3>
-                <p className="home-pkg__desc">Twilight imagery and a 90-second cinematic — luxury listing presentation.</p>
+                <p className="home-pkg__desc">Photo + plan + drone + Premium Listing Video — the flagship luxury deliverable.</p>
                 <ul className="home-pkg__incl">
                   <li>15 / 20 / 25 HDR photos by tier</li>
                   <li>2D floor plan + 5-image drone set</li>
-                  <li>90s premium cinematic, full grade</li>
-                  <li>5 twilight images · priority editing</li>
+                  <li>Premium Listing Video · 60–90s</li>
+                  <li>Includes agent footage + drone footage</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$880</span>
+                  <span className="home-pkg__price"><small>From</small>$649</span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
