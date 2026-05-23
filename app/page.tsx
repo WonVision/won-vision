@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const SHOW_VIDEO = false;
+  const SHOW_VIDEO = true;
   return (
     <>
       <LoaderGate />
@@ -421,15 +421,15 @@ export default function HomePage() {
               </div>
               <div className="home-pkg__body">
                 <h3 className="home-pkg__name">Showcase</h3>
-                <p className="home-pkg__desc">Photos, floor plan and a 5-image drone set — the standard suburban listing bundle.</p>
+                <p className="home-pkg__desc">Photos, floor plan, and aerial context in one shoot — the standard suburban listing bundle.</p>
                 <ul className="home-pkg__incl">
-                  <li>15 / 20 / 25 HDR photos by tier</li>
+                  <li>15 / 20 / 25 HDR photos (by tier)</li>
                   <li>2D floor plan with dimensions</li>
                   <li>Drone set — 5 edited images</li>
                   <li>Next-business-day delivery</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$280</span>
+                  <span className="home-pkg__price"><small>From</small>$350</span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
@@ -445,13 +445,13 @@ export default function HomePage() {
                 <h3 className="home-pkg__name">Signature</h3>
                 <p className="home-pkg__desc">Photo + plan + drone + Standard Listing Video — agent footage and drone footage included.</p>
                 <ul className="home-pkg__incl">
-                  <li>15 / 20 / 25 HDR photos by tier</li>
+                  <li>15 / 20 / 25 HDR photos (by tier)</li>
                   <li>2D floor plan + 5-image drone set</li>
                   <li>Standard Listing Video · 30–60s</li>
                   <li>Includes agent footage + drone footage</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$499</span>
+                  <span className="home-pkg__price"><small>From</small>$675</span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
@@ -468,13 +468,13 @@ export default function HomePage() {
                 <h3 className="home-pkg__name">Cinematic</h3>
                 <p className="home-pkg__desc">Photo + plan + drone + Premium Listing Video — the flagship luxury deliverable.</p>
                 <ul className="home-pkg__incl">
-                  <li>15 / 20 / 25 HDR photos by tier</li>
+                  <li>15 / 20 / 25 HDR photos (by tier)</li>
                   <li>2D floor plan + 5-image drone set</li>
                   <li>Premium Listing Video · 60–90s</li>
                   <li>Includes agent footage + drone footage</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$649</span>
+                  <span className="home-pkg__price"><small>From</small>$1,100</span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
