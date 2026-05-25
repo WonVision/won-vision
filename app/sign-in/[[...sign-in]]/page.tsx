@@ -138,7 +138,7 @@ export default function SignInPage() {
           padding: '48px 24px 80px',
         }}
       >
-        <div style={{ width: '100%', maxWidth: 440 }}>
+        <div style={{ width: '100%', maxWidth: 440, textAlign: 'center' }}>
           <p
             style={{
               fontSize: 11,
