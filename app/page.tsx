@@ -5,6 +5,7 @@ import LoaderGate from './components/LoaderGate';
 import ServicesEditorial from './components/ServicesEditorial';
 import ProcessStepper from './components/ProcessStepper';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
+import NavAuth from './components/NavAuth';
 
 export const metadata: Metadata = {
   title: {
@@ -267,6 +268,7 @@ export default function HomePage() {
           <a href="/gallery">Gallery</a>
         </nav>
         <div className="nav__right">
+          <NavAuth />
           <a href="/book" className="nav__cta">Book now</a>
         </div>
         <button className="nav__burger" aria-label="Menu" aria-expanded="false">

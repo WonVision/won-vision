@@ -20,7 +20,10 @@ const GA4_MEASUREMENT_ID = "G-MHFPGW1T7F";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      signInUrl="/sign-in"
+      signInFallbackRedirectUrl="/portal"
+    >
       <html lang="en" className={sora.variable}>
         <body id="top">
           {/* Runs before paint: if the intro loader will show this session,
