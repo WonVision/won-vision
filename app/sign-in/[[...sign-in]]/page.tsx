@@ -25,13 +25,16 @@ const wonVisionAppearance = {
     fontSize: '14px',
   },
   elements: {
-    rootBox: { width: '100%' },
+    rootBox: { width: '100%', maxWidth: 440, margin: '0 auto' },
     card: {
       backgroundColor: '#FFFFFF',
       border: '1px solid #E5E5E5',
       borderRadius: 0,
       boxShadow: 'none',
       padding: '40px 36px',
+      width: '100%',
+      boxSizing: 'border-box',
+      margin: 0,
     },
     headerTitle: {
       fontFamily: 'var(--font-sora), system-ui, sans-serif',
