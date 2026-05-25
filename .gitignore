@@ -9,5 +9,7 @@ out
 next-env.d.ts
 playwright-report
 test-results
-.env*.local
+.env
+.env.*
+!.env.example
 .gstack/
