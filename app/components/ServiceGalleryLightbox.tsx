@@ -9,6 +9,16 @@ type Media = {
   poster?: string;
 };
 
+// Per-service example buckets — keyed by the slug used in book/page.tsx
+// .cat[data-gallery="..."] attribute. Each .cat section maps to ONE service
+// bucket, so opening Examples from a Video card shows only video examples,
+// from a Drone card shows only drone examples, etc.
+//
+// To add more examples for a service later: drop a webp/mp4 into
+// public/images or public/video, then push a new entry onto the matching
+// array below — no other component changes required. Buckets with an empty
+// array are treated as "no examples yet" and the Examples button is not
+// injected for that section.
 const galleries: Record<string, Media[]> = {
   photography: [
     { src: '/images/showcase.webp', caption: 'Showcase' },
@@ -20,15 +30,6 @@ const galleries: Record<string, Media[]> = {
     { src: '/images/sales-premium.webp', caption: 'Sales · Premium' },
     { src: '/images/additional-photos.webp', caption: 'Additional photos' },
   ],
-  staging: [
-    { src: '/images/staging-after.webp', caption: 'Virtual staging' },
-    { src: '/images/dusk-after.webp', caption: 'Day-to-dusk' },
-    { src: '/images/declutter-after.webp', caption: 'Decluttering' },
-  ],
-  drone: [
-    { src: '/images/drone-set.webp', caption: 'Drone set' },
-    { src: '/images/drone-additional.webp', caption: 'Additional aerial' },
-  ],
   video: [
     {
       src: '/video/cinematic-demo.mp4',
@@ -37,13 +38,27 @@ const galleries: Record<string, Media[]> = {
       caption: 'Listing Video · 90s',
     },
   ],
+  drone: [
+    { src: '/images/drone-set.webp', caption: 'Drone set' },
+    { src: '/images/drone-additional.webp', caption: 'Additional aerial' },
+  ],
+  staging: [
+    { src: '/images/staging-after.webp', caption: 'Virtual staging' },
+    { src: '/images/dusk-after.webp', caption: 'Day-to-dusk' },
+    { src: '/images/declutter-after.webp', caption: 'Decluttering' },
+  ],
+  // Floor plan render examples land here once we have delivered assets to
+  // showcase. Until then the empty array suppresses the Examples button
+  // on the floor-plan section (handled by the length guard in inject()).
+  floorplans: [],
 };
 
 const titles: Record<string, string> = {
   photography: 'Photography',
-  staging: 'Virtual staging',
-  drone: 'Aerial / drone',
   video: 'Video',
+  drone: 'Aerial / drone',
+  staging: 'Virtual staging',
+  floorplans: 'Floor plans',
 };
 
 const ICON_SVG =
@@ -76,8 +91,9 @@ export default function ServiceGalleryLightbox() {
         const cat = card.closest('.cat') as HTMLElement | null;
         const catKey = cat?.dataset.gallery;
         const key = cardOverride || catKey;
-        // Only inject where a gallery exists — no dead buttons.
-        if (!key || !galleries[key]) return;
+        // Only inject where a gallery exists AND has at least one example —
+        // no dead buttons on services that don't yet have showcase media.
+        if (!key || !galleries[key] || galleries[key].length === 0) return;
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'svc-card__gallery-btn';
@@ -107,7 +123,7 @@ export default function ServiceGalleryLightbox() {
       e.preventDefault();
       e.stopPropagation();
       const key = btn.dataset.galleryBtn;
-      if (key && galleries[key]) setActive(key);
+      if (key && galleries[key] && galleries[key].length > 0) setActive(key);
     };
     const esc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setActive(null);
