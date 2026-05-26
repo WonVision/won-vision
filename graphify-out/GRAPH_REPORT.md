@@ -1,16 +1,16 @@
-# Graph Report - won-vision  (2026-05-22)
+# Graph Report - wv-v3  (2026-05-26)
 
 ## Corpus Check
-- 71 files · ~234,714 words
+- 73 files · ~236,131 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 302 nodes · 339 edges · 82 communities (72 shown, 10 thin omitted)
-- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.8)
+- 336 nodes · 390 edges · 88 communities (74 shown, 14 thin omitted)
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e16da873`
+- Built from commit: `ef1bef96`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -29,6 +29,7 @@
 - [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
 - [[_COMMUNITY_Community 17|Community 17]]
@@ -38,36 +39,40 @@
 - [[_COMMUNITY_Community 21|Community 21]]
 - [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `processPhoto()` - 17 edges
-2. `Wordmark()` - 16 edges
-3. `processProperty()` - 10 edges
-4. `createDraft()` - 9 edges
-5. `submitProperty()` - 9 edges
-6. `attachPhoto()` - 8 edges
-7. `buildPrompt()` - 7 edges
-8. `generate()` - 7 edges
-9. `uploadFromUrl()` - 7 edges
-10. `buildProcessingPath()` - 7 edges
+1. `Wordmark()` - 23 edges
+2. `processPhoto()` - 17 edges
+3. `buildPrompt()` - 10 edges
+4. `processProperty()` - 10 edges
+5. `buildProcessingPath()` - 9 edges
+6. `buildReviewPath()` - 9 edges
+7. `createDraft()` - 9 edges
+8. `submitProperty()` - 9 edges
+9. `generate()` - 8 edges
+10. `uploadFromUrl()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `ensureDraft()` --calls--> `createDraft()`  [INFERRED]
-  app/admin/editor/new/IntakeForm.tsx → lib/intake/actions.ts
-- `onCreateDraft()` --calls--> `createDraft()`  [INFERRED]
-  app/admin/editor/new/Stepper.tsx → lib/intake/actions.ts
-- `POST()` --calls--> `verify()`  [INFERRED]
-  app/api/vision-studio/property-from-job/route.ts → lib/crypto/hmac.ts
-- `handleSubmit()` --calls--> `attachPhoto()`  [INFERRED]
-  app/admin/editor/new/ReviewScreen.tsx → lib/intake/actions.ts
-- `handleSubmit()` --calls--> `submitProperty()`  [INFERRED]
-  app/admin/editor/new/ReviewScreen.tsx → lib/intake/actions.ts
+- `generateIntermediate()` --calls--> `generate()`  [INFERRED]
+  lib/workflow/process-photo.ts → /Users/kiranc/Code/won-vision/lib/fal/client.ts
+- `generateAndUploadVariant()` --calls--> `generate()`  [INFERRED]
+  lib/workflow/process-photo.ts → /Users/kiranc/Code/won-vision/lib/fal/client.ts
+- `ensureDropboxFolders()` --calls--> `ensureFolder()`  [INFERRED]
+  lib/workflow/process-property.ts → /Users/kiranc/Code/won-vision/lib/dropbox/client.ts
+- `intakePhoto()` --calls--> `uploadFromUrl()`  [INFERRED]
+  lib/workflow/process-property.ts → /Users/kiranc/Code/won-vision/lib/dropbox/client.ts
+- `processPhoto()` --calls--> `buildProcessingPath()`  [INFERRED]
+  lib/workflow/process-photo.ts → /Users/kiranc/Code/won-vision/lib/dropbox/paths.ts
 
-## Communities (82 total, 10 thin omitted)
+## Communities (88 total, 14 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.15
-Nodes (8): attachPhoto(), createDraft(), requireEditor(), submitProperty(), isStylePreset(), handleSubmit(), onCreateDraft(), onSubmit()
+Cohesion: 0.08
+Nodes (4): BookPage(), WonVisionMark(), Wordmark(), TermsPage()
 
 ### Community 1 - "Community 1"
 Cohesion: 0.18
@@ -78,64 +83,68 @@ Cohesion: 0.17
 Nodes (13): buildIntakePath(), buildProcessingPath(), buildReviewPath(), slugifyAddress(), batch(), orderServices(), ensureDropboxFolders(), intakePhoto() (+5 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.1
-Nodes (3): BookPage(), WonVisionMark(), Wordmark()
+Cohesion: 0.15
+Nodes (8): attachPhoto(), createDraft(), requireEditor(), submitProperty(), isStylePreset(), handleSubmit(), onCreateDraft(), onSubmit()
 
 ### Community 4 - "Community 4"
-Cohesion: 0.13
+Cohesion: 0.12
 Nodes (7): onTilt(), open(), schedule(), setHidden(), step(), update(), __wvBoot()
 
 ### Community 5 - "Community 5"
-Cohesion: 0.15
-Nodes (6): onTilt(), open(), schedule(), setHidden(), step(), update()
+Cohesion: 0.2
+Nodes (6): buildDuskPrompt(), buildSkyPrompt(), generate(), generateFromHelper(), pickModel(), buildPrompt()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.15
 Nodes (6): onTilt(), open(), schedule(), setHidden(), step(), update()
 
 ### Community 7 - "Community 7"
+Cohesion: 0.15
+Nodes (6): onTilt(), open(), schedule(), setHidden(), step(), update()
+
+### Community 8 - "Community 8"
 Cohesion: 0.17
 Nodes (3): formatAddress(), ensureDraft(), handleContinue()
 
-### Community 8 - "Community 8"
+### Community 9 - "Community 9"
 Cohesion: 0.35
 Nodes (10): add_eyebrow(), add_para(), add_section_title(), hr(), page_break(), Generates Won Vision Brand Book.docx — a designer-facing brand document with the, Fill a table cell with a flat colour., remove_table_borders() (+2 more)
-
-### Community 9 - "Community 9"
-Cohesion: 0.27
-Nodes (6): buildDuskPrompt(), buildSkyPrompt(), generate(), generateFromHelper(), pickModel(), buildPrompt()
 
 ### Community 10 - "Community 10"
 Cohesion: 0.48
 Nodes (5): pruneSeen(), sign(), verify(), bad(), POST()
 
-### Community 13 - "Community 13"
+### Community 11 - "Community 11"
+Cohesion: 0.53
+Nodes (4): onKeyDown(), onPointerDown(), onPointerMove(), onPointerUp()
+
+### Community 14 - "Community 14"
 Cohesion: 0.6
 Nodes (3): esc(), handler(), inject()
 
-### Community 16 - "Community 16"
-Cohesion: 0.83
+### Community 15 - "Community 15"
+Cohesion: 0.8
 Nodes (3): exchangeAuthCode(), main(), refreshAccessToken()
 
 ## Knowledge Gaps
 - **1 isolated node(s):** `Fill a table cell with a flat colour.`
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `generate()` connect `Community 9` to `Community 1`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `createDraft()` connect `Community 0` to `Community 7`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `generate()` connect `Community 5` to `Community 1`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `processPhoto()` connect `Community 1` to `Community 2`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `processPhoto()` (e.g. with `buildProcessingPath()` and `buildReviewPath()`) actually correct?**
   _`processPhoto()` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 2 inferred relationships involving `createDraft()` (e.g. with `ensureDraft()` and `onCreateDraft()`) actually correct?**
-  _`createDraft()` has 2 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 2 inferred relationships involving `submitProperty()` (e.g. with `handleSubmit()` and `onSubmit()`) actually correct?**
-  _`submitProperty()` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 4 inferred relationships involving `buildPrompt()` (e.g. with `buildDuskPrompt()` and `buildSkyPrompt()`) actually correct?**
+  _`buildPrompt()` has 4 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 2 inferred relationships involving `buildProcessingPath()` (e.g. with `ensureDropboxFolders()` and `processPhoto()`) actually correct?**
+  _`buildProcessingPath()` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Fill a table cell with a flat colour.` to the rest of the system?**
   _1 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._

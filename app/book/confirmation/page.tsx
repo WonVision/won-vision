@@ -19,41 +19,106 @@ export default function ConfirmationPage() {
         crossOrigin=""
       />
       <style>{`
+  /* Confirmation page — mirrors the booking confirmation email layout
+     (hero / portal CTA / map / shoot details / add-to-calendar) but
+     widened and made fluid for the website. Pure B&W per design_won_vision. */
+  .confirm-page{padding:120px var(--gutter) 96px;background:#FFFFFF;text-align:center}
+  .confirm-page__inner{max-width:880px;margin:0 auto;text-align:left}
+  .confirm-page__inner > .progress,
+  .confirm-page__inner > .confirm-page__hero{text-align:center}
+  .confirm-page__hero{margin-bottom:32px}
+  .confirm-page__check{background:#000000;color:#FFFFFF;border-radius:0;margin:0 auto 28px}
+  .confirm-page h1{font-family:var(--display);font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1.05;letter-spacing:-0.005em;color:#000000;margin:0 0 14px}
+  .confirm-page h1 em{font-style:italic;color:#000000;font-weight:400}
+  .confirm-page .lede{font-family:var(--display);font-style:italic;font-size:clamp(16px,1.6vw,20px);color:#404040;margin:0 auto 24px;max-width:560px}
+  .confirm-page__ref{
+    display:inline-block;background:#FFFFFF;color:#000000;
+    border:1px solid #000000;padding:10px 18px;border-radius:0;
+    font-family:var(--body);font-size:11px;letter-spacing:0.32em;text-transform:uppercase;font-weight:600;
+    margin-bottom:0;
+  }
+
+  /* Portal CTA card */
+  .confirm-page__portal{
+    background:#FFFFFF;border:1px solid #E5E5E5;
+    padding:32px;margin:32px 0;text-align:center;max-width:none;
+  }
+  .confirm-page__portal h4{font-family:var(--display);font-weight:500;font-size:22px;color:#000000;margin:0 0 8px;letter-spacing:-0.005em}
+  .confirm-page__portal p{font-family:var(--body);font-size:14px;color:#404040;line-height:1.6;margin:0 auto 20px;max-width:480px}
+  .confirm-page__portal a{
+    display:inline-block;background:#000000;color:#FFFFFF;border:1px solid #000000;
+    padding:16px 28px;border-radius:0;
+    font-family:var(--body);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;
+    text-decoration:none;transition:background .25s ease, color .25s ease;
+  }
+  .confirm-page__portal a:hover{background:#FFFFFF;color:#000000}
+
+  /* Map */
   .confirm-map{
-    position:relative;
-    height:280px;max-width:520px;margin:32px auto;
-    background:var(--soft);
-    border:1px solid rgba(74,74,72,0.16);
-    overflow:hidden;
+    position:relative;height:320px;max-width:none;margin:24px 0 0;
+    background:#F5F5F5;border:1px solid #E5E5E5;overflow:hidden;
   }
   .confirm-map__canvas{
-    position:absolute;inset:0;background:var(--soft);
-    filter:grayscale(1) contrast(1.05) brightness(0.97) sepia(0.04) hue-rotate(180deg) saturate(0.4);
+    position:absolute;inset:0;background:#F5F5F5;
+    filter:grayscale(1) contrast(1.05) brightness(0.98);
   }
-  .confirm-map .leaflet-container{background:var(--soft) !important;outline:none !important}
+  .confirm-map .leaflet-container{background:#F5F5F5 !important;outline:none !important}
   .confirm-map .leaflet-control-attribution,
   .confirm-map .leaflet-control-zoom,
   .confirm-map .leaflet-control-container{display:none !important}
   .confirm-map__label{
-    position:absolute;top:14px;left:14px;z-index:5;
-    background:var(--paper);padding:8px 12px;
-    font-family:var(--body);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
-    color:var(--ink);font-weight:600;
-    border:1px solid rgba(74,74,72,0.15);
+    position:absolute;top:14px;left:14px;z-index:5;background:#FFFFFF;
+    padding:8px 12px;font-family:var(--body);font-size:10px;letter-spacing:0.22em;
+    text-transform:uppercase;color:#000000;font-weight:600;border:1px solid #E5E5E5;
   }
   .map-pulse{transform-origin:center;animation:cmPulse 2.4s ease-in-out infinite}
   @keyframes cmPulse{
     0%,100%{stroke-opacity:0.55;fill-opacity:0.18;transform:scale(1)}
     50%{stroke-opacity:0.2;fill-opacity:0.05;transform:scale(1.5)}
   }
-  @media (max-width:560px){
-    .confirm-map{height:200px;margin:24px auto}
-    .confirm-map__label{font-size:9px;padding:6px 10px}
-    .confirm-page__check{width:56px;height:56px;font-size:24px}
-    .confirm-page__portal{padding:20px;margin:24px auto}
-    .confirm-page__portal h4{font-size:18px}
-    .confirm-page__portal p{font-size:13px}
-    .confirm-page__portal a{padding:12px 18px;font-size:11px}
+
+  /* Shoot details table — same look as the email detail rows */
+  .confirm-details{margin:32px 0 28px;border-top:1px solid #E5E5E5}
+  .confirm-details__row{
+    display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 4px;
+    border-bottom:1px solid #E5E5E5;align-items:start;
+  }
+  .confirm-details__label{
+    font-family:var(--body);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+    color:#737373;font-weight:500;padding-top:3px;
+  }
+  .confirm-details__value{font-family:var(--body);font-size:16px;line-height:1.5;color:#000000;font-weight:500;word-break:break-word}
+  .confirm-details__value a{color:#000000;text-decoration:underline}
+
+  /* Add-to-calendar */
+  .confirm-cta{margin:0 0 16px}
+  .confirm-cta a{
+    display:block;background:#FFFFFF;color:#000000;border:1px solid #000000;
+    padding:18px 24px;text-align:center;border-radius:0;text-decoration:none;
+    font-family:var(--body);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;
+    transition:background .25s ease, color .25s ease;
+  }
+  .confirm-cta a:hover{background:#000000;color:#FFFFFF}
+  .confirm-cta__note{font-family:var(--body);font-size:11px;color:#737373;text-align:center;margin:10px 0 0;letter-spacing:0.04em}
+
+  .confirm-footnote{font-family:var(--body);font-size:13px;color:#737373;text-align:center;margin:32px auto 0;line-height:1.7;max-width:520px}
+  .confirm-footnote strong{color:#000000}
+  .confirm-footnote a{color:#000000;text-decoration:underline}
+
+  @media (max-width:760px){
+    .confirm-page{padding:88px var(--gutter) 56px}
+    .confirm-page__check{width:60px;height:60px;font-size:26px;margin-bottom:24px}
+    .confirm-page__portal{padding:22px;margin:24px 0}
+    .confirm-map{height:240px}
+    .confirm-details__row{grid-template-columns:1fr;gap:6px;padding:14px 4px}
+    .confirm-details__label{padding-top:0}
+    .confirm-details__value{font-size:15px}
+  }
+  @media (max-width:480px){
+    .confirm-page__check{width:54px;height:54px;font-size:22px}
+    .confirm-page .lede{font-size:15px}
+    .confirm-map{height:200px}
+    .confirm-page__portal a,.confirm-cta a{padding:14px 20px;font-size:12px;letter-spacing:0.2em}
   }
 `}</style>
 
@@ -93,24 +158,54 @@ export default function ConfirmationPage() {
         </div>
 
         <div className="confirm-page__inner">
-          <div className="confirm-page__check">✓</div>
-          <h1>Booking <em>locked in.</em></h1>
-          <p className="lede">Studio will reach out within one working day to confirm details and send the call sheet.</p>
-          <span className="confirm-page__ref" id="bookingRef">Ref: WV-PENDING</span>
-
-          <div className="confirm-map" id="confirmMap" hidden>
-            <div className="confirm-map__canvas" id="confirmMapCanvas" aria-label="Booked property location"></div>
-            <div className="confirm-map__label" id="confirmMapLabel">Property location</div>
+          <div className="confirm-page__hero">
+            <div className="confirm-page__check">✓</div>
+            <h1>Booking <em>locked in.</em></h1>
+            <p className="lede">A confirmation email with the full call sheet will reach you one working day before the shoot.</p>
+            <span className="confirm-page__ref" id="bookingRef">Ref: WV-PENDING</span>
           </div>
 
           <div className="confirm-page__portal" id="portalCard">
             <h4>Your client portal</h4>
             <p id="portalCopy">Track shoot status, download files when ready, and message the studio — all from a single page tied to this booking.</p>
             <a id="portalLink" target="_blank" rel="noopener noreferrer" hidden>Open client portal →</a>
-            <p id="portalPending" style={{ fontSize: 13, color: 'var(--graphite)', margin: 0 }}>We&apos;ll email your portal link to <strong id="portalPendingEmail">your address</strong> shortly.</p>
+            <p id="portalPending" style={{ fontSize: 13, color: '#737373', margin: 0 }}>We&apos;ll email your portal link to <strong id="portalPendingEmail" style={{ color: '#000' }}>your address</strong> shortly.</p>
           </div>
 
-          <p style={{ fontSize: 13, color: 'var(--graphite)', marginTop: 24 }}>A confirmation email has been sent to <strong id="clientEmail" style={{ color: 'var(--ink)' }}>your address</strong>.<br />If urgent, call <a href="tel:+61416894541" style={{ color: 'var(--fg)', textDecoration: 'underline' }}>0416 894 541</a>.</p>
+          <div className="confirm-map" id="confirmMap" hidden>
+            <div className="confirm-map__canvas" id="confirmMapCanvas" aria-label="Booked property location"></div>
+            <div className="confirm-map__label" id="confirmMapLabel">Property location</div>
+          </div>
+
+          <div className="confirm-details" id="confirmDetails">
+            <div className="confirm-details__row">
+              <div className="confirm-details__label">Date &amp; Time</div>
+              <div className="confirm-details__value" id="detailWhen">—</div>
+            </div>
+            <div className="confirm-details__row">
+              <div className="confirm-details__label">Address</div>
+              <div className="confirm-details__value" id="detailAddress">—</div>
+            </div>
+            <div className="confirm-details__row">
+              <div className="confirm-details__label">Package</div>
+              <div className="confirm-details__value" id="detailPackage">—</div>
+            </div>
+            <div className="confirm-details__row" id="detailNotesRow" hidden>
+              <div className="confirm-details__label">Notes</div>
+              <div className="confirm-details__value" id="detailNotes">—</div>
+            </div>
+            <div className="confirm-details__row">
+              <div className="confirm-details__label">Reference</div>
+              <div className="confirm-details__value" id="detailRef">—</div>
+            </div>
+          </div>
+
+          <div className="confirm-cta">
+            <a id="calendarLink" href="#" target="_blank" rel="noopener noreferrer">Add to calendar</a>
+            <p className="confirm-cta__note">Works with Google Calendar, Apple Calendar, Outlook &amp; more.</p>
+          </div>
+
+          <p className="confirm-footnote">A confirmation email has been sent to <strong id="clientEmail">your address</strong>.<br />If urgent, call <a href="tel:+61416894541">0416 894 541</a>.</p>
         </div>
       </section>
 
@@ -184,6 +279,94 @@ export default function ConfirmationPage() {
     const emailEl = document.getElementById('clientEmail');
     refEl.textContent = 'Ref: ' + fallbackRef;
     if (details.email) emailEl.textContent = details.email;
+
+    // Belt-and-braces new-tab open for the portal CTA. target="_blank"
+    // alone has been unreliable on this page (popup blockers + occasional
+    // same-tab navigation reports). Bind an explicit window.open with
+    // preventDefault on success so the click always opens a fresh tab.
+    if (linkEl){
+      linkEl.addEventListener('click', function(ev){
+        const href = linkEl.getAttribute('href');
+        if (!href) return;
+        const win = window.open(href, '_blank', 'noopener,noreferrer');
+        if (win){
+          ev.preventDefault();
+          try { win.opener = null; } catch(e) {}
+        }
+      });
+    }
+
+    // Populate shoot-details table from sessionStorage (mirrors the
+    // confirmation email body for at-a-glance review on this page).
+    (function fillDetails(){
+      const fullAddress = [details.address, details.suburb, details.state, details.postcode]
+        .filter(Boolean).join(', ');
+      const pkg = (cart || []).map(function(it){ return it.name; }).filter(Boolean).join(' · ') || '—';
+      const whenEl = document.getElementById('detailWhen');
+      const addrEl = document.getElementById('detailAddress');
+      const pkgEl = document.getElementById('detailPackage');
+      const notesEl = document.getElementById('detailNotes');
+      const notesRow = document.getElementById('detailNotesRow');
+      const refDetailEl = document.getElementById('detailRef');
+      const dateObj = schedule.selectedDate ? new Date(schedule.selectedDate + 'T12:00:00') : null;
+      const dateStr = dateObj ? dateObj.toLocaleDateString('en-AU', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+      }) : '';
+      const timeStr = schedule.selectedTime
+        || (schedule.selectedWindow ? schedule.selectedWindow : '')
+        || (schedule.anytime ? 'Anytime that day' : '');
+      if (whenEl) whenEl.textContent = [dateStr, timeStr].filter(Boolean).join(' · ') || '—';
+      if (addrEl) addrEl.textContent = fullAddress || details.address || '—';
+      if (pkgEl) pkgEl.textContent = pkg;
+      if (details.propertyNotes && notesEl && notesRow){
+        notesEl.textContent = details.propertyNotes;
+        notesRow.hidden = false;
+      }
+      if (refDetailEl) refDetailEl.textContent = fallbackRef;
+    })();
+
+    // Build a Google Calendar template URL — opens the agent's default
+    // calendar app in a new tab with the event pre-filled.
+    (function fillCalendar(){
+      const calEl = document.getElementById('calendarLink');
+      if (!calEl) return;
+      const dateRaw = schedule.selectedDate;
+      const timeRaw = schedule.selectedTime || '09:00';
+      if (!dateRaw) return;
+      // Parse 9:00, 9am, 09:30, etc. → 24h HH:MM
+      function to24h(s){
+        if (!s) return '09:00';
+        const m = String(s).trim().toLowerCase().match(/^(\\d{1,2})(?::(\\d{2}))?\\s*(am|pm)?$/);
+        if (!m) return '09:00';
+        let h = parseInt(m[1], 10);
+        const min = parseInt(m[2] || '0', 10);
+        const ap = m[3];
+        if (ap === 'pm' && h < 12) h += 12;
+        if (ap === 'am' && h === 12) h = 0;
+        return (h < 10 ? '0' + h : String(h)) + ':' + (min < 10 ? '0' + min : String(min));
+      }
+      const hhmm = to24h(timeRaw);
+      const ymd = dateRaw.replace(/-/g, '');
+      const startLocal = ymd + 'T' + hhmm.replace(':', '') + '00';
+      // Default 90-min slot.
+      function plus90(hhmmStr){
+        const parts = hhmmStr.split(':');
+        let h = parseInt(parts[0], 10), m = parseInt(parts[1], 10) + 90;
+        h += Math.floor(m / 60); m = m % 60;
+        if (h >= 24) h = 23;
+        return (h < 10 ? '0' + h : String(h)) + (m < 10 ? '0' + m : String(m)) + '00';
+      }
+      const endLocal = ymd + 'T' + plus90(hhmm);
+      const text = 'Won Vision shoot — ' + ((cart || []).map(function(it){ return it.name; }).join(' · ') || 'Property shoot');
+      const fullAddress = [details.address, details.suburb, details.state, details.postcode].filter(Boolean).join(', ');
+      const detailsText = 'Booking ref: ' + fallbackRef + '\\n\\nProperty: ' + fullAddress + '\\nContact studio: 0416 894 541 · hello@wonvision.com.au';
+      const url = 'https://www.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent(text)
+        + '&dates=' + startLocal + '/' + endLocal
+        + '&details=' + encodeURIComponent(detailsText)
+        + '&location=' + encodeURIComponent(fullAddress);
+      calEl.setAttribute('href', url);
+    })();
 
     function applyPortal(jobNumber, response){
       const ref = jobNumber || (response && response.jobNumber) || fallbackRef;
