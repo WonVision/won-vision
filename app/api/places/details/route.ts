@@ -1,13 +1,9 @@
 // Won Vision: Place Details proxy (Places API New v1)
-// GET /api/places/details?place_id=… — Clerk-auth guard.
+// GET /api/places/details?place_id=… — public.
 
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
 
 export async function GET(req: NextRequest) {
-  const { userId } = await auth();
-  if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-
   const placeId = req.nextUrl.searchParams.get('place_id')?.trim();
   if (!placeId) {
     return NextResponse.json({ error: 'place_id required' }, { status: 400 });

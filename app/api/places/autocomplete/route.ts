@@ -1,8 +1,7 @@
 // Won Vision: Places Autocomplete proxy (Places API New v1)
-// GET /api/places/autocomplete?q=… — Clerk-auth guard, AU-restricted.
+// GET /api/places/autocomplete?q=… — public, AU-restricted.
 
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
 
 interface Prediction {
   description: string;
@@ -17,9 +16,6 @@ interface NewPlacesPrediction {
 }
 
 export async function GET(req: NextRequest) {
-  const { userId } = await auth();
-  if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-
   const q = req.nextUrl.searchParams.get('q')?.trim();
   if (!q) return NextResponse.json({ predictions: [] });
 

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Script from 'next/script';
-import { ClerkProvider } from '@clerk/nextjs';
 import { sora } from './fonts';
 import SpaReveal from './components/SpaReveal';
 
@@ -20,11 +19,7 @@ const GA4_MEASUREMENT_ID = "G-MHFPGW1T7F";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider
-      signInUrl="/sign-in"
-      signInFallbackRedirectUrl="/portal"
-    >
-      <html lang="en" className={sora.variable}>
+    <html lang="en" className={sora.variable}>
         <body id="top">
           {/* Runs before paint: if the intro loader will show this session,
               flag <html> so the hero morph holds "Won Vision" opaque for the
@@ -48,7 +43,6 @@ try{if(sessionStorage.getItem('wv-entered')!=='1'){document.documentElement.clas
             `}
           </Script>
         </body>
-      </html>
-    </ClerkProvider>
+    </html>
   );
 }
