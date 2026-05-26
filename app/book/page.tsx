@@ -1388,6 +1388,32 @@ export default function BookPage() {
     });
   });
 
+  // Initial deep-link from home page: /book#cat-xxx. The browser-native
+  // jump fires before images/layout finish, often landing short of the
+  // section. Re-scroll once on load (and again after window.load) so the
+  // section header sits at the top of the viewport under the sticky nav
+  // (scroll-margin-top handles the offset). Also handle in-page hashchange.
+  function smoothScrollToHash(hash){
+    if(!hash || hash.length < 2) return;
+    var id = hash.slice(1);
+    var sec = document.getElementById(id);
+    if(!sec) return;
+    sec.scrollIntoView({ behavior:'smooth', block:'start' });
+    var chip = chipFor(id);
+    if(chip) setActive(chip);
+  }
+  if(window.location.hash){
+    // Two passes: one immediately (after interactive), one after window.load
+    // when images and any late layout shifts have settled.
+    requestAnimationFrame(function(){ smoothScrollToHash(window.location.hash); });
+    window.addEventListener('load', function(){
+      setTimeout(function(){ smoothScrollToHash(window.location.hash); }, 60);
+    });
+  }
+  window.addEventListener('hashchange', function(){
+    smoothScrollToHash(window.location.hash);
+  });
+
   // Scrollspy: highlight the section currently in view
   var cats = Array.prototype.slice.call(document.querySelectorAll('.cat[id]'));
   if('IntersectionObserver' in window && cats.length){
