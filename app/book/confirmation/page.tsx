@@ -106,8 +106,8 @@ export default function ConfirmationPage() {
           <div className="confirm-page__portal" id="portalCard">
             <h4>Your client portal</h4>
             <p id="portalCopy">Track shoot status, download files when ready, and message the studio — all from a single page tied to this booking.</p>
-            <a href="#" id="portalLink" target="_blank" rel="noopener" hidden>Open client portal →</a>
-            <p id="portalPending" style={{ fontSize: 13, color: 'var(--graphite)', margin: 0 }}>We'll email your portal link to <strong id="portalPendingEmail">your address</strong> shortly.</p>
+            <a id="portalLink" target="_blank" rel="noopener noreferrer" hidden>Open client portal →</a>
+            <p id="portalPending" style={{ fontSize: 13, color: 'var(--graphite)', margin: 0 }}>We&apos;ll email your portal link to <strong id="portalPendingEmail">your address</strong> shortly.</p>
           </div>
 
           <p style={{ fontSize: 13, color: 'var(--graphite)', marginTop: 24 }}>A confirmation email has been sent to <strong id="clientEmail" style={{ color: 'var(--ink)' }}>your address</strong>.<br />If urgent, call <a href="tel:+61416894541" style={{ color: 'var(--fg)', textDecoration: 'underline' }}>0416 894 541</a>.</p>
@@ -154,15 +154,31 @@ export default function ConfirmationPage() {
       <Script src="https://ops.outbounddesign.com.au/booking-submit.js" strategy="afterInteractive" />
       <Script id="wv-confirm" strategy="afterInteractive">{`
 (function(){
+  // Persist a snapshot of the confirmed booking so revisits to this page
+  // (browser back, popup-blocked portal click + refresh, etc.) don't bounce
+  // the user back to /book step 1 after cleanupCart() wipes the cart.
+  const CONFIRMED_KEY = 'wv-confirmed';
+
   function boot(){
-    const cart = JSON.parse(sessionStorage.getItem('wv-cart') || '[]');
-    const details = JSON.parse(sessionStorage.getItem('wv-details') || '{}');
-    const schedule = JSON.parse(sessionStorage.getItem('wv-schedule') || '{}');
+    let cart = JSON.parse(sessionStorage.getItem('wv-cart') || '[]');
+    let details = JSON.parse(sessionStorage.getItem('wv-details') || '{}');
+    let schedule = JSON.parse(sessionStorage.getItem('wv-schedule') || '{}');
+    const confirmed = JSON.parse(sessionStorage.getItem(CONFIRMED_KEY) || 'null');
+
+    if (confirmed && confirmed.jobNumber){
+      // Re-hydrate from the confirmed snapshot if the live cart was wiped.
+      if (!cart.length && confirmed.cart) cart = confirmed.cart;
+      if (!details.email && confirmed.details) details = confirmed.details;
+      if (!schedule.selectedDate && confirmed.schedule) schedule = confirmed.schedule;
+    }
+
     if (!cart.length) { window.location.href = '/book'; return; }
     if (!details.email) { window.location.href = '/book/checkout'; return; }
     if (!schedule.selectedDate) { window.location.href = '/book/schedule'; return; }
 
-    const fallbackRef = 'WV-' + Date.now().toString(36).toUpperCase().slice(-6);
+    const fallbackRef = (confirmed && confirmed.jobNumber)
+      ? confirmed.jobNumber
+      : 'WV-' + Date.now().toString(36).toUpperCase().slice(-6);
     const refEl = document.getElementById('bookingRef');
     const linkEl = document.getElementById('portalLink');
     const emailEl = document.getElementById('clientEmail');
@@ -172,11 +188,13 @@ export default function ConfirmationPage() {
     function applyPortal(jobNumber, response){
       const ref = jobNumber || (response && response.jobNumber) || fallbackRef;
       refEl.textContent = 'Ref: ' + ref;
-      const realUrl = response && (response.portalUrl || response.portal_url || response.clientUrl);
+      const realUrl = (response && (response.portalUrl || response.portal_url || response.clientUrl))
+        || (confirmed && confirmed.portalUrl)
+        || null;
       const pendingEmailEl = document.getElementById('portalPendingEmail');
       const pendingEl = document.getElementById('portalPending');
       if (realUrl){
-        linkEl.href = realUrl;
+        linkEl.setAttribute('href', realUrl);
         linkEl.hidden = false;
         if (pendingEl) pendingEl.hidden = true;
       } else {
@@ -187,6 +205,17 @@ export default function ConfirmationPage() {
           if (pendingEmailEl && details.email) pendingEmailEl.textContent = details.email;
         }
       }
+      // Snapshot for revisits.
+      try {
+        sessionStorage.setItem(CONFIRMED_KEY, JSON.stringify({
+          jobNumber: ref,
+          portalUrl: realUrl,
+          cart: cart,
+          details: details,
+          schedule: schedule,
+          confirmedAt: Date.now(),
+        }));
+      } catch (e) {}
     }
 
     const booking = {
