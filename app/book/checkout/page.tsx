@@ -311,13 +311,21 @@ export default function CheckoutPage() {
   });
   document.getElementById('summaryAmt').textContent = total === 0 ? '$0' : '$' + total.toLocaleString('en-AU');
 
+  // Pre-fill from this booking's in-progress sessionStorage first, then
+  // fall back to the remembered contact profile in localStorage so a
+  // returning agent doesn't retype name/email/phone/agency every time.
+  const PROFILE_KEY = 'wv-contact-profile';
+  const PROFILE_FIELDS = ['firstName','lastName','email','phone','agency'];
+  let profile = {};
+  try { profile = JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}') || {}; } catch(e) {}
   const prior = JSON.parse(sessionStorage.getItem('wv-details') || '{}');
-  Object.entries(prior).forEach(([k,v]) => {
+  const seed = Object.assign({}, profile, prior);
+  Object.entries(seed).forEach(([k,v]) => {
     const el = document.querySelector(\`[name="\${k}"]\`);
     if (el && typeof v === 'string') el.value = v;
   });
-  if (prior.agencyLocation && typeof prior.agencyLocation === 'object'){
-    window.WV_AGENCY_OFFICE = prior.agencyLocation;
+  if (seed.agencyLocation && typeof seed.agencyLocation === 'object'){
+    window.WV_AGENCY_OFFICE = seed.agencyLocation;
   }
 
   const form = document.getElementById('checkoutForm');
@@ -392,6 +400,15 @@ export default function CheckoutPage() {
       data.agencyLocation = window.WV_AGENCY_OFFICE;
     }
     sessionStorage.setItem('wv-details', JSON.stringify(data));
+    // Remember the agent's contact profile across sessions so returning
+    // bookings auto-fill name/email/phone/agency. Property-specific fields
+    // (address, propertyNotes, lat/lon) are intentionally excluded.
+    try {
+      const remembered = {};
+      PROFILE_FIELDS.forEach(function(k){ if (data[k]) remembered[k] = data[k]; });
+      if (data.agencyLocation) remembered.agencyLocation = data.agencyLocation;
+      localStorage.setItem(PROFILE_KEY, JSON.stringify(remembered));
+    } catch(e) {}
     window.location.href = '/book/schedule';
   });
 
