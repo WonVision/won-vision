@@ -88,18 +88,8 @@ export default function OperateConveyor() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [idx, setIdx] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia('(max-width: 760px)');
-    const update = () => setIsMobile(mq.matches);
-    update();
-    mq.addEventListener('change', update);
-    return () => mq.removeEventListener('change', update);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile) return; // mobile uses static per-step cards, no scroll math
     const el = wrapRef.current;
     if (!el) return;
     let raf = 0;
@@ -125,69 +115,42 @@ export default function OperateConveyor() {
       window.removeEventListener('resize', onScroll);
       if (raf) cancelAnimationFrame(raf);
     };
-  }, [isMobile]);
+  }, []);
 
   return (
     <>
-      {/* DESKTOP / TABLET — scroll-driven sticky conveyor */}
-      {!isMobile && (
-        <div className="op-wrap" ref={wrapRef}>
-          <div className="op-sticky">
-            <div className="op-left">
-              {STEPS.map((s, i) => (
-                <div key={s.n} className={`op-step ${i === idx ? 'on' : ''}`} data-step={i}>
-                  <span className="op-num">{s.n}</span>
-                  <div className="op-label">{s.label}</div>
-                  <h3 className="op-title">
-                    {s.title.map((line, li) => (
-                      <span key={li}>{line}{li < s.title.length - 1 && <br />}</span>
-                    ))}
-                  </h3>
-                  <p className="op-body">{s.body}</p>
-                </div>
-              ))}
-              <div className="op-dots" aria-hidden>
-                {STEPS.map((_, i) => (
-                  <span key={i} className={i <= idx ? 'on' : ''}></span>
-                ))}
-              </div>
-            </div>
-            <div className="op-right">
-              <Stage idx={idx} />
-            </div>
+      <div className="op-wrap" ref={wrapRef}>
+        <div className="op-sticky">
+          {/* IMAGE FRAME — right on desktop, top on mobile/tablet */}
+          <div className="op-right">
+            <Stage idx={idx} />
           </div>
-        </div>
-      )}
-
-      {/* MOBILE — vertical per-step cards, no sticky */}
-      {isMobile && (
-        <div className="op-mobile">
-          {STEPS.map((s, i) => (
-            <article key={s.n} className="op-mcard">
-              <div className="op-mimg">
-                <Stage idx={i} />
-              </div>
-              <div className="op-mtxt">
-                <span className="op-mlabel">{s.label}</span>
-                <div className="op-mnum">{s.n}</div>
-                <h3 className="op-mtitle">
+          {/* TEXT FRAME — left on desktop, bottom on mobile/tablet */}
+          <div className="op-left">
+            {STEPS.map((s, i) => (
+              <div key={s.n} className={`op-step ${i === idx ? 'on' : ''}`} data-step={i}>
+                <span className="op-num">{s.n}</span>
+                <div className="op-label">{s.label}</div>
+                <h3 className="op-title">
                   {s.title.map((line, li) => (
                     <span key={li}>{line}{li < s.title.length - 1 && <br />}</span>
                   ))}
                 </h3>
-                <p className="op-mbody">{s.body}</p>
+                <p className="op-body">{s.body}</p>
               </div>
-            </article>
-          ))}
+            ))}
+            <div className="op-dots" aria-hidden>
+              {STEPS.map((_, i) => (
+                <span key={i} className={i <= idx ? 'on' : ''}></span>
+              ))}
+            </div>
+          </div>
         </div>
-      )}
+      </div>
 
       <div className="op-progress" style={{ '--p': `${progress * 100}%` } as React.CSSProperties} aria-hidden />
 
       <style jsx>{`
-        /* =========================================
-           SHARED
-           ========================================= */
         .op-progress{
           position:fixed; left:0; right:0; bottom:0; height:2px;
           background:transparent; z-index:50; pointer-events:none;
@@ -198,7 +161,7 @@ export default function OperateConveyor() {
         }
 
         /* =========================================
-           DESKTOP / TABLET CONVEYOR
+           DESKTOP — side-by-side sticky conveyor
            ========================================= */
         .op-wrap{
           position:relative;
@@ -208,14 +171,21 @@ export default function OperateConveyor() {
         .op-sticky{
           position:sticky; top:0;
           height:100vh; width:100%;
-          display:grid; grid-template-columns:1fr 1fr;
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          grid-template-areas: 'text image';
           overflow:hidden;
           background:#fff;
         }
         .op-left{
+          grid-area: text;
           padding:0 6vw; position:relative;
           border-right:1px solid #e5e5e5;
           overflow:hidden;
+        }
+        .op-right{
+          grid-area: image;
+          position:relative; overflow:hidden; background:#0a0a0a;
         }
         .op-step{
           position:absolute; left:6vw; right:6vw; top:50%;
@@ -245,11 +215,6 @@ export default function OperateConveyor() {
           font-size:clamp(14px, 1.05vw, 16px);
           line-height:1.55; color:#404040; max-width:42ch;
         }
-
-        .op-right{
-          position:relative; overflow:hidden; background:#0a0a0a;
-        }
-
         .op-dots{
           position:absolute; left:50%; bottom:30px; transform:translateX(-50%);
           display:flex; gap:8px; z-index:5;
@@ -260,8 +225,8 @@ export default function OperateConveyor() {
         }
         .op-dots span.on{background:#000;}
 
-        /* Tablet portrait — keep sticky but rebalance */
-        @media (max-width: 1024px) and (min-width: 761px){
+        /* Tablet portrait — rebalance side-by-side proportions */
+        @media (max-width: 1024px) and (min-width: 901px){
           .op-sticky{grid-template-columns: 45% 55%;}
           .op-num{font-size:clamp(80px, 14vw, 180px); margin-bottom:18px;}
           .op-title{font-size:clamp(20px, 3vw, 30px);}
@@ -270,48 +235,48 @@ export default function OperateConveyor() {
         }
 
         /* =========================================
-           MOBILE — per-step cards (no sticky)
+           MOBILE / SMALL TABLET — STACKED VERTICAL
+           Same scroll mechanic, layout flips so image
+           is on top and text frame is below.
            ========================================= */
-        .op-mobile{display:flex; flex-direction:column;}
-        .op-mcard{
-          display:flex; flex-direction:column;
-          border-bottom:1px solid #e5e5e5;
+        @media (max-width: 900px){
+          .op-sticky{
+            grid-template-columns: 1fr;
+            grid-template-rows: 50vh 50vh;
+            grid-template-areas:
+              'image'
+              'text';
+          }
+          .op-left{
+            border-right:0;
+            border-top:1px solid #e5e5e5;
+            padding: 0 6vw;
+          }
+          .op-step{
+            left: 6vw; right: 6vw;
+            transform: translateY(calc(-50% + 18px));
+          }
+          .op-num{font-size: clamp(72px, 18vw, 120px); margin-bottom: 14px;}
+          .op-label{font-size: 10px; margin-bottom: 12px;}
+          .op-title{font-size: clamp(20px, 5.5vw, 28px); margin-bottom: 14px;}
+          .op-body{font-size: 14px; line-height: 1.5;}
+          .op-dots{bottom: 18px;}
         }
-        .op-mcard:last-child{border-bottom:0;}
-        .op-mimg{
-          position:relative; width:100%;
-          aspect-ratio: 4 / 3;
-          background:#0a0a0a; overflow:hidden;
-        }
-        .op-mtxt{padding:36px 6vw 56px;}
-        .op-mlabel{
-          display:block; font-size:10px; letter-spacing:.3em; text-transform:uppercase;
-          color:#737373; font-weight:500; margin-bottom:14px;
-        }
-        .op-mnum{
-          font-size:clamp(72px, 22vw, 120px); line-height:.85;
-          font-weight:600; letter-spacing:-.05em; color:#000; margin-bottom:18px;
-        }
-        .op-mtitle{
-          font-size:clamp(24px, 7vw, 36px); line-height:1.05;
-          font-weight:600; letter-spacing:-.025em; text-transform:uppercase;
-          margin-bottom:18px;
-        }
-        .op-mbody{
-          font-size:15px; line-height:1.55; color:#404040;
+
+        @media (max-width: 600px){
+          .op-sticky{grid-template-rows: 44vh 56vh;}
+          .op-num{font-size: clamp(64px, 20vw, 96px); margin-bottom: 10px;}
+          .op-title{font-size: clamp(18px, 6vw, 24px);}
+          .op-body{font-size: 13.5px;}
         }
       `}</style>
 
-      {/* Global styles for stage internals — outside styled-jsx scope so the
-          deeply nested Stage children get them without scoped class hashing. */}
       <style jsx global>{`
         .op-stage{
           position:absolute; inset:0;
           display:flex; align-items:center; justify-content:center;
           opacity:0; transition:opacity .6s ease;
         }
-        .op-mimg .op-stage{position:absolute; inset:0; opacity:0;}
-        .op-mimg .op-stage.on{opacity:1;}
         .op-stage.on{opacity:1;}
         .op-stage > img{
           width:100%; height:100%; object-fit:cover;
@@ -321,22 +286,20 @@ export default function OperateConveyor() {
         /* Stage 1 — Brief */
         .op-s1 > img{filter:grayscale(1) contrast(.95);}
 
-        /* Stage 2 — Brackets as PILLARS (tall vertical slices) */
+        /* Stage 2 — Brackets as PILLARS, evenly spaced, filling more of the frame */
         .op-s2{
-          padding:0; background:#0a0a0a;
-          display:flex; align-items:stretch; justify-content:center;
-          gap: 18px;
-          padding: 8% 10%;
+          background:#0a0a0a;
+          display:flex; align-items:stretch; justify-content:space-between;
+          gap: 2.5%;
+          padding: 6% 5%;
         }
         .op-s2 .brk{
           position:relative; overflow:hidden;
           flex: 1 1 0;
           height: 100%;
-          max-width: 22%;
         }
         .op-s2 .brk img{
           width:100%; height:100%; object-fit:cover;
-          /* Center slice of the photo so it reads as a "pillar" cut */
           object-position: center center;
         }
         .op-s2 .brk:nth-child(1) img{filter:brightness(.4) grayscale(1);}
@@ -414,11 +377,9 @@ export default function OperateConveyor() {
           background:#000; padding:8px 14px;
         }
 
-        /* Mobile portal frame tightening */
-        @media (max-width: 760px){
-          .op-s2{padding: 6% 10%; gap:10px;}
-          .op-s2 .brk{max-width: 26%;}
-          .op-s2 .brk-label{font-size:8px; padding:4px 7px;}
+        /* Mobile portal tightening */
+        @media (max-width: 900px){
+          .op-s2{padding: 5% 6%; gap: 3%;}
           .portal-bar{font-size:9px; padding:8px 10px; gap:6px;}
           .portal-bar .pill{font-size:8px; padding:2px 6px;}
           .portal-meta{font-size:8px; grid-template-columns:repeat(2, 1fr);}
@@ -428,6 +389,10 @@ export default function OperateConveyor() {
           .portal-meta strong{font-size:12px;}
           .edit-marks .mark{width:48px; height:48px;}
           .delivered-tag{font-size:10px; padding:6px 10px; bottom:14px; right:14px;}
+        }
+        @media (max-width: 600px){
+          .op-s2{padding: 6% 5%;}
+          .op-s2 .brk-label{font-size:8px; padding:4px 7px; bottom:10px;}
         }
       `}</style>
     </>
