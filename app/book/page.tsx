@@ -829,7 +829,6 @@ export default function BookPage() {
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
                   <li>Bespoke music score · hand colour-grade</li>
-                  <li>Portal master, social master &amp; teaser cut</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -1002,7 +1001,6 @@ export default function BookPage() {
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
                   <li>Bespoke music score · hand colour-grade</li>
-                  <li>Portal master, social master &amp; teaser cut</li>
                 </ul>
                 <div className="svc-card__foot"><span className="svc-card__price">$699</span><span className="svc-card__add">Add +</span></div>
               </div>

@@ -483,7 +483,6 @@ export default function HomePage() {
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
                   <li>Bespoke music score · hand colour-grade</li>
-                  <li>Portal master, social master &amp; teaser cut</li>
                 </ul>
                 <div className="home-pkg__foot">
                   <span className="home-pkg__price"><small>From</small>$1,099</span>
