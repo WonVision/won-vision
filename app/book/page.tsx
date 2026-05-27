@@ -636,8 +636,7 @@ export default function BookPage() {
         <nav className="svc-jump" id="svcJump" aria-label="Jump to a service section">
           <div className="svc-jump__strip">
             <a href="#cat-packages" className="svc-jump__chip">Packages</a>
-            <a href="#cat-photography" className="svc-jump__chip">Photography</a>
-            <a href="#cat-drone" className="svc-jump__chip">Aerial / drone</a>
+            <a href="#cat-photography" className="svc-jump__chip">Photography &amp; aerial</a>
             {SHOW_VIDEO && <a href="#cat-video" className="svc-jump__chip">Videography</a>}
             <a href="#cat-floorplans" className="svc-jump__chip">Floor plans &amp; site plan</a>
             <a href="#cat-staging" className="svc-jump__chip">Virtual editing</a>
@@ -774,11 +773,11 @@ export default function BookPage() {
           </div>
         </div>
 
-        {/* PHOTOGRAPHY */}
-        <div className="cat" id="cat-photography" data-gallery="photography" data-cats="photography">
-          <div className="cat__head"><h3>Photography</h3><span className="cat__count">4 tiers · photo-only</span></div>
+        {/* PHOTOGRAPHY + AERIAL/DRONE */}
+        <div className="cat" id="cat-photography" data-gallery="photography" data-cats="photography,drone">
+          <div className="cat__head"><h3>Photography <em>&amp; aerial</em></h3><span className="cat__count">Photo + drone</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            Pure photography pricing by photo count. Full HDR retouching, sky replacement and agent-facing licensing included. Floor plan, drone, twilight and video available as add-ons below — or bundle them at 18–29% off via Packages above.
+            Pure photography pricing by photo count, plus a standalone drone set. Full HDR retouching, sky replacement and agent-facing licensing included. Bundle photo + plan + drone at 18–29% off via Packages above.
           </p>
 
           <div className="pkg-grid">
@@ -790,6 +789,7 @@ export default function BookPage() {
               data-pkg-name="Photography"
               data-pkg-img="/images/sales-standard.webp"
               data-tiers='{"eight":{"label":"8 photos","price":149},"fifteen":{"label":"15 photos","price":195},"twenty":{"label":"20 photos","price":245},"twentyfive":{"label":"25 photos","price":295}}'
+              style={{ gridColumn: 'span 2' }}
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Photo-only</span>
@@ -822,31 +822,39 @@ export default function BookPage() {
               </div>
             </article>
 
-          </div>
-        </div>
-
-        {/* DRONE */}
-        <div className="cat" id="cat-drone" data-gallery="drone" data-cats="drone">
-          <div className="cat__head"><h3>Aerial <em>/ drone</em></h3><span className="cat__count">Aerial</span></div>
-          <div className="svc-grid">
-
-            <article className="svc-card" data-svc="Drone Set (5 images)" data-price="220" data-desc="Professional drone set — 5 edited stills: 2 aesthetic hero shots, 2 POI shots, 1 plot/land overview. Same-day delivery." data-img="/images/drone-set.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Drone Set</h4>
-                <p className="svc-card__desc">5 edited images — 2 hero, 2 POI, 1 plot overview · same-day delivery.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$220</span><span className="svc-card__add">Add +</span></div>
+            <article
+              className="pkg-card"
+              data-pkg="drone-set"
+              data-cats="drone"
+              data-pkg-name="Drone Set"
+              data-pkg-img="/images/drone-set.webp"
+              data-tiers='{"lite":{"label":"Lite · 3 photos","price":139},"standard":{"label":"Standard · 5 photos","price":159}}'
+            >
+              <div className="pkg-card__media">
+                <span className="pkg-card__tag">Aerial</span>
+                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')" }}></div>
               </div>
-            </article>
-
-            <article className="svc-card" data-svc="Additional Drone Image" data-price="25" data-desc="Each drone image beyond the standard 5-image set. Same-day delivery." data-img="/images/drone-additional.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/drone-additional.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Additional Drone Image</h4>
-                <p className="svc-card__desc">Each image beyond the standard 5-image set · same-day delivery.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$25 <small>/ img</small></span><span className="svc-card__add">Add +</span></div>
+              <div className="pkg-card__body">
+                <h4 className="pkg-card__name">Drone Set</h4>
+                <p className="pkg-card__desc">Edited aerial stills — hero, POI and plot overview shots, same-day delivery.</p>
+                <ul className="pkg-card__incl">
+                  <li>Hero + POI shots</li>
+                  <li>Plot / land overview</li>
+                  <li>Same-day delivery</li>
+                </ul>
+                <div className="pkg-card__tiers">
+                  <label>Photo count</label>
+                  <div className="pkg-card__pills" data-pkg-tiers>
+                    <button type="button" data-tier="lite" className="is-active">Lite<small>3 photos</small></button>
+                    <button type="button" data-tier="standard">Standard<small>5 photos</small></button>
+                  </div>
+                </div>
+                <div className="pkg-card__pricerow">
+                  <span className="pkg-card__from">From</span>
+                  <span className="pkg-card__price" data-pkg-price>$139</span>
+                  <span className="pkg-card__list" data-pkg-list hidden></span>
+                </div>
+                <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
             </article>
 

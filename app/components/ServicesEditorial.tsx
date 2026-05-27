@@ -34,7 +34,7 @@ const allServices: Service[] = [
     num: '03',
     name: 'Drone',
     meta: 'Aerial',
-    href: '/book#cat-drone',
+    href: '/book#cat-photography',
     img: '/images/drone-additional.webp',
     caption: 'Drone',
   },
