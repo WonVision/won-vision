@@ -727,7 +727,7 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone"
               data-pkg-name="Essential"
               data-pkg-img="/images/showcase.webp"
-              data-tiers='{"compact":{"label":"Compact · 15 photos","price":350,"promo":280},"standard":{"label":"Standard · 20 photos","price":450,"promo":360},"premium":{"label":"Premium · 25 photos","price":550,"promo":440}}'
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":399},"standard":{"label":"Standard · 20 photos","price":469},"premium":{"label":"Premium · 25 photos","price":539}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Most booked</span>
@@ -752,7 +752,7 @@ export default function BookPage() {
                 </div>
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
-                  <span className="pkg-card__price" data-pkg-price>$350</span>
+                  <span className="pkg-card__price" data-pkg-price>$399</span>
                   <span className="pkg-card__list" data-pkg-list hidden></span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
@@ -766,7 +766,7 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone,video"
               data-pkg-name="Signature"
               data-pkg-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85"
-              data-tiers='{"compact":{"label":"Compact · 15 photos","price":675,"promo":540},"standard":{"label":"Standard · 20 photos","price":750,"promo":600},"premium":{"label":"Premium · 25 photos","price":825,"promo":660}}'
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":649},"standard":{"label":"Standard · 20 photos","price":745},"premium":{"label":"Premium · 25 photos","price":819}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Complete deliverable</span>
@@ -791,8 +791,8 @@ export default function BookPage() {
                 </div>
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
-                  <span className="pkg-card__price" data-pkg-price>$540</span>
-                  <span className="pkg-card__list" data-pkg-list>$675</span>
+                  <span className="pkg-card__price" data-pkg-price>$649</span>
+                  <span className="pkg-card__list" data-pkg-list hidden></span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
@@ -806,7 +806,7 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone,video"
               data-pkg-name="Cinematic"
               data-pkg-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85"
-              data-tiers='{"compact":{"label":"Compact · 15 photos","price":1100,"promo":880},"standard":{"label":"Standard · 20 photos","price":1200,"promo":960},"premium":{"label":"Premium · 25 photos","price":1300,"promo":1040}}'
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":1099},"standard":{"label":"Standard · 20 photos","price":1169},"premium":{"label":"Premium · 25 photos","price":1239}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Flagship</span>
@@ -831,8 +831,8 @@ export default function BookPage() {
                 </div>
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
-                  <span className="pkg-card__price" data-pkg-price>$880</span>
-                  <span className="pkg-card__list" data-pkg-list>$1,100</span>
+                  <span className="pkg-card__price" data-pkg-price>$1,099</span>
+                  <span className="pkg-card__list" data-pkg-list hidden></span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>

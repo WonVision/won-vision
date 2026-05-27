@@ -431,7 +431,7 @@ export default function HomePage() {
                   <li>Next-business-day delivery</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$350</span>
+                  <span className="home-pkg__price"><small>From</small>$399</span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
@@ -453,7 +453,7 @@ export default function HomePage() {
                   <li>Includes agent footage + drone footage</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$675</span>
+                  <span className="home-pkg__price"><small>From</small>$649</span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
@@ -476,7 +476,7 @@ export default function HomePage() {
                   <li>Includes agent footage + drone footage</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$1,100</span>
+                  <span className="home-pkg__price"><small>From</small>$1,099</span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
