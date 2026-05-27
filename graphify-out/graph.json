@@ -132,37 +132,37 @@
     {
       "label": "ServiceGalleryLightbox.tsx",
       "file_type": "code",
-      "source_file": "/private/tmp/wv-v3/app/components/ServiceGalleryLightbox.tsx",
+      "source_file": "app/components/ServiceGalleryLightbox.tsx",
       "source_location": "L1",
-      "id": "private_tmp_wv_v3_app_components_servicegallerylightbox_tsx",
-      "community": 7,
+      "id": "app_components_servicegallerylightbox_tsx",
+      "community": 5,
       "norm_label": "servicegallerylightbox.tsx"
     },
     {
       "label": "inject()",
       "file_type": "code",
-      "source_file": "/private/tmp/wv-v3/app/components/ServiceGalleryLightbox.tsx",
+      "source_file": "app/components/ServiceGalleryLightbox.tsx",
       "source_location": "L81",
       "id": "components_servicegallerylightbox_inject",
-      "community": 7,
+      "community": 5,
       "norm_label": "inject()"
     },
     {
       "label": "handler()",
       "file_type": "code",
-      "source_file": "/private/tmp/wv-v3/app/components/ServiceGalleryLightbox.tsx",
+      "source_file": "app/components/ServiceGalleryLightbox.tsx",
       "source_location": "L118",
       "id": "components_servicegallerylightbox_handler",
-      "community": 7,
+      "community": 5,
       "norm_label": "handler()"
     },
     {
       "label": "esc()",
       "file_type": "code",
-      "source_file": "/private/tmp/wv-v3/app/components/ServiceGalleryLightbox.tsx",
+      "source_file": "app/components/ServiceGalleryLightbox.tsx",
       "source_location": "L128",
       "id": "components_servicegallerylightbox_esc",
-      "community": 7,
+      "community": 5,
       "norm_label": "esc()"
     },
     {
@@ -213,9 +213,9 @@
     {
       "label": "ServicesEditorial.tsx",
       "file_type": "code",
-      "source_file": "/private/tmp/wv-v3/app/components/ServicesEditorial.tsx",
+      "source_file": "app/components/ServicesEditorial.tsx",
       "source_location": "L1",
-      "id": "private_tmp_wv_v3_app_components_serviceseditorial_tsx",
+      "id": "app_components_serviceseditorial_tsx",
       "community": 29,
       "norm_label": "serviceseditorial.tsx"
     },
@@ -225,7 +225,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L1",
       "id": "app_components_beforeafterslider_tsx",
-      "community": 5,
+      "community": 6,
       "norm_label": "beforeafterslider.tsx"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L41",
       "id": "components_beforeafterslider_onpointerdown",
-      "community": 5,
+      "community": 6,
       "norm_label": "onpointerdown()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L46",
       "id": "components_beforeafterslider_onpointermove",
-      "community": 5,
+      "community": 6,
       "norm_label": "onpointermove()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L50",
       "id": "components_beforeafterslider_onpointerup",
-      "community": 5,
+      "community": 6,
       "norm_label": "onpointerup()"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L55",
       "id": "components_beforeafterslider_onkeydown",
-      "community": 5,
+      "community": 6,
       "norm_label": "onkeydown()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "app/components/OperateConveyor.tsx",
       "source_location": "L1",
       "id": "app_components_operateconveyor_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "operateconveyor.tsx"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "app/components/OperateConveyor.tsx",
       "source_location": "L96",
       "id": "components_operateconveyor_onscroll",
-      "community": 6,
+      "community": 7,
       "norm_label": "onscroll()"
     },
     {
@@ -666,7 +666,7 @@
       "source_file": "public/script.js",
       "source_location": "L1",
       "id": "public_script_js",
-      "community": 6,
+      "community": 7,
       "norm_label": "script.js"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "public/script.js",
       "source_location": "L5",
       "id": "public_script_wvboot",
-      "community": 6,
+      "community": 7,
       "norm_label": "__wvboot()"
     },
     {
@@ -1048,11 +1048,29 @@
       "norm_label": "getpreset()"
     },
     {
+      "label": "ServicesEditorial.tsx",
+      "file_type": "code",
+      "source_file": "/private/tmp/wv-v3/app/components/ServicesEditorial.tsx",
+      "source_location": "L1",
+      "community": 45,
+      "norm_label": "serviceseditorial.tsx",
+      "id": "private_tmp_wv_v3_app_components_serviceseditorial_tsx"
+    },
+    {
+      "label": "ServiceGalleryLightbox.tsx",
+      "file_type": "code",
+      "source_file": "/private/tmp/wv-v3/app/components/ServiceGalleryLightbox.tsx",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "servicegallerylightbox.tsx",
+      "id": "private_tmp_wv_v3_app_components_servicegallerylightbox_tsx"
+    },
+    {
       "label": "update()",
       "file_type": "code",
       "source_file": "app/components/OperateConveyor.tsx",
       "source_location": "L95",
-      "community": 6,
+      "community": 7,
       "norm_label": "update()",
       "id": "components_operateconveyor_update"
     },
@@ -1178,6 +1196,36 @@
       "confidence_score": 1.0,
       "source": "app_operate_page_tsx",
       "target": "operate_page_operatepage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/ServiceGalleryLightbox.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_components_servicegallerylightbox_tsx",
+      "target": "components_servicegallerylightbox_inject"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/ServiceGalleryLightbox.tsx",
+      "source_location": "L118",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_components_servicegallerylightbox_tsx",
+      "target": "components_servicegallerylightbox_handler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/ServiceGalleryLightbox.tsx",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_components_servicegallerylightbox_tsx",
+      "target": "components_servicegallerylightbox_esc"
     },
     {
       "relation": "contains",
@@ -2117,5 +2165,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3d7614a78aa6bece73e20073bba7eb940158d713"
+  "built_at_commit": "248490ab85d268207a0220b3dca5bc5506f3f82c"
 }

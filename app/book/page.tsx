@@ -901,7 +901,7 @@ export default function BookPage() {
             >
               <div className="pkg-card__media" style={{ aspectRatio: '5 / 6' }}>
                 <span className="pkg-card__tag">Aerial</span>
-                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')", backgroundSize: '135%', backgroundPosition: 'center 45%' }}></div>
+                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')", backgroundSize: 'cover', backgroundPosition: 'center 40%', backgroundRepeat: 'no-repeat', transform: 'scale(1.35)', transformOrigin: 'center 40%' }}></div>
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Drone Set</h4>
@@ -1004,9 +1004,9 @@ export default function BookPage() {
 
         {/* FLOORPLANS & SITE PLAN */}
         <div className="cat" id="cat-floorplans" data-gallery="floorplans" data-cats="floorplan">
-          <div className="cat__head"><h3>Floor <em>plans &amp; site plan</em></h3><span className="cat__count">2D · 3D · Site plan</span></div>
+          <div className="cat__head"><h3>Floor <em>plans &amp; site plan</em></h3><span className="cat__count">Plan · Site · Redraw</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            Pick 2D for a clean black &amp; white plan view, or 3D for a photoreal dollhouse render. Add a standalone site plan with boundaries, orientation and lot dimensions.
+            Pick a clean 2D floor plan or a standalone site plan with boundaries, orientation and lot dimensions. Bundle both at a saving, or redraw an existing plan in Won Vision linework.
           </p>
 
           <div className="svc-grid">
@@ -1016,39 +1016,39 @@ export default function BookPage() {
               data-pkg="floor-plan"
               data-cats="floorplan"
               data-pkg-name="Floor Plan"
-              data-pkg-img=""
-              data-tiers='{"twod":{"label":"2D · Plan view","price":129},"threed":{"label":"3D · Dollhouse","price":219}}'
+              data-pkg-img="/images/floor-plan.webp"
+              data-tiers='{"floor":{"label":"Floor Plan","price":149,"img":"/images/floor-plan.webp"},"site":{"label":"Site Plan","price":49,"img":"/images/floor-plan.webp"}}'
             >
               <div className="pkg-card__media">
-                <span className="pkg-card__tag">Floor plan</span>
-                <div className="pkg-card__media__img"></div>
+                <span className="pkg-card__tag">Plan</span>
+                <div className="pkg-card__media__img" data-pkg-media style={{ backgroundImage: "url('/images/floor-plan.webp')" }}></div>
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Floor Plan</h4>
-                <p className="pkg-card__desc">Pick your style — 2D shaded plan or 3D photoreal dollhouse render. Includes dimensions, room labels and a north arrow.</p>
+                <p className="pkg-card__desc">Pick a 2D floor plan with dimensions and room labels, or a standalone site plan with boundaries, orientation and lot dimensions.</p>
                 <div className="pkg-card__tiers">
-                  <label>Style</label>
+                  <label>Plan type</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
-                    <button type="button" data-tier="twod" className="is-active">2D<small>Plan view</small></button>
-                    <button type="button" data-tier="threed">3D<small>Dollhouse</small></button>
+                    <button type="button" data-tier="floor" className="is-active">Floor Plan<small>2D · dimensions</small></button>
+                    <button type="button" data-tier="site">Site Plan<small>Boundaries · north</small></button>
                   </div>
                 </div>
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
-                  <span className="pkg-card__price" data-pkg-price>$129</span>
+                  <span className="pkg-card__price" data-pkg-price>$149</span>
                   <span className="pkg-card__list" data-pkg-list hidden></span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Site Plan" data-price="49" data-desc="Standalone site plan — boundaries, orientation, lot dimensions." data-img="">
-              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
+            <article className="svc-card" data-svc="Floor Plan + Site Plan" data-price="189" data-desc="Floor plan and site plan bundled together — full 2D floor plan with dimensions plus boundaries, orientation and lot dimensions." data-img="/images/floor-plan.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/floor-plan.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Site Plan</h4>
-                <p className="svc-card__desc">Standalone site plan — boundaries, orientation, lot dimensions.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$49</span><span className="svc-card__add">Add +</span></div>
+                <h4 className="svc-card__name">Floor Plan + Site Plan</h4>
+                <p className="svc-card__desc">Both deliverables together — 2D floor plan plus a standalone site plan.</p>
+                <div className="svc-card__foot"><span className="svc-card__price">$189</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
@@ -1430,6 +1430,7 @@ export default function BookPage() {
       const priceEl = card.querySelector('[data-pkg-price]');
       const listEl  = card.querySelector('[data-pkg-list]');
       const addBtn  = card.querySelector('[data-pkg-add]');
+      const mediaEl = card.querySelector('[data-pkg-media]');
       const pillBtns = card.querySelectorAll('[data-pkg-tiers] button');
 
       function currentName(){
@@ -1442,6 +1443,7 @@ export default function BookPage() {
         const tier = tiers[t];
         if(priceEl) priceEl.textContent = fmtAud(tier.price);
         if(listEl){ listEl.textContent = ''; listEl.hidden = true; }
+        if(mediaEl && tier.img){ mediaEl.style.backgroundImage = "url('" + tier.img + "')"; }
 
         // Reflect cart state: highlight card if any tier of this package is in cart
         const inCart = Array.from(items.keys()).some(k => k.startsWith(pkgName + ' — '));

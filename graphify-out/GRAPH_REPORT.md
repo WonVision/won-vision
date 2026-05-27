@@ -1,16 +1,16 @@
 # Graph Report - won-vision  (2026-05-27)
 
 ## Corpus Check
-- 68 files · ~240,244 words
+- 68 files · ~240,544 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 121 nodes · 98 edges · 45 communities (41 shown, 4 thin omitted)
+- 123 nodes · 101 edges · 46 communities (42 shown, 4 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3d7614a7`
+- Built from commit: `248490ab`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,7 +20,8 @@
 - [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
-- [[_COMMUNITY_Community 6|Community 6]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 9|Community 9]]
 - [[_COMMUNITY_Community 10|Community 10]]
 - [[_COMMUNITY_Community 11|Community 11]]
@@ -47,7 +48,7 @@
 - `generateFromHelper()` --calls--> `buildPrompt()`  [INFERRED]
   lib/fal/client.ts → lib/fal/prompts.ts
 
-## Communities (45 total, 4 thin omitted)
+## Communities (46 total, 4 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.26
@@ -64,6 +65,10 @@ Nodes (5): ensureFolder(), getAccessToken(), move(), rpc(), uploadFromUrl()
 ### Community 4 - "Community 4"
 Cohesion: 0.73
 Nodes (4): buildIntakePath(), buildProcessingPath(), buildReviewPath(), slugifyAddress()
+
+### Community 5 - "Community 5"
+Cohesion: 0.6
+Nodes (3): esc(), handler(), inject()
 
 ### Community 9 - "Community 9"
 Cohesion: 0.83
