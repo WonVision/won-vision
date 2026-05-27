@@ -539,9 +539,9 @@ export default function BookPage() {
   }
   .cart__addons__add:hover{background:transparent;color:var(--ink)}
 
-  /* Non-intrusive upsell toast (bottom-right) */
+  /* Non-intrusive upsell toast (bottom-left) */
   .upsell-toast{
-    position:fixed;right:24px;bottom:96px;z-index:9000;
+    position:fixed;left:24px;bottom:96px;z-index:9000;
     width:min(340px, calc(100vw - 32px));
     background:var(--paper);color:var(--ink);
     border:1px solid rgba(74,74,72,0.18);
@@ -569,7 +569,7 @@ export default function BookPage() {
   }
   .upsell-toast__add:hover{background:transparent;color:var(--ink)}
   @media (max-width:560px){
-    .upsell-toast{right:14px;left:14px;bottom:88px;width:auto}
+    .upsell-toast{left:14px;right:14px;bottom:88px;width:auto}
   }
 
   @media (max-width:560px){
@@ -1009,15 +1009,15 @@ export default function BookPage() {
               data-cats="floorplan"
               data-pkg-name="Floor Plan"
               data-pkg-img="/images/floor-plan.webp"
-              data-tiers='{"floor":{"label":"Floor Plan","price":149,"img":"/images/floor-plan.webp"},"site":{"label":"Site Plan","price":49,"img":"/images/floor-plan.webp"}}'
+              data-tiers='{"floor":{"label":"Floor Plan","cartName":"Floor Plan","title":"Floor Plan","desc":"A clean 2D floor plan with dimensions, room labels and a north arrow.","price":149,"img":"/images/floor-plan.webp"},"site":{"label":"Site Plan","cartName":"Site Plan","title":"Site Plan","desc":"A standalone site plan with boundaries, orientation and lot dimensions.","price":49,"img":"/images/floor-plan.webp"}}'
             >
               <div className="pkg-card__media">
-                <span className="pkg-card__tag">Plan</span>
+                <span className="pkg-card__tag" data-pkg-tag>Plan</span>
                 <div className="pkg-card__media__img" data-pkg-media style={{ backgroundImage: "url('/images/floor-plan.webp')" }}></div>
               </div>
               <div className="pkg-card__body">
-                <h4 className="pkg-card__name">Floor Plan</h4>
-                <p className="pkg-card__desc">Pick a 2D floor plan with dimensions and room labels, or a standalone site plan with boundaries, orientation and lot dimensions.</p>
+                <h4 className="pkg-card__name" data-pkg-title>Floor Plan</h4>
+                <p className="pkg-card__desc" data-pkg-desc>A clean 2D floor plan with dimensions, room labels and a north arrow.</p>
                 <div className="pkg-card__tiers">
                   <label>Plan type</label>
                   <div className="pkg-card__pills" data-pkg-tiers>
@@ -1116,40 +1116,6 @@ export default function BookPage() {
             <p>Tap any card to add it. Cart fills as you go.</p>
           </div>
           <div className="cart__list" id="cartList" hidden></div>
-
-          <div className="cart__addons" id="cartAddons" hidden>
-            <div className="cart__addons__label">Add-ons</div>
-
-            <div className="cart__addons__row" id="cartAddonRowReel" hidden>
-              <div className="cart__addons__thumb" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="6" y="3" width="12" height="18" rx="2.5" />
-                  <line x1="11" y1="18.5" x2="13" y2="18.5" />
-                </svg>
-              </div>
-              <div className="cart__addons__info">
-                <div className="cart__addons__name">Social Reel</div>
-                <div className="cart__addons__desc">A short-form social cut of your video — 30s vertical 9:16.</div>
-              </div>
-              <div className="cart__addons__price">$99</div>
-              <button type="button" className="cart__addons__add" id="cartAddonReel">Add</button>
-            </div>
-
-            <div className="cart__addons__row" id="cartAddonRowSitePlan" hidden>
-              <div className="cart__addons__thumb" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="1" />
-                  <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
-                </svg>
-              </div>
-              <div className="cart__addons__info">
-                <div className="cart__addons__name">Site Plan</div>
-                <div className="cart__addons__desc">Boundaries, orientation and lot dimensions.</div>
-              </div>
-              <div className="cart__addons__price">$49</div>
-              <button type="button" className="cart__addons__add" id="cartAddonSitePlan">Add</button>
-            </div>
-          </div>
         </div>
 
         <div className="cart__total" id="cartTotal" hidden>
@@ -1158,7 +1124,7 @@ export default function BookPage() {
         </div>
 
         <div className="cart__foot">
-          <button type="button" className="cart__submit" id="cartNext" disabled>Next →</button>
+          <button type="button" className="cart__submit" id="cartNext" disabled>View cart →</button>
         </div>
       </aside>
 
@@ -1290,28 +1256,8 @@ export default function BookPage() {
     return bundles.split(',').includes('siteplan');
   }
 
-  // Cart add-on row sync
-  const addonsBox     = document.getElementById('cartAddons');
-  const addonRowReel  = document.getElementById('cartAddonRowReel');
-  const addonRowSite  = document.getElementById('cartAddonRowSitePlan');
-  const addonBtnReel  = document.getElementById('cartAddonReel');
-  const addonBtnSite  = document.getElementById('cartAddonSitePlan');
-  function syncAddons(){
-    if (!addonsBox) return;
-    const showReel = cartHasVideo() && !items.has(REEL.name);
-    // Site Plan addon shows whenever a package is in cart that doesn't bundle a site plan and reel isn't already there
-    let showSite = false;
-    if (!items.has(SITE_PLAN.name) && !items.has('Floor Plan + Site Plan')) {
-      for (const name of items.keys()) {
-        if (!name.includes(' — ')) continue;
-        const pkgName = name.split(' — ')[0];
-        if (!pkgBundlesSite(pkgName)) { showSite = true; break; }
-      }
-    }
-    if (addonRowReel) addonRowReel.hidden = !showReel;
-    if (addonRowSite) addonRowSite.hidden = !showSite;
-    addonsBox.hidden = !(showReel || showSite);
-  }
+  // Add-ons live on the /book/cart page now, not the overlay — nothing to sync here.
+  function syncAddons(){ /* no-op in overlay; cart page renders its own add-ons */ }
   function addReel(){
     items.set(REEL.name, { price: String(REEL.price), img: REEL.img, categories: REEL.categories.slice() });
     render(); openCart();
@@ -1326,9 +1272,6 @@ export default function BookPage() {
     const addBtn = card.querySelector('[data-pkg-add]');
     if (addBtn) addBtn.click();
   }
-  if (addonBtnReel) addonBtnReel.addEventListener('click', addReel);
-  if (addonBtnSite) addonBtnSite.addEventListener('click', addSitePlan);
-
   // ---- Non-intrusive toast (one slot, queued) ----
   const toast       = document.getElementById('upsellToast');
   const toastEyebrow= document.getElementById('upsellToastEyebrow');
@@ -1556,7 +1499,7 @@ export default function BookPage() {
     next.addEventListener('click', () => {
       if(items.size === 0) return;
       persist();
-      window.location.href = '/book/checkout';
+      window.location.href = '/book/cart';
     });
   }
 
@@ -1580,11 +1523,15 @@ export default function BookPage() {
       const listEl  = card.querySelector('[data-pkg-list]');
       const addBtn  = card.querySelector('[data-pkg-add]');
       const mediaEl = card.querySelector('[data-pkg-media]');
+      const titleEl = card.querySelector('[data-pkg-title]');
+      const descEl  = card.querySelector('[data-pkg-desc]');
       const pillBtns = card.querySelectorAll('[data-pkg-tiers] button');
 
       function currentName(){
         const t = state.get(pkgKey);
-        return pkgName + ' — ' + tiers[t].label;
+        const tier = tiers[t];
+        if (tier && tier.cartName) return tier.cartName;
+        return pkgName + ' — ' + tier.label;
       }
 
       function refresh(){
@@ -1596,9 +1543,12 @@ export default function BookPage() {
           else { listEl.textContent = ''; listEl.hidden = true; }
         }
         if(mediaEl && tier.img){ mediaEl.style.backgroundImage = "url('" + tier.img + "')"; }
+        if(titleEl && tier.title){ titleEl.textContent = tier.title; }
+        if(descEl  && tier.desc){ descEl.textContent  = tier.desc; }
 
         // Reflect cart state: highlight card if any tier of this package is in cart
-        const inCart = Array.from(items.keys()).some(k => k.startsWith(pkgName + ' — '));
+        const tierCartNames = Object.values(tiers).map(tr => tr.cartName || (pkgName + ' — ' + tr.label));
+        const inCart = Array.from(items.keys()).some(k => k.startsWith(pkgName + ' — ') || tierCartNames.includes(k));
         card.classList.toggle('is-added', inCart);
       }
 
@@ -1614,8 +1564,9 @@ export default function BookPage() {
       if(addBtn){
         addBtn.addEventListener('click', () => {
           // Remove any other tier of this package, then add the chosen tier
+          const tierCartNames = Object.values(tiers).map(tr => tr.cartName || (pkgName + ' — ' + tr.label));
           Array.from(items.keys()).forEach(k => {
-            if(k.startsWith(pkgName + ' — ')) items.delete(k);
+            if(k.startsWith(pkgName + ' — ') || tierCartNames.includes(k)) items.delete(k);
           });
           const t = state.get(pkgKey);
           const tier = tiers[t];
