@@ -18,7 +18,7 @@ const allServices: Service[] = [
     num: '01',
     name: 'Photography',
     meta: 'Stills · Twilight',
-    href: '/book#cat-rental',
+    href: '/book#cat-photography',
     img: '/images/showcase.webp',
     caption: 'Photography',
   },

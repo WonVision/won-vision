@@ -636,8 +636,7 @@ export default function BookPage() {
         <nav className="svc-jump" id="svcJump" aria-label="Jump to a service section">
           <div className="svc-jump__strip">
             <a href="#cat-packages" className="svc-jump__chip">Packages</a>
-            <a href="#cat-rental" className="svc-jump__chip">Rental photography</a>
-            <a href="#cat-sales" className="svc-jump__chip">Sales photography</a>
+            <a href="#cat-photography" className="svc-jump__chip">Photography</a>
             <a href="#cat-drone" className="svc-jump__chip">Aerial / drone</a>
             {SHOW_VIDEO && <a href="#cat-video" className="svc-jump__chip">Videography</a>}
             <a href="#cat-floorplans" className="svc-jump__chip">Floor plans &amp; site plan</a>
@@ -775,79 +774,51 @@ export default function BookPage() {
           </div>
         </div>
 
-        {/* RENTAL PHOTOGRAPHY */}
-        <div className="cat" id="cat-rental" data-gallery="photography" data-cats="photography">
-          <div className="cat__head"><h3>Rental <em>photography</em></h3><span className="cat__count">3 tiers</span></div>
-          <div className="svc-grid">
-
-            <article className="svc-card" data-svc="Rental Compact (8 photos)" data-price="180" data-desc="Rental — 8 HDR photos, basic editing, sky correction, same-day delivery." data-img="/images/rental-compact.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-compact.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Rental Compact</h4>
-                <p className="svc-card__desc">8 HDR photos · sky correction · same-day delivery.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$180</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Rental Standard (10 photos)" data-price="220" data-desc="Rental — 10 HDR photos, basic editing, sky correction, same-day delivery." data-img="/images/rental-standard.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-standard.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Rental Standard</h4>
-                <p className="svc-card__desc">10 HDR photos · sky correction · same-day delivery.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$220</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Rental Large (12 photos)" data-price="260" data-desc="Rental — 12 HDR photos, basic editing, sky correction, same-day delivery." data-img="/images/rental-large.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/rental-large.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Rental Large</h4>
-                <p className="svc-card__desc">12 HDR photos · sky correction · same-day delivery.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$260</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        {/* SALES PHOTOGRAPHY */}
-        <div className="cat" id="cat-sales" data-gallery="photography" data-cats="photography">
-          <div className="cat__head"><h3>Sales <em>photography</em></h3><span className="cat__count">3 tiers · photo-only</span></div>
+        {/* PHOTOGRAPHY */}
+        <div className="cat" id="cat-photography" data-gallery="photography" data-cats="photography">
+          <div className="cat__head"><h3>Photography</h3><span className="cat__count">4 tiers · photo-only</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            Pure photography pricing by property size. Full HDR retouching, sky replacement and agent-facing licensing included. Floor plan, drone, twilight and video available as add-ons below — or bundle them at 18–29% off via Packages above.
+            Pure photography pricing by photo count. Full HDR retouching, sky replacement and agent-facing licensing included. Floor plan, drone, twilight and video available as add-ons below — or bundle them at 18–29% off via Packages above.
           </p>
-          <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Sales Compact (15 photos)" data-price="195" data-desc="Sales shoot — 15 HDR photos, full retouching, sky replacement, same-day delivery, agent-facing licensing." data-img="/images/sales-compact.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-compact.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Sales Compact</h4>
-                <p className="svc-card__desc">15 HDR photos · full retouching · sky replacement.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$195</span><span className="svc-card__add">Add +</span></div>
+          <div className="pkg-grid">
+
+            <article
+              className="pkg-card"
+              data-pkg="photography"
+              data-cats="photography"
+              data-pkg-name="Photography"
+              data-pkg-img="/images/sales-standard.webp"
+              data-tiers='{"eight":{"label":"8 photos","price":149},"fifteen":{"label":"15 photos","price":195},"twenty":{"label":"20 photos","price":245},"twentyfive":{"label":"25 photos","price":295}}'
+            >
+              <div className="pkg-card__media">
+                <span className="pkg-card__tag">Photo-only</span>
+                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/sales-standard.webp')" }}></div>
               </div>
-            </article>
-
-            <article className="svc-card" data-svc="Sales Standard (20 photos)" data-price="295" data-desc="Sales shoot — 20 HDR photos, full retouching, sky replacement, same-day delivery, agent-facing licensing." data-img="/images/sales-standard.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-standard.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Sales Standard</h4>
-                <p className="svc-card__desc">20 HDR photos · full retouching · sky replacement.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$295</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Sales Premium (25 photos)" data-price="395" data-desc="Sales shoot — 25 HDR photos, full retouching, sky replacement, same-day delivery, agent-facing licensing." data-img="/images/sales-premium.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/sales-premium.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Sales Premium</h4>
-                <p className="svc-card__desc">25 HDR photos · full retouching · sky replacement.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$395</span><span className="svc-card__add">Add +</span></div>
+              <div className="pkg-card__body">
+                <h4 className="pkg-card__name">Photography</h4>
+                <p className="pkg-card__desc">Full HDR retouching, sky replacement and agent-facing licensing — pick the photo count that fits the property.</p>
+                <ul className="pkg-card__incl">
+                  <li>Full HDR retouching</li>
+                  <li>Sky replacement</li>
+                  <li>Agent-facing licensing</li>
+                  <li>Next-business-day delivery</li>
+                </ul>
+                <div className="pkg-card__tiers">
+                  <label>Photo count</label>
+                  <div className="pkg-card__pills" data-pkg-tiers>
+                    <button type="button" data-tier="eight" className="is-active">8<small>photos</small></button>
+                    <button type="button" data-tier="fifteen">15<small>photos</small></button>
+                    <button type="button" data-tier="twenty">20<small>photos</small></button>
+                    <button type="button" data-tier="twentyfive">25<small>photos</small></button>
+                  </div>
+                </div>
+                <div className="pkg-card__pricerow">
+                  <span className="pkg-card__from">From</span>
+                  <span className="pkg-card__price" data-pkg-price>$149</span>
+                  <span className="pkg-card__list" data-pkg-list hidden></span>
+                </div>
+                <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
             </article>
 
