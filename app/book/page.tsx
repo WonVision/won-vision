@@ -523,8 +523,8 @@ export default function BookPage() {
   .cart__submit:disabled{opacity:0.5;cursor:not-allowed}
 
   /* Cart add-ons (upsell strip inside cart) */
-  .cart__addons{margin-top:14px;padding:12px 0 4px;border-top:1px dashed rgba(74,74,72,0.22)}
-  .cart__addons__label{font-family:var(--body);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--graphite);font-weight:500;margin-bottom:8px}
+  .cart__addons{margin-top:14px;padding:12px 0 4px;border-top:1px dashed rgba(74,74,72,0.22);display:flex;flex-direction:column;gap:10px}
+  .cart__addons__label{font-family:var(--body);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--graphite);font-weight:500}
   .cart__addons__row{display:grid;grid-template-columns:36px 1fr auto auto;gap:10px;align-items:center}
   .cart__addons__thumb{width:36px;height:36px;background:var(--soft);border:1px solid rgba(74,74,72,0.16);display:flex;align-items:center;justify-content:center;color:var(--ink)}
   .cart__addons__thumb svg{width:18px;height:18px}
@@ -538,57 +538,38 @@ export default function BookPage() {
     transition:background .25s ease,color .25s ease;
   }
   .cart__addons__add:hover{background:transparent;color:var(--ink)}
-  .cart__addons.is-added .cart__addons__add{background:var(--steel);border-color:var(--steel);color:var(--paper);pointer-events:none}
-  .cart__addons.is-added .cart__addons__add::before{content:'\\2713 '}
 
-  /* Social Reel upsell modal */
-  .reel-modal{position:fixed;inset:0;z-index:9000;display:none;align-items:center;justify-content:center;padding:24px}
-  .reel-modal.is-open{display:flex}
-  .reel-modal__backdrop{position:absolute;inset:0;background:rgba(10,10,10,0.55);backdrop-filter:blur(4px)}
-  .reel-modal__panel{
-    position:relative;z-index:1;
+  /* Non-intrusive upsell toast (bottom-right) */
+  .upsell-toast{
+    position:fixed;right:24px;bottom:96px;z-index:9000;
+    width:min(340px, calc(100vw - 32px));
     background:var(--paper);color:var(--ink);
-    max-width:440px;width:100%;
-    padding:30px 28px 26px;
     border:1px solid rgba(74,74,72,0.18);
-    box-shadow:0 24px 60px rgba(10,10,10,0.25);
-    animation:reelPop .35s var(--ease);
+    box-shadow:0 14px 36px rgba(10,10,10,0.18);
+    padding:18px 18px 16px 18px;
+    opacity:0;transform:translateY(12px);pointer-events:none;
+    transition:opacity .35s var(--ease), transform .35s var(--ease);
   }
-  @keyframes reelPop{from{transform:translateY(10px);opacity:0}to{transform:translateY(0);opacity:1}}
-  .reel-modal__close{
-    position:absolute;top:10px;right:10px;
-    width:32px;height:32px;border:1px solid rgba(74,74,72,0.2);background:transparent;color:var(--ink);
+  .upsell-toast.is-open{opacity:1;transform:translateY(0);pointer-events:auto}
+  .upsell-toast__close{
+    position:absolute;top:6px;right:6px;
+    width:26px;height:26px;border:none;background:transparent;color:var(--graphite);
     font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
-    transition:background .25s,color .25s,border-color .25s;
   }
-  .reel-modal__close:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-  .reel-modal__eyebrow{font-family:var(--body);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--steel);font-weight:500;margin-bottom:10px}
-  .reel-modal__title{font-family:var(--display);font-weight:500;font-size:26px;line-height:1.15;letter-spacing:-0.01em;color:var(--ink);margin-bottom:10px}
-  .reel-modal__title em{font-style:italic;color:var(--steel);font-weight:400}
-  .reel-modal__desc{font-family:var(--body);font-size:13px;line-height:1.55;color:var(--graphite);margin-bottom:18px}
-  .reel-modal__pricerow{display:flex;align-items:baseline;gap:10px;padding:10px 0 16px;border-top:1px solid rgba(74,74,72,0.14);border-bottom:1px solid rgba(74,74,72,0.14);margin-bottom:18px}
-  .reel-modal__from{font-family:var(--body);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--graphite);font-weight:500}
-  .reel-modal__price{font-family:var(--display);font-weight:500;font-size:26px;color:var(--ink);letter-spacing:-0.01em;line-height:1}
-  .reel-modal__actions{display:flex;gap:10px}
-  .reel-modal__skip{
-    flex:0 0 auto;padding:13px 16px;
+  .upsell-toast__close:hover{color:var(--ink)}
+  .upsell-toast__eyebrow{font-family:var(--body);font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:var(--steel);font-weight:500;margin-bottom:6px}
+  .upsell-toast__title{font-family:var(--display);font-weight:500;font-size:18px;line-height:1.2;letter-spacing:-0.005em;color:var(--ink);margin-bottom:6px}
+  .upsell-toast__desc{font-family:var(--body);font-size:12px;line-height:1.5;color:var(--graphite);margin-bottom:12px}
+  .upsell-toast__row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:10px;border-top:1px solid rgba(74,74,72,0.12)}
+  .upsell-toast__price{font-family:var(--display);font-weight:500;font-size:18px;color:var(--ink);letter-spacing:-0.005em;line-height:1}
+  .upsell-toast__add{
     font-family:var(--body);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;
-    background:transparent;color:var(--graphite);border:1px solid rgba(74,74,72,0.24);cursor:pointer;
-    transition:color .25s,border-color .25s;
-  }
-  .reel-modal__skip:hover{color:var(--ink);border-color:var(--ink)}
-  .reel-modal__add{
-    flex:1 1 auto;padding:13px 16px;
-    font-family:var(--body);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;
-    background:var(--ink);color:var(--paper);border:1px solid var(--ink);cursor:pointer;
+    padding:10px 14px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);cursor:pointer;
     transition:background .25s,color .25s;
   }
-  .reel-modal__add:hover{background:transparent;color:var(--ink)}
-  @media (max-width:480px){
-    .reel-modal__panel{padding:24px 20px 20px}
-    .reel-modal__title{font-size:22px}
-    .reel-modal__actions{flex-direction:column-reverse}
-    .reel-modal__skip,.reel-modal__add{width:100%}
+  .upsell-toast__add:hover{background:transparent;color:var(--ink)}
+  @media (max-width:560px){
+    .upsell-toast{right:14px;left:14px;bottom:88px;width:auto}
   }
 
   @media (max-width:560px){
@@ -727,7 +708,8 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone"
               data-pkg-name="Essential"
               data-pkg-img="/images/showcase.webp"
-              data-tiers='{"compact":{"label":"Compact · 15 photos","price":399},"standard":{"label":"Standard · 20 photos","price":469},"premium":{"label":"Premium · 25 photos","price":539}}'
+              data-pkg-bundles="photo,floorplan,drone"
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":399,"total":483},"standard":{"label":"Standard · 20 photos","price":469,"total":533},"premium":{"label":"Premium · 25 photos","price":539,"total":583}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Most booked</span>
@@ -754,7 +736,7 @@ export default function BookPage() {
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
                   <span className="pkg-card__price" data-pkg-price>$399</span>
-                  <span className="pkg-card__list" data-pkg-list hidden></span>
+                  <span className="pkg-card__list" data-pkg-list>$483 total cost</span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
@@ -767,7 +749,8 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone,video"
               data-pkg-name="Signature"
               data-pkg-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85"
-              data-tiers='{"compact":{"label":"Compact · 15 photos","price":649},"standard":{"label":"Standard · 20 photos","price":745},"premium":{"label":"Premium · 25 photos","price":819}}'
+              data-pkg-bundles="photo,floorplan,siteplan,drone,listingvideo"
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":649,"total":1051},"standard":{"label":"Standard · 20 photos","price":745,"total":1101},"premium":{"label":"Premium · 25 photos","price":819,"total":1151}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Complete deliverable</span>
@@ -796,7 +779,7 @@ export default function BookPage() {
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
                   <span className="pkg-card__price" data-pkg-price>$649</span>
-                  <span className="pkg-card__list" data-pkg-list hidden></span>
+                  <span className="pkg-card__list" data-pkg-list>$1,051 total cost</span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
@@ -807,10 +790,11 @@ export default function BookPage() {
             <article
               className="pkg-card"
               data-pkg="cinematic"
-              data-cats="photography,floorplan,drone,video"
+              data-cats="photography,floorplan,drone,video,social"
               data-pkg-name="Cinematic"
               data-pkg-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85"
-              data-tiers='{"compact":{"label":"Compact · 15 photos","price":1099},"standard":{"label":"Standard · 20 photos","price":1169},"premium":{"label":"Premium · 25 photos","price":1239}}'
+              data-pkg-bundles="photo,floorplan,siteplan,drone,cinematicvideo,reel"
+              data-tiers='{"compact":{"label":"Compact · 15 photos","price":1099,"total":1350},"standard":{"label":"Standard · 20 photos","price":1169,"total":1400},"premium":{"label":"Premium · 25 photos","price":1239,"total":1450}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Flagship</span>
@@ -828,7 +812,7 @@ export default function BookPage() {
                   <li>Cinematic Listing Video · 60–90s</li>
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
-                  <li>Bespoke music score · hand colour-grade</li>
+                  <li>Hand colour-grade</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -841,7 +825,7 @@ export default function BookPage() {
                 <div className="pkg-card__pricerow">
                   <span className="pkg-card__from">From</span>
                   <span className="pkg-card__price" data-pkg-price>$1,099</span>
-                  <span className="pkg-card__list" data-pkg-list hidden></span>
+                  <span className="pkg-card__list" data-pkg-list>$1,350 total cost</span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
               </div>
@@ -1000,7 +984,7 @@ export default function BookPage() {
                   <li>60–90s flagship cinematic edit</li>
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
-                  <li>Bespoke music score · hand colour-grade</li>
+                  <li>Hand colour-grade</li>
                 </ul>
                 <div className="svc-card__foot"><span className="svc-card__price">$699</span><span className="svc-card__add">Add +</span></div>
               </div>
@@ -1135,7 +1119,8 @@ export default function BookPage() {
 
           <div className="cart__addons" id="cartAddons" hidden>
             <div className="cart__addons__label">Add-ons</div>
-            <div className="cart__addons__row">
+
+            <div className="cart__addons__row" id="cartAddonRowReel" hidden>
               <div className="cart__addons__thumb" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <rect x="6" y="3" width="12" height="18" rx="2.5" />
@@ -1144,10 +1129,25 @@ export default function BookPage() {
               </div>
               <div className="cart__addons__info">
                 <div className="cart__addons__name">Social Reel</div>
-                <div className="cart__addons__desc">30s vertical 9:16 cut for Instagram &amp; TikTok.</div>
+                <div className="cart__addons__desc">A short-form social cut of your video — 30s vertical 9:16.</div>
               </div>
               <div className="cart__addons__price">$99</div>
               <button type="button" className="cart__addons__add" id="cartAddonReel">Add</button>
+            </div>
+
+            <div className="cart__addons__row" id="cartAddonRowSitePlan" hidden>
+              <div className="cart__addons__thumb" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="1" />
+                  <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
+                </svg>
+              </div>
+              <div className="cart__addons__info">
+                <div className="cart__addons__name">Site Plan</div>
+                <div className="cart__addons__desc">Boundaries, orientation and lot dimensions.</div>
+              </div>
+              <div className="cart__addons__price">$49</div>
+              <button type="button" className="cart__addons__add" id="cartAddonSitePlan">Add</button>
             </div>
           </div>
         </div>
@@ -1162,22 +1162,15 @@ export default function BookPage() {
         </div>
       </aside>
 
-      {/* Social Reel upsell modal — triggers once when first video item is added */}
-      <div className="reel-modal" id="reelModal" aria-hidden="true" role="dialog" aria-labelledby="reelModalTitle">
-        <div className="reel-modal__backdrop" id="reelModalBackdrop"></div>
-        <div className="reel-modal__panel" role="document">
-          <button type="button" className="reel-modal__close" id="reelModalClose" aria-label="Close">×</button>
-          <div className="reel-modal__eyebrow">Add-on · Recommended</div>
-          <h3 className="reel-modal__title" id="reelModalTitle">Add a <em>Social Reel</em>?</h3>
-          <p className="reel-modal__desc">Cut your video into a 30-second vertical 9:16 reel built for Instagram and TikTok — captions, music and hook-first edit, delivered same week.</p>
-          <div className="reel-modal__pricerow">
-            <span className="reel-modal__from">Add-on</span>
-            <span className="reel-modal__price">$99</span>
-          </div>
-          <div className="reel-modal__actions">
-            <button type="button" className="reel-modal__skip" id="reelModalSkip">No thanks</button>
-            <button type="button" className="reel-modal__add" id="reelModalAdd">Add Social Reel · $99</button>
-          </div>
+      {/* Non-intrusive upsell toast (Reel / Site Plan / Package suggestion) */}
+      <div className="upsell-toast" id="upsellToast" aria-hidden="true" role="dialog" aria-live="polite">
+        <button type="button" className="upsell-toast__close" id="upsellToastClose" aria-label="Dismiss">×</button>
+        <div className="upsell-toast__eyebrow" id="upsellToastEyebrow">Add-on · Recommended</div>
+        <h4 className="upsell-toast__title" id="upsellToastTitle">Add a Social Reel?</h4>
+        <p className="upsell-toast__desc" id="upsellToastDesc"></p>
+        <div className="upsell-toast__row">
+          <span className="upsell-toast__price" id="upsellToastPrice">$99</span>
+          <button type="button" className="upsell-toast__add" id="upsellToastAdd">Add</button>
         </div>
       </div>
 
@@ -1237,64 +1230,211 @@ export default function BookPage() {
   const next    = document.getElementById('cartNext');
   if(!cards.length || !fab) return;
 
-  // ---- Social Reel upsell (virtual item, no card in the grid) ----
+  // ---- Upsell catalogue (virtual items + popup triggers) ----
   const REEL = {
     name: 'Social Reel',
     price: 99,
     img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80',
     categories: ['video','social'],
+    desc: 'A short-form social cut of your chosen video — 30s vertical 9:16, captions, hook-first edit. Built for Instagram & TikTok.',
   };
-  const addonsBox = document.getElementById('cartAddons');
-  const addonBtn  = document.getElementById('cartAddonReel');
-  const modal     = document.getElementById('reelModal');
-  const modalBg   = document.getElementById('reelModalBackdrop');
-  const modalAdd  = document.getElementById('reelModalAdd');
-  const modalSkip = document.getElementById('reelModalSkip');
-  const modalClose= document.getElementById('reelModalClose');
+  const SITE_PLAN = {
+    name: 'Site Plan',
+    price: 49,
+    img: '/images/floor-plan.webp',
+    categories: ['floorplan','siteplan'],
+    desc: 'Standalone site plan with boundaries, orientation and lot dimensions — add it to round out the package.',
+  };
+
+  // Map à-la-carte cart item names → bundle component tags (for package-suggestion)
+  function componentsForItem(name, categories){
+    const tags = new Set();
+    const cats = Array.isArray(categories) ? categories : [];
+    if (/^Photography\b/.test(name) || cats.includes('photography')) tags.add('photo');
+    if (/^Floor Plan\b/.test(name)) tags.add('floorplan');
+    if (/^Floor Plan \+ Site Plan/.test(name)) { tags.add('floorplan'); tags.add('siteplan'); }
+    if (/^Site Plan\b/.test(name)) tags.add('siteplan');
+    if (/^Drone Set\b/.test(name)) tags.add('drone');
+    if (/^Property Highlight Video\b/.test(name)) tags.add('video');
+    if (/^Listing Video\b/.test(name)) { tags.add('video'); tags.add('listingvideo'); }
+    if (/^Cinematic Listing Video\b/.test(name)) { tags.add('video'); tags.add('cinematicvideo'); }
+    if (/^Social Reel\b/.test(name)) { tags.add('video'); tags.add('reel'); }
+    return tags;
+  }
+  function cartComponents(){
+    const all = new Set();
+    items.forEach((data, name) => {
+      // Don't count items that came from an already-added package
+      if (name.includes(' — ')) return;
+      componentsForItem(name, data.categories).forEach(t => all.add(t));
+    });
+    return all;
+  }
   function cartHasVideo(){
     for (const [, data] of items) {
       if (Array.isArray(data.categories) && data.categories.includes('video') && !data.categories.includes('social')) return true;
     }
     return false;
   }
+  function cartHasPackageInProgress(){
+    for (const name of items.keys()) { if (name.includes(' — ')) return true; }
+    return false;
+  }
+  function pkgInCart(pkgName){
+    for (const name of items.keys()) { if (name.startsWith(pkgName + ' — ')) return true; }
+    return false;
+  }
+  function pkgBundlesSite(pkgName){
+    const cardEl = document.querySelector('.pkg-card[data-pkg-name="' + pkgName + '"]');
+    const bundles = cardEl ? (cardEl.getAttribute('data-pkg-bundles') || '') : '';
+    return bundles.split(',').includes('siteplan');
+  }
+
+  // Cart add-on row sync
+  const addonsBox     = document.getElementById('cartAddons');
+  const addonRowReel  = document.getElementById('cartAddonRowReel');
+  const addonRowSite  = document.getElementById('cartAddonRowSitePlan');
+  const addonBtnReel  = document.getElementById('cartAddonReel');
+  const addonBtnSite  = document.getElementById('cartAddonSitePlan');
   function syncAddons(){
     if (!addonsBox) return;
-    const showRow = cartHasVideo();
-    addonsBox.hidden = !showRow;
-    if (showRow) addonsBox.classList.toggle('is-added', items.has(REEL.name));
+    const showReel = cartHasVideo() && !items.has(REEL.name);
+    // Site Plan addon shows whenever a package is in cart that doesn't bundle a site plan and reel isn't already there
+    let showSite = false;
+    if (!items.has(SITE_PLAN.name) && !items.has('Floor Plan + Site Plan')) {
+      for (const name of items.keys()) {
+        if (!name.includes(' — ')) continue;
+        const pkgName = name.split(' — ')[0];
+        if (!pkgBundlesSite(pkgName)) { showSite = true; break; }
+      }
+    }
+    if (addonRowReel) addonRowReel.hidden = !showReel;
+    if (addonRowSite) addonRowSite.hidden = !showSite;
+    addonsBox.hidden = !(showReel || showSite);
   }
   function addReel(){
     items.set(REEL.name, { price: String(REEL.price), img: REEL.img, categories: REEL.categories.slice() });
-    render();
-    openCart();
+    render(); openCart();
   }
-  function openReelModal(){
-    if (!modal) return;
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden','false');
+  function addSitePlan(){
+    items.set(SITE_PLAN.name, { price: String(SITE_PLAN.price), img: SITE_PLAN.img, categories: SITE_PLAN.categories.slice() });
+    render(); openCart();
   }
-  function closeReelModal(){
-    if (!modal) return;
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden','true');
+  function addPackageByKey(pkgKey){
+    const card = document.querySelector('.pkg-card[data-pkg="' + pkgKey + '"]');
+    if (!card) return;
+    const addBtn = card.querySelector('[data-pkg-add]');
+    if (addBtn) addBtn.click();
   }
+  if (addonBtnReel) addonBtnReel.addEventListener('click', addReel);
+  if (addonBtnSite) addonBtnSite.addEventListener('click', addSitePlan);
+
+  // ---- Non-intrusive toast (one slot, queued) ----
+  const toast       = document.getElementById('upsellToast');
+  const toastEyebrow= document.getElementById('upsellToastEyebrow');
+  const toastTitle  = document.getElementById('upsellToastTitle');
+  const toastDesc   = document.getElementById('upsellToastDesc');
+  const toastPrice  = document.getElementById('upsellToastPrice');
+  const toastAdd    = document.getElementById('upsellToastAdd');
+  const toastClose  = document.getElementById('upsellToastClose');
+  let toastTimer = null;
+  let toastQueue = [];
+  let toastOpen = false;
+  function showToast(opts){
+    if (!toast) return;
+    if (toastOpen) { toastQueue.push(opts); return; }
+    toastOpen = true;
+    if (toastEyebrow) toastEyebrow.textContent = opts.eyebrow || 'Add-on · Recommended';
+    if (toastTitle)   toastTitle.textContent   = opts.title;
+    if (toastDesc)    toastDesc.textContent    = opts.desc;
+    if (toastPrice)   toastPrice.textContent   = opts.price;
+    if (toastAdd) {
+      toastAdd.textContent = opts.addLabel || 'Add';
+      toastAdd.onclick = function(){ try { opts.onAdd && opts.onAdd(); } finally { hideToast(); } };
+    }
+    toast.classList.add('is-open');
+    toast.setAttribute('aria-hidden','false');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(hideToast, 14000);
+  }
+  function hideToast(){
+    if (!toast) return;
+    toast.classList.remove('is-open');
+    toast.setAttribute('aria-hidden','true');
+    if (toastTimer) { clearTimeout(toastTimer); toastTimer = null; }
+    toastOpen = false;
+    if (toastQueue.length) {
+      const next = toastQueue.shift();
+      setTimeout(() => showToast(next), 350);
+    }
+  }
+  if (toastClose) toastClose.addEventListener('click', hideToast);
+
   function maybePromptReel(addedCategories){
-    if (!modal) return;
+    if (!toast) return;
     if (!Array.isArray(addedCategories) || !addedCategories.includes('video')) return;
-    if (addedCategories.includes('social')) return; // the reel itself
+    if (addedCategories.includes('social')) return;
     if (items.has(REEL.name)) return;
     if (sessionStorage.getItem('wv-reel-prompted') === '1') return;
     sessionStorage.setItem('wv-reel-prompted','1');
-    setTimeout(openReelModal, 250);
+    showToast({
+      eyebrow: 'Add-on · Recommended',
+      title: 'Add a Social Reel?',
+      desc: REEL.desc,
+      price: '$' + REEL.price,
+      addLabel: 'Add · $' + REEL.price,
+      onAdd: addReel,
+    });
   }
-  if (addonBtn) addonBtn.addEventListener('click', () => { addReel(); });
-  if (modalAdd) modalAdd.addEventListener('click', () => { addReel(); closeReelModal(); });
-  if (modalSkip) modalSkip.addEventListener('click', closeReelModal);
-  if (modalClose) modalClose.addEventListener('click', closeReelModal);
-  if (modalBg) modalBg.addEventListener('click', closeReelModal);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) closeReelModal();
-  });
+  function maybePromptSitePlan(addedPkgName, addedPkgBundles){
+    if (!toast) return;
+    if (!addedPkgName) return;
+    const bundles = (addedPkgBundles || '').split(',');
+    if (bundles.includes('siteplan')) return; // already bundled
+    if (items.has(SITE_PLAN.name) || items.has('Floor Plan + Site Plan')) return;
+    if (sessionStorage.getItem('wv-siteplan-prompted') === '1') return;
+    sessionStorage.setItem('wv-siteplan-prompted','1');
+    showToast({
+      eyebrow: 'Add-on · Recommended',
+      title: 'Add a Site Plan?',
+      desc: SITE_PLAN.desc,
+      price: '$' + SITE_PLAN.price,
+      addLabel: 'Add · $' + SITE_PLAN.price,
+      onAdd: addSitePlan,
+    });
+  }
+  function maybePromptPackage(){
+    if (!toast) return;
+    if (cartHasPackageInProgress()) return;
+    const have = cartComponents();
+    if (have.size < 2) return;
+    const candidates = Array.from(document.querySelectorAll('.pkg-card[data-pkg-bundles]'));
+    for (const card of candidates) {
+      const pkgKey = card.getAttribute('data-pkg');
+      const pkgName = card.getAttribute('data-pkg-name');
+      const bundles = (card.getAttribute('data-pkg-bundles') || '').split(',').filter(Boolean);
+      if (!bundles.length) continue;
+      let overlap = 0;
+      for (const b of bundles) if (have.has(b)) overlap++;
+      if (overlap < 2) continue;
+      const flag = 'wv-pkg-prompted-' + pkgKey;
+      if (sessionStorage.getItem(flag) === '1') continue;
+      sessionStorage.setItem(flag, '1');
+      // Read the package's first tier price for the toast headline
+      let tiers = {}; try { tiers = JSON.parse(card.getAttribute('data-tiers') || '{}'); } catch (_){}
+      const firstTier = tiers[Object.keys(tiers)[0]];
+      const priceLabel = firstTier ? 'From $' + Number(firstTier.price).toLocaleString('en-AU') : '';
+      showToast({
+        eyebrow: 'Save with a package',
+        title: 'Bundle into ' + pkgName + '?',
+        desc: 'You\\'ve added ' + overlap + ' items that come bundled in the ' + pkgName + ' package — usually cheaper than à la carte.',
+        price: priceLabel,
+        addLabel: 'View ' + pkgName,
+        onAdd: function(){ addPackageByKey(pkgKey); },
+      });
+      return;
+    }
+  }
 
   const items = new Map();
 
@@ -1389,6 +1529,7 @@ export default function BookPage() {
       card.classList.add('is-added');
       openCart();
       maybePromptReel(cats);
+      maybePromptPackage();
     } else {
       items.delete(name);
       if(card) card.classList.remove('is-added');
@@ -1450,7 +1591,10 @@ export default function BookPage() {
         const t = state.get(pkgKey);
         const tier = tiers[t];
         if(priceEl) priceEl.textContent = fmtAud(tier.price);
-        if(listEl){ listEl.textContent = ''; listEl.hidden = true; }
+        if(listEl){
+          if(tier.total){ listEl.textContent = fmtAud(tier.total) + ' total cost'; listEl.hidden = false; }
+          else { listEl.textContent = ''; listEl.hidden = true; }
+        }
         if(mediaEl && tier.img){ mediaEl.style.backgroundImage = "url('" + tier.img + "')"; }
 
         // Reflect cart state: highlight card if any tier of this package is in cart
@@ -1481,7 +1625,9 @@ export default function BookPage() {
             img: pkgImg,
             categories: cats,
           });
+          const bundles = card.getAttribute('data-pkg-bundles') || '';
           maybePromptReel(cats);
+          maybePromptSitePlan(pkgName, bundles);
           render();
           openCart();
           refresh();

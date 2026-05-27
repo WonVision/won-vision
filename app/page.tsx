@@ -204,6 +204,7 @@ export default function HomePage() {
   .home-pkg__price{font-family:var(--display);font-weight:500;font-size:24px;color:var(--ink);letter-spacing:-0.01em;line-height:1}
   .home-pkg--featured .home-pkg__price{font-size:30px}
   .home-pkg__price small{font-family:var(--body);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--graphite,#4A4A48);font-weight:500;display:block;margin-bottom:3px}
+  .home-pkg__total{font-family:var(--body);font-size:11px;color:var(--graphite,#4A4A48);font-weight:500;text-decoration:line-through;margin-top:6px;display:block}
   .home-pkg__cta{font-family:var(--body);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);font-weight:500;white-space:nowrap}
   @media (max-width:1100px){
     .home-pkgs__grid{grid-template-columns:repeat(2,1fr);align-items:stretch}
@@ -432,7 +433,7 @@ export default function HomePage() {
                   <li>Next-business-day delivery</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$399</span>
+                  <span className="home-pkg__price"><small>From</small>$399<span className="home-pkg__total">$483 total cost</span></span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
@@ -457,7 +458,7 @@ export default function HomePage() {
                   <li>Agent piece-to-camera direction</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$649</span>
+                  <span className="home-pkg__price"><small>From</small>$649<span className="home-pkg__total">$1,051 total cost</span></span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
@@ -482,10 +483,10 @@ export default function HomePage() {
                   <li>Cinematic Listing Video · 60–90s</li>
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
-                  <li>Bespoke music score · hand colour-grade</li>
+                  <li>Hand colour-grade</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$1,099</span>
+                  <span className="home-pkg__price"><small>From</small>$1,099<span className="home-pkg__total">$1,350 total cost</span></span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
