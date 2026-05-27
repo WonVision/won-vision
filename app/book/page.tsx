@@ -830,9 +830,9 @@ export default function BookPage() {
               data-pkg-img="/images/drone-set.webp"
               data-tiers='{"lite":{"label":"Lite · 3 photos","price":139},"standard":{"label":"Standard · 5 photos","price":159}}'
             >
-              <div className="pkg-card__media">
+              <div className="pkg-card__media" style={{ aspectRatio: '5 / 6' }}>
                 <span className="pkg-card__tag">Aerial</span>
-                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')" }}></div>
+                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')", backgroundSize: '135%', backgroundPosition: 'center 45%' }}></div>
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Drone Set</h4>
