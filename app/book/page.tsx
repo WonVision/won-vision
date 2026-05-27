@@ -522,6 +522,75 @@ export default function BookPage() {
   .cart__submit:hover::before{transform:scaleX(0);transform-origin:left center}
   .cart__submit:disabled{opacity:0.5;cursor:not-allowed}
 
+  /* Cart add-ons (upsell strip inside cart) */
+  .cart__addons{margin-top:14px;padding:12px 0 4px;border-top:1px dashed rgba(74,74,72,0.22)}
+  .cart__addons__label{font-family:var(--body);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--graphite);font-weight:500;margin-bottom:8px}
+  .cart__addons__row{display:grid;grid-template-columns:36px 1fr auto auto;gap:10px;align-items:center}
+  .cart__addons__thumb{width:36px;height:36px;background:var(--soft);border:1px solid rgba(74,74,72,0.16);display:flex;align-items:center;justify-content:center;color:var(--ink)}
+  .cart__addons__thumb svg{width:18px;height:18px}
+  .cart__addons__info{min-width:0}
+  .cart__addons__name{font-family:var(--display);font-weight:500;font-size:14px;color:var(--ink);line-height:1.2;letter-spacing:-0.005em}
+  .cart__addons__desc{font-family:var(--body);font-size:11px;line-height:1.4;color:var(--graphite);margin-top:2px}
+  .cart__addons__price{font-family:var(--body);font-size:12px;color:var(--ink);font-weight:600}
+  .cart__addons__add{
+    font-family:var(--body);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;
+    padding:8px 12px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;
+    transition:background .25s ease,color .25s ease;
+  }
+  .cart__addons__add:hover{background:transparent;color:var(--ink)}
+  .cart__addons.is-added .cart__addons__add{background:var(--steel);border-color:var(--steel);color:var(--paper);pointer-events:none}
+  .cart__addons.is-added .cart__addons__add::before{content:'\\2713 '}
+
+  /* Social Reel upsell modal */
+  .reel-modal{position:fixed;inset:0;z-index:9000;display:none;align-items:center;justify-content:center;padding:24px}
+  .reel-modal.is-open{display:flex}
+  .reel-modal__backdrop{position:absolute;inset:0;background:rgba(10,10,10,0.55);backdrop-filter:blur(4px)}
+  .reel-modal__panel{
+    position:relative;z-index:1;
+    background:var(--paper);color:var(--ink);
+    max-width:440px;width:100%;
+    padding:30px 28px 26px;
+    border:1px solid rgba(74,74,72,0.18);
+    box-shadow:0 24px 60px rgba(10,10,10,0.25);
+    animation:reelPop .35s var(--ease);
+  }
+  @keyframes reelPop{from{transform:translateY(10px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .reel-modal__close{
+    position:absolute;top:10px;right:10px;
+    width:32px;height:32px;border:1px solid rgba(74,74,72,0.2);background:transparent;color:var(--ink);
+    font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .25s,color .25s,border-color .25s;
+  }
+  .reel-modal__close:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .reel-modal__eyebrow{font-family:var(--body);font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--steel);font-weight:500;margin-bottom:10px}
+  .reel-modal__title{font-family:var(--display);font-weight:500;font-size:26px;line-height:1.15;letter-spacing:-0.01em;color:var(--ink);margin-bottom:10px}
+  .reel-modal__title em{font-style:italic;color:var(--steel);font-weight:400}
+  .reel-modal__desc{font-family:var(--body);font-size:13px;line-height:1.55;color:var(--graphite);margin-bottom:18px}
+  .reel-modal__pricerow{display:flex;align-items:baseline;gap:10px;padding:10px 0 16px;border-top:1px solid rgba(74,74,72,0.14);border-bottom:1px solid rgba(74,74,72,0.14);margin-bottom:18px}
+  .reel-modal__from{font-family:var(--body);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--graphite);font-weight:500}
+  .reel-modal__price{font-family:var(--display);font-weight:500;font-size:26px;color:var(--ink);letter-spacing:-0.01em;line-height:1}
+  .reel-modal__actions{display:flex;gap:10px}
+  .reel-modal__skip{
+    flex:0 0 auto;padding:13px 16px;
+    font-family:var(--body);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;
+    background:transparent;color:var(--graphite);border:1px solid rgba(74,74,72,0.24);cursor:pointer;
+    transition:color .25s,border-color .25s;
+  }
+  .reel-modal__skip:hover{color:var(--ink);border-color:var(--ink)}
+  .reel-modal__add{
+    flex:1 1 auto;padding:13px 16px;
+    font-family:var(--body);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;
+    background:var(--ink);color:var(--paper);border:1px solid var(--ink);cursor:pointer;
+    transition:background .25s,color .25s;
+  }
+  .reel-modal__add:hover{background:transparent;color:var(--ink)}
+  @media (max-width:480px){
+    .reel-modal__panel{padding:24px 20px 20px}
+    .reel-modal__title{font-size:22px}
+    .reel-modal__actions{flex-direction:column-reverse}
+    .reel-modal__skip,.reel-modal__add{width:100%}
+  }
+
   @media (max-width:560px){
     .cart-fab{bottom:18px;right:18px;width:54px;height:54px}
     .cart{
@@ -864,17 +933,17 @@ export default function BookPage() {
         {/* VIDEO */}
         {SHOW_VIDEO && (
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
-          <div className="cat__head"><h3>Videography</h3><span className="cat__count">3 products</span></div>
+          <div className="cat__head"><h3>Videography</h3><span className="cat__count">3 films</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            Property Highlight Video is footage only — no agent on camera. Standard and Premium Listing Video both include agent footage and drone footage; Premium extends to a 60–90s edit.
+            From a fast-moving Property Highlight to a full Cinematic Listing — every Won Vision film is shot in-house, colour-graded by hand, and scored to a track that fits the home. Social cut-downs are offered at checkout.
           </p>
 
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Property Highlight Video (30–60s · no agent)" data-price="349" data-desc="Property Highlight Video · 30–60s. Footage only, no agent on camera. 16:9, music-bedded." data-img="/images/cinematic.webp">
+            <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/cinematic.webp">
               <div className="svc-card__media">
                 <video
-                  src="/video/cinematic-demo.mp4"
+                  src="/video/cinematic-demo-loop.mp4"
                   autoPlay
                   loop
                   muted
@@ -888,59 +957,44 @@ export default function BookPage() {
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Property Highlight Video</h4>
                 <ul className="pkg-card__incl">
-                  <li>30–60s edit · 16:9 cinematic</li>
-                  <li>No agent on camera</li>
-                  <li>Music-bedded, full grade</li>
+                  <li>30–60s edit · 16:9 cinematic frame</li>
+                  <li>Pure architecture · no agent on camera</li>
+                  <li>Hand colour-grade · custom music bed</li>
+                  <li>Same-week delivery, in-house</li>
                 </ul>
-                <div className="svc-card__foot"><span className="svc-card__price">$349</span><span className="svc-card__add">Add +</span></div>
+                <div className="svc-card__foot"><span className="svc-card__price">$399</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article
-              className="pkg-card"
-              data-pkg="listing-video"
-              data-cats="video"
-              data-gallery="none"
-              data-pkg-name="Listing Video"
-              data-pkg-img="/images/cinematic.webp"
-              data-tiers='{"standard":{"label":"Standard · 30–60s","price":499},"premium":{"label":"Premium · 60–90s","price":649}}'
-            >
-              <div className="pkg-card__media">
-                <span className="pkg-card__tag">Listing video</span>
-                <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div>
-              </div>
-              <div className="pkg-card__body">
-                <h4 className="pkg-card__name">Listing Video</h4>
-                <ul className="pkg-card__incl">
-                  <li>Cinematic 16:9 listing film</li>
-                  <li>Agent footage on camera</li>
-                  <li>Drone footage included</li>
-                  <li>Music-bedded · full grade</li>
-                  <li>Standard 30–60s · Premium 60–90s</li>
-                </ul>
-                <div className="pkg-card__tiers">
-                  <label>Edit length</label>
-                  <div className="pkg-card__pills" data-pkg-tiers>
-                    <button type="button" data-tier="standard" className="is-active">Standard<small>30–60s</small></button>
-                    <button type="button" data-tier="premium">Premium<small>60–90s</small></button>
-                  </div>
-                </div>
-                <div className="pkg-card__pricerow">
-                  <span className="pkg-card__from">From</span>
-                  <span className="pkg-card__price" data-pkg-price>$499</span>
-                  <span className="pkg-card__list" data-pkg-list hidden></span>
-                </div>
-                <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Social Reel (30s · 9:16)" data-price="195" data-desc="30-second vertical reel cut for Instagram and TikTok with music and captions." data-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80')" }}></div></div>
+            <article className="svc-card" data-svc="Listing Video" data-price="499" data-desc="A polished 30–60s listing film with agent on camera and drone aerials. Hand-graded, scored, and delivered ready for portals and socials." data-img="/images/cinematic.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Social Reel</h4>
-                <p className="svc-card__desc">30s portrait 9:16 cut for Instagram and TikTok.</p>
-                <div className="svc-card__foot"><span className="svc-card__price">$195</span><span className="svc-card__add">Add +</span></div>
+                <h4 className="svc-card__name">Listing Video</h4>
+                <ul className="pkg-card__incl">
+                  <li>30–60s polished listing film · 16:9</li>
+                  <li>Agent piece-to-camera direction</li>
+                  <li>Drone aerials + interior coverage</li>
+                  <li>Cinematic grade · scored to picture</li>
+                  <li>Portal-ready master + web cut</li>
+                </ul>
+                <div className="svc-card__foot"><span className="svc-card__price">$499</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card" data-svc="Cinematic Listing Video" data-price="699" data-desc="Our flagship 60–90s cinematic film. Director-led, fully storyboarded, with extended aerial coverage and a bespoke music score. The complete signature deliverable." data-img="/images/cinematic.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Cinematic Listing Video</h4>
+                <ul className="pkg-card__incl">
+                  <li>60–90s flagship cinematic edit</li>
+                  <li>Director-led shoot · storyboard treatment</li>
+                  <li>Extended aerial &amp; gimbal coverage</li>
+                  <li>Bespoke music score · hand colour-grade</li>
+                  <li>Portal master, social master &amp; teaser cut</li>
+                </ul>
+                <div className="svc-card__foot"><span className="svc-card__price">$699</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
@@ -1070,6 +1124,24 @@ export default function BookPage() {
             <p>Tap any card to add it. Cart fills as you go.</p>
           </div>
           <div className="cart__list" id="cartList" hidden></div>
+
+          <div className="cart__addons" id="cartAddons" hidden>
+            <div className="cart__addons__label">Add-ons</div>
+            <div className="cart__addons__row">
+              <div className="cart__addons__thumb" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="6" y="3" width="12" height="18" rx="2.5" />
+                  <line x1="11" y1="18.5" x2="13" y2="18.5" />
+                </svg>
+              </div>
+              <div className="cart__addons__info">
+                <div className="cart__addons__name">Social Reel</div>
+                <div className="cart__addons__desc">30s vertical 9:16 cut for Instagram &amp; TikTok.</div>
+              </div>
+              <div className="cart__addons__price">$99</div>
+              <button type="button" className="cart__addons__add" id="cartAddonReel">Add</button>
+            </div>
+          </div>
         </div>
 
         <div className="cart__total" id="cartTotal" hidden>
@@ -1081,6 +1153,25 @@ export default function BookPage() {
           <button type="button" className="cart__submit" id="cartNext" disabled>Next →</button>
         </div>
       </aside>
+
+      {/* Social Reel upsell modal — triggers once when first video item is added */}
+      <div className="reel-modal" id="reelModal" aria-hidden="true" role="dialog" aria-labelledby="reelModalTitle">
+        <div className="reel-modal__backdrop" id="reelModalBackdrop"></div>
+        <div className="reel-modal__panel" role="document">
+          <button type="button" className="reel-modal__close" id="reelModalClose" aria-label="Close">×</button>
+          <div className="reel-modal__eyebrow">Add-on · Recommended</div>
+          <h3 className="reel-modal__title" id="reelModalTitle">Add a <em>Social Reel</em>?</h3>
+          <p className="reel-modal__desc">Cut your video into a 30-second vertical 9:16 reel built for Instagram and TikTok — captions, music and hook-first edit, delivered same week.</p>
+          <div className="reel-modal__pricerow">
+            <span className="reel-modal__from">Add-on</span>
+            <span className="reel-modal__price">$99</span>
+          </div>
+          <div className="reel-modal__actions">
+            <button type="button" className="reel-modal__skip" id="reelModalSkip">No thanks</button>
+            <button type="button" className="reel-modal__add" id="reelModalAdd">Add Social Reel · $99</button>
+          </div>
+        </div>
+      </div>
 
       <footer className="foot">
         <div className="foot__inner">
@@ -1137,6 +1228,65 @@ export default function BookPage() {
   const amt     = document.getElementById('cartAmt');
   const next    = document.getElementById('cartNext');
   if(!cards.length || !fab) return;
+
+  // ---- Social Reel upsell (virtual item, no card in the grid) ----
+  const REEL = {
+    name: 'Social Reel',
+    price: 99,
+    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80',
+    categories: ['video','social'],
+  };
+  const addonsBox = document.getElementById('cartAddons');
+  const addonBtn  = document.getElementById('cartAddonReel');
+  const modal     = document.getElementById('reelModal');
+  const modalBg   = document.getElementById('reelModalBackdrop');
+  const modalAdd  = document.getElementById('reelModalAdd');
+  const modalSkip = document.getElementById('reelModalSkip');
+  const modalClose= document.getElementById('reelModalClose');
+  function cartHasVideo(){
+    for (const [, data] of items) {
+      if (Array.isArray(data.categories) && data.categories.includes('video') && !data.categories.includes('social')) return true;
+    }
+    return false;
+  }
+  function syncAddons(){
+    if (!addonsBox) return;
+    const showRow = cartHasVideo();
+    addonsBox.hidden = !showRow;
+    if (showRow) addonsBox.classList.toggle('is-added', items.has(REEL.name));
+  }
+  function addReel(){
+    items.set(REEL.name, { price: String(REEL.price), img: REEL.img, categories: REEL.categories.slice() });
+    render();
+    openCart();
+  }
+  function openReelModal(){
+    if (!modal) return;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+  }
+  function closeReelModal(){
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+  }
+  function maybePromptReel(addedCategories){
+    if (!modal) return;
+    if (!Array.isArray(addedCategories) || !addedCategories.includes('video')) return;
+    if (addedCategories.includes('social')) return; // the reel itself
+    if (items.has(REEL.name)) return;
+    if (sessionStorage.getItem('wv-reel-prompted') === '1') return;
+    sessionStorage.setItem('wv-reel-prompted','1');
+    setTimeout(openReelModal, 250);
+  }
+  if (addonBtn) addonBtn.addEventListener('click', () => { addReel(); });
+  if (modalAdd) modalAdd.addEventListener('click', () => { addReel(); closeReelModal(); });
+  if (modalSkip) modalSkip.addEventListener('click', closeReelModal);
+  if (modalClose) modalClose.addEventListener('click', closeReelModal);
+  if (modalBg) modalBg.addEventListener('click', closeReelModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) closeReelModal();
+  });
 
   const items = new Map();
 
@@ -1209,6 +1359,7 @@ export default function BookPage() {
       list.appendChild(row);
     });
     amt.textContent = subtotal === 0 ? '$0' : fmt(subtotal);
+    syncAddons();
     persist();
   }
 
@@ -1221,13 +1372,15 @@ export default function BookPage() {
     const isAdded = items.has(name);
     const nextState = (typeof force === 'boolean') ? force : !isAdded;
     if(nextState && card){
+      const cats = readCats(card);
       items.set(name, {
         price: card.dataset.price,
         img: card.dataset.img,
-        categories: readCats(card),
+        categories: cats,
       });
       card.classList.add('is-added');
       openCart();
+      maybePromptReel(cats);
     } else {
       items.delete(name);
       if(card) card.classList.remove('is-added');
@@ -1312,11 +1465,13 @@ export default function BookPage() {
           });
           const t = state.get(pkgKey);
           const tier = tiers[t];
+          const cats = readCats(card);
           items.set(currentName(), {
             price: String(tier.price),
             img: pkgImg,
-            categories: readCats(card),
+            categories: cats,
           });
+          maybePromptReel(cats);
           render();
           openCart();
           refresh();
