@@ -422,7 +422,7 @@ export default function HomePage() {
                 <div className="home-pkg__media__img" style={{ backgroundImage: "url('/images/showcase.webp')" }}></div>
               </div>
               <div className="home-pkg__body">
-                <h3 className="home-pkg__name">Showcase</h3>
+                <h3 className="home-pkg__name">Essential</h3>
                 <p className="home-pkg__desc">Photos, floor plan, and aerial context in one shoot — the standard suburban listing bundle.</p>
                 <ul className="home-pkg__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
@@ -523,7 +523,7 @@ export default function HomePage() {
             <details className="home-faq__item">
               <summary>What's the difference between a package and à la carte?</summary>
               <div>
-                <p>The Showcase package bundles our most-requested services together at a meaningful saving compared to buying each piece individually. Photo count scales automatically with property size.</p>
+                <p>The Essential package bundles our most-requested services together at a meaningful saving compared to buying each piece individually. Photo count scales automatically with property size.</p>
                 <p>À la carte lets you build a custom shoot — photography only, drone only, or any combination. Both routes use the same booking form.</p>
               </div>
             </details>

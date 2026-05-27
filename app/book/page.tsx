@@ -658,7 +658,7 @@ export default function BookPage() {
               className="pkg-card"
               data-pkg="showcase"
               data-cats="photography,floorplan,drone"
-              data-pkg-name="Showcase"
+              data-pkg-name="Essential"
               data-pkg-img="/images/showcase.webp"
               data-tiers='{"compact":{"label":"Compact · 15 photos","price":350,"promo":280},"standard":{"label":"Standard · 20 photos","price":450,"promo":360},"premium":{"label":"Premium · 25 photos","price":550,"promo":440}}'
             >
@@ -667,7 +667,7 @@ export default function BookPage() {
                 <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/showcase.webp')" }}></div>
               </div>
               <div className="pkg-card__body">
-                <h4 className="pkg-card__name">Showcase</h4>
+                <h4 className="pkg-card__name">Essential</h4>
                 <p className="pkg-card__desc">Photos, floor plan, and aerial context in one shoot — the standard suburban listing bundle.</p>
                 <ul className="pkg-card__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
@@ -887,16 +887,16 @@ export default function BookPage() {
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
           <div className="cat__head"><h3>Video</h3><span className="cat__count">3 products</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            Compact Listing Video is exterior + drone footage only — no agent on camera. Standard and Premium Listing Video both include agent footage and drone footage; Premium extends to a 60–90s edit.
+            Property Highlight Video is exterior + drone footage only — no agent on camera. Standard and Premium Listing Video both include agent footage and drone footage; Premium extends to a 60–90s edit.
           </p>
 
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Compact Listing Video (30–60s · no agent)" data-price="349" data-desc="Compact Listing Video · 30–60s. Exterior and drone footage only, no agent on camera. 16:9, music-bedded." data-img="/images/cinematic.webp">
+            <article className="svc-card" data-svc="Property Highlight Video (30–60s · no agent)" data-price="349" data-desc="Property Highlight Video · 30–60s. Exterior and drone footage only, no agent on camera. 16:9, music-bedded." data-img="/images/cinematic.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Compact Listing Video</h4>
+                <h4 className="svc-card__name">Property Highlight Video</h4>
                 <ul className="pkg-card__incl">
                   <li>30–60s edit · 16:9 cinematic</li>
                   <li>Exterior + drone footage</li>

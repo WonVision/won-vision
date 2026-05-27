@@ -100,7 +100,7 @@ export default function GalleryPage() {
           <article className="gallery__item s8" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/showcase.webp">
-            <img src="/images/showcase.webp" alt="Showcase listing" />
+            <img src="/images/showcase.webp" alt="Essential listing" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>

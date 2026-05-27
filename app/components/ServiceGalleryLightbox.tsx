@@ -21,7 +21,7 @@ type Media = {
 // injected for that section.
 const galleries: Record<string, Media[]> = {
   photography: [
-    { src: '/images/showcase.webp', caption: 'Showcase' },
+    { src: '/images/showcase.webp', caption: 'Essential' },
     { src: '/images/rental-compact.webp', caption: 'Rental · Compact' },
     { src: '/images/rental-standard.webp', caption: 'Rental · Standard' },
     { src: '/images/rental-large.webp', caption: 'Rental · Large' },
