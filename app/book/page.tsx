@@ -866,19 +866,18 @@ export default function BookPage() {
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
           <div className="cat__head"><h3>Videography</h3><span className="cat__count">3 products</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            Property Highlight Video is exterior + drone footage only — no agent on camera. Standard and Premium Listing Video both include agent footage and drone footage; Premium extends to a 60–90s edit.
+            Property Highlight Video is footage only — no agent on camera. Standard and Premium Listing Video both include agent footage and drone footage; Premium extends to a 60–90s edit.
           </p>
 
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Property Highlight Video (30–60s · no agent)" data-price="349" data-desc="Property Highlight Video · 30–60s. Exterior and drone footage only, no agent on camera. 16:9, music-bedded." data-img="/images/cinematic.webp">
+            <article className="svc-card" data-svc="Property Highlight Video (30–60s · no agent)" data-price="349" data-desc="Property Highlight Video · 30–60s. Footage only, no agent on camera. 16:9, music-bedded." data-img="/images/cinematic.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Property Highlight Video</h4>
                 <ul className="pkg-card__incl">
                   <li>30–60s edit · 16:9 cinematic</li>
-                  <li>Exterior + drone footage</li>
                   <li>No agent on camera</li>
                   <li>Music-bedded, full grade</li>
                 </ul>
