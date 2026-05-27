@@ -265,6 +265,7 @@ export default function HomePage() {
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
           <a href="/gallery">Gallery</a>
+          <a href="/operate">Operate</a>
         </nav>
         <div className="nav__right">
           <a href="/book" className="nav__cta">Book now</a>
@@ -278,6 +279,7 @@ export default function HomePage() {
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="/gallery"><em>Gallery</em></a></li>
+          <li><a href="/operate">Operate</a></li>
           <li><a href="/book" className="drawer-cta">Book now →</a></li>
         </ul>
         <div className="nav__drawer__foot">
@@ -594,6 +596,7 @@ export default function HomePage() {
               <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/operate">How we operate</a></li>
                 <li><a href="/book">Book now</a></li>
               </ul>
             </div>

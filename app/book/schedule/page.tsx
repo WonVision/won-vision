@@ -74,6 +74,7 @@ export default function SchedulePage() {
           <Link href="/#services">Services</Link>
           <Link href="/#contact">Contact</Link>
           <Link href="/gallery">Gallery</Link>
+          <Link href="/operate">Operate</Link>
         </nav>
         <div className="nav__right">
           <Link href="/book" className="nav__cta">Book now</Link>
@@ -85,6 +86,7 @@ export default function SchedulePage() {
           <li><Link href="/#services">Services</Link></li>
           <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="/gallery"><em>Gallery</em></Link></li>
+          <li><Link href="/operate">Operate</Link></li>
           <li><Link href="/book" className="drawer-cta">Book now →</Link></li>
         </ul>
         <div className="nav__drawer__foot"><span>Won Vision</span><span>Melbourne · 2026</span></div>

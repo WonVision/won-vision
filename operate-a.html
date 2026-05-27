@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How We Operate — Option A · Won Vision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#000; --paper:#fff; --muted:#737373; --border:#e5e5e5; --soft:#404040;
+    --font:'Sora', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--font); -webkit-font-smoothing:antialiased;}
+  body{font-weight:400; line-height:1.5;}
+  img{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+
+  /* --- HEADER --- */
+  .type-window{
+    padding:140px 6vw 80px; border-bottom:1px solid var(--border);
+  }
+  .type-window .eyebrow{
+    font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--muted); font-weight:500; margin-bottom:32px;
+  }
+  .type-window h1{
+    font-size:clamp(56px, 11vw, 168px); line-height:.92;
+    font-weight:600; letter-spacing:-.03em; text-transform:uppercase;
+  }
+  .type-window h1 .l{
+    display:inline-block; padding:0 .12em; background:#000; color:#fff; margin-right:.04em;
+  }
+  .type-window .deck{
+    margin-top:36px; font-size:clamp(16px, 1.4vw, 20px); line-height:1.5;
+    max-width:64ch; color:var(--soft);
+  }
+
+  /* --- CONVEYOR --- */
+  .conv-wrap{
+    position:relative;
+    height:600vh; /* 5 steps × 120vh of scroll */
+  }
+  .conv-sticky{
+    position:sticky; top:0;
+    height:100vh; width:100%;
+    display:grid; grid-template-columns: 1fr 1fr;
+    overflow:hidden;
+    background:var(--paper);
+  }
+  .conv-left{
+    padding:0 6vw; position:relative;
+    border-right:1px solid var(--border);
+    overflow:hidden;
+  }
+  .conv-step{
+    position:absolute; left:6vw; right:6vw; top:50%;
+    transform:translateY(calc(-50% + 30px));
+    opacity:0; transition:opacity .55s ease, transform .55s ease;
+    pointer-events:none;
+  }
+  .conv-step.active{
+    opacity:1; transform:translateY(-50%);
+    pointer-events:auto;
+  }
+  .conv-num{
+    font-size:clamp(120px, 22vw, 320px); line-height:.85;
+    font-weight:600; letter-spacing:-.05em; color:#000;
+    display:block; margin-bottom:24px;
+  }
+  .conv-label{
+    font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--muted); font-weight:500; margin-bottom:18px;
+  }
+  .conv-title{
+    font-size:clamp(28px, 3.4vw, 44px); font-weight:600; letter-spacing:-.02em;
+    text-transform:uppercase; line-height:1.05; margin-bottom:20px;
+  }
+  .conv-body{
+    font-size:16px; line-height:1.55; color:var(--soft); max-width:42ch;
+  }
+
+  .conv-right{
+    position:relative; overflow:hidden; background:#0a0a0a;
+  }
+  .conv-stage{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; transition:opacity .6s ease;
+  }
+  .conv-stage.active{opacity:1;}
+  .conv-stage > img{
+    width:100%; height:100%; object-fit:cover;
+    transition:filter .6s ease, transform .6s ease;
+  }
+
+  /* Stage 1 — Brief: clean wide image */
+  .stage-1 > img{filter:grayscale(1) contrast(.95);}
+
+  /* Stage 2 — Shoot: bracketed exposures */
+  .stage-2{
+    padding:6%;
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;
+    background:#0a0a0a;
+  }
+  .stage-2 .brk{position:relative; overflow:hidden;}
+  .stage-2 .brk img{width:100%; height:100%; object-fit:cover;}
+  .stage-2 .brk:nth-child(1) img{filter:brightness(.4) grayscale(1);}
+  .stage-2 .brk:nth-child(2) img{filter:brightness(1) grayscale(1);}
+  .stage-2 .brk:nth-child(3) img{filter:brightness(1.7) grayscale(1);}
+  .stage-2 .brk-label{
+    position:absolute; bottom:10px; left:10px;
+    font-size:9px; letter-spacing:.2em; text-transform:uppercase;
+    color:#fff; background:rgba(0,0,0,.7); padding:5px 9px; font-weight:600;
+  }
+
+  /* Stage 3 — Edit: mid-pipeline with active marks */
+  .stage-3 > img{filter:grayscale(.5) contrast(1.15) brightness(1.05); transform:scale(1.02);}
+  .stage-3::after{
+    content:''; position:absolute; inset:0;
+    background:repeating-linear-gradient(180deg, transparent 0 3px, rgba(255,255,255,.04) 3px 4px);
+    pointer-events:none;
+  }
+  .edit-marks{
+    position:absolute; inset:0; pointer-events:none;
+  }
+  .edit-marks .mark{
+    position:absolute; width:80px; height:80px; border:1px solid #fff;
+    animation:pulse 1.8s ease-in-out infinite;
+  }
+  .edit-marks .mark::after{
+    content:'+'; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:14px; font-weight:300;
+  }
+  .edit-marks .m1{top:30%; left:18%;}
+  .edit-marks .m2{top:55%; left:62%; animation-delay:.6s;}
+  .edit-marks .m3{top:22%; left:70%; animation-delay:1.2s;}
+  @keyframes pulse{0%,100%{opacity:.4;} 50%{opacity:1;}}
+
+  /* Stage 4 — Portal: image inside portal UI */
+  .stage-4{background:#0a0a0a; padding:5%;}
+  .portal-frame{
+    width:100%; height:100%; background:#fff; color:#000;
+    border:1px solid #fff;
+    display:grid; grid-template-rows:auto 1fr auto;
+    font-family:var(--font);
+  }
+  .portal-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:10px 14px; border-bottom:1px solid #000;
+    font-size:10px; letter-spacing:.18em; text-transform:uppercase; font-weight:600;
+  }
+  .portal-bar .dot{width:7px; height:7px; background:#000;}
+  .portal-bar .spacer{flex:1;}
+  .portal-bar .pill{
+    border:1px solid #000; padding:3px 8px; font-size:9px; letter-spacing:.16em;
+  }
+  .portal-bar .pill.live{background:#000; color:#fff;}
+  .portal-body{position:relative; overflow:hidden;}
+  .portal-body img{width:100%; height:100%; object-fit:cover; filter:grayscale(.1);}
+  .portal-meta{
+    display:grid; grid-template-columns:repeat(4, 1fr);
+    border-top:1px solid #000; font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  }
+  .portal-meta div{padding:10px 12px; border-right:1px solid #000;}
+  .portal-meta div:last-child{border-right:0;}
+  .portal-meta strong{display:block; font-weight:600; font-size:13px; letter-spacing:-.01em; text-transform:none; margin-bottom:4px;}
+
+  /* Stage 5 — Delivered */
+  .stage-5 > img{filter:none;}
+  .stage-5 .delivered-tag{
+    position:absolute; bottom:24px; right:24px;
+    font-size:11px; letter-spacing:.3em; font-weight:600; color:#fff;
+    background:#000; padding:8px 14px;
+  }
+
+  /* Step indicator dots (right edge of left panel) */
+  .conv-dots{
+    position:absolute; left:50%; bottom:30px; transform:translateX(-50%);
+    display:flex; gap:8px; z-index:5;
+  }
+  .conv-dots span{
+    display:block; width:24px; height:2px; background:var(--border);
+    transition:background .3s ease;
+  }
+  .conv-dots span.on{background:#000;}
+
+  /* Progress bar */
+  .conv-progress{
+    position:fixed; left:0; right:0; bottom:0; height:2px;
+    background:transparent; z-index:50; pointer-events:none;
+  }
+  .conv-progress::before{
+    content:''; display:block; height:100%; background:#000;
+    width:var(--p, 0%); transition:width .12s linear;
+  }
+
+  /* CTA */
+  .cta-row{
+    padding:140px 6vw; text-align:center; border-top:1px solid var(--border);
+  }
+  .cta-row h2{
+    font-size:clamp(36px, 5vw, 72px); font-weight:600; letter-spacing:-.025em;
+    text-transform:uppercase; line-height:1; margin-bottom:32px;
+  }
+  .cta-row a{
+    display:inline-block; background:#000; color:#fff; padding:18px 42px;
+    font-size:12px; letter-spacing:.24em; text-transform:uppercase; font-weight:600;
+  }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 860px){
+    .conv-wrap{height:auto;}
+    .conv-sticky{
+      position:relative; height:auto;
+      grid-template-columns:1fr; grid-template-rows:auto auto;
+    }
+    .conv-left{border-right:0; padding:60px 6vw 80px;}
+    .conv-step{
+      position:relative; left:auto; right:auto; top:auto; transform:none;
+      opacity:1; pointer-events:auto;
+      padding-bottom:60px; border-bottom:1px solid var(--border); margin-bottom:60px;
+    }
+    .conv-step:last-of-type{border-bottom:0; margin-bottom:0;}
+    .conv-num{font-size:96px;}
+    .conv-title{font-size:24px;}
+    .conv-right{
+      position:fixed; top:auto; bottom:0; left:0; right:0;
+      height:42vh; z-index:10;
+      border-top:1px solid #000;
+    }
+    .conv-left{padding-bottom:46vh;}
+    .stage-2{grid-template-columns:1fr 1fr 1fr; padding:3%;}
+    .conv-dots{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="type-window">
+    <div class="eyebrow">How we operate</div>
+    <h1><span class="l">H</span>OW WE<br/>OPERATE</h1>
+    <p class="deck">Most studios sell you a shoot. We sell you a campaign that's live by tomorrow. Scroll the pipeline — same frame, every stage.</p>
+  </header>
+
+  <div class="conv-wrap" id="convWrap">
+    <div class="conv-sticky">
+
+      <div class="conv-left">
+        <div class="conv-step active" data-step="0">
+          <span class="conv-num">01</span>
+          <div class="conv-label">Step One · Brief</div>
+          <h3 class="conv-title">The booking<br/>is the brief</h3>
+          <p class="conv-body">Cart, address, access notes and timing land in our system before the shoot is confirmed. No morning-of emails. The photographer arrives knowing the property, the package, and the access plan.</p>
+        </div>
+        <div class="conv-step" data-step="1">
+          <span class="conv-num">02</span>
+          <div class="conv-label">Step Two · Shoot</div>
+          <h3 class="conv-title">A fixed standard,<br/>not a fixed clock</h3>
+          <p class="conv-body">High-end camera gear, bracketed exposures on every interior frame, drone coverage where it counts. We don't leave until every hero room has the frame we'd put on the cover.</p>
+        </div>
+        <div class="conv-step" data-step="2">
+          <span class="conv-num">03</span>
+          <div class="conv-label">Step Three · Edit</div>
+          <h3 class="conv-title">The edit happens<br/>while we're<br/>on the road</h3>
+          <p class="conv-body">Our editing team gets the files the moment they're offloaded. Colour calibration, vertical correction, sky and window pulls — all handled by trained eyes who know what a hero shot looks like.</p>
+        </div>
+        <div class="conv-step" data-step="3">
+          <span class="conv-num">04</span>
+          <div class="conv-label">Step Four · Portal</div>
+          <h3 class="conv-title">Everything lands<br/>in your<br/>Client Portal</h3>
+          <p class="conv-body">One private link. Live shoot status, final gallery with bulk download, per-photo edit requests, re-share to your team. The reason we can promise same-day without dropping standards.</p>
+        </div>
+        <div class="conv-step" data-step="4">
+          <span class="conv-num">05</span>
+          <div class="conv-label">Step Five · Delivered</div>
+          <h3 class="conv-title">Photos same day.<br/>Standard.</h3>
+          <p class="conv-body">Photos: same day. Video: 48 hours. Floor plans: 48 hours. Not "up to" — that's the standard. The campaign is live by tomorrow.</p>
+        </div>
+
+        <div class="conv-dots" aria-hidden="true">
+          <span class="on"></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="conv-right">
+        <div class="conv-stage stage-1 active">
+          <img src="public/images/signature.webp" alt="" />
+        </div>
+        <div class="conv-stage stage-2">
+          <div class="brk"><img src="public/images/signature.webp" alt="" /><span class="brk-label">−2 EV</span></div>
+          <div class="brk"><img src="public/images/signature.webp" alt="" /><span class="brk-label">0 EV</span></div>
+          <div class="brk"><img src="public/images/signature.webp" alt="" /><span class="brk-label">+2 EV</span></div>
+        </div>
+        <div class="conv-stage stage-3">
+          <img src="public/images/signature.webp" alt="" />
+          <div class="edit-marks">
+            <span class="mark m1"></span>
+            <span class="mark m2"></span>
+            <span class="mark m3"></span>
+          </div>
+        </div>
+        <div class="conv-stage stage-4">
+          <div class="portal-frame">
+            <div class="portal-bar">
+              <span class="dot"></span> Won Vision · Client Portal
+              <span class="spacer"></span>
+              <span class="pill">Ref WV-2604</span>
+              <span class="pill live">Live</span>
+            </div>
+            <div class="portal-body">
+              <img src="public/images/signature.webp" alt="" />
+            </div>
+            <div class="portal-meta">
+              <div><strong>32</strong>Photos ready</div>
+              <div><strong>1</strong>Video editing</div>
+              <div><strong>2</strong>Floor plans 48h</div>
+              <div><strong>0</strong>Open requests</div>
+            </div>
+          </div>
+        </div>
+        <div class="conv-stage stage-5">
+          <img src="public/images/signature.webp" alt="" />
+          <span class="delivered-tag">Delivered</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="cta-row">
+    <h2>Ready to ship<br/>a campaign?</h2>
+    <a href="/book">Book a shoot</a>
+  </section>
+
+  <div class="conv-progress" id="convProgress"></div>
+
+<script>
+  const wrap = document.getElementById('convWrap');
+  const steps = Array.from(document.querySelectorAll('.conv-step'));
+  const stages = Array.from(document.querySelectorAll('.conv-stage'));
+  const dots = Array.from(document.querySelectorAll('.conv-dots span'));
+  const progress = document.getElementById('convProgress');
+  const total = steps.length;
+  const isMobile = () => window.matchMedia('(max-width: 860px)').matches;
+
+  let lastIdx = -1;
+  function updateConveyor(){
+    if(isMobile()) return;
+    const rect = wrap.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // active scrolling range: when wrap top crosses 0 → wrap bottom crosses vh
+    const scrolled = Math.max(0, -rect.top);
+    const span = Math.max(1, rect.height - vh);
+    const p = Math.max(0, Math.min(1, scrolled / span));
+    progress.style.setProperty('--p', (p*100)+'%');
+
+    // map p to step index using midpoints
+    let idx = Math.min(total - 1, Math.floor(p * total));
+    if(idx === lastIdx) return;
+    lastIdx = idx;
+
+    steps.forEach((s,i)=>s.classList.toggle('active', i===idx));
+    stages.forEach((s,i)=>s.classList.toggle('active', i===idx));
+    dots.forEach((d,i)=>d.classList.toggle('on', i<=idx));
+  }
+  window.addEventListener('scroll', updateConveyor, {passive:true});
+  window.addEventListener('resize', updateConveyor);
+  updateConveyor();
+</script>
+
+</body>
+</html>

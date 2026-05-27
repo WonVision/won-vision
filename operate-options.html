@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How We Operate — Options A & B · Won Vision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#000; --paper:#fff; --muted:#737373; --border:#e5e5e5; --soft:#404040;
+    --font:'Sora', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--font); -webkit-font-smoothing:antialiased;}
+  body{font-weight:400; line-height:1.5;}
+  img{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+
+  /* --- TOGGLE BAR --- */
+  .toggle{
+    position:fixed; top:16px; left:50%; transform:translateX(-50%);
+    z-index:1000; background:#000; color:#fff;
+    display:flex; gap:0; border:1px solid #000;
+    font-size:11px; letter-spacing:.18em; text-transform:uppercase; font-weight:600;
+  }
+  .toggle button{
+    background:#000; color:#fff; border:0; padding:12px 22px;
+    font:inherit; cursor:pointer; letter-spacing:inherit; text-transform:inherit;
+  }
+  .toggle button.active{background:#fff; color:#000;}
+  .toggle button + button{border-left:1px solid #fff;}
+
+  /* --- SHARED HEADER --- */
+  .type-window{
+    padding:140px 6vw 80px; border-bottom:1px solid var(--border);
+  }
+  .type-window .eyebrow{
+    font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--muted); font-weight:500; margin-bottom:32px;
+  }
+  .type-window h1{
+    font-size:clamp(56px, 11vw, 168px); line-height:.92;
+    font-weight:600; letter-spacing:-.03em; text-transform:uppercase;
+  }
+  .type-window h1 .l{
+    display:inline-block; padding:0 .12em; background:#000; color:#fff; margin-right:.04em;
+  }
+  .type-window .deck{
+    margin-top:36px; font-size:clamp(16px, 1.4vw, 20px); line-height:1.5;
+    max-width:64ch; color:var(--soft);
+  }
+
+  /* ==================================================================
+     OPTION A — THE CONVEYOR
+     Sticky right image transforms through 5 states as scroll progresses.
+     Left: pinned oversized step numerals + copy that swap on scroll.
+     ================================================================== */
+  .conveyor{display:none;}
+  body.show-a .conveyor{display:block;}
+  body.show-a .splitview{display:none;}
+
+  .conv-wrap{
+    position:relative;
+    /* 5 steps * 100vh of scroll */
+    height:500vh;
+  }
+  .conv-sticky{
+    position:sticky; top:0;
+    height:100vh; width:100%;
+    display:grid; grid-template-columns: 1fr 1fr;
+    overflow:hidden;
+  }
+  .conv-left{
+    padding:0 6vw; display:flex; flex-direction:column; justify-content:center;
+    border-right:1px solid var(--border);
+    position:relative;
+  }
+  .conv-step{
+    position:absolute; left:6vw; right:6vw; top:50%; transform:translateY(-50%);
+    opacity:0; transition:opacity .5s ease;
+    pointer-events:none;
+  }
+  .conv-step.active{opacity:1;}
+  .conv-num{
+    font-size:clamp(120px, 22vw, 320px); line-height:.85;
+    font-weight:600; letter-spacing:-.05em; color:#000;
+    display:block; margin-bottom:24px;
+  }
+  .conv-label{
+    font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--muted); font-weight:500; margin-bottom:18px;
+  }
+  .conv-title{
+    font-size:clamp(28px, 3.4vw, 44px); font-weight:600; letter-spacing:-.02em;
+    text-transform:uppercase; line-height:1.05; margin-bottom:20px;
+  }
+  .conv-body{
+    font-size:16px; line-height:1.55; color:var(--soft); max-width:42ch;
+  }
+
+  .conv-right{
+    position:relative; overflow:hidden; background:#0a0a0a;
+  }
+  .conv-stage{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; transition:opacity .6s ease;
+  }
+  .conv-stage.active{opacity:1;}
+  .conv-stage img{
+    width:100%; height:100%; object-fit:cover;
+    transition:filter .6s ease, transform .6s ease;
+  }
+
+  /* Stage 1 — Brief: clean wide image */
+  .stage-1 img{filter:grayscale(1) contrast(.95);}
+
+  /* Stage 2 — Shoot: bracketed exposures */
+  .stage-2{padding:8%; display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; background:#0a0a0a;}
+  .stage-2 .brk{position:relative; overflow:hidden; height:100%;}
+  .stage-2 .brk img{width:100%; height:100%; object-fit:cover;}
+  .stage-2 .brk:nth-child(1) img{filter:brightness(.45) grayscale(1);}
+  .stage-2 .brk:nth-child(2) img{filter:brightness(1) grayscale(1);}
+  .stage-2 .brk:nth-child(3) img{filter:brightness(1.6) grayscale(1);}
+  .stage-2 .brk-label{
+    position:absolute; bottom:8px; left:8px;
+    font-size:9px; letter-spacing:.2em; text-transform:uppercase;
+    color:#fff; background:rgba(0,0,0,.6); padding:4px 8px; font-weight:500;
+  }
+
+  /* Stage 3 — Edit: merging mid-pipeline */
+  .stage-3 img{filter:grayscale(.6) contrast(1.15) brightness(1.05); transform:scale(1.02);}
+  .stage-3::after{
+    content:''; position:absolute; inset:0;
+    background:repeating-linear-gradient(180deg, transparent 0 3px, rgba(255,255,255,.04) 3px 4px);
+    pointer-events:none;
+  }
+  .stage-3 .edit-marks{
+    position:absolute; inset:0; pointer-events:none;
+  }
+  .stage-3 .mark{
+    position:absolute; width:80px; height:80px; border:1px solid #fff;
+    animation:pulse 1.8s ease-in-out infinite;
+  }
+  .stage-3 .mark::after{
+    content:'+'; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    color:#fff; font-size:14px; font-weight:300;
+  }
+  .stage-3 .mark.m1{top:30%; left:18%;}
+  .stage-3 .mark.m2{top:55%; left:62%; animation-delay:.6s;}
+  .stage-3 .mark.m3{top:22%; left:70%; animation-delay:1.2s;}
+  @keyframes pulse{0%,100%{opacity:.4;} 50%{opacity:1;}}
+
+  /* Stage 4 — Portal: image lives inside a portal UI mockup */
+  .stage-4{background:#0a0a0a; padding:5%;}
+  .portal-frame{
+    width:100%; height:100%; background:#fff; color:#000;
+    border:1px solid #fff; display:grid; grid-template-rows:auto 1fr auto;
+    font-family:var(--font);
+  }
+  .portal-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:10px 14px; border-bottom:1px solid #000;
+    font-size:10px; letter-spacing:.18em; text-transform:uppercase; font-weight:600;
+  }
+  .portal-bar .dot{width:7px; height:7px; background:#000;}
+  .portal-bar .spacer{flex:1;}
+  .portal-bar .pill{
+    border:1px solid #000; padding:3px 8px; font-size:9px; letter-spacing:.16em;
+  }
+  .portal-bar .pill.live{background:#000; color:#fff;}
+  .portal-body{position:relative; overflow:hidden;}
+  .portal-body img{width:100%; height:100%; object-fit:cover; filter:grayscale(.1);}
+  .portal-meta{
+    display:grid; grid-template-columns:repeat(4, 1fr);
+    border-top:1px solid #000; font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  }
+  .portal-meta div{padding:10px 12px; border-right:1px solid #000;}
+  .portal-meta div:last-child{border-right:0;}
+  .portal-meta strong{display:block; font-weight:600; font-size:13px; letter-spacing:-.01em; text-transform:none; margin-bottom:4px;}
+
+  /* Stage 5 — Delivery: full, final, clean */
+  .stage-5 img{filter:none;}
+  .stage-5::after{
+    content:'DELIVERED'; position:absolute; bottom:24px; right:24px;
+    font-size:11px; letter-spacing:.3em; font-weight:600; color:#fff;
+    background:#000; padding:8px 14px;
+  }
+
+  /* Progress bar */
+  .conv-progress{
+    position:fixed; left:0; right:0; bottom:0; height:2px; background:transparent; z-index:50;
+    pointer-events:none;
+  }
+  body.show-a .conv-progress::before{
+    content:''; display:block; height:100%; background:#000;
+    width:var(--p, 0%); transition:width .15s linear;
+  }
+  body:not(.show-a) .conv-progress{display:none;}
+
+  /* ==================================================================
+     OPTION B — THE SPLIT-SCREEN MANIFESTO
+     Locked left text column, sticky right image scrubs through reel.
+     Portal section breaks the split with full-bleed inverse panel.
+     ================================================================== */
+  .splitview{display:none;}
+  body.show-b .splitview{display:block;}
+  body.show-b .conveyor{display:none;}
+
+  .split-section{
+    display:grid; grid-template-columns:1fr 1fr;
+    min-height:100vh; border-bottom:1px solid var(--border);
+  }
+  .split-text{
+    padding:120px 6vw; display:flex; flex-direction:column; justify-content:center;
+    border-right:1px solid var(--border);
+  }
+  .split-num{
+    font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--muted); font-weight:500; margin-bottom:28px;
+  }
+  .split-title{
+    font-size:clamp(34px, 4.2vw, 56px); font-weight:600; letter-spacing:-.025em;
+    text-transform:uppercase; line-height:1.02; margin-bottom:28px;
+  }
+  .split-body{
+    font-size:17px; line-height:1.55; color:var(--soft); max-width:44ch;
+    margin-bottom:24px;
+  }
+  .split-body + .split-body{margin-top:0;}
+  .split-callout{
+    margin-top:32px; padding-top:24px; border-top:1px solid var(--border);
+    font-size:13px; letter-spacing:.16em; text-transform:uppercase; font-weight:600;
+  }
+  .split-img{
+    position:relative; overflow:hidden; background:#0a0a0a;
+  }
+  .split-img img{
+    width:100%; height:100%; object-fit:cover; filter:grayscale(1);
+    transition:transform 1.4s ease;
+  }
+  .split-section:hover .split-img img{transform:scale(1.04);}
+
+  /* Portal-break inverse section */
+  .portal-break{
+    background:#000; color:#fff; padding:120px 6vw;
+    border-bottom:1px solid #000;
+  }
+  .portal-break .pb-eyebrow{
+    font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+    color:#a3a3a3; font-weight:500; margin-bottom:24px;
+  }
+  .portal-break .pb-title{
+    font-size:clamp(40px, 6vw, 88px); font-weight:600; letter-spacing:-.03em;
+    text-transform:uppercase; line-height:.98; margin-bottom:32px;
+    max-width:18ch;
+  }
+  .portal-break .pb-body{
+    font-size:18px; line-height:1.55; color:#d4d4d4; max-width:64ch; margin-bottom:48px;
+  }
+  .pb-mockup{
+    margin-top:48px; background:#fff; color:#000; padding:0;
+    display:grid; grid-template-columns:1fr 1.2fr; min-height:480px;
+  }
+  .pb-mockup .pb-side{
+    padding:28px; border-right:1px solid #000;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .pb-mockup .pb-side h4{
+    font-size:11px; letter-spacing:.22em; text-transform:uppercase; font-weight:600;
+    margin-bottom:6px;
+  }
+  .pb-mockup .pb-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:10px 0; border-bottom:1px solid var(--border);
+    font-size:13px;
+  }
+  .pb-mockup .pb-row:last-child{border-bottom:0;}
+  .pb-mockup .pb-row .tag{
+    font-size:9px; letter-spacing:.2em; text-transform:uppercase; font-weight:600;
+    padding:3px 8px; background:#000; color:#fff;
+  }
+  .pb-mockup .pb-row .tag.muted{background:transparent; color:var(--muted); border:1px solid var(--border);}
+  .pb-mockup .pb-img{position:relative; overflow:hidden;}
+  .pb-mockup .pb-img img{width:100%; height:100%; object-fit:cover;}
+  .pb-mockup .pb-img-meta{
+    position:absolute; bottom:0; left:0; right:0;
+    padding:14px 18px; background:rgba(255,255,255,.95);
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:600;
+    border-top:1px solid #000;
+  }
+  .pb-mockup .pb-img-meta .req{
+    background:#000; color:#fff; padding:6px 12px;
+  }
+
+  /* B closer: tight 3-column "what you get" grid */
+  .closer{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    border-bottom:1px solid var(--border);
+  }
+  .closer .item{
+    padding:80px 40px; border-right:1px solid var(--border);
+  }
+  .closer .item:last-child{border-right:0;}
+  .closer .n{
+    font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--muted); font-weight:500; margin-bottom:18px;
+  }
+  .closer h3{
+    font-size:24px; font-weight:600; letter-spacing:-.01em;
+    text-transform:uppercase; margin-bottom:14px;
+  }
+  .closer p{font-size:14px; color:var(--soft); line-height:1.55;}
+
+  .cta-row{
+    padding:120px 6vw; text-align:center; border-bottom:1px solid var(--border);
+  }
+  .cta-row h2{
+    font-size:clamp(36px, 5vw, 72px); font-weight:600; letter-spacing:-.025em;
+    text-transform:uppercase; line-height:1; margin-bottom:32px;
+  }
+  .cta-row a{
+    display:inline-block; background:#000; color:#fff; padding:18px 42px;
+    font-size:12px; letter-spacing:.24em; text-transform:uppercase; font-weight:600;
+  }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 860px){
+    .conv-sticky{grid-template-columns:1fr; grid-template-rows:1fr 1fr;}
+    .conv-left{border-right:0; border-bottom:1px solid var(--border); padding:24px 6vw;}
+    .conv-step{left:6vw; right:6vw;}
+    .conv-num{font-size:96px;}
+    .conv-title{font-size:24px;}
+    .stage-2{grid-template-columns:1fr; grid-template-rows:1fr 1fr 1fr;}
+
+    .split-section{grid-template-columns:1fr;}
+    .split-text{padding:80px 6vw; border-right:0; border-bottom:1px solid var(--border);}
+    .split-img{min-height:60vh;}
+
+    .pb-mockup{grid-template-columns:1fr;}
+    .pb-mockup .pb-side{border-right:0; border-bottom:1px solid #000;}
+    .pb-mockup .pb-img{min-height:300px;}
+
+    .closer{grid-template-columns:1fr;}
+    .closer .item{border-right:0; border-bottom:1px solid var(--border);}
+  }
+</style>
+</head>
+<body class="show-a">
+
+<div class="toggle" role="tablist">
+  <button data-opt="a" class="active">Option A — Conveyor</button>
+  <button data-opt="b">Option B — Split Manifesto</button>
+</div>
+
+<!-- ============================ OPTION A ============================ -->
+<section class="conveyor" aria-label="Option A - Conveyor">
+
+  <header class="type-window">
+    <div class="eyebrow">How we operate · Option A</div>
+    <h1><span class="l">H</span>OW WE<br/>OPERATE</h1>
+    <p class="deck">Most studios sell you a shoot. We sell you a campaign that's live by tomorrow. Scroll through the pipeline — same frame, every stage.</p>
+  </header>
+
+  <div class="conv-wrap" id="convWrap">
+    <div class="conv-sticky">
+      <div class="conv-left">
+        <div class="conv-step active" data-step="0">
+          <span class="conv-num">01</span>
+          <div class="conv-label">Step One</div>
+          <h3 class="conv-title">The booking is the brief</h3>
+          <p class="conv-body">Cart, address, access notes and timing land in our system before the shoot is confirmed. No morning-of emails. The photographer arrives knowing the property, the package, and the access plan.</p>
+        </div>
+        <div class="conv-step" data-step="1">
+          <span class="conv-num">02</span>
+          <div class="conv-label">Step Two</div>
+          <h3 class="conv-title">Shoot to a standard,<br/>not a clock</h3>
+          <p class="conv-body">High-end camera gear, bracketed exposures on every interior frame, drone coverage where it counts. We don't leave until every hero room has the frame we'd put on the cover.</p>
+        </div>
+        <div class="conv-step" data-step="2">
+          <span class="conv-num">03</span>
+          <div class="conv-label">Step Three</div>
+          <h3 class="conv-title">The edit happens<br/>while we're on the road</h3>
+          <p class="conv-body">Our editing team gets the files the moment they're offloaded. Colour calibration, vertical correction, sky and window pulls — handled by trained eyes who know what a hero shot looks like.</p>
+        </div>
+        <div class="conv-step" data-step="3">
+          <span class="conv-num">04</span>
+          <div class="conv-label">Step Four</div>
+          <h3 class="conv-title">Everything lands<br/>in your Client Portal</h3>
+          <p class="conv-body">One private link. Live shoot status, final gallery with bulk download, per-photo edit requests, re-share to your team. The reason we can promise same-day without dropping standards.</p>
+        </div>
+        <div class="conv-step" data-step="4">
+          <span class="conv-num">05</span>
+          <div class="conv-label">Step Five</div>
+          <h3 class="conv-title">Delivered — photos<br/>same day. Standard.</h3>
+          <p class="conv-body">Photos: same day. Video: 48 hours. Floor plans: 48 hours. Not "up to" — that's the standard. The campaign is live by tomorrow.</p>
+        </div>
+      </div>
+
+      <div class="conv-right">
+        <!-- Stage 1: Brief -->
+        <div class="conv-stage stage-1 active">
+          <img src="public/images/signature.webp" alt="" />
+        </div>
+        <!-- Stage 2: Shoot brackets -->
+        <div class="conv-stage stage-2">
+          <div class="brk"><img src="public/images/signature.webp" alt="" /><span class="brk-label">−2 EV</span></div>
+          <div class="brk"><img src="public/images/signature.webp" alt="" /><span class="brk-label">0 EV</span></div>
+          <div class="brk"><img src="public/images/signature.webp" alt="" /><span class="brk-label">+2 EV</span></div>
+        </div>
+        <!-- Stage 3: Editing -->
+        <div class="conv-stage stage-3">
+          <img src="public/images/signature.webp" alt="" />
+          <div class="edit-marks">
+            <span class="mark m1"></span>
+            <span class="mark m2"></span>
+            <span class="mark m3"></span>
+          </div>
+        </div>
+        <!-- Stage 4: Portal frame -->
+        <div class="conv-stage stage-4">
+          <div class="portal-frame">
+            <div class="portal-bar">
+              <span class="dot"></span> Won Vision · Client Portal
+              <span class="spacer"></span>
+              <span class="pill">Ref WV-2604</span>
+              <span class="pill live">Live</span>
+            </div>
+            <div class="portal-body">
+              <img src="public/images/signature.webp" alt="" />
+            </div>
+            <div class="portal-meta">
+              <div><strong>32</strong>Photos ready</div>
+              <div><strong>1</strong>Video editing</div>
+              <div><strong>2</strong>Floor plans 48h</div>
+              <div><strong>0</strong>Open requests</div>
+            </div>
+          </div>
+        </div>
+        <!-- Stage 5: Delivered -->
+        <div class="conv-stage stage-5">
+          <img src="public/images/signature.webp" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cta-row">
+    <h2>Ready to ship<br/>a campaign?</h2>
+    <a href="/book">Book a shoot</a>
+  </section>
+
+</section>
+
+<div class="conv-progress" id="convProgress"></div>
+
+
+<!-- ============================ OPTION B ============================ -->
+<section class="splitview" aria-label="Option B - Split Manifesto">
+
+  <header class="type-window">
+    <div class="eyebrow">How we operate · Option B</div>
+    <h1><span class="l">H</span>OW WE<br/>OPERATE</h1>
+    <p class="deck">A studio built so the humans spend their time on craft — not on chasing files.</p>
+  </header>
+
+  <article class="split-section">
+    <div class="split-text">
+      <div class="split-num">01 · Brief</div>
+      <h2 class="split-title">The booking<br/>is the brief</h2>
+      <p class="split-body">When an agent books through our site, the cart, address, access notes and timing land in our system before the shoot is confirmed.</p>
+      <p class="split-body">No back-and-forth emails. No "can you resend the address?" the morning of. The photographer arrives knowing the property, the package, and the access plan.</p>
+      <div class="split-callout">— Zero friction from quote to call sheet</div>
+    </div>
+    <div class="split-img"><img src="public/images/showcase.webp" alt="" /></div>
+  </article>
+
+  <article class="split-section">
+    <div class="split-text">
+      <div class="split-num">02 · Shoot</div>
+      <h2 class="split-title">A fixed standard,<br/>not a fixed clock</h2>
+      <p class="split-body">We bring high-end camera gear to every shoot — full-frame bodies, bracketed exposures on every interior frame, drone coverage for larger properties or anything with a view worth claiming.</p>
+      <p class="split-body">We don't leave until every hero room has the frame we'd put on the cover. Most shoots run 45–90 min depending on package — we don't rush, and we don't pad.</p>
+      <div class="split-callout">— Same team, same standard, every property</div>
+    </div>
+    <div class="split-img"><img src="public/images/signature.webp" alt="" /></div>
+  </article>
+
+  <article class="split-section">
+    <div class="split-text">
+      <div class="split-num">03 · Edit</div>
+      <h2 class="split-title">The edit happens<br/>while we're<br/>on the road</h2>
+      <p class="split-body">Our editing team gets the files the moment they're offloaded and starts working immediately — colour calibration, vertical correction, sky and window pulls on the frames that need it.</p>
+      <p class="split-body">All handled by trained eyes who know what a hero shot looks like. By the time the photographer is back at the desk, the gallery is already coming together.</p>
+      <div class="split-callout">— Photos same day · Video 48h · Floor plans 48h</div>
+    </div>
+    <div class="split-img"><img src="public/images/cinematic.webp" alt="" /></div>
+  </article>
+
+  <!-- Inverse portal break -->
+  <section class="portal-break">
+    <div class="pb-eyebrow">04 · Portal</div>
+    <h2 class="pb-title">Everything<br/>lands in one<br/>private link.</h2>
+    <p class="pb-body">Every booking comes with a Client Portal. Live shoot status. Final gallery with one-click bulk download. Per-photo edit requests — flag a window pull or a sky swap on any single frame and we turn it around without redoing the set. Re-share to your team and vendors from the same link. The portal isn't a bolt-on. It's the reason we can promise same-day turnaround without dropping standards.</p>
+
+    <div class="pb-mockup">
+      <div class="pb-side">
+        <h4>Shoot status</h4>
+        <div class="pb-row">Photos <span class="tag">Ready</span></div>
+        <div class="pb-row">Video edit <span class="tag muted">In progress</span></div>
+        <div class="pb-row">Floor plans <span class="tag muted">48h</span></div>
+        <h4 style="margin-top:18px;">Recent requests</h4>
+        <div class="pb-row">Window pull · Living <span class="tag">Done</span></div>
+        <div class="pb-row">Sky swap · Hero <span class="tag muted">2h</span></div>
+        <div class="pb-row">Declutter · Kitchen <span class="tag muted">Queued</span></div>
+      </div>
+      <div class="pb-img">
+        <img src="public/images/dusk-after.webp" alt="" />
+        <div class="pb-img-meta">
+          <span>Hero · 04 of 32</span>
+          <span class="req">Request edit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="split-section">
+    <div class="split-text">
+      <div class="split-num">05 · Studio</div>
+      <h2 class="split-title">We're a studio,<br/>not a marketplace</h2>
+      <p class="split-body">You'll work with the same small team every time. We know your agency's brand, your preferred crop, the way your director likes hero shots framed.</p>
+      <p class="split-body">The software exists so the humans can spend their time on craft. Not on chasing files.</p>
+      <div class="split-callout">— Built in Melbourne · Servicing 100km radius</div>
+    </div>
+    <div class="split-img"><img src="public/images/staging-after.webp" alt="" /></div>
+  </article>
+
+  <section class="closer">
+    <div class="item">
+      <div class="n">Photos</div>
+      <h3>Same day</h3>
+      <p>HDR-graded, vertical-corrected, web and print-ready in one bulk download.</p>
+    </div>
+    <div class="item">
+      <div class="n">Video</div>
+      <h3>48 hours</h3>
+      <p>Cinematic walk-through, colour-graded, brand-ready cuts for socials and listing pages.</p>
+    </div>
+    <div class="item">
+      <div class="n">Floor Plans</div>
+      <h3>48 hours</h3>
+      <p>Line-work and rendered options including 3D dollhouse view for premium listings.</p>
+    </div>
+  </section>
+
+  <section class="cta-row">
+    <h2>Most studios sell<br/>a shoot. We sell<br/>a campaign.</h2>
+    <a href="/book">Book a shoot</a>
+  </section>
+
+</section>
+
+
+<script>
+  // ---- Toggle ----
+  const body = document.body;
+  document.querySelectorAll('.toggle button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const opt = btn.dataset.opt;
+      body.classList.toggle('show-a', opt==='a');
+      body.classList.toggle('show-b', opt==='b');
+      window.scrollTo({top:0, behavior:'instant'});
+    });
+  });
+
+  // ---- Option A conveyor scroll mechanics ----
+  const wrap = document.getElementById('convWrap');
+  const steps = document.querySelectorAll('.conv-step');
+  const stages = document.querySelectorAll('.conv-stage');
+  const progress = document.getElementById('convProgress');
+  const total = steps.length; // 5
+
+  function updateConveyor(){
+    if(!body.classList.contains('show-a')) return;
+    const rect = wrap.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const scrolled = -rect.top;
+    const span = rect.height - vh;
+    const p = Math.max(0, Math.min(1, scrolled / span));
+    progress.style.setProperty('--p', (p*100)+'%');
+
+    // map p (0..1) to step index 0..total-1
+    let idx = Math.floor(p * total);
+    if(idx >= total) idx = total - 1;
+
+    steps.forEach((s,i)=>s.classList.toggle('active', i===idx));
+    stages.forEach((s,i)=>s.classList.toggle('active', i===idx));
+  }
+  window.addEventListener('scroll', updateConveyor, {passive:true});
+  window.addEventListener('resize', updateConveyor);
+  updateConveyor();
+</script>
+
+</body>
+</html>
