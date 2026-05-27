@@ -321,20 +321,32 @@ export default function OperateConveyor() {
         /* Stage 1 — Brief */
         .op-s1 > img{filter:grayscale(1) contrast(.95);}
 
-        /* Stage 2 — Brackets */
+        /* Stage 2 — Brackets as PILLARS (tall vertical slices) */
         .op-s2{
-          padding:6%; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;
-          background:#0a0a0a;
+          padding:0; background:#0a0a0a;
+          display:flex; align-items:stretch; justify-content:center;
+          gap: 18px;
+          padding: 8% 10%;
         }
-        .op-s2 .brk{position:relative; overflow:hidden;}
-        .op-s2 .brk img{width:100%; height:100%; object-fit:cover;}
+        .op-s2 .brk{
+          position:relative; overflow:hidden;
+          flex: 1 1 0;
+          height: 100%;
+          max-width: 22%;
+        }
+        .op-s2 .brk img{
+          width:100%; height:100%; object-fit:cover;
+          /* Center slice of the photo so it reads as a "pillar" cut */
+          object-position: center center;
+        }
         .op-s2 .brk:nth-child(1) img{filter:brightness(.4) grayscale(1);}
         .op-s2 .brk:nth-child(2) img{filter:brightness(1) grayscale(1);}
         .op-s2 .brk:nth-child(3) img{filter:brightness(1.7) grayscale(1);}
         .op-s2 .brk-label{
-          position:absolute; bottom:10px; left:10px;
-          font-size:9px; letter-spacing:.2em; text-transform:uppercase;
-          color:#fff; background:rgba(0,0,0,.7); padding:5px 9px; font-weight:600;
+          position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+          font-size:9px; letter-spacing:.22em; text-transform:uppercase;
+          color:#fff; background:rgba(0,0,0,.75); padding:6px 10px; font-weight:600;
+          white-space:nowrap;
         }
 
         /* Stage 3 — Edit */
@@ -404,8 +416,9 @@ export default function OperateConveyor() {
 
         /* Mobile portal frame tightening */
         @media (max-width: 760px){
-          .op-s2{padding:4%; gap:6px;}
-          .op-s2 .brk-label{font-size:8px; padding:3px 6px;}
+          .op-s2{padding: 6% 10%; gap:10px;}
+          .op-s2 .brk{max-width: 26%;}
+          .op-s2 .brk-label{font-size:8px; padding:4px 7px;}
           .portal-bar{font-size:9px; padding:8px 10px; gap:6px;}
           .portal-bar .pill{font-size:8px; padding:2px 6px;}
           .portal-meta{font-size:8px; grid-template-columns:repeat(2, 1fr);}

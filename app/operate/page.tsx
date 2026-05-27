@@ -60,30 +60,29 @@ export default function OperatePage() {
           <OperateConveyor />
         </div>
 
-        <section className="op-cta">
-          <div className="op-cta__inner">
-            <h2>
-              Most studios sell<br />
-              a shoot. We sell<br />
-              a campaign.
-            </h2>
-            <Link href="/book" className="op-cta__btn">Book a shoot</Link>
+        {/* CTA — identical to /gallery and homepage */}
+        <section id="contact" className="cta-c" style={{ scrollMarginTop: 90 }}>
+          <div className="cta-c__box">
+            <div>
+              <span className="eyebrow">Book the studio</span>
+              <h2 className="cta-c__h">Bring your <em>next listing</em> to the studio.</h2>
+            </div>
+            <div className="cta-c__act">
+              <Link href="/book" className="cta-c__btn cta-c__btn--solid">Book a shoot →</Link>
+            </div>
           </div>
         </section>
       </main>
 
       <footer className="foot">
         <div className="foot__inner">
-          <div className="foot__grid">
+          <div className="foot__top reveal-stagger">
             <div>
-              <h4>Won Vision</h4>
-              <ul>
-                <li>Melbourne real estate photography</li>
-                <li>Same day · 100km service radius</li>
-              </ul>
+              <Link href="/#top" aria-label="Won Vision"><Wordmark /></Link>
+              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day turn around.</p>
             </div>
             <div>
-              <h4>Explore</h4>
+              <h4>Studio</h4>
               <ul>
                 <li><Link href="/#services">Services</Link></li>
                 <li><Link href="/gallery">Gallery</Link></li>
@@ -94,7 +93,8 @@ export default function OperatePage() {
             <div>
               <h4>Contact</h4>
               <ul>
-                <li><a href="mailto:admin@wonvision.com.au">admin@wonvision.com.au</a></li>
+                <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
+                <li><a href="tel:+61416894541">0416 894 541</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>
@@ -115,30 +115,6 @@ export default function OperatePage() {
           </div>
         </div>
       </footer>
-
-      <style>{`
-        .op-cta{
-          background:#fff; color:#000;
-          border-top:1px solid #e5e5e5;
-          padding: 140px 6vw;
-          text-align:center;
-        }
-        .op-cta__inner{display:flex; flex-direction:column; align-items:center; gap:36px;}
-        .op-cta h2{
-          font-size: clamp(36px, 6vw, 84px);
-          font-weight:600; letter-spacing:-.03em; text-transform:uppercase;
-          line-height:.98; margin:0;
-        }
-        .op-cta__btn{
-          display:inline-block; background:#000; color:#fff;
-          padding: 18px 42px;
-          font-size:12px; letter-spacing:.24em; text-transform:uppercase; font-weight:600;
-          text-decoration:none;
-        }
-        @media (max-width: 760px){
-          .op-cta{padding: 90px 6vw;}
-        }
-      `}</style>
     </>
   );
 }
