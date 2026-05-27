@@ -123,7 +123,7 @@ export default function TermsPage() {
           <p>
             Questions about these terms can be sent to{' '}
             <a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a> or{' '}
-            <a href="tel:+61416894541">0416 894 541</a>.
+            <a href="tel:+61493714609">0493 714 609</a>.
           </p>
         </article>
       </main>
@@ -147,7 +147,7 @@ export default function TermsPage() {
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
-                <li><a href="tel:+61416894541">0416 894 541</a></li>
+                <li><a href="tel:+61493714609">0493 714 609</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>

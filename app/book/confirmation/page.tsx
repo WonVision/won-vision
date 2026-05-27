@@ -130,7 +130,7 @@ export default function ConfirmationPage() {
           <Link href="/#services">Services</Link>
           <Link href="/#contact">Contact</Link>
           <Link href="/gallery">Gallery</Link>
-          <Link href="/operate">Operate</Link>
+          <Link href="/operate">How we operate</Link>
         </nav>
         <div className="nav__right">
           <Link href="/book" className="nav__cta">Book now</Link>
@@ -142,7 +142,7 @@ export default function ConfirmationPage() {
           <li><Link href="/#services">Services</Link></li>
           <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="/gallery"><em>Gallery</em></Link></li>
-          <li><Link href="/operate">Operate</Link></li>
+          <li><Link href="/operate">How we operate</Link></li>
           <li><Link href="/book" className="drawer-cta">Book now →</Link></li>
         </ul>
         <div className="nav__drawer__foot"><span>Won Vision</span><span>Melbourne · 2026</span></div>
@@ -207,7 +207,7 @@ export default function ConfirmationPage() {
             <p className="confirm-cta__note">Works with Google Calendar, Apple Calendar, Outlook &amp; more.</p>
           </div>
 
-          <p className="confirm-footnote">A confirmation email has been sent to <strong id="clientEmail">your address</strong>.<br />If urgent, call <a href="tel:+61416894541">0416 894 541</a>.</p>
+          <p className="confirm-footnote">A confirmation email has been sent to <strong id="clientEmail">your address</strong>.<br />If urgent, call <a href="tel:+61493714609">0493 714 609</a>.</p>
         </div>
       </section>
 
@@ -225,7 +225,7 @@ export default function ConfirmationPage() {
             </ul></div>
             <div><h4>Contact</h4><ul>
               <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
-              <li><a href="tel:+61416894541">0416 894 541</a></li>
+              <li><a href="tel:+61493714609">0493 714 609</a></li>
             </ul></div>
             <div><h4>Operations</h4><ul>
               <li>Won Vision Pty Ltd</li>
@@ -361,7 +361,7 @@ export default function ConfirmationPage() {
       const endLocal = ymd + 'T' + plus90(hhmm);
       const text = 'Won Vision shoot — ' + ((cart || []).map(function(it){ return it.name; }).join(' · ') || 'Property shoot');
       const fullAddress = [details.address, details.suburb, details.state, details.postcode].filter(Boolean).join(', ');
-      const detailsText = 'Booking ref: ' + fallbackRef + '\\n\\nProperty: ' + fullAddress + '\\nContact studio: 0416 894 541 · hello@wonvision.com.au';
+      const detailsText = 'Booking ref: ' + fallbackRef + '\\n\\nProperty: ' + fullAddress + '\\nContact studio: 0493 714 609 · hello@wonvision.com.au';
       const url = 'https://www.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent(text)
         + '&dates=' + startLocal + '/' + endLocal

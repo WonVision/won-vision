@@ -265,7 +265,7 @@ export default function HomePage() {
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
           <a href="/gallery">Gallery</a>
-          <a href="/operate">Operate</a>
+          <a href="/operate">How we operate</a>
         </nav>
         <div className="nav__right">
           <a href="/book" className="nav__cta">Book now</a>
@@ -279,7 +279,7 @@ export default function HomePage() {
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="/gallery"><em>Gallery</em></a></li>
-          <li><a href="/operate">Operate</a></li>
+          <li><a href="/operate">How we operate</a></li>
           <li><a href="/book" className="drawer-cta">Book now →</a></li>
         </ul>
         <div className="nav__drawer__foot">
@@ -604,7 +604,7 @@ export default function HomePage() {
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
-                <li><a href="tel:+61416894541">0416 894 541</a></li>
+                <li><a href="tel:+61493714609">0493 714 609</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>

@@ -128,7 +128,7 @@ export default function CheckoutPage() {
           <Link href="/#services">Services</Link>
           <Link href="/#contact">Contact</Link>
           <Link href="/gallery">Gallery</Link>
-          <Link href="/operate">Operate</Link>
+          <Link href="/operate">How we operate</Link>
         </nav>
         <div className="nav__right">
           <Link href="/book" className="nav__cta">Book now</Link>
@@ -140,7 +140,7 @@ export default function CheckoutPage() {
           <li><Link href="/#services">Services</Link></li>
           <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="/gallery"><em>Gallery</em></Link></li>
-          <li><Link href="/operate">Operate</Link></li>
+          <li><Link href="/operate">How we operate</Link></li>
           <li><Link href="/book" className="drawer-cta">Book now →</Link></li>
         </ul>
         <div className="nav__drawer__foot"><span>Won Vision</span><span>Melbourne · 2026</span></div>
@@ -269,7 +269,7 @@ export default function CheckoutPage() {
             </ul></div>
             <div><h4>Contact</h4><ul>
               <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
-              <li><a href="tel:+61416894541">0416 894 541</a></li>
+              <li><a href="tel:+61493714609">0493 714 609</a></li>
             </ul></div>
             <div><h4>Operations</h4><ul>
               <li>Won Vision Pty Ltd</li>
