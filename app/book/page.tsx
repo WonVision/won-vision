@@ -738,6 +738,7 @@ export default function BookPage() {
                 <p className="pkg-card__desc">Photos, floor plan, and aerial context in one shoot — the standard suburban listing bundle.</p>
                 <ul className="pkg-card__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
+                  <li>Sky replacement included</li>
                   <li>2D floor plan with dimensions</li>
                   <li>Drone set — 5 edited images</li>
                   <li>Next-business-day delivery</li>
@@ -777,9 +778,12 @@ export default function BookPage() {
                 <p className="pkg-card__desc">Photo + plan + drone + Standard Listing Video — agent footage and drone footage included.</p>
                 <ul className="pkg-card__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
-                  <li>2D floor plan + 5-image drone set</li>
+                  <li>Full HDR retouching</li>
+                  <li>Sky replacement included</li>
+                  <li>2D floor plan with dimensions</li>
+                  <li>Drone set — 5 edited aerials</li>
                   <li>Standard Listing Video · 30–60s</li>
-                  <li>Includes agent footage + drone footage</li>
+                  <li>Agent piece-to-camera direction</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -816,10 +820,16 @@ export default function BookPage() {
                 <h4 className="pkg-card__name">Cinematic</h4>
                 <p className="pkg-card__desc">Photo + plan + drone + Premium Listing Video — the flagship luxury deliverable.</p>
                 <ul className="pkg-card__incl">
-                  <li>15 / 20 / 25 HDR photos (by tier)</li>
-                  <li>2D floor plan + 5-image drone set</li>
-                  <li>Premium Listing Video · 60–90s</li>
-                  <li>Includes agent footage + drone footage</li>
+                  <li>25+ photos</li>
+                  <li>Full HDR retouching</li>
+                  <li>Sky replacement included</li>
+                  <li>2D floor plan with dimensions</li>
+                  <li>Drone set — 5 edited aerials</li>
+                  <li>Cinematic Listing Video · 60–90s</li>
+                  <li>Director-led shoot · storyboard treatment</li>
+                  <li>Extended aerial &amp; gimbal coverage</li>
+                  <li>Bespoke music score · hand colour-grade</li>
+                  <li>Portal master, social master &amp; teaser cut</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>

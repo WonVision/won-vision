@@ -426,6 +426,7 @@ export default function HomePage() {
                 <p className="home-pkg__desc">Photos, floor plan, and aerial context in one shoot — the standard suburban listing bundle.</p>
                 <ul className="home-pkg__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
+                  <li>Sky replacement included</li>
                   <li>2D floor plan with dimensions</li>
                   <li>Drone set — 5 edited images</li>
                   <li>Next-business-day delivery</li>
@@ -448,9 +449,12 @@ export default function HomePage() {
                 <p className="home-pkg__desc">Photo + plan + drone + Standard Listing Video — agent footage and drone footage included.</p>
                 <ul className="home-pkg__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
-                  <li>2D floor plan + 5-image drone set</li>
+                  <li>Full HDR retouching</li>
+                  <li>Sky replacement included</li>
+                  <li>2D floor plan with dimensions</li>
+                  <li>Drone set — 5 edited aerials</li>
                   <li>Standard Listing Video · 30–60s</li>
-                  <li>Includes agent footage + drone footage</li>
+                  <li>Agent piece-to-camera direction</li>
                 </ul>
                 <div className="home-pkg__foot">
                   <span className="home-pkg__price"><small>From</small>$649</span>
@@ -470,10 +474,16 @@ export default function HomePage() {
                 <h3 className="home-pkg__name">Cinematic</h3>
                 <p className="home-pkg__desc">Photo + plan + drone + Premium Listing Video — the flagship luxury deliverable.</p>
                 <ul className="home-pkg__incl">
-                  <li>15 / 20 / 25 HDR photos (by tier)</li>
-                  <li>2D floor plan + 5-image drone set</li>
-                  <li>Premium Listing Video · 60–90s</li>
-                  <li>Includes agent footage + drone footage</li>
+                  <li>25+ photos</li>
+                  <li>Full HDR retouching</li>
+                  <li>Sky replacement included</li>
+                  <li>2D floor plan with dimensions</li>
+                  <li>Drone set — 5 edited aerials</li>
+                  <li>Cinematic Listing Video · 60–90s</li>
+                  <li>Director-led shoot · storyboard treatment</li>
+                  <li>Extended aerial &amp; gimbal coverage</li>
+                  <li>Bespoke music score · hand colour-grade</li>
+                  <li>Portal master, social master &amp; teaser cut</li>
                 </ul>
                 <div className="home-pkg__foot">
                   <span className="home-pkg__price"><small>From</small>$1,099</span>
