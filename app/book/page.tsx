@@ -872,7 +872,18 @@ export default function BookPage() {
           <div className="svc-grid">
 
             <article className="svc-card" data-svc="Property Highlight Video (30–60s · no agent)" data-price="349" data-desc="Property Highlight Video · 30–60s. Footage only, no agent on camera. 16:9, music-bedded." data-img="/images/cinematic.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
+              <div className="svc-card__media">
+                <video
+                  src="/video/cinematic-demo.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  poster="/images/cinematic.webp"
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.94)' }}
+                />
+              </div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Property Highlight Video</h4>
