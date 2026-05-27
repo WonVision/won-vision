@@ -639,9 +639,9 @@ export default function BookPage() {
             <a href="#cat-rental" className="svc-jump__chip">Rental photography</a>
             <a href="#cat-sales" className="svc-jump__chip">Sales photography</a>
             <a href="#cat-drone" className="svc-jump__chip">Aerial / drone</a>
-            {SHOW_VIDEO && <a href="#cat-video" className="svc-jump__chip">Video</a>}
-            <a href="#cat-staging" className="svc-jump__chip">Virtual editing</a>
+            {SHOW_VIDEO && <a href="#cat-video" className="svc-jump__chip">Videography</a>}
             <a href="#cat-floorplans" className="svc-jump__chip">Floor plans &amp; site plan</a>
+            <a href="#cat-staging" className="svc-jump__chip">Virtual editing</a>
           </div>
         </nav>
 
@@ -885,7 +885,7 @@ export default function BookPage() {
         {/* VIDEO */}
         {SHOW_VIDEO && (
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
-          <div className="cat__head"><h3>Video</h3><span className="cat__count">3 products</span></div>
+          <div className="cat__head"><h3>Videography</h3><span className="cat__count">3 products</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
             Property Highlight Video is exterior + drone footage only — no agent on camera. Standard and Premium Listing Video both include agent footage and drone footage; Premium extends to a 60–90s edit.
           </p>
@@ -959,39 +959,6 @@ export default function BookPage() {
         </div>
         )}
 
-        {/* VIRTUAL EDITING — info only, paid per image in Vision Studio client portal */}
-        <div className="cat" id="cat-staging" data-gallery="staging" data-cats="virtual-editing">
-          <div className="cat__head"><h3>Virtual <em>editing</em></h3><span className="cat__count">Per image · client portal</span></div>
-          <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 8 }}>
-            Virtual staging, decluttering and day-to-dusk are <strong>not booked here</strong>. After delivery you'll review the gallery in the <strong>Vision Studio client portal</strong> and pay per image — only for the photos you choose.
-          </p>
-
-          {/* Before/after comparison sliders — real Won Vision editing samples */}
-          <div className="ba-row" style={{ marginTop: 16 }}>
-            <BeforeAfterSlider
-              label="Virtual staging · $20 / img"
-              beforeAlt="Empty room before virtual staging"
-              afterAlt="Virtually staged room"
-              beforeSrc="/images/staging-before.webp"
-              afterSrc="/images/staging-after.webp"
-            />
-            <BeforeAfterSlider
-              label="Day-to-dusk · $10 / img"
-              beforeAlt="Exterior at day"
-              afterAlt="Exterior at dusk"
-              beforeSrc="/images/dusk-before.webp"
-              afterSrc="/images/dusk-after.webp"
-            />
-            <BeforeAfterSlider
-              label="Declutter · $10 / img"
-              beforeAlt="Cluttered living room"
-              afterAlt="Decluttered living room"
-              beforeSrc="/images/declutter-before.webp"
-              afterSrc="/images/declutter-after.webp"
-            />
-          </div>
-        </div>
-
         {/* FLOORPLANS & SITE PLAN */}
         <div className="cat" id="cat-floorplans" data-gallery="floorplans" data-cats="floorplan">
           <div className="cat__head"><h3>Floor <em>plans &amp; site plan</em></h3><span className="cat__count">2D · 3D · Site plan</span></div>
@@ -1052,6 +1019,39 @@ export default function BookPage() {
               </div>
             </article>
 
+          </div>
+        </div>
+
+        {/* VIRTUAL EDITING — info only, paid per image in Vision Studio client portal */}
+        <div className="cat" id="cat-staging" data-gallery="staging" data-cats="virtual-editing">
+          <div className="cat__head"><h3>Virtual <em>editing</em></h3><span className="cat__count">Per image · client portal</span></div>
+          <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 8 }}>
+            Virtual staging, decluttering and day-to-dusk are <strong>not booked here</strong>. After delivery you'll review the gallery in the <strong>Vision Studio client portal</strong> and pay per image — only for the photos you choose.
+          </p>
+
+          {/* Before/after comparison sliders — real Won Vision editing samples */}
+          <div className="ba-row" style={{ marginTop: 16 }}>
+            <BeforeAfterSlider
+              label="Virtual staging · $20 / img"
+              beforeAlt="Empty room before virtual staging"
+              afterAlt="Virtually staged room"
+              beforeSrc="/images/staging-before.webp"
+              afterSrc="/images/staging-after.webp"
+            />
+            <BeforeAfterSlider
+              label="Day-to-dusk · $10 / img"
+              beforeAlt="Exterior at day"
+              afterAlt="Exterior at dusk"
+              beforeSrc="/images/dusk-before.webp"
+              afterSrc="/images/dusk-after.webp"
+            />
+            <BeforeAfterSlider
+              label="Declutter · $10 / img"
+              beforeAlt="Cluttered living room"
+              afterAlt="Decluttered living room"
+              beforeSrc="/images/declutter-before.webp"
+              afterSrc="/images/declutter-after.webp"
+            />
           </div>
         </div>
 
