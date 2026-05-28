@@ -169,7 +169,7 @@ export default function HomePage() {
   .home-pkgs__head h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.4vw,60px);line-height:1.02;color:var(--ink);letter-spacing:-0.005em;margin-top:10px}
   .home-pkgs__head h2 em{font-style:italic;color:var(--steel);font-weight:400}
   .home-pkgs__head p{color:var(--graphite,#4A4A48);font-size:14px;line-height:1.6;max-width:380px}
-  .home-pkgs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:center}
+  .home-pkgs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
   .home-pkg{
     display:flex;flex-direction:column;
     background:var(--paper);
@@ -179,7 +179,7 @@ export default function HomePage() {
   }
   .home-pkg:hover{transform:translateY(-3px);border-color:var(--ink)}
   .home-pkg__media{aspect-ratio:1/1;background:#f3f3ef;position:relative;overflow:hidden}
-  .home-pkg--featured .home-pkg__media{aspect-ratio:4/5}
+  .home-pkg--featured .home-pkg__media{aspect-ratio:1/1}
   .home-pkg__media__img{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(0.94);transition:filter .35s ease, transform .8s var(--ease,cubic-bezier(.2,.7,.2,1))}
   .home-pkg:hover .home-pkg__media__img{filter:saturate(1.05);transform:scale(1.03)}
   .home-pkg__tag{
@@ -188,12 +188,14 @@ export default function HomePage() {
     padding:6px 10px;
     font-family:var(--body);font-size:9px;letter-spacing:0.32em;text-transform:uppercase;font-weight:600;
   }
-  .home-pkg__body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
-  .home-pkg--featured .home-pkg__body{padding:22px 24px 24px;gap:12px}
+  .home-pkg__body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .home-pkg--featured .home-pkg__body{padding:22px 24px 24px;gap:14px}
+  .home-pkg__desc{margin-bottom:6px}
   .home-pkg__name{font-family:var(--display);font-weight:500;font-size:22px;line-height:1.05;color:var(--ink);letter-spacing:-0.008em}
   .home-pkg--featured .home-pkg__name{font-size:28px}
   .home-pkg__desc{font-family:var(--body);font-size:12px;line-height:1.55;color:var(--graphite,#4A4A48)}
-  .home-pkg__incl{font-family:var(--body);font-size:11.5px;line-height:1.55;color:var(--ink);margin:0;padding:0;list-style:none;flex:1}
+  .home-pkg__incl{font-family:var(--body);font-size:11.5px;line-height:1.55;color:var(--ink);margin:0;padding:0;list-style:none}
+  .home-pkg__foot{margin-top:auto}
   .home-pkg__incl li{padding:6px 0;border-top:1px solid rgba(0,0,0,0.08);display:flex;gap:8px;align-items:flex-start}
   .home-pkg__incl li:first-child{border-top:none}
   .home-pkg__incl li::before{content:'';flex:0 0 5px;width:5px;height:5px;background:var(--ink);margin-top:7px}
@@ -455,7 +457,6 @@ export default function HomePage() {
                   <li>2D floor plan with dimensions</li>
                   <li>Drone set — 5 edited aerials</li>
                   <li>Standard Listing Video · 30–60s</li>
-                  <li>Agent piece-to-camera direction</li>
                 </ul>
                 <div className="home-pkg__foot">
                   <span className="home-pkg__price"><small>From</small>$649<span className="home-pkg__total">$1,051 total cost</span></span>
@@ -483,7 +484,6 @@ export default function HomePage() {
                   <li>Cinematic Listing Video · 60–90s</li>
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
-                  <li>Hand colour-grade</li>
                 </ul>
                 <div className="home-pkg__foot">
                   <span className="home-pkg__price"><small>From</small>$1,099<span className="home-pkg__total">$1,350 total cost</span></span>

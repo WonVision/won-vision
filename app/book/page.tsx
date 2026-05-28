@@ -791,7 +791,6 @@ export default function BookPage() {
                   <li>2D floor plan with dimensions</li>
                   <li>Drone set — 5 edited aerials</li>
                   <li>Standard Listing Video · 30–60s</li>
-                  <li>Agent piece-to-camera direction</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -837,7 +836,6 @@ export default function BookPage() {
                   <li>Cinematic Listing Video · 60–90s</li>
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
-                  <li>Hand colour-grade</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -994,7 +992,6 @@ export default function BookPage() {
                   <li>Agent piece-to-camera direction</li>
                   <li>Drone aerials + interior coverage</li>
                   <li>Cinematic grade · scored to picture</li>
-                  <li>Portal-ready master + web cut</li>
                 </ul>
                 <div className="svc-card__foot"><span className="svc-card__price">$499</span><span className="svc-card__add">Add +</span></div>
               </div>
@@ -1009,7 +1006,6 @@ export default function BookPage() {
                   <li>60–90s flagship cinematic edit</li>
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
-                  <li>Hand colour-grade</li>
                 </ul>
                 <div className="svc-card__foot"><span className="svc-card__price">$699</span><span className="svc-card__add">Add +</span></div>
               </div>

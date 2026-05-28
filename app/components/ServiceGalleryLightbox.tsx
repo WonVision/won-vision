@@ -40,8 +40,7 @@ const galleries: Record<string, Media[]> = {
     },
   ],
   drone: [
-    { src: '/images/drone-set.webp', caption: 'Drone set' },
-    { src: '/images/drone-additional.webp', caption: 'Additional aerial' },
+    { src: '/images/drone-set.webp', caption: 'Drone set · 5 aerials' },
   ],
   staging: [
     { src: '/images/staging-after.webp', caption: 'Virtual staging' },
