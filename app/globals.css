@@ -1303,6 +1303,19 @@ body.is-loading > :not(.loader){visibility:hidden}
   flex:1;display:flex;align-items:center;justify-content:center;
   padding:32px 0;overflow:hidden;
 }
+.operate-hero__stack{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:22px;width:100%;
+}
+.operate-hero__pretitle{
+  font-family:var(--body);font-size:14px;letter-spacing:0.36em;text-transform:uppercase;
+  color:rgba(120,120,118,0.78);font-weight:500;
+  text-align:center;display:block;
+}
+@media (max-width:760px){
+  .operate-hero__stack{gap:14px}
+  .operate-hero__pretitle{font-size:11px;letter-spacing:0.3em}
+}
 .typed{
   font-family:var(--display);font-weight:400;
   font-size:min(clamp(48px, 12vw, 200px), calc((100vw - 2 * var(--gutter)) / 4));
