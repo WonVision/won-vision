@@ -381,6 +381,11 @@ export default function BookPage() {
   #cat-photography .pkg-card__desc{min-height:56px}
   #cat-photography .pkg-card__incl{min-height:120px}
   #cat-photography .pkg-card__tiers{margin-top:auto}
+  /* Force both card images to the exact same pixel height (aspect-ratio differs because Photography spans 2 cols) */
+  #cat-photography .pkg-card__media{aspect-ratio:auto;height:clamp(360px, 30vw, 520px)}
+  @media (max-width:760px){
+    #cat-photography .pkg-card__media{height:clamp(260px, 70vw, 420px)}
+  }
 
   /* Packages section: pin tiers/price/button to the bottom so they line up across Essential / Signature / Cinematic */
   #cat-packages .pkg-card__body{display:flex;flex-direction:column}
@@ -912,7 +917,7 @@ export default function BookPage() {
               data-pkg-img="/images/drone-set.webp"
               data-tiers='{"lite":{"label":"Lite · 3 photos","price":139},"standard":{"label":"Standard · 5 photos","price":159}}'
             >
-              <div className="pkg-card__media" style={{ aspectRatio: '5 / 6' }}>
+              <div className="pkg-card__media">
                 <span className="pkg-card__tag">Aerial</span>
                 <div className="pkg-card__media__img" style={{ backgroundImage: "url('/images/drone-set.webp')", backgroundSize: 'cover', backgroundPosition: 'center 40%', backgroundRepeat: 'no-repeat', transform: 'scale(1.35)', transformOrigin: 'center 40%' }}></div>
               </div>
