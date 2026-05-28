@@ -958,7 +958,7 @@ export default function BookPage() {
 
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/cinematic.webp">
+            <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/cinematic.webp" data-gallery="highlight">
               <div className="svc-card__media">
                 <video
                   src="/video/cinematic-demo-loop.mp4"

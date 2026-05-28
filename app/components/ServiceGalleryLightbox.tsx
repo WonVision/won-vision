@@ -30,12 +30,13 @@ const galleries: Record<string, Media[]> = {
     { src: '/images/sales-premium.webp', caption: 'Sales · Premium' },
     { src: '/images/additional-photos.webp', caption: 'Additional photos' },
   ],
-  video: [
+  video: [],
+  highlight: [
     {
-      src: '/video/cinematic-demo.mp4',
+      src: '/video/cinematic-demo-loop.mp4',
       type: 'video',
       poster: '/images/cinematic.webp',
-      caption: 'Listing Video · 90s',
+      caption: 'Property Highlight Video',
     },
   ],
   drone: [
@@ -56,6 +57,7 @@ const galleries: Record<string, Media[]> = {
 const titles: Record<string, string> = {
   photography: 'Photography',
   video: 'Video',
+  highlight: 'Property Highlight Video',
   drone: 'Aerial / drone',
   staging: 'Virtual staging',
   floorplans: 'Floor plans',
