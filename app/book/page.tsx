@@ -549,14 +549,23 @@ export default function BookPage() {
   /* Non-intrusive upsell toast (bottom-left) */
   .upsell-toast{
     position:fixed;left:24px;bottom:96px;z-index:9000;
-    width:min(340px, calc(100vw - 32px));
+    width:min(380px, calc(100vw - 32px));
     background:var(--paper);color:var(--ink);
     border:1px solid rgba(74,74,72,0.18);
     box-shadow:0 14px 36px rgba(10,10,10,0.18);
-    padding:18px 18px 16px 18px;
+    padding:16px 16px 14px 16px;
     opacity:0;transform:translateY(12px);pointer-events:none;
     transition:opacity .35s var(--ease), transform .35s var(--ease);
+    display:flex;gap:14px;align-items:stretch;
   }
+  .upsell-toast__thumb{
+    flex:0 0 auto;
+    width:74px;align-self:stretch;
+    background:var(--soft) center/cover no-repeat;
+    border:1px solid rgba(74,74,72,0.14);
+    min-height:90px;
+  }
+  .upsell-toast__body{flex:1;min-width:0;display:flex;flex-direction:column}
   .upsell-toast.is-open{opacity:1;transform:translateY(0);pointer-events:auto}
   .upsell-toast__close{
     position:absolute;top:6px;right:6px;
@@ -1138,12 +1147,15 @@ export default function BookPage() {
       {/* Non-intrusive upsell toast (Reel / Site Plan / Package suggestion) */}
       <div className="upsell-toast" id="upsellToast" aria-hidden="true" role="dialog" aria-live="polite">
         <button type="button" className="upsell-toast__close" id="upsellToastClose" aria-label="Dismiss">×</button>
-        <div className="upsell-toast__eyebrow" id="upsellToastEyebrow">Add-on · Recommended</div>
-        <h4 className="upsell-toast__title" id="upsellToastTitle">Add a Social Reel?</h4>
-        <p className="upsell-toast__desc" id="upsellToastDesc"></p>
-        <div className="upsell-toast__row">
-          <span className="upsell-toast__price" id="upsellToastPrice">$99</span>
-          <button type="button" className="upsell-toast__add" id="upsellToastAdd">Add</button>
+        <div className="upsell-toast__thumb" id="upsellToastThumb" aria-hidden="true"></div>
+        <div className="upsell-toast__body">
+          <div className="upsell-toast__eyebrow" id="upsellToastEyebrow">Add-on · Recommended</div>
+          <h4 className="upsell-toast__title" id="upsellToastTitle">Add a Social Reel?</h4>
+          <p className="upsell-toast__desc" id="upsellToastDesc"></p>
+          <div className="upsell-toast__row">
+            <span className="upsell-toast__price" id="upsellToastPrice">$99</span>
+            <button type="button" className="upsell-toast__add" id="upsellToastAdd">Add</button>
+          </div>
         </div>
       </div>
 
@@ -1267,11 +1279,11 @@ export default function BookPage() {
   function syncAddons(){ /* no-op in overlay; cart page renders its own add-ons */ }
   function addReel(){
     items.set(REEL.name, { price: String(REEL.price), img: REEL.img, categories: REEL.categories.slice() });
-    render(); openCart();
+    render(); openCart({auto:true});
   }
   function addSitePlan(){
     items.set(SITE_PLAN.name, { price: String(SITE_PLAN.price), img: SITE_PLAN.img, categories: SITE_PLAN.categories.slice() });
-    render(); openCart();
+    render(); openCart({auto:true});
   }
   function addPackageByKey(pkgKey){
     const card = document.querySelector('.pkg-card[data-pkg="' + pkgKey + '"]');
@@ -1281,6 +1293,7 @@ export default function BookPage() {
   }
   // ---- Non-intrusive toast (one slot, queued) ----
   const toast       = document.getElementById('upsellToast');
+  const toastThumb  = document.getElementById('upsellToastThumb');
   const toastEyebrow= document.getElementById('upsellToastEyebrow');
   const toastTitle  = document.getElementById('upsellToastTitle');
   const toastDesc   = document.getElementById('upsellToastDesc');
@@ -1298,6 +1311,7 @@ export default function BookPage() {
     if (toastTitle)   toastTitle.textContent   = opts.title;
     if (toastDesc)    toastDesc.textContent    = opts.desc;
     if (toastPrice)   toastPrice.textContent   = opts.price;
+    if (toastThumb)   toastThumb.style.backgroundImage = opts.img ? "url('" + opts.img + "')" : 'none';
     if (toastAdd) {
       toastAdd.textContent = opts.addLabel || 'Add';
       toastAdd.onclick = function(){ try { opts.onAdd && opts.onAdd(); } finally { hideToast(); } };
@@ -1332,6 +1346,7 @@ export default function BookPage() {
       title: 'Add a Social Reel?',
       desc: REEL.desc,
       price: '$' + REEL.price,
+      img: REEL.img,
       addLabel: 'Add · $' + REEL.price,
       onAdd: addReel,
     });
@@ -1355,6 +1370,7 @@ export default function BookPage() {
       title: 'Add a Site Plan?',
       desc: SITE_PLAN.desc,
       price: '$' + SITE_PLAN.price,
+      img: SITE_PLAN.img,
       addLabel: 'Add · $' + SITE_PLAN.price,
       onAdd: addSitePlan,
     });
@@ -1385,6 +1401,7 @@ export default function BookPage() {
         title: 'Bundle into ' + pkgName + '?',
         desc: 'You\\'ve added ' + overlap + ' items that come bundled in the ' + pkgName + ' package — usually cheaper than à la carte.',
         price: priceLabel,
+        img: card.getAttribute('data-pkg-img') || '',
         addLabel: 'View ' + pkgName,
         onAdd: function(){ addPackageByKey(pkgKey); },
       });
@@ -1483,7 +1500,7 @@ export default function BookPage() {
         categories: cats,
       });
       card.classList.add('is-added');
-      openCart();
+      openCart({auto:true});
       maybePromptReel(cats);
       maybePromptPackage();
     } else {
@@ -1497,7 +1514,12 @@ export default function BookPage() {
     card.addEventListener('click', () => toggleCard(card.dataset.svc));
   });
 
-  function openCart(){ cart.classList.add('is-open'); cart.setAttribute('aria-hidden','false'); fab.classList.add('is-open'); }
+  function isMobile(){ return typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 560px)').matches; }
+  function openCart(opts){
+    // On mobile, never auto-open the overlay (only when the user taps the FAB explicitly).
+    if (opts && opts.auto && isMobile()) return;
+    cart.classList.add('is-open'); cart.setAttribute('aria-hidden','false'); fab.classList.add('is-open');
+  }
   function closeCart(){ cart.classList.remove('is-open'); cart.setAttribute('aria-hidden','true'); fab.classList.remove('is-open'); }
 
   fab.addEventListener('click', () => {
@@ -1594,7 +1616,7 @@ export default function BookPage() {
           maybePromptReel(cats);
           maybePromptSitePlan(pkgName, bundles);
           render();
-          openCart();
+          openCart({auto:true});
           refresh();
         });
       }
