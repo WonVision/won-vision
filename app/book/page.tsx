@@ -382,6 +382,10 @@ export default function BookPage() {
   #cat-photography .pkg-card__incl{min-height:120px}
   #cat-photography .pkg-card__tiers{margin-top:auto}
 
+  /* Packages section: pin tiers/price/button to the bottom so they line up across Essential / Signature / Cinematic */
+  #cat-packages .pkg-card__body{display:flex;flex-direction:column}
+  #cat-packages .pkg-card__tiers{margin-top:auto}
+
   @media (max-width:1100px){.pkg-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:760px){
     .pkg-grid{grid-template-columns:1fr;gap:14px}
