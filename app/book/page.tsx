@@ -375,6 +375,13 @@ export default function BookPage() {
   .pkg-card.is-added .pkg-card__add{color:var(--paper);border-color:var(--steel)}
   .pkg-card.is-added .pkg-card__add::before{background:var(--steel);transform:scaleX(1) !important;transform-origin:left center}
   .pkg-card.is-added .pkg-card__add::after{content:' ✓'}
+  /* Photography + Drone section: align matching sub-sections across both cards */
+  #cat-photography .pkg-card__body{display:flex;flex-direction:column}
+  #cat-photography .pkg-card__name{min-height:26px}
+  #cat-photography .pkg-card__desc{min-height:56px}
+  #cat-photography .pkg-card__incl{min-height:120px}
+  #cat-photography .pkg-card__tiers{margin-top:auto}
+
   @media (max-width:1100px){.pkg-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:760px){
     .pkg-grid{grid-template-columns:1fr;gap:14px}
