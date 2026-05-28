@@ -1016,7 +1016,7 @@ export default function BookPage() {
               data-cats="floorplan"
               data-pkg-name="Floor Plan"
               data-pkg-img="/images/floor-plan.webp"
-              data-tiers='{"floor":{"label":"Floor Plan","cartName":"Floor Plan","title":"Floor Plan","desc":"A clean 2D floor plan with dimensions, room labels and a north arrow.","price":149,"img":"/images/floor-plan.webp"},"site":{"label":"Site Plan","cartName":"Site Plan","title":"Site Plan","desc":"A standalone site plan with boundaries, orientation and lot dimensions.","price":49,"img":"/images/floor-plan.webp"}}'
+              data-tiers='{"floor":{"label":"Floor Plan","cartName":"Floor Plan","title":"Floor Plan","desc":"A clean 2D floor plan with dimensions, room labels and a north arrow.","price":149,"img":"/images/floor-plan.webp","categories":["floorplan"]},"site":{"label":"Site Plan","cartName":"Site Plan","title":"Site Plan","desc":"A standalone site plan with boundaries, orientation and lot dimensions.","price":49,"img":"/images/site-plan.webp","categories":["siteplan"]}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag" data-pkg-tag>Plan</span>
@@ -1339,9 +1339,15 @@ export default function BookPage() {
   function maybePromptSitePlan(addedPkgName, addedPkgBundles){
     if (!toast) return;
     if (!addedPkgName) return;
-    const bundles = (addedPkgBundles || '').split(',');
+    const bundles = (addedPkgBundles || '').split(',').filter(Boolean);
+    // Only fire for real bundled packages — they always carry the 'photo' tag in bundles.
+    if (!bundles.includes('photo')) return;
     if (bundles.includes('siteplan')) return; // already bundled
     if (items.has(SITE_PLAN.name) || items.has('Floor Plan + Site Plan')) return;
+    // Also suppress if the cart already contains anything categorised as 'siteplan'
+    for (const [, data] of items) {
+      if (Array.isArray(data.categories) && data.categories.includes('siteplan')) return;
+    }
     if (sessionStorage.getItem('wv-siteplan-prompted') === '1') return;
     sessionStorage.setItem('wv-siteplan-prompted','1');
     showToast({
@@ -1577,10 +1583,11 @@ export default function BookPage() {
           });
           const t = state.get(pkgKey);
           const tier = tiers[t];
-          const cats = readCats(card);
+          const cats = Array.isArray(tier.categories) ? tier.categories : readCats(card);
+          const tierImg = tier.img || pkgImg;
           items.set(currentName(), {
             price: String(tier.price),
-            img: pkgImg,
+            img: tierImg,
             categories: cats,
           });
           const bundles = card.getAttribute('data-pkg-bundles') || '';
