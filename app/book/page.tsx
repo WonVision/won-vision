@@ -947,6 +947,21 @@ export default function BookPage() {
 
           <div className="svc-grid">
 
+            <article className="svc-card" data-svc="Photo to Video" data-price="99" data-desc="Turn your listing photos into a short AI-generated video. Subtle motion, cinematic feel, ready for socials and portals — the budget-friendly way to add motion to your listing." data-img="/images/cinematic.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Photo to Video</h4>
+                <ul className="pkg-card__incl">
+                  <li>AI-generated motion from your stills</li>
+                  <li>Subtle parallax · cinematic feel</li>
+                  <li>Vertical &amp; 16:9 cuts · socials-ready</li>
+                  <li>Same-day delivery · no extra shoot</li>
+                </ul>
+                <div className="svc-card__foot"><span className="svc-card__price">$99</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
             <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/cinematic.webp" data-gallery="highlight">
               <div className="svc-card__media">
                 <video
@@ -996,21 +1011,6 @@ export default function BookPage() {
                   <button type="button" data-variant="long">60–90s<small>$699</small></button>
                 </div>
                 <div className="svc-card__foot"><span className="svc-card__price" data-variant-price>$499</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Photo to Video" data-price="99" data-desc="Turn your listing photos into a short AI-generated video. Subtle motion, cinematic feel, ready for socials and portals — the budget-friendly way to add motion to your listing." data-img="/images/cinematic.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Photo to Video</h4>
-                <ul className="pkg-card__incl">
-                  <li>AI-generated motion from your stills</li>
-                  <li>Subtle parallax · cinematic feel</li>
-                  <li>Vertical &amp; 16:9 cuts · socials-ready</li>
-                  <li>Same-day delivery · no extra shoot</li>
-                </ul>
-                <div className="svc-card__foot"><span className="svc-card__price">$99</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
