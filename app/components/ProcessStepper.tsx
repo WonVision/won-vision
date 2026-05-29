@@ -6,23 +6,28 @@ import type { CSSProperties } from 'react';
 const steps = [
   {
     num: '01',
-    name: 'Book',
-    desc: 'Pick services and a date through the booking calendar. Studio confirms within one working day.',
+    name: 'Brief',
+    desc: 'Cart, address, access notes and timing land in our system before the shoot is confirmed. The photographer arrives knowing the property, the package and the access plan.',
   },
   {
     num: '02',
-    name: 'Plan',
-    desc: 'Site walk and shot list. Light timing and access locked in before the shoot day.',
+    name: 'Shoot',
+    desc: 'High-end gear, bracketed exposures on every interior frame, drone coverage where it counts. We don’t leave until every hero room has the frame.',
   },
   {
     num: '03',
-    name: 'Capture',
-    desc: 'A single visit covers stills, video, drone and floor plans. Naturally coloured, no over-direction.',
+    name: 'Edit',
+    desc: 'Files offloaded straight to our editing team — colour calibration, vertical correction, sky and window pulls, all by trained eyes.',
   },
   {
     num: '04',
-    name: 'Deliver',
-    desc: 'Edited files within 48 hours — high-res, web set, listing video cut, brand-aligned plans.',
+    name: 'Portal',
+    desc: 'One private link. Live shoot status, final gallery with bulk download, per-photo edit requests, re-share to your team.',
+  },
+  {
+    num: '05',
+    name: 'Delivered',
+    desc: 'Photos: same day. Video: 48 hours. Floor plans: 48 hours. Not “up to” — that’s the standard. Campaign live by tomorrow.',
   },
 ];
 

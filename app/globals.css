@@ -2376,8 +2376,8 @@ a{color:inherit}
 }
 .ps__row{
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:48px;
+  grid-template-columns:repeat(5, 1fr);
+  gap:36px;
   position:relative;
   padding-top:48px;
 }
