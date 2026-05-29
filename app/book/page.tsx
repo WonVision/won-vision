@@ -940,7 +940,7 @@ export default function BookPage() {
         {/* VIDEO */}
         {SHOW_VIDEO && (
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
-          <div className="cat__head"><h3>Videography</h3><span className="cat__count">4 films</span></div>
+          <div className="cat__head"><h3>Videography</h3><span className="cat__count">3 films</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
             From a fast Property Highlight to a full Cinematic Listing — every Won Vision film is shot in-house, colour-graded by hand, and scored to a track that fits the home. Add a Photo to Video AI cut from your stills as the budget-friendly option.
           </p>
@@ -973,33 +973,29 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Cinematic Listing Video · 30–60s" data-price="499" data-desc="A polished 30–60s cinematic listing film with agent on camera and drone aerials. Hand-graded, scored, and delivered ready for portals and socials." data-img="/images/cinematic.webp">
+            <article
+              className="svc-card svc-card--variants"
+              data-svc="Cinematic Listing Video · 30–60s"
+              data-price="499"
+              data-desc="A cinematic listing film — agent on camera, drone aerials, hand-graded and scored. Choose 30–60s for a polished cut, or 60–90s for extra time on set capturing the aesthetic and mood of the home."
+              data-img="/images/cinematic.webp"
+              data-variants='[{"key":"short","name":"Cinematic Listing Video · 30–60s","price":499,"label":"30–60s","lead":"30–60s cinematic edit · 16:9","b1":"Agent piece-to-camera direction","b2":"Drone aerials + interior coverage","b3":"Hand colour-grade · scored to picture"},{"key":"long","name":"Cinematic Listing Video · 60–90s","price":699,"label":"60–90s","lead":"60–90s flagship cinematic edit","b1":"Extra set time for aesthetic & mood","b2":"Director-led shoot · storyboard treatment","b3":"Extended aerial & gimbal coverage"}]'
+            >
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Cinematic Listing Video · 30–60s</h4>
+                <h4 className="svc-card__name" data-variant-name>Cinematic Listing Video · 30–60s</h4>
                 <ul className="pkg-card__incl">
-                  <li>30–60s cinematic edit · 16:9</li>
-                  <li>Agent piece-to-camera direction</li>
-                  <li>Drone aerials + interior coverage</li>
-                  <li>Hand colour-grade · scored to picture</li>
+                  <li data-variant-lead>30–60s cinematic edit · 16:9</li>
+                  <li data-variant-b1>Agent piece-to-camera direction</li>
+                  <li data-variant-b2>Drone aerials + interior coverage</li>
+                  <li data-variant-b3>Hand colour-grade · scored to picture</li>
                 </ul>
-                <div className="svc-card__foot"><span className="svc-card__price">$499</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
-            <article className="svc-card" data-svc="Cinematic Listing Video · 60–90s" data-price="699" data-desc="Our flagship 60–90s cinematic film. Extra time on set to capture the aesthetic and mood of the home — director-led, fully storyboarded, with extended aerial coverage and a bespoke score." data-img="/images/cinematic.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Cinematic Listing Video · 60–90s</h4>
-                <ul className="pkg-card__incl">
-                  <li>60–90s flagship cinematic edit</li>
-                  <li>Extra set time for aesthetic &amp; mood</li>
-                  <li>Director-led shoot · storyboard treatment</li>
-                  <li>Extended aerial &amp; gimbal coverage</li>
-                </ul>
-                <div className="svc-card__foot"><span className="svc-card__price">$699</span><span className="svc-card__add">Add +</span></div>
+                <div className="pkg-card__pills" data-svc-variants style={{ marginTop: 10 }}>
+                  <button type="button" data-variant="short" className="is-active">30–60s<small>$499</small></button>
+                  <button type="button" data-variant="long">60–90s<small>$699</small></button>
+                </div>
+                <div className="svc-card__foot"><span className="svc-card__price" data-variant-price>$499</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
@@ -1524,6 +1520,57 @@ export default function BookPage() {
 
   cards.forEach(card => {
     card.addEventListener('click', () => toggleCard(card.dataset.svc));
+  });
+
+  // ---- Variant pickers on svc-cards (e.g. Cinematic Listing Video 30–60s / 60–90s) ----
+  document.querySelectorAll('.svc-card--variants').forEach(card => {
+    let variants = [];
+    try { variants = JSON.parse(card.dataset.variants || '[]'); } catch (_) {}
+    if (!variants.length) return;
+    const pills = card.querySelectorAll('[data-svc-variants] button');
+    const nameEl = card.querySelector('[data-variant-name]');
+    const priceEl = card.querySelector('[data-variant-price]');
+    const leadEl = card.querySelector('[data-variant-lead]');
+    const b1El = card.querySelector('[data-variant-b1]');
+    const b2El = card.querySelector('[data-variant-b2]');
+    const b3El = card.querySelector('[data-variant-b3]');
+
+    function applyVariant(key, opts){
+      const v = variants.find(x => x.key === key);
+      if (!v) return;
+      const swap = (opts && opts.swap) !== false;
+      // If the OTHER variant is currently in the cart, swap it for the new one.
+      if (swap) {
+        variants.filter(x => x.key !== key).forEach(other => {
+          if (items.has(other.name)) {
+            items.delete(other.name);
+            items.set(v.name, { price: String(v.price), img: card.dataset.img, categories: ['video'] });
+          }
+        });
+      }
+      card.dataset.svc = v.name;
+      card.dataset.price = String(v.price);
+      if (nameEl)  nameEl.textContent  = v.name;
+      if (priceEl) priceEl.textContent = '$' + Number(v.price).toLocaleString('en-AU');
+      if (leadEl)  leadEl.textContent  = v.lead;
+      if (b1El)    b1El.textContent    = v.b1;
+      if (b2El)    b2El.textContent    = v.b2;
+      if (b3El)    b3El.textContent    = v.b3;
+      pills.forEach(p => p.classList.toggle('is-active', p.dataset.variant === key));
+      card.classList.toggle('is-added', items.has(v.name));
+      render();
+    }
+
+    pills.forEach(p => {
+      p.addEventListener('click', (e) => {
+        e.stopPropagation();
+        applyVariant(p.dataset.variant);
+      });
+    });
+
+    // Restore from persisted cart: if either variant is already saved, lock the picker to it.
+    const present = variants.find(v => items.has(v.name));
+    if (present) applyVariant(present.key, { swap: false });
   });
 
   function isMobile(){ return typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 560px)').matches; }
