@@ -774,7 +774,7 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone,video"
               data-pkg-name="Signature"
               data-pkg-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85"
-              data-pkg-bundles="photo,floorplan,siteplan,drone,listingvideo"
+              data-pkg-bundles="photo,floorplan,siteplan,drone,cinematicvideo"
               data-tiers='{"compact":{"label":"Compact · 15 photos","price":649,"total":1051},"standard":{"label":"Standard · 20 photos","price":745,"total":1101},"premium":{"label":"Premium · 25 photos","price":819,"total":1151}}'
             >
               <div className="pkg-card__media">
@@ -783,14 +783,14 @@ export default function BookPage() {
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Signature</h4>
-                <p className="pkg-card__desc">Photo + plan + drone + Standard Listing Video — agent footage and drone footage included.</p>
+                <p className="pkg-card__desc">Photo + plan + drone + Cinematic Listing Video — agent footage and drone footage included.</p>
                 <ul className="pkg-card__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
                   <li>Full HDR retouching</li>
                   <li>Sky replacement included</li>
                   <li>2D floor plan with dimensions</li>
                   <li>Drone set — 5 edited aerials</li>
-                  <li>Standard Listing Video · 30–60s</li>
+                  <li>Cinematic Listing Video · 30–60s</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -818,7 +818,7 @@ export default function BookPage() {
               data-pkg-name="Cinematic"
               data-pkg-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85"
               data-pkg-bundles="photo,floorplan,siteplan,drone,cinematicvideo,reel"
-              data-tiers='{"compact":{"label":"Compact · 15 photos","price":1099,"total":1350},"standard":{"label":"Standard · 20 photos","price":1169,"total":1400},"premium":{"label":"Premium · 25 photos","price":1239,"total":1450}}'
+              data-tiers='{"single":{"label":"Package","price":999,"total":1350}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag">Flagship</span>
@@ -837,17 +837,8 @@ export default function BookPage() {
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
                 </ul>
-                <div className="pkg-card__tiers">
-                  <label>Property size</label>
-                  <div className="pkg-card__pills" data-pkg-tiers>
-                    <button type="button" data-tier="compact" className="is-active">Compact<small>15 photos</small></button>
-                    <button type="button" data-tier="standard">Standard<small>20 photos</small></button>
-                    <button type="button" data-tier="premium">Premium<small>25 photos</small></button>
-                  </div>
-                </div>
                 <div className="pkg-card__pricerow">
-                  <span className="pkg-card__from">From</span>
-                  <span className="pkg-card__price" data-pkg-price>$1,099</span>
+                  <span className="pkg-card__price" data-pkg-price>$999</span>
                   <span className="pkg-card__list" data-pkg-list>$1,350 total cost</span>
                 </div>
                 <button type="button" className="pkg-card__add" data-pkg-add>Add to booking →</button>
@@ -982,28 +973,29 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Listing Video" data-price="499" data-desc="A polished 30–60s listing film with agent on camera and drone aerials. Hand-graded, scored, and delivered ready for portals and socials." data-img="/images/cinematic.webp">
+            <article className="svc-card" data-svc="Cinematic Listing Video · 30–60s" data-price="499" data-desc="A polished 30–60s cinematic listing film with agent on camera and drone aerials. Hand-graded, scored, and delivered ready for portals and socials." data-img="/images/cinematic.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Listing Video</h4>
+                <h4 className="svc-card__name">Cinematic Listing Video · 30–60s</h4>
                 <ul className="pkg-card__incl">
-                  <li>30–60s polished listing film · 16:9</li>
+                  <li>30–60s cinematic edit · 16:9</li>
                   <li>Agent piece-to-camera direction</li>
                   <li>Drone aerials + interior coverage</li>
-                  <li>Cinematic grade · scored to picture</li>
+                  <li>Hand colour-grade · scored to picture</li>
                 </ul>
                 <div className="svc-card__foot"><span className="svc-card__price">$499</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Cinematic Listing Video" data-price="699" data-desc="Our flagship 60–90s cinematic film. Director-led, fully storyboarded, with extended aerial coverage and a bespoke music score. The complete signature deliverable." data-img="/images/cinematic.webp">
+            <article className="svc-card" data-svc="Cinematic Listing Video · 60–90s" data-price="699" data-desc="Our flagship 60–90s cinematic film. Extra time on set to capture the aesthetic and mood of the home — director-led, fully storyboarded, with extended aerial coverage and a bespoke score." data-img="/images/cinematic.webp">
               <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Cinematic Listing Video</h4>
+                <h4 className="svc-card__name">Cinematic Listing Video · 60–90s</h4>
                 <ul className="pkg-card__incl">
                   <li>60–90s flagship cinematic edit</li>
+                  <li>Extra set time for aesthetic &amp; mood</li>
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
                 </ul>
