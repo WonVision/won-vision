@@ -817,7 +817,7 @@ export default function BookPage() {
               data-cats="photography,floorplan,drone,video,social"
               data-pkg-name="Cinematic"
               data-pkg-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85"
-              data-pkg-bundles="photo,floorplan,siteplan,drone,cinematicvideo,reel"
+              data-pkg-bundles="photo,floorplan,siteplan,drone,cinematicvideo"
               data-tiers='{"single":{"label":"Package","price":999,"total":1350}}'
             >
               <div className="pkg-card__media">
@@ -940,9 +940,9 @@ export default function BookPage() {
         {/* VIDEO */}
         {SHOW_VIDEO && (
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
-          <div className="cat__head"><h3>Videography</h3><span className="cat__count">3 films</span></div>
+          <div className="cat__head"><h3>Videography</h3><span className="cat__count">4 films</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            From a fast-moving Property Highlight to a full Cinematic Listing — every Won Vision film is shot in-house, colour-graded by hand, and scored to a track that fits the home. Social cut-downs are offered at checkout.
+            From a fast Property Highlight to a full Cinematic Listing — every Won Vision film is shot in-house, colour-graded by hand, and scored to a track that fits the home. Add a Photo to Video AI cut from your stills as the budget-friendly option.
           </p>
 
           <div className="svc-grid">
@@ -1000,6 +1000,21 @@ export default function BookPage() {
                   <li>Extended aerial &amp; gimbal coverage</li>
                 </ul>
                 <div className="svc-card__foot"><span className="svc-card__price">$699</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card" data-svc="Photo to Video" data-price="99" data-desc="Turn your listing photos into a short AI-generated video. Subtle motion, cinematic feel, ready for socials and portals — the budget-friendly way to add motion to your listing." data-img="/images/cinematic.webp">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Photo to Video</h4>
+                <ul className="pkg-card__incl">
+                  <li>AI-generated motion from your stills</li>
+                  <li>Subtle parallax · cinematic feel</li>
+                  <li>Vertical &amp; 16:9 cuts · socials-ready</li>
+                  <li>Same-day delivery · no extra shoot</li>
+                </ul>
+                <div className="svc-card__foot"><span className="svc-card__price">$99</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
@@ -1141,13 +1156,13 @@ export default function BookPage() {
         </div>
       </aside>
 
-      {/* Non-intrusive upsell toast (Reel / Site Plan / Package suggestion) */}
+      {/* Non-intrusive upsell toast (Photo to Video / Site Plan / Package suggestion) */}
       <div className="upsell-toast" id="upsellToast" aria-hidden="true" role="dialog" aria-live="polite">
         <button type="button" className="upsell-toast__close" id="upsellToastClose" aria-label="Dismiss">×</button>
         <div className="upsell-toast__thumb" id="upsellToastThumb" aria-hidden="true"></div>
         <div className="upsell-toast__body">
           <div className="upsell-toast__eyebrow" id="upsellToastEyebrow">Add-on · Recommended</div>
-          <h4 className="upsell-toast__title" id="upsellToastTitle">Add a Social Reel?</h4>
+          <h4 className="upsell-toast__title" id="upsellToastTitle">Add a Photo to Video?</h4>
           <p className="upsell-toast__desc" id="upsellToastDesc"></p>
           <div className="upsell-toast__row">
             <span className="upsell-toast__price" id="upsellToastPrice">$99</span>
@@ -1213,12 +1228,12 @@ export default function BookPage() {
   if(!cards.length || !fab) return;
 
   // ---- Upsell catalogue (virtual items + popup triggers) ----
-  const REEL = {
-    name: 'Social Reel',
+  const PHOTO_TO_VIDEO = {
+    name: 'Photo to Video',
     price: 99,
     img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80',
-    categories: ['video','social'],
-    desc: 'A short-form social cut of your chosen video — 30s vertical 9:16, captions, hook-first edit. Built for Instagram & TikTok.',
+    categories: ['video'],
+    desc: 'Turn your listing photos into a short AI-generated video — subtle motion, cinematic feel, ready for socials and portals.',
   };
   const SITE_PLAN = {
     name: 'Site Plan',
@@ -1240,7 +1255,7 @@ export default function BookPage() {
     if (/^Property Highlight Video\b/.test(name)) tags.add('video');
     if (/^Listing Video\b/.test(name)) { tags.add('video'); tags.add('listingvideo'); }
     if (/^Cinematic Listing Video\b/.test(name)) { tags.add('video'); tags.add('cinematicvideo'); }
-    if (/^Social Reel\b/.test(name)) { tags.add('video'); tags.add('reel'); }
+    if (/^Photo to Video\b/.test(name)) tags.add('video');
     return tags;
   }
   function cartComponents(){
@@ -1253,8 +1268,9 @@ export default function BookPage() {
     return all;
   }
   function cartHasVideo(){
-    for (const [, data] of items) {
-      if (Array.isArray(data.categories) && data.categories.includes('video') && !data.categories.includes('social')) return true;
+    for (const [name, data] of items) {
+      if (name === PHOTO_TO_VIDEO.name) continue;
+      if (Array.isArray(data.categories) && data.categories.includes('video')) return true;
     }
     return false;
   }
@@ -1274,8 +1290,8 @@ export default function BookPage() {
 
   // Add-ons live on the /book/cart page now, not the overlay — nothing to sync here.
   function syncAddons(){ /* no-op in overlay; cart page renders its own add-ons */ }
-  function addReel(){
-    items.set(REEL.name, { price: String(REEL.price), img: REEL.img, categories: REEL.categories.slice() });
+  function addPhotoToVideo(){
+    items.set(PHOTO_TO_VIDEO.name, { price: String(PHOTO_TO_VIDEO.price), img: PHOTO_TO_VIDEO.img, categories: PHOTO_TO_VIDEO.categories.slice() });
     render(); openCart({auto:true});
   }
   function addSitePlan(){
@@ -1331,21 +1347,20 @@ export default function BookPage() {
   }
   if (toastClose) toastClose.addEventListener('click', hideToast);
 
-  function maybePromptReel(addedCategories){
+  function maybePromptPhotoToVideo(addedCategories){
     if (!toast) return;
     if (!Array.isArray(addedCategories) || !addedCategories.includes('video')) return;
-    if (addedCategories.includes('social')) return;
-    if (items.has(REEL.name)) return;
-    if (sessionStorage.getItem('wv-reel-prompted') === '1') return;
-    sessionStorage.setItem('wv-reel-prompted','1');
+    if (items.has(PHOTO_TO_VIDEO.name)) return;
+    if (sessionStorage.getItem('wv-p2v-prompted') === '1') return;
+    sessionStorage.setItem('wv-p2v-prompted','1');
     showToast({
       eyebrow: 'Add-on · Recommended',
-      title: 'Add a Social Reel?',
-      desc: REEL.desc,
-      price: '$' + REEL.price,
-      img: REEL.img,
-      addLabel: 'Add · $' + REEL.price,
-      onAdd: addReel,
+      title: 'Add a Photo to Video?',
+      desc: PHOTO_TO_VIDEO.desc,
+      price: '$' + PHOTO_TO_VIDEO.price,
+      img: PHOTO_TO_VIDEO.img,
+      addLabel: 'Add · $' + PHOTO_TO_VIDEO.price,
+      onAdd: addPhotoToVideo,
     });
   }
   function maybePromptSitePlan(addedPkgName, addedPkgBundles){
@@ -1498,7 +1513,7 @@ export default function BookPage() {
       });
       card.classList.add('is-added');
       openCart({auto:true});
-      maybePromptReel(cats);
+      maybePromptPhotoToVideo(cats);
       maybePromptPackage();
     } else {
       items.delete(name);
@@ -1610,7 +1625,7 @@ export default function BookPage() {
             categories: cats,
           });
           const bundles = card.getAttribute('data-pkg-bundles') || '';
-          maybePromptReel(cats);
+          maybePromptPhotoToVideo(cats);
           maybePromptSitePlan(pkgName, bundles);
           render();
           openCart({auto:true});

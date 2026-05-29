@@ -11,11 +11,11 @@ type CartItem = {
   categories: string[];
 };
 
-const REEL: CartItem = {
-  name: 'Social Reel',
+const PHOTO_TO_VIDEO: CartItem = {
+  name: 'Photo to Video',
   price: 99,
   img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80',
-  categories: ['video', 'social'],
+  categories: ['video'],
 };
 const SITE_PLAN: CartItem = {
   name: 'Site Plan',
@@ -72,15 +72,15 @@ export default function CartPage() {
   function update(next: CartItem[]) { setItems(next); writeCart(next); }
   function remove(name: string) { update(items.filter(i => i.name !== name)); }
 
-  const hasVideo = items.some(i => Array.isArray(i.categories) && i.categories.includes('video') && !i.categories.includes('social'));
-  const hasReel = items.some(i => i.name === REEL.name);
+  const hasVideo = items.some(i => i.name !== PHOTO_TO_VIDEO.name && Array.isArray(i.categories) && i.categories.includes('video'));
+  const hasPhotoToVideo = items.some(i => i.name === PHOTO_TO_VIDEO.name);
   const hasSite = items.some(i => i.name === SITE_PLAN.name || i.name === 'Floor Plan + Site Plan' || (Array.isArray(i.categories) && i.categories.includes('siteplan')));
   const hasEssentialPackage = items.some(i => PACKAGES_WITHOUT_SITEPLAN.some(p => i.name.startsWith(p)));
 
-  const showReelAddon = hasVideo && !hasReel;
+  const showPhotoToVideoAddon = hasVideo && !hasPhotoToVideo;
   const showSiteAddon = hasEssentialPackage && !hasSite;
 
-  function addReel() { update([...items, REEL]); }
+  function addPhotoToVideo() { update([...items, PHOTO_TO_VIDEO]); }
   function addSite() { update([...items, SITE_PLAN]); }
 
   return (
@@ -153,18 +153,18 @@ export default function CartPage() {
                   </ul>
                 </section>
 
-                {(showReelAddon || showSiteAddon) && (
+                {(showPhotoToVideoAddon || showSiteAddon) && (
                   <section className="cart-addons">
                     <h3>Recommended add-ons</h3>
-                    {showReelAddon && (
+                    {showPhotoToVideoAddon && (
                       <div className="cart-addons__row">
                         <div className="cart-addons__thumb"><PhoneIcon /></div>
                         <div className="cart-addons__info">
-                          <div className="cart-addons__name">Social Reel</div>
-                          <div className="cart-addons__desc">A short-form social cut of your chosen video — 30s vertical 9:16, captions, hook-first edit. Built for Instagram &amp; TikTok.</div>
+                          <div className="cart-addons__name">Photo to Video</div>
+                          <div className="cart-addons__desc">Turn your listing photos into a short AI-generated video — subtle motion, cinematic feel, ready for socials and portals.</div>
                         </div>
                         <div className="cart-addons__price">$99</div>
-                        <button type="button" className="cart-addons__add" onClick={addReel}>Add</button>
+                        <button type="button" className="cart-addons__add" onClick={addPhotoToVideo}>Add</button>
                       </div>
                     )}
                     {showSiteAddon && (
