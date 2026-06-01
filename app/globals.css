@@ -1368,7 +1368,7 @@ body.is-loading > :not(.loader){visibility:hidden}
    only applied by JS when the bar is actually pinned AND the navbar has
    been hidden long enough — so it rises to cover the vacated nav area
    without ever overlapping preceding content or bouncing. */
-.gallery-controls.is-navhidden{transform:translateY(-72px)}
+.gallery-controls.is-navhidden{transform:translateY(-76px)}
 @media (max-width:760px){
   .gallery-controls.is-navhidden{transform:translateY(-56px)}
 }

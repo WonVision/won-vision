@@ -341,15 +341,22 @@ export default function GalleryPage() {
   var sentinel = document.getElementById('galCtlSentinel');
   var nav = document.querySelector('.nav');
   if(!bar || !nav) return;
-  var HIDE_MS = 220, pend = null, pinned = false;
+  var HIDE_MS = 220, pend = null;
+  // Compute "pinned" live from the sentinel rect instead of caching the IO
+  // value — a stale cached pinned=false leaves the reserved nav band as a
+  // gap at the top when the nav hides. (See matching fix on /book.)
+  var isPinned = function(){
+    if(sentinel) return sentinel.getBoundingClientRect().top <= 0;
+    return window.scrollY > 1;
+  };
   var apply = function(){
-    var shouldLift = pinned && nav.classList.contains('is-hidden');
+    var shouldLift = isPinned() && nav.classList.contains('is-hidden');
     if(shouldLift){
       if(bar.classList.contains('is-navhidden')) return;
       if(pend) return;
       pend = setTimeout(function(){
         pend = null;
-        if(pinned && nav.classList.contains('is-hidden')) bar.classList.add('is-navhidden');
+        if(isPinned() && nav.classList.contains('is-hidden')) bar.classList.add('is-navhidden');
       }, HIDE_MS);
     } else {
       if(pend){ clearTimeout(pend); pend = null; }
@@ -357,11 +364,9 @@ export default function GalleryPage() {
     }
   };
   if(sentinel && 'IntersectionObserver' in window){
-    new IntersectionObserver(function(entries){
-      pinned = entries[0].boundingClientRect.top <= 0;
-      apply();
-    }, { threshold:[0,1] }).observe(sentinel);
+    new IntersectionObserver(apply, { threshold:[0,1] }).observe(sentinel);
   }
+  window.addEventListener('scroll', apply, { passive: true });
   apply();
   new MutationObserver(apply).observe(nav, { attributes:true, attributeFilter:['class'] });
 })();

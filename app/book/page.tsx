@@ -633,7 +633,7 @@ export default function BookPage() {
     border-bottom:1px solid var(--border);
     transition:transform .28s var(--ease);
   }
-  .svc-jump.is-navhidden{transform:translateY(-72px)}
+  .svc-jump.is-navhidden{transform:translateY(-76px)}
   .svc-jump__strip{
     display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
     -webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
@@ -653,7 +653,7 @@ export default function BookPage() {
   .cat{scroll-margin-top:140px}
   @media (max-width:760px){
     .svc-jump{padding-top:78px}
-    .svc-jump.is-navhidden{transform:translateY(-66px)}
+    .svc-jump.is-navhidden{transform:translateY(-72px)}
     .cat{scroll-margin-top:128px}
     .svc-jump__chip{font-size:11px;padding:8px 13px}
   }
@@ -1787,15 +1787,26 @@ export default function BookPage() {
   var nav = document.querySelector('.nav');
   var sentinel = document.getElementById('svcJumpSentinel');
   if(nav){
-    var HIDE_MS = 220, pend = null, pinned = false;
+    var HIDE_MS = 220, pend = null;
+    // Compute "pinned" LIVE from the sentinel's actual position rather than
+    // trusting a cached IntersectionObserver value. The IO can lag or miss
+    // the "scrolled above top" crossing, leaving a stale pinned=false; when
+    // the nav then hides, apply() would read that stale value and never lift
+    // the strip — so the reserved nav band stays as a gap at the top. Reading
+    // the rect on demand is cheap (only on nav-class change / scroll) and
+    // always correct.
+    var isPinned = function(){
+      if(sentinel) return sentinel.getBoundingClientRect().top <= 0;
+      return window.scrollY > 1;
+    };
     var apply = function(){
-      var shouldLift = pinned && nav.classList.contains('is-hidden');
+      var shouldLift = isPinned() && nav.classList.contains('is-hidden');
       if(shouldLift){
         if(strip.classList.contains('is-navhidden')) return;     // already lifted
         if(pend) return;                                         // already waiting
         pend = setTimeout(function(){
           pend = null;
-          if(pinned && nav.classList.contains('is-hidden')) strip.classList.add('is-navhidden');
+          if(isPinned() && nav.classList.contains('is-hidden')) strip.classList.add('is-navhidden');
         }, HIDE_MS);
       } else {
         if(pend){ clearTimeout(pend); pend = null; }              // cancel pending lift
@@ -1803,13 +1814,11 @@ export default function BookPage() {
       }
     };
     if(sentinel && 'IntersectionObserver' in window){
-      new IntersectionObserver(function(entries){
-        // pinned once the sentinel (just above the strip) has scrolled to
-        // or above the viewport top.
-        pinned = entries[0].boundingClientRect.top <= 0;
-        apply();
-      }, { threshold:[0,1] }).observe(sentinel);
+      new IntersectionObserver(apply, { threshold:[0,1] }).observe(sentinel);
     }
+    // Re-sync on scroll (passive) so pin transitions are caught even when the
+    // nav class doesn't change on that frame.
+    window.addEventListener('scroll', apply, { passive: true });
     apply();
     new MutationObserver(apply).observe(nav, { attributes:true, attributeFilter:['class'] });
   }
