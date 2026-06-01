@@ -169,6 +169,53 @@ export default function GalleryPage() {
             </div>
           </article>
 
+          {/* 2/29 Henry St, St Albans — day photography */}
+          <article className="gallery__item s6" data-cat="photography" data-sub="day"
+                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-full="/images/henry-st-photo-1.webp">
+            <img src="/images/henry-st-photo-1.webp" alt="St Albans living room" />
+            <div className="gallery__item__caption">
+              <p className="tags">Day photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-cat="photography" data-sub="day"
+                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-full="/images/henry-st-photo-2.webp">
+            <img src="/images/henry-st-photo-2.webp" alt="St Albans interior" />
+            <div className="gallery__item__caption">
+              <p className="tags">Day photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-cat="photography" data-sub="day"
+                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-full="/images/henry-st-photo-3.webp">
+            <img src="/images/henry-st-photo-3.webp" alt="St Albans interior" />
+            <div className="gallery__item__caption">
+              <p className="tags">Day photography</p>
+            </div>
+          </article>
+
+          {/* 2/29 Henry St, St Albans — aerials */}
+          <article className="gallery__item s4" data-cat="photography" data-sub="aerial"
+                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-full="/images/henry-st-aerial-1.webp">
+            <img src="/images/henry-st-aerial-1.webp" alt="St Albans aerial" />
+            <div className="gallery__item__caption">
+              <p className="tags">Aerials</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-cat="photography" data-sub="aerial"
+                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-full="/images/henry-st-aerial-2.webp">
+            <img src="/images/henry-st-aerial-2.webp" alt="St Albans aerial" />
+            <div className="gallery__item__caption">
+              <p className="tags">Aerials</p>
+            </div>
+          </article>
+
           {/* Virtual editing — before/after sliders */}
           <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="staging">
             <BeforeAfterSlider
@@ -176,6 +223,16 @@ export default function GalleryPage() {
               afterSrc="/images/staging-after.webp"
               beforeAlt="Empty room before virtual staging"
               afterAlt="Room after virtual staging"
+              label="Virtual staging"
+            />
+          </article>
+
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="staging">
+            <BeforeAfterSlider
+              beforeSrc="/images/henry-st-staging-before.webp"
+              afterSrc="/images/henry-st-staging-after.webp"
+              beforeAlt="St Albans living room before virtual staging"
+              afterAlt="St Albans living room after virtual staging"
               label="Virtual staging"
             />
           </article>

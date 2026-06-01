@@ -29,6 +29,9 @@ const galleries: Record<string, Media[]> = {
     { src: '/images/sales-standard.webp', caption: 'Sales · Standard' },
     { src: '/images/sales-premium.webp', caption: 'Sales · Premium' },
     { src: '/images/additional-photos.webp', caption: 'Additional photos' },
+    { src: '/images/henry-st-photo-1.webp', caption: 'Living · St Albans' },
+    { src: '/images/henry-st-photo-2.webp', caption: 'Interior · St Albans' },
+    { src: '/images/henry-st-photo-3.webp', caption: 'Interior · St Albans' },
   ],
   video: [],
   highlight: [
@@ -41,9 +44,12 @@ const galleries: Record<string, Media[]> = {
   ],
   drone: [
     { src: '/images/drone-set.webp', caption: 'Drone set · 5 aerials' },
+    { src: '/images/henry-st-aerial-1.webp', caption: 'Aerial · St Albans' },
+    { src: '/images/henry-st-aerial-2.webp', caption: 'Aerial · St Albans' },
   ],
   staging: [
     { src: '/images/staging-after.webp', caption: 'Virtual staging' },
+    { src: '/images/henry-st-staging-after.webp', caption: 'Virtual staging · St Albans' },
     { src: '/images/dusk-after.webp', caption: 'Day-to-dusk' },
     { src: '/images/declutter-after.webp', caption: 'Decluttering' },
   ],
