@@ -5,6 +5,7 @@ import LoaderGate from './components/LoaderGate';
 import ServicesEditorial from './components/ServicesEditorial';
 import ProcessStepper from './components/ProcessStepper';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
+import ClientLogos from './components/ClientLogos';
 
 export const metadata: Metadata = {
   title: {
@@ -359,6 +360,9 @@ export default function HomePage() {
 
         <div className="hero__cursor"></div>
       </section>
+
+      {/* CLIENTS — mono logo row directly under the hero */}
+      <ClientLogos />
 
       {/* SERVICES + PROCESS — wrapper lets us flip the order on mobile so
           the four-step explainer sits above the services list on phones */}
