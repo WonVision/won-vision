@@ -490,7 +490,7 @@ export default function HomePage() {
                   <li>Extended aerial &amp; gimbal coverage</li>
                 </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$1,099<span className="home-pkg__total">$1,350 total cost</span></span>
+                  <span className="home-pkg__price">$999<span className="home-pkg__total">$1,350 total cost</span></span>
                   <span className="home-pkg__cta">Pick size →</span>
                 </div>
               </div>
