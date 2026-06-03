@@ -258,6 +258,17 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   to{opacity:1;transform:none}
 }
 
+/* While the intro loader is up, lock scroll so the page can't be moved behind
+   the splash. Set on <html> before paint (see layout.tsx) and removed by
+   LoaderGate when the loader completes. touch-action/overscroll cover mobile,
+   where overflow:hidden alone doesn't always stop touch scrolling. */
+html.wv-noscroll,
+html.wv-noscroll body{
+  overflow:hidden;
+  overscroll-behavior:none;
+  touch-action:none;
+}
+
 /* While loader is up, lock body scroll and hide page paint */
 body.is-loading{overflow:hidden}
 body.is-loading > :not(.loader){visibility:hidden}

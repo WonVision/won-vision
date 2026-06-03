@@ -23,9 +23,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body id="top">
           {/* Runs before paint: if the intro loader will show this session,
               flag <html> so the hero morph holds "Won Vision" opaque for the
-              loader's duration (one-time start offset, loop unchanged). */}
+              loader's duration (one-time start offset, loop unchanged), and
+              lock scroll (wv-noscroll) so the page can't be scrolled behind
+              the splash. LoaderGate removes wv-noscroll when the loader ends;
+              wv-loader-active stays put so the morph clock isn't disturbed. */}
           <Script id="wv-loader-class" strategy="beforeInteractive">{`
-try{if(sessionStorage.getItem('wv-entered')!=='1'){document.documentElement.classList.add('wv-loader-active')}}catch(e){}
+try{if(sessionStorage.getItem('wv-entered')!=='1'){document.documentElement.classList.add('wv-loader-active','wv-noscroll')}}catch(e){}
 `}</Script>
           <SpaReveal />
           {children}
