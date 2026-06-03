@@ -1,20 +1,24 @@
 /* Clients Won Vision shoots for. Logos are normalised to a uniform optical
-   HEIGHT (the box caps height + width and uses object-fit:contain), so it
-   doesn't matter that source files have different aspect ratios — drop any
-   clean PNG/SVG into /public/logos and it sits at the same visual weight.
-   Greyscale + dimmed at rest to stay on Won Vision's mono brand; the source
-   colour fades in on hover. */
+   HEIGHT (a fixed box + object-fit:contain), so different source aspect ratios
+   all read at one visual weight. Rest state is solid black-and-white; brand
+   colour fades in on hover.
+
+   Two rendering paths:
+   - Most logos are dark artwork on transparent, so CSS `brightness(0)` blacks
+     them out cleanly at rest and `filter:none` restores colour on hover.
+   - V Group ships as light artwork on a black field (dark-mode logo). CSS can't
+     black that out without leaving grey, so we crossfade a dedicated solid-black
+     file (rest) and a colour-on-transparent file (hover). */
 type Client = {
   name: string;
   src: string;
-  /* V Group's logo is built on a solid black field (dark-mode artwork). We
-     keep it identical to the source rather than recolouring it, so it sits on
-     its own sharp dark chip and the black reads as an intentional badge. */
-  chip?: boolean;
+  /* present only for logos whose colour artwork can't be CSS-blacked cleanly:
+     a separate pre-rendered black-and-white file shown at rest */
+  bwSrc?: string;
 };
 
 const clients: Client[] = [
-  { name: 'V Group Real Estate', src: '/logos/vgroup.webp', chip: true },
+  { name: 'V Group Real Estate', src: '/logos/vgroup-colour.webp', bwSrc: '/logos/vgroup-bw.webp' },
   { name: 'Henley', src: '/logos/henley.webp' },
   { name: 'Raine & Horne', src: '/logos/raine-horne.webp' },
 ];
@@ -36,14 +40,13 @@ export default function ClientLogos() {
     display:flex;
     align-items:center;
     justify-content:center;
-    /* generous, even rhythm between the three marks */
     gap:clamp(36px, 7vw, 88px);
     flex-wrap:nowrap;
     max-width:840px;
     margin-inline:auto;
   }
-  /* Uniform bounding box: every logo is height-capped and width-capped and
-     contained, so wide wordmarks and square icons all read at one weight. */
+  /* Uniform bounding box: height- and width-capped + contained, so wide
+     wordmarks and square marks all read at one weight. */
   .clients__logo{
     position:relative;
     flex:0 1 auto;
@@ -51,50 +54,56 @@ export default function ClientLogos() {
     width:clamp(96px, 22vw, 168px);
     height:clamp(34px, 5.5vw, 52px);
   }
-  /* Dark badge for logos that ship on a black field (V Group). Sharp edges
-     to match the Won Vision brand — no border-radius. Fills the box so the
-     artwork's own black blends into one clean badge instead of a stray box. */
-  .clients__logo--chip{
-    background:#000;
-    padding-inline:clamp(8px, 1.4vw, 14px);
-  }
   .clients__logo img{
     width:100%;
     height:100%;
     object-fit:contain;
     object-position:center;
-    /* mono + dimmed at rest */
-    filter:grayscale(100%) contrast(1.02);
-    opacity:0.5;
     transition:filter .45s ease, opacity .45s ease;
   }
-  .clients__logo:hover img,
-  .clients__logo:focus-within img{
-    filter:grayscale(0%) contrast(1);
-    opacity:1;
-  }
-  /* Touch / reduced-motion: show them mono but legible, no hover dependency */
+
+  /* --- CSS-blacked logos: solid black at rest, colour on hover --- */
+  .clients__logo--mono img{filter:brightness(0);}
+  .clients__logo--mono:hover img,
+  .clients__logo--mono:focus-within img{filter:none;}
+
+  /* --- crossfade logos (V Group): stack the two files, fade on hover --- */
+  .clients__logo--swap .clients__bw,
+  .clients__logo--swap .clients__colour{position:absolute;inset:0;}
+  .clients__logo--swap .clients__colour{opacity:0;}
+  .clients__logo--swap:hover .clients__bw,
+  .clients__logo--swap:focus-within .clients__bw{opacity:0;}
+  .clients__logo--swap:hover .clients__colour,
+  .clients__logo--swap:focus-within .clients__colour{opacity:1;}
+
+  /* Touch devices can't hover — show full colour so the brand colours aren't
+     stranded behind an interaction they can't trigger. */
   @media (hover:none){
-    .clients__logo img{opacity:0.7}
+    .clients__logo--mono img{filter:none;}
+    .clients__logo--swap .clients__bw{opacity:0;}
+    .clients__logo--swap .clients__colour{opacity:1;}
   }
   @media (prefers-reduced-motion:reduce){
-    .clients__logo img{transition:none}
+    .clients__logo img{transition:none;}
   }
       `}</style>
 
       <span className="eyebrow clients__label">Trusted by Melbourne&rsquo;s best</span>
 
       <div className="clients__row">
-        {clients.map((client) => (
-          <div
-            key={client.name}
-            className={`clients__logo${client.chip ? ' clients__logo--chip' : ''}`}
-          >
-            {/* plain <img>: renders SVG/PNG/WebP with no optimizer config,
-                and these sit below the fold so there's no LCP cost */}
-            <img src={client.src} alt={client.name} loading="lazy" decoding="async" />
-          </div>
-        ))}
+        {clients.map((client) =>
+          client.bwSrc ? (
+            <div key={client.name} className="clients__logo clients__logo--swap">
+              <img className="clients__bw" src={client.bwSrc} alt={client.name} loading="lazy" decoding="async" />
+              <img className="clients__colour" src={client.src} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            </div>
+          ) : (
+            <div key={client.name} className="clients__logo clients__logo--mono">
+              {/* plain <img>: renders any format with no optimizer config; below the fold so no LCP cost */}
+              <img src={client.src} alt={client.name} loading="lazy" decoding="async" />
+            </div>
+          )
+        )}
       </div>
     </section>
   );
