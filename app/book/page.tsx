@@ -972,7 +972,6 @@ export default function BookPage() {
                   muted
                   playsInline
                   preload="auto"
-                  poster="/images/cinematic.webp"
                   style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.94)' }}
                 />
               </div>
@@ -1006,7 +1005,6 @@ export default function BookPage() {
                   muted
                   playsInline
                   preload="auto"
-                  poster="/images/cinematic.webp"
                   style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.94)' }}
                 />
               </div>

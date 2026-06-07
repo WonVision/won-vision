@@ -198,11 +198,38 @@ export default function GalleryPage() {
             </div>
           </article>
 
+          <article className="gallery__item s6" data-cat="photography" data-sub="day"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/wv-exterior-1.webp">
+            <img src="/images/wv-exterior-1.webp" alt="Listing exterior" />
+            <div className="gallery__item__caption">
+              <p className="tags">Day photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-cat="photography" data-sub="day"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/wv-exterior-2.webp">
+            <img src="/images/wv-exterior-2.webp" alt="Listing street view" />
+            <div className="gallery__item__caption">
+              <p className="tags">Day photography</p>
+            </div>
+          </article>
+
           {/* Selected aerials */}
           <article className="gallery__item s6" data-cat="photography" data-sub="aerial"
                    data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-aerial-1.webp">
             <img src="/images/henry-st-aerial-1.webp" alt="Listing aerial" />
+            <div className="gallery__item__caption">
+              <p className="tags">Aerials</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-cat="photography" data-sub="aerial"
+                   data-place="Won Vision · Selected work"
+                   data-full="/images/wv-aerial-plot.webp">
+            <img src="/images/wv-aerial-plot.webp" alt="Listing aerial plot overview" />
             <div className="gallery__item__caption">
               <p className="tags">Aerials</p>
             </div>
@@ -215,6 +242,16 @@ export default function GalleryPage() {
               afterSrc="/images/staging-after.webp"
               beforeAlt="Empty room before virtual staging"
               afterAlt="Room after virtual staging"
+              label="Virtual staging"
+            />
+          </article>
+
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="staging">
+            <BeforeAfterSlider
+              beforeSrc="/images/wv-staging-before.webp"
+              afterSrc="/images/wv-staging-after.webp"
+              beforeAlt="Empty living room before virtual staging"
+              afterAlt="Living room after virtual staging"
               label="Virtual staging"
             />
           </article>
@@ -253,8 +290,7 @@ export default function GalleryPage() {
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Cinematic">
             <video
-              src="/video/cinematic-listing.mp4"
-              poster="/images/cinematic.webp"
+              src="/video/cinematic-listing.mp4#t=0.1"
               controls
               preload="metadata"
               playsInline
@@ -268,8 +304,7 @@ export default function GalleryPage() {
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
                    data-place="Won Vision · Property highlight">
             <video
-              src="/video/property-highlight.mp4"
-              poster="/images/cinematic.webp"
+              src="/video/property-highlight.mp4#t=0.1"
               controls
               preload="metadata"
               playsInline

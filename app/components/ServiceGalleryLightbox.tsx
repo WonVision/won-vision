@@ -32,13 +32,14 @@ const galleries: Record<string, Media[]> = {
     { src: '/images/henry-st-photo-1.webp', caption: 'Living & kitchen' },
     { src: '/images/henry-st-photo-2.webp', caption: 'Kitchen' },
     { src: '/images/henry-st-photo-3.webp', caption: 'Twilight exterior' },
+    { src: '/images/wv-exterior-1.webp', caption: 'Exterior' },
+    { src: '/images/wv-exterior-2.webp', caption: 'Street view' },
   ],
   video: [],
   highlight: [
     {
       src: '/video/property-highlight.mp4',
       type: 'video',
-      poster: '/images/cinematic.webp',
       caption: 'Property Highlight Video',
     },
   ],
@@ -46,16 +47,17 @@ const galleries: Record<string, Media[]> = {
     {
       src: '/video/cinematic-listing.mp4',
       type: 'video',
-      poster: '/images/cinematic.webp',
       caption: 'Cinematic Listing Video',
     },
   ],
   drone: [
     { src: '/images/drone-set.webp', caption: 'Aerial set' },
     { src: '/images/henry-st-aerial-1.webp', caption: 'Plot overview' },
+    { src: '/images/wv-aerial-plot.webp', caption: 'Plot overview' },
   ],
   staging: [
     { src: '/images/staging-after.webp', caption: 'Virtual staging' },
+    { src: '/images/wv-staging-after.webp', caption: 'Virtual staging' },
     { src: '/images/henry-st-staging-after.webp', caption: 'Virtual staging' },
     { src: '/images/dusk-after.webp', caption: 'Day-to-dusk' },
     { src: '/images/declutter-after.webp', caption: 'Decluttering' },
@@ -193,8 +195,7 @@ export default function ServiceGalleryLightbox() {
           m.type === 'video' ? (
             <figure key={i} className="svc-lb__fig svc-lb__fig--video">
               <video
-                src={m.src}
-                poster={m.poster}
+                src={`${m.src}#t=0.1`}
                 controls
                 playsInline
                 preload="metadata"
