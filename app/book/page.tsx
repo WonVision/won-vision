@@ -902,6 +902,7 @@ export default function BookPage() {
               className="pkg-card"
               data-pkg="drone-set"
               data-cats="drone"
+              data-gallery="drone"
               data-pkg-name="Drone Set"
               data-pkg-img="/images/drone-set.webp"
               data-tiers='{"lite":{"label":"Lite · 3 photos","price":139},"standard":{"label":"Standard · 5 photos","price":159}}'
@@ -965,7 +966,7 @@ export default function BookPage() {
             <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/cinematic.webp" data-gallery="highlight">
               <div className="svc-card__media">
                 <video
-                  src="/video/cinematic-demo-loop.mp4"
+                  src="/video/property-highlight-loop.mp4"
                   autoPlay
                   loop
                   muted
@@ -994,9 +995,21 @@ export default function BookPage() {
               data-price="499"
               data-desc="A cinematic listing film — agent on camera, drone aerials, hand-graded and scored. Choose 30–60s for a polished cut, or 60–90s for extra time on set capturing the aesthetic and mood of the home."
               data-img="/images/cinematic.webp"
+              data-gallery="cinematic"
               data-variants='[{"key":"short","name":"Cinematic Listing Video · 30–60s","price":499,"label":"30–60s","lead":"30–60s cinematic edit · 16:9","b1":"Agent piece-to-camera direction","b2":"Drone aerials + interior coverage","b3":"Hand colour-grade · scored to picture"},{"key":"long","name":"Cinematic Listing Video · 60–90s","price":699,"label":"60–90s","lead":"60–90s flagship cinematic edit","b1":"Extra set time for aesthetic & mood","b2":"Director-led shoot · storyboard treatment","b3":"Extended aerial & gimbal coverage"}]'
             >
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
+              <div className="svc-card__media">
+                <video
+                  src="/video/cinematic-listing-loop.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  poster="/images/cinematic.webp"
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.94)' }}
+                />
+              </div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name" data-variant-name>Cinematic Listing Video · 30–60s</h4>

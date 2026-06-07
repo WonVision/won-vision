@@ -89,6 +89,7 @@ export default function GalleryPage() {
           <div className="filters" role="tablist" data-filter-row="sub">
             <button className="filter is-active" data-sub="all">All</button>
             <button className="filter" data-sub="cinematic">Cinematic video</button>
+            <button className="filter" data-sub="highlight">Property highlight</button>
           </div>
         </div>
       </div>
@@ -100,7 +101,7 @@ export default function GalleryPage() {
           <article className="gallery__item s8" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/showcase.webp">
-            <img src="/images/showcase.webp" alt="Essential listing" />
+            <img src="/images/showcase.webp" alt="Listing bedroom" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -109,7 +110,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-compact.webp">
-            <img src="/images/rental-compact.webp" alt="Rental compact interior" />
+            <img src="/images/rental-compact.webp" alt="Listing living room" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -118,7 +119,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-standard.webp">
-            <img src="/images/rental-standard.webp" alt="Rental standard interior" />
+            <img src="/images/rental-standard.webp" alt="Listing living and dining" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -127,7 +128,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-large.webp">
-            <img src="/images/rental-large.webp" alt="Rental large interior" />
+            <img src="/images/rental-large.webp" alt="Listing bedroom" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -136,7 +137,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-compact.webp">
-            <img src="/images/sales-compact.webp" alt="Sales compact interior" />
+            <img src="/images/sales-compact.webp" alt="Listing kitchen and dining" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -145,7 +146,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-standard.webp">
-            <img src="/images/sales-standard.webp" alt="Sales standard interior" />
+            <img src="/images/sales-standard.webp" alt="Listing living room" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -154,7 +155,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-premium.webp">
-            <img src="/images/sales-premium.webp" alt="Sales premium interior" />
+            <img src="/images/sales-premium.webp" alt="Listing bedroom" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -163,54 +164,45 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/additional-photos.webp">
-            <img src="/images/additional-photos.webp" alt="Additional photos" />
+            <img src="/images/additional-photos.webp" alt="Listing bedroom detail" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
           </article>
 
-          {/* 2/29 Henry St, St Albans — day photography */}
+          {/* Selected day photography */}
           <article className="gallery__item s8" data-cat="photography" data-sub="day"
-                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-photo-1.webp">
-            <img src="/images/henry-st-photo-1.webp" alt="St Albans living room" />
+            <img src="/images/henry-st-photo-1.webp" alt="Listing living and kitchen" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
           </article>
 
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
-                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-photo-2.webp">
-            <img src="/images/henry-st-photo-2.webp" alt="St Albans interior" />
+            <img src="/images/henry-st-photo-2.webp" alt="Listing kitchen" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
           </article>
 
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
-                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-photo-3.webp">
-            <img src="/images/henry-st-photo-3.webp" alt="St Albans interior" />
+            <img src="/images/henry-st-photo-3.webp" alt="Listing twilight exterior" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
           </article>
 
-          {/* 2/29 Henry St, St Albans — aerials */}
+          {/* Selected aerials */}
           <article className="gallery__item s6" data-cat="photography" data-sub="aerial"
-                   data-place="2/29 Henry St, St Albans · Raine & Horne"
+                   data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-aerial-1.webp">
-            <img src="/images/henry-st-aerial-1.webp" alt="St Albans aerial" />
-            <div className="gallery__item__caption">
-              <p className="tags">Aerials</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-cat="photography" data-sub="aerial"
-                   data-place="2/29 Henry St, St Albans · Raine & Horne"
-                   data-full="/images/henry-st-aerial-2.webp">
-            <img src="/images/henry-st-aerial-2.webp" alt="St Albans aerial" />
+            <img src="/images/henry-st-aerial-1.webp" alt="Listing aerial" />
             <div className="gallery__item__caption">
               <p className="tags">Aerials</p>
             </div>
@@ -231,8 +223,8 @@ export default function GalleryPage() {
             <BeforeAfterSlider
               beforeSrc="/images/henry-st-staging-before.webp"
               afterSrc="/images/henry-st-staging-after.webp"
-              beforeAlt="St Albans living room before virtual staging"
-              afterAlt="St Albans living room after virtual staging"
+              beforeAlt="Living room before virtual staging"
+              afterAlt="Living room after virtual staging"
               label="Virtual staging"
             />
           </article>
@@ -258,10 +250,10 @@ export default function GalleryPage() {
           </article>
 
           {/* Video — cinematic listing film, plays inline */}
-          <article className="gallery__item gallery__item--video s12" data-cat="video" data-sub="cinematic"
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Cinematic">
             <video
-              src="/video/cinematic-demo.mp4"
+              src="/video/cinematic-listing.mp4"
               poster="/images/cinematic.webp"
               controls
               preload="metadata"
@@ -269,6 +261,21 @@ export default function GalleryPage() {
             />
             <div className="gallery__item__caption">
               <p className="tags">Cinematic video</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight.mp4"
+              poster="/images/cinematic.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
             </div>
           </article>
 

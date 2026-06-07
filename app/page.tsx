@@ -554,7 +554,7 @@ export default function HomePage() {
               <summary>What if the weather is bad on shoot day?</summary>
               <div>
                 <p>We monitor the forecast 24 hours out. Indoor photography proceeds in any conditions. Drone, twilight and exterior-dependent work reschedules at no charge when weather makes a quality shoot impossible.</p>
-                <p>Sky replacement is included in all sales photography, so an overcast day rarely affects deliverables.</p>
+                <p>Sky replacement is included in all photography, so an overcast day rarely affects deliverables.</p>
               </div>
             </details>
 
