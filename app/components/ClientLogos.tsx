@@ -19,6 +19,8 @@ type Client = {
 
 const clients: Client[] = [
   { name: 'V Group Real Estate', src: '/logos/vgroup-colour.webp', bwSrc: '/logos/vgroup-bw.webp' },
+  { name: 'Marshall White', src: '/logos/marshall-white.webp' },
+  { name: 'Jellis Craig', src: '/logos/jellis-craig.webp' },
   { name: 'Henley', src: '/logos/henley.webp' },
   { name: 'Raine & Horne', src: '/logos/raine-horne.webp' },
 ];
@@ -40,9 +42,9 @@ export default function ClientLogos() {
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:clamp(36px, 7vw, 88px);
-    flex-wrap:nowrap;
-    max-width:840px;
+    gap:clamp(24px, 4vw, 52px);
+    flex-wrap:wrap;
+    max-width:1040px;
     margin-inline:auto;
   }
   /* Uniform bounding box: height- and width-capped + contained, so wide
@@ -51,8 +53,8 @@ export default function ClientLogos() {
     position:relative;
     flex:0 1 auto;
     box-sizing:border-box;
-    width:clamp(96px, 22vw, 168px);
-    height:clamp(34px, 5.5vw, 52px);
+    width:clamp(80px, 15vw, 150px);
+    height:clamp(34px, 5.5vw, 50px);
   }
   .clients__logo img{
     width:100%;
