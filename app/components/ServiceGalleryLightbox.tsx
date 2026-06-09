@@ -40,6 +40,7 @@ const galleries: Record<string, Media[]> = {
     {
       src: '/video/property-highlight.mp4',
       type: 'video',
+      poster: '/images/property-highlight-poster.webp',
       caption: 'Property Highlight Video',
     },
   ],
@@ -47,11 +48,13 @@ const galleries: Record<string, Media[]> = {
     {
       src: '/video/cinematic-listing.mp4',
       type: 'video',
+      poster: '/images/cinematic-1-poster.webp',
       caption: 'Cinematic Listing Video',
     },
     {
       src: '/video/cinematic-listing-2.mp4',
       type: 'video',
+      poster: '/images/cinematic-2-poster.webp',
       caption: 'Cinematic Listing Video',
     },
   ],
@@ -200,7 +203,8 @@ export default function ServiceGalleryLightbox() {
           m.type === 'video' ? (
             <figure key={i} className="svc-lb__fig svc-lb__fig--video">
               <video
-                src={`${m.src}#t=0.1`}
+                src={m.poster ? m.src : `${m.src}#t=0.1`}
+                poster={m.poster}
                 controls
                 playsInline
                 preload="metadata"

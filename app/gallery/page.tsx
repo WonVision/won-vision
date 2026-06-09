@@ -290,7 +290,8 @@ export default function GalleryPage() {
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Cinematic">
             <video
-              src="/video/cinematic-listing.mp4#t=0.1"
+              src="/video/cinematic-listing.mp4"
+              poster="/images/cinematic-1-poster.webp"
               controls
               preload="metadata"
               playsInline
@@ -304,7 +305,8 @@ export default function GalleryPage() {
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Cinematic">
             <video
-              src="/video/cinematic-listing-2.mp4#t=0.1"
+              src="/video/cinematic-listing-2.mp4"
+              poster="/images/cinematic-2-poster.webp"
               controls
               preload="metadata"
               playsInline
@@ -318,7 +320,8 @@ export default function GalleryPage() {
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
                    data-place="Won Vision · Property highlight">
             <video
-              src="/video/property-highlight.mp4#t=0.1"
+              src="/video/property-highlight.mp4"
+              poster="/images/property-highlight-poster.webp"
               controls
               preload="metadata"
               playsInline
