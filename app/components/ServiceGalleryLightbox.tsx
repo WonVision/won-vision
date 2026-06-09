@@ -49,6 +49,11 @@ const galleries: Record<string, Media[]> = {
       type: 'video',
       caption: 'Cinematic Listing Video',
     },
+    {
+      src: '/video/cinematic-listing-2.mp4',
+      type: 'video',
+      caption: 'Cinematic Listing Video',
+    },
   ],
   drone: [
     { src: '/images/drone-set.webp', caption: 'Aerial set' },

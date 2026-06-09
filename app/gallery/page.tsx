@@ -300,6 +300,20 @@ export default function GalleryPage() {
             </div>
           </article>
 
+          {/* Video — cinematic listing film, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
+                   data-place="Won Vision · Cinematic">
+            <video
+              src="/video/cinematic-listing-2.mp4#t=0.1"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Cinematic video</p>
+            </div>
+          </article>
+
           {/* Video — property highlight film, plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
                    data-place="Won Vision · Property highlight">
