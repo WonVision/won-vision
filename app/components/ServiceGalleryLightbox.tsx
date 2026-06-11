@@ -43,6 +43,12 @@ const galleries: Record<string, Media[]> = {
       poster: '/images/property-highlight-poster.webp',
       caption: 'Property Highlight Video',
     },
+    {
+      src: '/video/property-highlight-2.mp4',
+      type: 'video',
+      poster: '/images/property-highlight-2-poster.webp',
+      caption: 'Property Highlight Video',
+    },
   ],
   cinematic: [
     {

@@ -23,6 +23,8 @@ const clients: Client[] = [
   { name: 'Jellis Craig', src: '/logos/jellis-craig.webp' },
   { name: 'Henley', src: '/logos/henley.webp' },
   { name: 'Raine & Horne', src: '/logos/raine-horne.webp' },
+  { name: 'Hunter French', src: '/logos/hunter-french.webp' },
+  { name: 'Pink & Blue Real Estate', src: '/logos/pink-blue.webp' },
 ];
 
 export default function ClientLogos() {

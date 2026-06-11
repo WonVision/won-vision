@@ -331,6 +331,21 @@ export default function GalleryPage() {
             </div>
           </article>
 
+          {/* Video — property highlight film, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-2.mp4"
+              poster="/images/property-highlight-2-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
         </div>
         <p className="gallery__empty" data-gallery-empty hidden>Work coming soon.</p>
       </section>
