@@ -20,6 +20,7 @@ type Client = {
 const clients: Client[] = [
   { name: 'Marshall White', src: '/logos/marshall-white.webp' },
   { name: 'Jellis Craig', src: '/logos/jellis-craig.webp' },
+  { name: 'Harcourts', src: '/logos/harcourts.webp' },
   { name: 'Henley', src: '/logos/henley.webp' },
   { name: 'Raine & Horne', src: '/logos/raine-horne.webp' },
   { name: 'Hunter French', src: '/logos/hunter-french.webp' },
