@@ -18,13 +18,13 @@ type Client = {
 };
 
 const clients: Client[] = [
-  { name: 'V Group Real Estate', src: '/logos/vgroup-colour.webp', bwSrc: '/logos/vgroup-bw.webp' },
   { name: 'Marshall White', src: '/logos/marshall-white.webp' },
   { name: 'Jellis Craig', src: '/logos/jellis-craig.webp' },
   { name: 'Henley', src: '/logos/henley.webp' },
   { name: 'Raine & Horne', src: '/logos/raine-horne.webp' },
   { name: 'Hunter French', src: '/logos/hunter-french.webp' },
   { name: 'Pink & Blue Real Estate', src: '/logos/pink-blue.webp' },
+  { name: 'V Group Real Estate', src: '/logos/vgroup-colour.webp', bwSrc: '/logos/vgroup-bw.webp' },
 ];
 
 export default function ClientLogos() {
@@ -40,15 +40,21 @@ export default function ClientLogos() {
     display:block;
     margin:0 0 clamp(20px, 3vw, 32px);
   }
+  .clients__viewport{
+    max-width:1040px;
+    margin-inline:auto;
+  }
+  /* desktop: ticker collapses so the row lays out directly in the viewport */
+  .clients__ticker{display:contents;}
   .clients__row{
     display:flex;
     align-items:center;
     justify-content:center;
     gap:clamp(24px, 4vw, 52px);
     flex-wrap:wrap;
-    max-width:1040px;
-    margin-inline:auto;
   }
+  /* duplicate row exists only to seed the mobile marquee loop */
+  .clients__row--dupe{display:none;}
   /* Uniform bounding box: height- and width-capped + contained, so wide
      wordmarks and square marks all read at one weight. */
   .clients__logo{
@@ -89,26 +95,76 @@ export default function ClientLogos() {
   }
   @media (prefers-reduced-motion:reduce){
     .clients__logo img{transition:none;}
+    .clients__ticker{animation:none;}
+  }
+
+  /* --- mobile: continuous horizontal ticker --- */
+  @media (max-width:760px){
+    .clients__viewport{
+      max-width:100%;
+      overflow:hidden;
+      /* feather both edges so logos glide in/out instead of hard-clipping */
+      -webkit-mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+              mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    }
+    .clients__ticker{
+      display:flex;
+      width:max-content;
+      animation:clients-scroll 32s linear infinite;
+    }
+    .clients__row,
+    .clients__row--dupe{
+      display:flex;
+      flex-wrap:nowrap;
+      justify-content:flex-start;
+      gap:0;
+      width:max-content;
+    }
+    /* trailing margin on every cell (incl. the last) keeps each copy the same
+       width, so translateX(-50%) lands the duplicate exactly on the original */
+    .clients__logo{
+      margin-right:clamp(28px, 9vw, 44px);
+      flex:0 0 auto;
+    }
+  }
+  @keyframes clients-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
   }
       `}</style>
 
       <span className="eyebrow clients__label">Trusted by Melbourne&rsquo;s best</span>
 
-      <div className="clients__row">
-        {clients.map((client) =>
-          client.bwSrc ? (
-            <div key={client.name} className="clients__logo clients__logo--swap">
-              <img className="clients__bw" src={client.bwSrc} alt={client.name} loading="lazy" decoding="async" />
-              <img className="clients__colour" src={client.src} alt="" aria-hidden="true" loading="lazy" decoding="async" />
-            </div>
-          ) : (
-            <div key={client.name} className="clients__logo clients__logo--mono">
-              {/* plain <img>: renders any format with no optimizer config; below the fold so no LCP cost */}
-              <img src={client.src} alt={client.name} loading="lazy" decoding="async" />
-            </div>
-          )
-        )}
+      {/* viewport clips the overflow on mobile; the ticker holds two identical
+          rows so the marquee loops seamlessly. On desktop the ticker is
+          display:contents and the duplicate row is hidden — it stays a plain
+          centered wrap. */}
+      <div className="clients__viewport">
+        <div className="clients__ticker">
+          <div className="clients__row">{clients.map((c) => renderLogo(c))}</div>
+          <div className="clients__row clients__row--dupe" aria-hidden="true">
+            {clients.map((c) => renderLogo(c, true))}
+          </div>
+        </div>
       </div>
     </section>
+  );
+}
+
+/* One logo cell. `dupe` marks the second (mobile-ticker-only) copy: its key is
+   suffixed and its alt text is dropped so screen readers don't read the row
+   twice. */
+function renderLogo(client: Client, dupe = false) {
+  const key = dupe ? `${client.name}--dupe` : client.name;
+  return client.bwSrc ? (
+    <div key={key} className="clients__logo clients__logo--swap">
+      <img className="clients__bw" src={client.bwSrc} alt={dupe ? '' : client.name} aria-hidden={dupe || undefined} loading="lazy" decoding="async" />
+      <img className="clients__colour" src={client.src} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+    </div>
+  ) : (
+    <div key={key} className="clients__logo clients__logo--mono">
+      {/* plain <img>: renders any format with no optimizer config; below the fold so no LCP cost */}
+      <img src={client.src} alt={dupe ? '' : client.name} aria-hidden={dupe || undefined} loading="lazy" decoding="async" />
+    </div>
   );
 }
