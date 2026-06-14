@@ -1124,6 +1124,11 @@ export default function BookPage() {
   .wv-slot__top{display:flex;align-items:center;gap:8px}
   .wv-slot__idx{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--steel);white-space:nowrap}
   .wv-inp{flex:1;border:1px solid rgba(74,74,72,0.18);padding:10px 12px;font-family:var(--body);font-size:13px;color:var(--ink);background:var(--paper);min-width:0}
+  .wv-select{min-height:42px;cursor:pointer;appearance:auto}
+  .wv-allhelp{font-size:12px;line-height:1.5;color:var(--steel);margin:0}
+  .wv-card__media .ba-slider{margin:0}
+  .wv-card__media .ba-slider__label{display:none}
+  .wv-card__media .ba-slider__frame{aspect-ratio:16/10}
   .wv-drop{display:flex;align-items:center;gap:8px;width:100%;border:1px dashed var(--steel);padding:10px 12px;font-size:11.5px;color:var(--steel);background:var(--paper);cursor:pointer;font-family:var(--body);text-align:left}
   .wv-drop svg{width:15px;height:15px;flex:0 0 15px}
   .wv-imgchip{display:flex;align-items:center;gap:8px}
@@ -1136,6 +1141,8 @@ export default function BookPage() {
   .wv-add{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:var(--ink);color:var(--paper);font-size:13px;font-weight:600;border:0;cursor:pointer;font-family:var(--body)}
   .wv-add--ghost{background:var(--paper);color:var(--ink);border:1px solid var(--ink)}
   .cart__item--editing{opacity:.92}
+  .cart__item--editing .cart__item__name{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.3}
+  .cart__item--editing .cart__item__price{white-space:normal;font-weight:500}
           `}</style>
           <VirtualEditingSection />
         </div>
@@ -1523,7 +1530,7 @@ export default function BookPage() {
       const scope = e.mode === 'all' ? 'all rooms' : (e.roomCount + ' room' + (e.roomCount === 1 ? '' : 's'));
       const row = document.createElement('div');
       row.className = 'cart__item cart__item--editing';
-      row.innerHTML = '<div class="cart__item__info"><div class="cart__item__name">' + label + ' · ' + scope + '</div><div class="cart__item__price">POA</div></div>';
+      row.innerHTML = '<div class="cart__item__info"><div class="cart__item__name">' + label + '</div><div class="cart__item__price">' + scope + ' · on request</div></div>';
       list.appendChild(row);
     });
     amt.textContent = subtotal === 0 ? '$0' : fmt(subtotal);

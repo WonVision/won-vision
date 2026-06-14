@@ -1,7 +1,15 @@
 export type EditingServiceId = 'virtual_staging' | 'declutter' | 'day_to_dusk';
 export type EditingMode = 'all' | 'choose';
 
-export const MAX_CHOOSE_ROOMS = 3;
+export const MAX_CHOOSE_ROOMS = 5;
+
+/** The most generic room choices for the per-room dropdown; "Other" (free text)
+ *  is appended by the UI. */
+export const ROOM_OPTIONS = ['Living room', 'Bedroom', 'Kitchen', 'Outdoor area'] as const;
+
+/** Shown when "All rooms" is selected, so the client knows what it covers. */
+export const ALL_ROOMS_HELP =
+  'Every base room that suits the edit — living rooms, bedrooms, kitchen, outdoor patio, etc. We use our judgement on the property.';
 
 export interface EditingRoom {
   name: string;

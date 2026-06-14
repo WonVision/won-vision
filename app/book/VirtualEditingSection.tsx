@@ -2,9 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { upload } from '@vercel/blob/client';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import {
+  ALL_ROOMS_HELP,
   EDITING_SERVICES,
   MAX_CHOOSE_ROOMS,
+  ROOM_OPTIONS,
   buildEditingPayload,
   clampRoomCount,
   type EditingMode,
@@ -80,8 +83,8 @@ export default function VirtualEditingSection() {
         <span className="cat__count">Choose at booking · per room</span>
       </div>
       <p className="wv-edit__intro">
-        Pick the rooms you want virtually edited — all the necessary rooms, or up to three specific
-        rooms. Name each room and (optional) drop a reference photo so we know exactly what you mean.
+        Pick the rooms you want virtually edited — all the necessary rooms, or up to five specific
+        rooms. Choose each room and (optional) drop a reference photo so we know exactly what you mean.
       </p>
 
       <div className="wv-edit__row">
@@ -90,11 +93,13 @@ export default function VirtualEditingSection() {
           return (
             <article key={svc.id} className={`wv-card${s.enabled ? ' is-on' : ''}`}>
               <div className="wv-card__media">
-                <img src={svc.afterSrc} alt={`${svc.label} example`} />
-                <div className="wv-card__ba">
-                  <span>{svc.beforeLabel}</span>
-                  <span>{svc.afterLabel}</span>
-                </div>
+                <BeforeAfterSlider
+                  beforeSrc={svc.beforeSrc}
+                  afterSrc={svc.afterSrc}
+                  beforeAlt={`${svc.label} — ${svc.beforeLabel.toLowerCase()}`}
+                  afterAlt={`${svc.label} — ${svc.afterLabel.toLowerCase()}`}
+                  label=""
+                />
               </div>
               <div className="wv-card__body">
                 <div className="wv-card__nm">{svc.label}</div>
@@ -102,7 +107,7 @@ export default function VirtualEditingSection() {
 
                 {!s.enabled ? (
                   <div className="wv-card__foot">
-                    <span className="wv-card__price">From POA</span>
+                    <span className="wv-card__price">Price on request</span>
                     <button
                       type="button"
                       className="wv-add wv-add--ghost"
@@ -160,7 +165,7 @@ export default function VirtualEditingSection() {
                             </button>
                           </span>
                         </div>
-                        <p className="wv-maxnote">Max 3 rooms · need more? choose “All rooms”</p>
+                        <p className="wv-maxnote">Max 5 rooms · need more? choose “All rooms”</p>
                         <div className="wv-rooms">
                           {s.rooms.slice(0, s.roomCount).map((room, i) => (
                             <RoomSlot
@@ -186,17 +191,20 @@ export default function VirtualEditingSection() {
                         </div>
                       </>
                     ) : (
-                      <AllRoomsExtras
-                        note={s.note}
-                        refImageUrls={s.refImageUrls}
-                        onNote={(note) => patch(svc.id, (st) => ({ ...st, note }))}
-                        onImage={(url) =>
-                          patch(svc.id, (st) => ({
-                            ...st,
-                            refImageUrls: [...st.refImageUrls, url],
-                          }))
-                        }
-                      />
+                      <>
+                        <p className="wv-allhelp">{ALL_ROOMS_HELP}</p>
+                        <AllRoomsExtras
+                          note={s.note}
+                          refImageUrls={s.refImageUrls}
+                          onNote={(note) => patch(svc.id, (st) => ({ ...st, note }))}
+                          onImage={(url) =>
+                            patch(svc.id, (st) => ({
+                              ...st,
+                              refImageUrls: [...st.refImageUrls, url],
+                            }))
+                          }
+                        />
+                      </>
                     )}
 
                     <div className="wv-card__foot">
@@ -204,7 +212,7 @@ export default function VirtualEditingSection() {
                         {s.mode === 'all'
                           ? 'All rooms'
                           : `${s.roomCount} room${s.roomCount === 1 ? '' : 's'}`}{' '}
-                        · POA
+                        · Price on request
                       </span>
                       <button type="button" className="wv-add" onClick={() => toggle(svc.id)}>
                         Added ✓
@@ -232,17 +240,51 @@ function RoomSlot({
   onName: (name: string) => void;
   onImage: (url: string | null) => void;
 }) {
+  const isPreset = (ROOM_OPTIONS as readonly string[]).includes(room.name);
+  // "Other" mode = a custom name (non-empty, non-preset), or the user explicitly
+  // picked Other and hasn't typed yet (tracked locally).
+  const [otherMode, setOtherMode] = useState(room.name !== '' && !isPreset);
+  const selectValue = otherMode ? 'Other' : isPreset ? room.name : '';
+
+  function onSelect(v: string) {
+    if (v === 'Other') {
+      setOtherMode(true);
+      onName('');
+    } else {
+      setOtherMode(false);
+      onName(v);
+    }
+  }
+
   return (
     <div className="wv-slot">
       <div className="wv-slot__top">
         <span className="wv-slot__idx">Room {index + 1}</span>
+        <select
+          className="wv-inp wv-select"
+          value={selectValue}
+          onChange={(e) => onSelect(e.target.value)}
+          aria-label={`Room ${index + 1}`}
+        >
+          <option value="" disabled>
+            Which room?
+          </option>
+          {ROOM_OPTIONS.map((r) => (
+            <option key={r} value={r}>
+              {r}
+            </option>
+          ))}
+          <option value="Other">Other…</option>
+        </select>
+      </div>
+      {otherMode && (
         <input
           className="wv-inp"
-          placeholder="Which room?"
+          placeholder="Type the room name"
           value={room.name}
           onChange={(e) => onName(e.target.value)}
         />
-      </div>
+      )}
       <RefDrop url={room.refImageUrl} onImage={onImage} />
     </div>
   );
