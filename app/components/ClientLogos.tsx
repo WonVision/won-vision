@@ -1,31 +1,30 @@
 /* Clients Won Vision shoots for. Logos are normalised to a uniform optical
    HEIGHT (a fixed box + object-fit:contain), so different source aspect ratios
-   all read at one visual weight. Rest state is solid black-and-white; brand
-   colour fades in on hover.
+   all read at one visual weight. Every logo shows in its real brand colour —
+   no hover interaction.
 
-   Two rendering paths:
-   - Most logos are dark artwork on transparent, so CSS `brightness(0)` blacks
-     them out cleanly at rest and `filter:none` restores colour on hover.
-   - V Group ships as light artwork on a black field (dark-mode logo). CSS can't
-     black that out without leaving grey, so we crossfade a dedicated solid-black
-     file (rest) and a colour-on-transparent file (hover). */
+   The one exception: logos whose artwork is white (designed for dark
+   backgrounds) would be invisible on the white paper. Those are flagged `mono`
+   and rendered solid black via CSS `brightness(0)`. */
 type Client = {
   name: string;
   src: string;
-  /* present only for logos whose colour artwork can't be CSS-blacked cleanly:
-     a separate pre-rendered black-and-white file shown at rest */
-  bwSrc?: string;
+  /* true for white/reverse artwork: rendered solid black so it reads on the
+     white background (brand colour would be invisible) */
+  mono?: boolean;
 };
 
 const clients: Client[] = [
   { name: 'Marshall White', src: '/logos/marshall-white.webp' },
-  { name: 'Jellis Craig', src: '/logos/jellis-craig.webp' },
-  { name: 'Harcourts', src: '/logos/harcourts.webp' },
   { name: 'Henley', src: '/logos/henley.webp' },
-  { name: 'Raine & Horne', src: '/logos/raine-horne.webp' },
+  { name: 'Jellis Craig', src: '/logos/jellis-craig.webp' },
+  { name: 'Barry Plant', src: '/logos/barry-plant.webp' },
+  { name: 'Harcourts', src: '/logos/harcourts.webp' },
   { name: 'Hunter French', src: '/logos/hunter-french.webp' },
+  { name: 'Raine & Horne', src: '/logos/raine-horne.webp' },
+  { name: 'Bella Real Estate', src: '/logos/bella.webp', mono: true },
+  { name: 'V Group Real Estate', src: '/logos/vgroup-colour.webp', mono: true },
   { name: 'Pink & Blue Real Estate', src: '/logos/pink-blue.webp' },
-  { name: 'V Group Real Estate', src: '/logos/vgroup-colour.webp', bwSrc: '/logos/vgroup-bw.webp' },
 ];
 
 export default function ClientLogos() {
@@ -70,32 +69,12 @@ export default function ClientLogos() {
     height:100%;
     object-fit:contain;
     object-position:center;
-    transition:filter .45s ease, opacity .45s ease;
   }
 
-  /* --- CSS-blacked logos: solid black at rest, colour on hover --- */
+  /* White/reverse artwork → rendered solid black so it reads on white paper */
   .clients__logo--mono img{filter:brightness(0);}
-  .clients__logo--mono:hover img,
-  .clients__logo--mono:focus-within img{filter:none;}
 
-  /* --- crossfade logos (V Group): stack the two files, fade on hover --- */
-  .clients__logo--swap .clients__bw,
-  .clients__logo--swap .clients__colour{position:absolute;inset:0;}
-  .clients__logo--swap .clients__colour{opacity:0;}
-  .clients__logo--swap:hover .clients__bw,
-  .clients__logo--swap:focus-within .clients__bw{opacity:0;}
-  .clients__logo--swap:hover .clients__colour,
-  .clients__logo--swap:focus-within .clients__colour{opacity:1;}
-
-  /* Touch devices can't hover — show full colour so the brand colours aren't
-     stranded behind an interaction they can't trigger. */
-  @media (hover:none){
-    .clients__logo--mono img{filter:none;}
-    .clients__logo--swap .clients__bw{opacity:0;}
-    .clients__logo--swap .clients__colour{opacity:1;}
-  }
   @media (prefers-reduced-motion:reduce){
-    .clients__logo img{transition:none;}
     .clients__ticker{animation:none;}
   }
 
@@ -157,13 +136,8 @@ export default function ClientLogos() {
    twice. */
 function renderLogo(client: Client, dupe = false) {
   const key = dupe ? `${client.name}--dupe` : client.name;
-  return client.bwSrc ? (
-    <div key={key} className="clients__logo clients__logo--swap">
-      <img className="clients__bw" src={client.bwSrc} alt={dupe ? '' : client.name} aria-hidden={dupe || undefined} loading="lazy" decoding="async" />
-      <img className="clients__colour" src={client.src} alt="" aria-hidden="true" loading="lazy" decoding="async" />
-    </div>
-  ) : (
-    <div key={key} className="clients__logo clients__logo--mono">
+  return (
+    <div key={key} className={`clients__logo${client.mono ? ' clients__logo--mono' : ''}`}>
       {/* plain <img>: renders any format with no optimizer config; below the fold so no LCP cost */}
       <img src={client.src} alt={dupe ? '' : client.name} aria-hidden={dupe || undefined} loading="lazy" decoding="async" />
     </div>
