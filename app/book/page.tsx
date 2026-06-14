@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { Wordmark } from '../components/Wordmark';
 import ServiceGalleryLightbox from '../components/ServiceGalleryLightbox';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import VirtualEditingSection from './VirtualEditingSection';
 
 export const metadata: Metadata = {
   title: 'Book a shoot',
@@ -1092,37 +1092,52 @@ export default function BookPage() {
           </div>
         </div>
 
-        {/* VIRTUAL EDITING — info only, paid per image in Vision Studio client portal */}
+        {/* VIRTUAL EDITING — chosen at booking, per room (sub-project ①) */}
         <div className="cat" id="cat-staging" data-gallery="staging" data-cats="virtual-editing">
-          <div className="cat__head"><h3>Virtual <em>editing</em></h3><span className="cat__count">Per image · client portal</span></div>
-          <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 8 }}>
-            Virtual staging, decluttering and day-to-dusk are <strong>not booked here</strong>. After delivery you'll review the gallery in the <strong>Vision Studio client portal</strong> and pay per image — only for the photos you choose.
-          </p>
-
-          {/* Before/after comparison sliders — real Won Vision editing samples */}
-          <div className="ba-row" style={{ marginTop: 16 }}>
-            <BeforeAfterSlider
-              label="Virtual staging · $20 / img"
-              beforeAlt="Empty room before virtual staging"
-              afterAlt="Virtually staged room"
-              beforeSrc="/images/staging-before.webp"
-              afterSrc="/images/staging-after.webp"
-            />
-            <BeforeAfterSlider
-              label="Day-to-dusk · $10 / img"
-              beforeAlt="Exterior at day"
-              afterAlt="Exterior at dusk"
-              beforeSrc="/images/dusk-before.webp"
-              afterSrc="/images/dusk-after.webp"
-            />
-            <BeforeAfterSlider
-              label="Declutter · $10 / img"
-              beforeAlt="Cluttered living room"
-              afterAlt="Decluttered living room"
-              beforeSrc="/images/declutter-before.webp"
-              afterSrc="/images/declutter-after.webp"
-            />
-          </div>
+          <style>{`
+  .wv-edit__intro{color:var(--graphite);font-size:14px;line-height:1.6;max-width:640px;margin:0 0 24px}
+  .wv-edit__row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+  @media (max-width:880px){.wv-edit__row{grid-template-columns:1fr}}
+  .wv-card{border:1px solid rgba(74,74,72,0.18);background:var(--paper);display:flex;flex-direction:column}
+  .wv-card.is-on{border-color:var(--ink)}
+  .wv-card__media{position:relative;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid rgba(74,74,72,0.18);background:#f4f4f3}
+  .wv-card__media img{width:100%;height:100%;object-fit:cover;display:block}
+  .wv-card__ba{position:absolute;bottom:0;left:0;right:0;display:flex;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+  .wv-card__ba span{flex:1;padding:5px 8px;background:rgba(255,255,255,0.9);color:var(--ink)}
+  .wv-card__ba span+span{border-left:1px solid rgba(74,74,72,0.18);text-align:right;background:rgba(0,0,0,0.78);color:#fff}
+  .wv-card__body{padding:16px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .wv-card__nm{font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
+  .wv-card__desc{font-size:12.5px;line-height:1.55;color:var(--steel)}
+  .wv-modes{display:flex;border:1px solid rgba(74,74,72,0.18)}
+  .wv-mode{flex:1;text-align:center;padding:10px 8px;font-size:12.5px;font-weight:600;background:var(--paper);color:var(--ink);border:0;cursor:pointer;font-family:var(--body)}
+  .wv-mode+.wv-mode{border-left:1px solid rgba(74,74,72,0.18)}
+  .wv-mode.is-sel{background:var(--ink);color:var(--paper)}
+  .wv-stepper{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--ink);padding:6px}
+  .wv-stepper__lab{font-size:12px;color:var(--graphite);padding-left:6px}
+  .wv-stepper__ctl{display:flex;align-items:center}
+  .wv-sb{width:44px;height:44px;border:1px solid var(--ink);background:var(--paper);font-size:18px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink)}
+  .wv-sb.is-dis{opacity:.3;cursor:not-allowed}
+  .wv-sb__count{width:46px;text-align:center;font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+  .wv-maxnote{font-size:10.5px;color:var(--steel);text-align:center;margin:0}
+  .wv-rooms{display:flex;flex-direction:column;gap:8px}
+  .wv-slot{border:1px solid rgba(74,74,72,0.18);padding:8px;display:flex;flex-direction:column;gap:8px}
+  .wv-slot__top{display:flex;align-items:center;gap:8px}
+  .wv-slot__idx{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--steel);white-space:nowrap}
+  .wv-inp{flex:1;border:1px solid rgba(74,74,72,0.18);padding:10px 12px;font-family:var(--body);font-size:13px;color:var(--ink);background:var(--paper);min-width:0}
+  .wv-drop{display:flex;align-items:center;gap:8px;width:100%;border:1px dashed var(--steel);padding:10px 12px;font-size:11.5px;color:var(--steel);background:var(--paper);cursor:pointer;font-family:var(--body);text-align:left}
+  .wv-drop svg{width:15px;height:15px;flex:0 0 15px}
+  .wv-imgchip{display:flex;align-items:center;gap:8px}
+  .wv-imgchip__t{width:46px;height:34px;overflow:hidden;background:#f4f4f3;flex:0 0 46px}
+  .wv-imgchip__t img{width:100%;height:100%;object-fit:cover}
+  .wv-imgchip__nme{font-size:11.5px;color:var(--graphite);flex:1}
+  .wv-imgchip__rm{font-size:14px;color:var(--steel);background:none;border:0;cursor:pointer}
+  .wv-card__foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .wv-card__price{font-size:13px;font-weight:600;color:var(--graphite)}
+  .wv-add{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:var(--ink);color:var(--paper);font-size:13px;font-weight:600;border:0;cursor:pointer;font-family:var(--body)}
+  .wv-add--ghost{background:var(--paper);color:var(--ink);border:1px solid var(--ink)}
+  .cart__item--editing{opacity:.92}
+          `}</style>
+          <VirtualEditingSection />
         </div>
 
       </section>
@@ -1470,13 +1485,17 @@ export default function BookPage() {
   function fmt(n){ return '$' + Number(n).toLocaleString('en-AU'); }
 
   function render(){
+    let editing = [];
+    try { editing = JSON.parse(sessionStorage.getItem('wv-editing') || '[]'); } catch (_) {}
+    const editingCount = editing.length;
     const n = items.size;
-    count.textContent = String(n);
-    fab.classList.toggle('has-items', n > 0);
-    if(next) next.disabled = (n === 0);
-    empty.style.display = n === 0 ? '' : 'none';
-    list.hidden = n === 0;
-    total.hidden = n === 0;
+    const hasAny = n > 0 || editingCount > 0;
+    count.textContent = String(n + editingCount);
+    fab.classList.toggle('has-items', hasAny);
+    if(next) next.disabled = !hasAny;
+    empty.style.display = hasAny ? 'none' : '';
+    list.hidden = !hasAny;
+    total.hidden = !hasAny;
 
     let subtotal = 0;
     list.innerHTML = '';
@@ -1496,6 +1515,15 @@ export default function BookPage() {
       row.querySelector('.cart__item__remove').addEventListener('click', () => {
         toggleCard(name, false);
       });
+      list.appendChild(row);
+    });
+    // Reflect booking-time virtual-editing picks (POA — no subtotal change).
+    editing.forEach((e) => {
+      const label = ({virtual_staging:'Virtual staging',declutter:'Decluttering',day_to_dusk:'Day-to-dusk'})[e.service] || e.service;
+      const scope = e.mode === 'all' ? 'all rooms' : (e.roomCount + ' room' + (e.roomCount === 1 ? '' : 's'));
+      const row = document.createElement('div');
+      row.className = 'cart__item cart__item--editing';
+      row.innerHTML = '<div class="cart__item__info"><div class="cart__item__name">' + label + ' · ' + scope + '</div><div class="cart__item__price">POA</div></div>';
       list.appendChild(row);
     });
     amt.textContent = subtotal === 0 ? '$0' : fmt(subtotal);
@@ -1532,6 +1560,10 @@ export default function BookPage() {
   cards.forEach(card => {
     card.addEventListener('click', () => toggleCard(card.dataset.svc));
   });
+
+  // The VirtualEditingSection island writes wv-editing then fires this event;
+  // re-render so the cart reflects editing picks + opens to confirm the change.
+  window.addEventListener('wv-editing-changed', () => { render(); openCart({auto:true}); });
 
   // ---- Variant pickers on svc-cards (e.g. Cinematic Listing Video 30–60s / 60–90s) ----
   document.querySelectorAll('.svc-card--variants').forEach(card => {

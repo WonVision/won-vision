@@ -258,6 +258,7 @@ export default function ConfirmationPage() {
 
   function boot(){
     let cart = JSON.parse(sessionStorage.getItem('wv-cart') || '[]');
+    let editing = JSON.parse(sessionStorage.getItem('wv-editing') || '[]');
     let details = JSON.parse(sessionStorage.getItem('wv-details') || '{}');
     let schedule = JSON.parse(sessionStorage.getItem('wv-schedule') || '{}');
     const confirmed = JSON.parse(sessionStorage.getItem(CONFIRMED_KEY) || 'null');
@@ -405,6 +406,7 @@ export default function ConfirmationPage() {
 
     const booking = {
       services: cart,
+      editing: editing,
       property: {
         address: details.address || '',
         unit: details.unit || '',
@@ -502,6 +504,7 @@ export default function ConfirmationPage() {
     function cleanupCart(){
       setTimeout(() => {
         sessionStorage.removeItem('wv-cart');
+        sessionStorage.removeItem('wv-editing');
         sessionStorage.removeItem('wv-details');
         sessionStorage.removeItem('wv-schedule');
       }, 1500);

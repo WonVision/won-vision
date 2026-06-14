@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Won Vision — Booking editing card (phone)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fff;--fg:#000;--graphite:#52525b;--muted:#71717a;--border:#e4e4e7;--strong:#a1a1aa;--surface:#fafafa;}
+  *{box-sizing:border-box;border-radius:0;margin:0;padding:0;}
+  body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--fg);font-size:16px;-webkit-font-smoothing:antialiased;padding:18px;}
+  .cat__head{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;}
+  .cat__head h3{font-size:24px;font-weight:700;letter-spacing:-.02em;}
+  .cat__head h3 em{font-style:italic;font-weight:500;}
+  .cat__count{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);}
+  .intro{font-size:13px;line-height:1.55;color:var(--graphite);margin-bottom:18px;}
+  .svc{border:1px solid #000;background:#fff;}
+  .media{aspect-ratio:16/10;background:var(--surface);overflow:hidden;border-bottom:1px solid var(--border);position:relative;}
+  .media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .ba{position:absolute;bottom:0;left:0;right:0;display:flex;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;}
+  .ba span{flex:1;padding:5px 8px;background:rgba(255,255,255,.9);}
+  .ba span+span{border-left:1px solid var(--border);text-align:right;background:rgba(0,0,0,.78);color:#fff;}
+  .body{padding:16px;display:flex;flex-direction:column;gap:13px;}
+  .nm{font-size:19px;font-weight:600;letter-spacing:-.01em;}
+  .desc{font-size:13px;line-height:1.5;color:var(--muted);}
+  .modes{display:flex;border:1px solid var(--border);}
+  .mode{flex:1;text-align:center;padding:12px 8px;font-size:13.5px;font-weight:600;background:#fff;}
+  .mode+.mode{border-left:1px solid var(--border);}
+  .mode.sel{background:#000;color:#fff;}
+  .stepper{display:flex;align-items:center;justify-content:space-between;border:1px solid #000;padding:8px;}
+  .stepper .lab{font-size:13px;color:var(--graphite);padding-left:6px;}
+  .ctl{display:flex;align-items:center;}
+  .sb{width:44px;height:44px;border:1px solid #000;background:#fff;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+  .scount{width:48px;text-align:center;font-size:18px;font-weight:700;}
+  .maxnote{font-size:11px;color:var(--muted);text-align:center;}
+  .slot{border:1px solid var(--border);padding:10px;display:flex;flex-direction:column;gap:9px;}
+  .top{display:flex;align-items:center;gap:8px;}
+  .idx{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--strong);}
+  .inp{flex:1;border:1px solid var(--border);padding:11px 12px;font-family:inherit;font-size:14px;color:#000;}
+  .inp.ph{color:var(--strong);}
+  .drop{display:flex;align-items:center;gap:9px;border:1px dashed var(--strong);padding:12px;font-size:12.5px;color:var(--muted);}
+  .drop svg{width:16px;height:16px;}
+  .imgchip{display:flex;align-items:center;gap:9px;}
+  .imgchip .t{width:52px;height:40px;overflow:hidden;background:var(--surface);flex:0 0 52px;}
+  .imgchip .t img{width:100%;height:100%;object-fit:cover;}
+  .imgchip .nme{font-size:12.5px;color:var(--graphite);flex:1;}
+  .imgchip .rm{font-size:16px;color:var(--muted);}
+  .foot{display:flex;align-items:center;justify-content:space-between;}
+  .price{font-size:13.5px;font-weight:600;color:var(--graphite);}
+  .add{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;background:#000;color:#fff;font-size:14px;font-weight:600;border:none;}
+</style>
+</head>
+<body>
+  <div class="cat__head"><h3>Virtual <em>editing</em></h3><span class="cat__count">Per room</span></div>
+  <p class="intro">All rooms, or up to three specific rooms. Name each room and optionally drop a reference photo.</p>
+  <div class="svc">
+    <div class="media"><img src="https://picsum.photos/seed/stage9/640/400"><div class="ba"><span>Before</span><span>Staged</span></div></div>
+    <div class="body">
+      <div class="nm">Virtual staging</div>
+      <div class="desc">Furnish empty rooms with realistic furniture so buyers can picture living there.</div>
+      <div class="modes"><div class="mode">All rooms</div><div class="mode sel">Choose rooms</div></div>
+      <div class="stepper"><span class="lab">Rooms</span><div class="ctl"><div class="sb">−</div><div class="scount">2</div><div class="sb">+</div></div></div>
+      <div class="maxnote">Max 3 rooms · need more? choose “All rooms”</div>
+      <div class="slot">
+        <div class="top"><span class="idx">Room 1</span><input class="inp" value="Living room"></div>
+        <div class="imgchip"><div class="t"><img src="https://picsum.photos/seed/livr/120/90"></div><span class="nme">living-ref.jpg</span><span class="rm">✕</span></div>
+      </div>
+      <div class="slot">
+        <div class="top"><span class="idx">Room 2</span><input class="inp ph" value="Which room?"></div>
+        <div class="drop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 19h14M12 15V5M8 9l4-4 4 4" stroke-linecap="square"/></svg>Drop a reference photo (optional)</div>
+      </div>
+      <div class="foot"><span class="price">2 rooms · POA</span><button class="add">Added ✓</button></div>
+    </div>
+  </div>
+</body>
+</html>
