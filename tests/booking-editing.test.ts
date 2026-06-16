@@ -3,6 +3,7 @@ import {
   clampRoomCount,
   buildEditingPayload,
   summarizeEditingEntry,
+  priceForEditing,
   EDITING_SERVICES,
   MAX_CHOOSE_ROOMS,
   type EditingSelectionState,
@@ -65,6 +66,7 @@ describe('buildEditingPayload', () => {
         ],
         note: null,
         refImageUrls: [],
+        price: 40, // virtual_staging $20/room × 2 rooms
       },
     ]);
   });
@@ -87,6 +89,7 @@ describe('buildEditingPayload', () => {
         rooms: [],
         note: 'remove the bins',
         refImageUrls: ['https://blob/a.jpg'],
+        price: 50, // declutter all-rooms flat
       },
     ]);
   });
@@ -115,6 +118,7 @@ describe('summarizeEditingEntry', () => {
         rooms: [],
         note: null,
         refImageUrls: [],
+        price: 79,
       }),
     ).toBe('Virtual staging · all rooms'));
   it('summarizes a single room', () =>
@@ -126,6 +130,7 @@ describe('summarizeEditingEntry', () => {
         rooms: [{ name: 'Kitchen', refImageUrl: null }],
         note: null,
         refImageUrls: [],
+        price: 10,
       }),
     ).toBe('Decluttering · 1 room'));
   it('summarizes multiple rooms', () =>
@@ -137,6 +142,27 @@ describe('summarizeEditingEntry', () => {
         rooms: [],
         note: null,
         refImageUrls: [],
+        price: 30,
       }),
     ).toBe('Day-to-dusk · 2 rooms'));
+});
+
+describe('priceForEditing', () => {
+  it('prices all-rooms at the flat rate', () => {
+    expect(priceForEditing('virtual_staging', 'all', null)).toBe(79);
+    expect(priceForEditing('declutter', 'all', null)).toBe(50);
+    expect(priceForEditing('day_to_dusk', 'all', null)).toBe(70);
+  });
+
+  it('prices chosen rooms at per-room × count', () => {
+    expect(priceForEditing('virtual_staging', 'choose', 3)).toBe(60);
+    expect(priceForEditing('declutter', 'choose', 2)).toBe(20);
+    expect(priceForEditing('day_to_dusk', 'choose', 1)).toBe(15);
+  });
+
+  it('clamps room count into range before pricing', () => {
+    expect(priceForEditing('declutter', 'choose', 0)).toBe(10); // clamps to 1
+    expect(priceForEditing('declutter', 'choose', 99)).toBe(10 * MAX_CHOOSE_ROOMS);
+    expect(priceForEditing('virtual_staging', 'choose', null)).toBe(20); // defaults to 1
+  });
 });

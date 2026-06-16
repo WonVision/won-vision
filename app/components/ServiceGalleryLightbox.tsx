@@ -52,15 +52,9 @@ const galleries: Record<string, Media[]> = {
   ],
   cinematic: [
     {
-      src: '/video/cinematic-listing.mp4',
+      src: '/video/cinematic-v3.mp4',
       type: 'video',
-      poster: '/images/cinematic-1-poster.webp',
-      caption: 'Cinematic Listing Video',
-    },
-    {
-      src: '/video/cinematic-listing-2.mp4',
-      type: 'video',
-      poster: '/images/cinematic-2-poster.webp',
+      poster: '/images/cinematic-v3-poster.webp',
       caption: 'Cinematic Listing Video',
     },
   ],

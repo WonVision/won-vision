@@ -11,6 +11,9 @@ export const ROOM_OPTIONS = ['Living room', 'Bedroom', 'Kitchen', 'Outdoor area'
 export const ALL_ROOMS_HELP =
   'Every base room that suits the edit — living rooms, bedrooms, kitchen, outdoor patio, etc. We use our judgement on the property.';
 
+/** Pricing disclaimer shown on every editing card — one edited room = one photo. */
+export const ROOM_PHOTO_NOTE = '1 room = 1 photo';
+
 export interface EditingRoom {
   name: string;
   refImageUrl: string | null;
@@ -34,6 +37,8 @@ export interface EditingEntry {
   rooms: EditingRoom[];
   note: string | null;
   refImageUrls: string[];
+  /** Resolved AUD price for this pick (per-room × count, or the all-rooms flat). */
+  price: number;
 }
 
 export const EDITING_SERVICES: {
@@ -44,6 +49,10 @@ export const EDITING_SERVICES: {
   afterLabel: string;
   beforeSrc: string;
   afterSrc: string;
+  /** Price per room (AUD) when picking individual rooms. */
+  perRoom: number;
+  /** Flat price (AUD) when "All rooms" is selected. */
+  allRooms: number;
 }[] = [
   {
     id: 'virtual_staging',
@@ -53,6 +62,8 @@ export const EDITING_SERVICES: {
     afterLabel: 'Staged',
     beforeSrc: '/images/staging-before.webp',
     afterSrc: '/images/staging-after.webp',
+    perRoom: 20,
+    allRooms: 79,
   },
   {
     id: 'declutter',
@@ -62,6 +73,8 @@ export const EDITING_SERVICES: {
     afterLabel: 'Decluttered',
     beforeSrc: '/images/declutter-before.webp',
     afterSrc: '/images/declutter-after.webp',
+    perRoom: 10,
+    allRooms: 50,
   },
   {
     id: 'day_to_dusk',
@@ -71,8 +84,23 @@ export const EDITING_SERVICES: {
     afterLabel: 'Dusk',
     beforeSrc: '/images/dusk-before.webp',
     afterSrc: '/images/dusk-after.webp',
+    perRoom: 15,
+    allRooms: 70,
   },
 ];
+
+/** Resolve the AUD price for a service + scope. Single source of truth for the
+ *  card foot, the cart line, and the booking payload. */
+export function priceForEditing(
+  service: EditingServiceId,
+  mode: EditingMode,
+  roomCount: number | null,
+): number {
+  const svc = EDITING_SERVICES.find((s) => s.id === service);
+  if (!svc) return 0;
+  if (mode === 'all') return svc.allRooms;
+  return svc.perRoom * clampRoomCount(roomCount ?? 1);
+}
 
 export function clampRoomCount(n: number): number {
   if (!Number.isFinite(n) || n < 1) return 1;
@@ -96,6 +124,7 @@ export function buildEditingPayload(
         rooms: [],
         note: note.length ? note : null,
         refImageUrls: [...s.refImageUrls],
+        price: priceForEditing(svc.id, 'all', null),
       });
     } else {
       const roomCount = clampRoomCount(s.roomCount);
@@ -109,6 +138,7 @@ export function buildEditingPayload(
         })),
         note: null,
         refImageUrls: [],
+        price: priceForEditing(svc.id, 'choose', roomCount),
       });
     }
   }

@@ -1,19 +1,24 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { upload } from '@vercel/blob/client';
+import { useEffect, useState } from 'react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import {
   ALL_ROOMS_HELP,
   EDITING_SERVICES,
   MAX_CHOOSE_ROOMS,
-  ROOM_OPTIONS,
+  ROOM_PHOTO_NOTE,
   buildEditingPayload,
   clampRoomCount,
+  priceForEditing,
   type EditingMode,
   type EditingSelectionState,
   type EditingServiceId,
 } from '../../lib/booking-editing';
+
+/** AUD money, no decimals (prices are whole dollars). */
+function aud(n: number): string {
+  return '$' + n.toLocaleString('en-AU');
+}
 
 function blankState(): EditingSelectionState {
   return {
@@ -104,10 +109,13 @@ export default function VirtualEditingSection() {
               <div className="wv-card__body">
                 <div className="wv-card__nm">{svc.label}</div>
                 <div className="wv-card__desc">{svc.desc}</div>
+                <div className="wv-card__note">{ROOM_PHOTO_NOTE}</div>
 
                 {!s.enabled ? (
                   <div className="wv-card__foot">
-                    <span className="wv-card__price">Price on request</span>
+                    <span className="wv-card__price">
+                      {aud(svc.perRoom)}/room · all rooms {aud(svc.allRooms)}
+                    </span>
                     <button
                       type="button"
                       className="wv-add wv-add--ghost"
@@ -166,44 +174,16 @@ export default function VirtualEditingSection() {
                           </span>
                         </div>
                         <p className="wv-maxnote">Max 5 rooms · need more? choose “All rooms”</p>
-                        <div className="wv-rooms">
-                          {s.rooms.slice(0, s.roomCount).map((room, i) => (
-                            <RoomSlot
-                              key={i}
-                              index={i}
-                              room={room}
-                              onName={(name) =>
-                                patch(svc.id, (st) => {
-                                  const rooms = st.rooms.slice();
-                                  rooms[i] = { ...rooms[i], name };
-                                  return { ...st, rooms };
-                                })
-                              }
-                              onImage={(url) =>
-                                patch(svc.id, (st) => {
-                                  const rooms = st.rooms.slice();
-                                  rooms[i] = { ...rooms[i], refImageUrl: url };
-                                  return { ...st, rooms };
-                                })
-                              }
-                            />
-                          ))}
-                        </div>
+                        <p className="wv-nextstep">
+                          You’ll name each room and add reference photos on the next step.
+                        </p>
                       </>
                     ) : (
                       <>
                         <p className="wv-allhelp">{ALL_ROOMS_HELP}</p>
-                        <AllRoomsExtras
-                          note={s.note}
-                          refImageUrls={s.refImageUrls}
-                          onNote={(note) => patch(svc.id, (st) => ({ ...st, note }))}
-                          onImage={(url) =>
-                            patch(svc.id, (st) => ({
-                              ...st,
-                              refImageUrls: [...st.refImageUrls, url],
-                            }))
-                          }
-                        />
+                        <p className="wv-nextstep">
+                          You’ll add any notes and reference photos on the next step.
+                        </p>
                       </>
                     )}
 
@@ -212,7 +192,7 @@ export default function VirtualEditingSection() {
                         {s.mode === 'all'
                           ? 'All rooms'
                           : `${s.roomCount} room${s.roomCount === 1 ? '' : 's'}`}{' '}
-                        · Price on request
+                        · {aud(priceForEditing(svc.id, s.mode, s.roomCount))}
                       </span>
                       <button type="button" className="wv-add" onClick={() => toggle(svc.id)}>
                         Added ✓
@@ -229,170 +209,3 @@ export default function VirtualEditingSection() {
   );
 }
 
-function RoomSlot({
-  index,
-  room,
-  onName,
-  onImage,
-}: {
-  index: number;
-  room: { name: string; refImageUrl: string | null };
-  onName: (name: string) => void;
-  onImage: (url: string | null) => void;
-}) {
-  const isPreset = (ROOM_OPTIONS as readonly string[]).includes(room.name);
-  // "Other" mode = a custom name (non-empty, non-preset), or the user explicitly
-  // picked Other and hasn't typed yet (tracked locally).
-  const [otherMode, setOtherMode] = useState(room.name !== '' && !isPreset);
-  const selectValue = otherMode ? 'Other' : isPreset ? room.name : '';
-
-  function onSelect(v: string) {
-    if (v === 'Other') {
-      setOtherMode(true);
-      onName('');
-    } else {
-      setOtherMode(false);
-      onName(v);
-    }
-  }
-
-  return (
-    <div className="wv-slot">
-      <div className="wv-slot__top">
-        <span className="wv-slot__idx">Room {index + 1}</span>
-        <select
-          className="wv-inp wv-select"
-          value={selectValue}
-          onChange={(e) => onSelect(e.target.value)}
-          aria-label={`Room ${index + 1}`}
-        >
-          <option value="" disabled>
-            Which room?
-          </option>
-          {ROOM_OPTIONS.map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-          <option value="Other">Other…</option>
-        </select>
-      </div>
-      {otherMode && (
-        <input
-          className="wv-inp"
-          placeholder="Type the room name"
-          value={room.name}
-          onChange={(e) => onName(e.target.value)}
-        />
-      )}
-      <RefDrop url={room.refImageUrl} onImage={onImage} />
-    </div>
-  );
-}
-
-function AllRoomsExtras({
-  note,
-  refImageUrls,
-  onNote,
-  onImage,
-}: {
-  note: string;
-  refImageUrls: string[];
-  onNote: (note: string) => void;
-  onImage: (url: string) => void;
-}) {
-  return (
-    <div className="wv-slot">
-      <div className="wv-slot__top">
-        <span className="wv-slot__idx">Note</span>
-        <input
-          className="wv-inp"
-          placeholder="Anything specific? (optional)"
-          value={note}
-          onChange={(e) => onNote(e.target.value)}
-        />
-      </div>
-      <RefDrop
-        url={null}
-        label="Add reference photos (optional)"
-        onImage={(u) => u && onImage(u)}
-      />
-      {refImageUrls.length > 0 && (
-        <p className="wv-maxnote">
-          {refImageUrls.length} reference photo{refImageUrls.length === 1 ? '' : 's'} added
-        </p>
-      )}
-    </div>
-  );
-}
-
-function RefDrop({
-  url,
-  label = 'Drop a reference photo (optional)',
-  onImage,
-}: {
-  url: string | null;
-  label?: string;
-  onImage: (url: string | null) => void;
-}) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [busy, setBusy] = useState(false);
-  const [err, setErr] = useState<string | null>(null);
-
-  async function pick(file: File) {
-    setErr(null);
-    setBusy(true);
-    try {
-      const res = await upload(file.name, file, {
-        access: 'public',
-        handleUploadUrl: '/api/book/upload-ref',
-      });
-      onImage(res.url);
-    } catch {
-      setErr('Upload failed — tap to retry');
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  if (url) {
-    return (
-      <div className="wv-imgchip">
-        <span className="wv-imgchip__t">
-          <img src={url} alt="Reference" />
-        </span>
-        <span className="wv-imgchip__nme">Reference photo added</span>
-        <button
-          type="button"
-          className="wv-imgchip__rm"
-          aria-label="Remove reference photo"
-          onClick={() => onImage(null)}
-        >
-          ✕
-        </button>
-      </div>
-    );
-  }
-
-  return (
-    <>
-      <button type="button" className="wv-drop" onClick={() => inputRef.current?.click()} disabled={busy}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-          <path d="M5 19h14M12 15V5M8 9l4-4 4 4" strokeLinecap="square" />
-        </svg>
-        {busy ? 'Uploading…' : (err ?? label)}
-      </button>
-      <input
-        ref={inputRef}
-        type="file"
-        accept="image/jpeg,image/png,image/heic,image/webp"
-        hidden
-        onChange={(e) => {
-          const f = e.target.files?.[0];
-          if (f) void pick(f);
-          e.target.value = '';
-        }}
-      />
-    </>
-  );
-}

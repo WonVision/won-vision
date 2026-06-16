@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { Wordmark } from '../../components/Wordmark';
+import { EDITING_SERVICES, type EditingEntry } from '../../../lib/booking-editing';
 
 type CartItem = {
   name: string;
@@ -10,6 +11,27 @@ type CartItem = {
   img: string;
   categories: string[];
 };
+
+function editLabel(e: EditingEntry): string {
+  return EDITING_SERVICES.find((s) => s.id === e.service)?.label ?? e.service;
+}
+function editScope(e: EditingEntry): string {
+  return e.mode === 'all'
+    ? 'All rooms'
+    : `${e.roomCount} room${e.roomCount === 1 ? '' : 's'}`;
+}
+function readEditing(): EditingEntry[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = JSON.parse(sessionStorage.getItem('wv-editing') || '[]');
+    return Array.isArray(raw) ? raw : [];
+  } catch (_) {
+    return [];
+  }
+}
+function writeEditing(items: EditingEntry[]) {
+  try { sessionStorage.setItem('wv-editing', JSON.stringify(items)); } catch (_) {}
+}
 
 const PHOTO_TO_VIDEO: CartItem = {
   name: 'Photo to Video',
@@ -60,17 +82,30 @@ function PhoneIcon() {
 
 export default function CartPage() {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [editing, setEditing] = useState<EditingEntry[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     setItems(readCart());
+    setEditing(readEditing());
     setHydrated(true);
   }, []);
 
-  const subtotal = useMemo(() => items.reduce((s, it) => s + (Number(it.price) || 0), 0), [items]);
+  const subtotal = useMemo(
+    () =>
+      items.reduce((s, it) => s + (Number(it.price) || 0), 0) +
+      editing.reduce((s, e) => s + (Number(e.price) || 0), 0),
+    [items, editing],
+  );
+  const hasAny = items.length > 0 || editing.length > 0;
 
   function update(next: CartItem[]) { setItems(next); writeCart(next); }
   function remove(name: string) { update(items.filter(i => i.name !== name)); }
+  function removeEditing(idx: number) {
+    const next = editing.filter((_, i) => i !== idx);
+    setEditing(next);
+    writeEditing(next);
+  }
 
   const hasVideo = items.some(i => i.name !== PHOTO_TO_VIDEO.name && Array.isArray(i.categories) && i.categories.includes('video'));
   const hasPhotoToVideo = items.some(i => i.name === PHOTO_TO_VIDEO.name);
@@ -127,7 +162,7 @@ export default function CartPage() {
             <h2>Your <em>cart.</em></h2>
             <p className="lede">Review the line items. Add any recommended extras below. Then continue to details.</p>
 
-            {hydrated && items.length === 0 && (
+            {hydrated && !hasAny && (
               <div className="cart-empty">
                 <h3>No services yet.</h3>
                 <p>Browse the catalogue and add what your listing needs.</p>
@@ -135,7 +170,7 @@ export default function CartPage() {
               </div>
             )}
 
-            {hydrated && items.length > 0 && (
+            {hydrated && hasAny && (
               <>
                 <section>
                   <h3>Line items</h3>
@@ -148,6 +183,16 @@ export default function CartPage() {
                           <div className="cart-line__price">{Number(it.price) === 0 ? 'POA' : fmt(it.price)}</div>
                         </div>
                         <button type="button" className="cart-line__remove" aria-label={`Remove ${it.name}`} onClick={() => remove(it.name)}>×</button>
+                      </li>
+                    ))}
+                    {editing.map((e, idx) => (
+                      <li key={`edit-${idx}`} className="cart-line">
+                        <div className="cart-line__thumb cart-line__thumb--edit" aria-hidden="true" />
+                        <div className="cart-line__info">
+                          <div className="cart-line__name">{editLabel(e)}</div>
+                          <div className="cart-line__price">{editScope(e)} · {Number(e.price) === 0 ? 'POA' : fmt(e.price)}</div>
+                        </div>
+                        <button type="button" className="cart-line__remove" aria-label={`Remove ${editLabel(e)}`} onClick={() => removeEditing(idx)}>×</button>
                       </li>
                     ))}
                   </ul>
@@ -189,7 +234,7 @@ export default function CartPage() {
             )}
           </div>
 
-          {hydrated && items.length > 0 && (
+          {hydrated && hasAny && (
             <aside className="step-summary">
               <h3>Your booking</h3>
               <div className="step-summary__list">
@@ -198,6 +243,13 @@ export default function CartPage() {
                     <div className="step-summary__thumb" style={{ backgroundImage: it.img ? `url('${it.img}')` : 'none' }} />
                     <div className="step-summary__name">{it.name}</div>
                     <div className="step-summary__price">{Number(it.price) === 0 ? 'POA' : fmt(it.price)}</div>
+                  </div>
+                ))}
+                {editing.map((e, idx) => (
+                  <div key={`edit-${idx}`} className="step-summary__item">
+                    <div className="step-summary__thumb" />
+                    <div className="step-summary__name">{editLabel(e)} · {editScope(e)}</div>
+                    <div className="step-summary__price">{Number(e.price) === 0 ? 'POA' : fmt(e.price)}</div>
                   </div>
                 ))}
               </div>
@@ -224,6 +276,7 @@ export default function CartPage() {
         .cart-lines{list-style:none;margin:0;padding:0;border-top:1px solid rgba(74,74,72,0.16)}
         .cart-line{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(74,74,72,0.1)}
         .cart-line__thumb{width:64px;height:64px;background:var(--soft) center/cover no-repeat;border:1px solid rgba(74,74,72,0.14)}
+        .cart-line__thumb--edit{background:repeating-linear-gradient(135deg,var(--soft),var(--soft) 6px,rgba(74,74,72,0.06) 6px,rgba(74,74,72,0.06) 12px)}
         .cart-line__info{min-width:0}
         .cart-line__name{font-family:var(--display);font-weight:500;font-size:16px;color:var(--ink);letter-spacing:-0.005em;line-height:1.25}
         .cart-line__price{font-family:var(--body);font-size:13px;color:var(--graphite);margin-top:4px}

@@ -993,13 +993,13 @@ export default function BookPage() {
               data-svc="Cinematic Listing Video · 30–60s"
               data-price="499"
               data-desc="A cinematic listing film — agent on camera, drone aerials, hand-graded and scored. Choose 30–60s for a polished cut, or 60–90s for extra time on set capturing the aesthetic and mood of the home."
-              data-img="/images/cinematic.webp"
+              data-img="/images/cinematic-v3-poster.webp"
               data-gallery="cinematic"
               data-variants='[{"key":"short","name":"Cinematic Listing Video · 30–60s","price":499,"label":"30–60s","lead":"30–60s cinematic edit · 16:9","b1":"Agent piece-to-camera direction","b2":"Drone aerials + interior coverage","b3":"Hand colour-grade · scored to picture"},{"key":"long","name":"Cinematic Listing Video · 60–90s","price":699,"label":"60–90s","lead":"60–90s flagship cinematic edit","b1":"Extra set time for aesthetic & mood","b2":"Director-led shoot · storyboard treatment","b3":"Extended aerial & gimbal coverage"}]'
             >
               <div className="svc-card__media">
                 <video
-                  src="/video/cinematic-listing-loop.mp4"
+                  src="/video/cinematic-v3-loop.mp4"
                   autoPlay
                   loop
                   muted
@@ -1108,6 +1108,7 @@ export default function BookPage() {
   .wv-card__body{padding:16px;display:flex;flex-direction:column;gap:12px;flex:1}
   .wv-card__nm{font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
   .wv-card__desc{font-size:12.5px;line-height:1.55;color:var(--steel)}
+  .wv-card__note{display:inline-flex;align-self:flex-start;font-size:10.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--graphite);background:rgba(74,74,72,0.07);border:1px solid rgba(74,74,72,0.14);padding:3px 8px}
   .wv-modes{display:flex;border:1px solid rgba(74,74,72,0.18)}
   .wv-mode{flex:1;text-align:center;padding:10px 8px;font-size:12.5px;font-weight:600;background:var(--paper);color:var(--ink);border:0;cursor:pointer;font-family:var(--body)}
   .wv-mode+.wv-mode{border-left:1px solid rgba(74,74,72,0.18)}
@@ -1126,6 +1127,7 @@ export default function BookPage() {
   .wv-inp{flex:1;border:1px solid rgba(74,74,72,0.18);padding:10px 12px;font-family:var(--body);font-size:13px;color:var(--ink);background:var(--paper);min-width:0}
   .wv-select{min-height:42px;cursor:pointer;appearance:auto}
   .wv-allhelp{font-size:12px;line-height:1.5;color:var(--steel);margin:0}
+  .wv-nextstep{font-size:11.5px;line-height:1.5;color:var(--graphite);margin:0;padding:9px 11px;background:rgba(74,74,72,0.05);border-left:2px solid var(--ink)}
   .wv-card__media .ba-slider{margin:0}
   .wv-card__media .ba-slider__label{display:none}
   .wv-card__media .ba-slider__frame{aspect-ratio:16/10}
@@ -1140,9 +1142,10 @@ export default function BookPage() {
   .wv-card__price{font-size:13px;font-weight:600;color:var(--graphite)}
   .wv-add{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:var(--ink);color:var(--paper);font-size:13px;font-weight:600;border:0;cursor:pointer;font-family:var(--body)}
   .wv-add--ghost{background:var(--paper);color:var(--ink);border:1px solid var(--ink)}
-  .cart__item--editing{opacity:.92}
-  .cart__item--editing .cart__item__name{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.3}
-  .cart__item--editing .cart__item__price{white-space:normal;font-weight:500}
+  .cart__item--editing{grid-template-columns:1fr auto;opacity:.92}
+  .cart__item--editing .cart__item__name{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.25}
+  .cart__item__sub{font-family:var(--body);font-size:11px;color:var(--graphite);margin-top:2px}
+  .cart__item__editprice{font-family:var(--body);font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;align-self:center}
           `}</style>
           <VirtualEditingSection />
         </div>
@@ -1524,13 +1527,15 @@ export default function BookPage() {
       });
       list.appendChild(row);
     });
-    // Reflect booking-time virtual-editing picks (POA — no subtotal change).
+    // Reflect booking-time virtual-editing picks (priced per room · 1 room = 1 photo).
     editing.forEach((e) => {
       const label = ({virtual_staging:'Virtual staging',declutter:'Decluttering',day_to_dusk:'Day-to-dusk'})[e.service] || e.service;
       const scope = e.mode === 'all' ? 'all rooms' : (e.roomCount + ' room' + (e.roomCount === 1 ? '' : 's'));
+      const p = Number(e.price) || 0;
+      subtotal += p;
       const row = document.createElement('div');
       row.className = 'cart__item cart__item--editing';
-      row.innerHTML = '<div class="cart__item__info"><div class="cart__item__name">' + label + '</div><div class="cart__item__price">' + scope + ' · on request</div></div>';
+      row.innerHTML = '<div class="cart__item__info"><div class="cart__item__name">' + label + '</div><div class="cart__item__sub">' + scope + '</div></div><div class="cart__item__editprice">' + (p === 0 ? 'On request' : fmt(p)) + '</div>';
       list.appendChild(row);
     });
     amt.textContent = subtotal === 0 ? '$0' : fmt(subtotal);
@@ -1641,7 +1646,9 @@ export default function BookPage() {
 
   if(next){
     next.addEventListener('click', () => {
-      if(items.size === 0) return;
+      let editingCount = 0;
+      try { editingCount = (JSON.parse(sessionStorage.getItem('wv-editing') || '[]') || []).length; } catch(e) {}
+      if(items.size === 0 && editingCount === 0) return;
       persist();
       window.location.href = '/book/cart';
     });

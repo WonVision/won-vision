@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
 import { Wordmark } from '../../components/Wordmark';
+import EditingDetailsSection from '../EditingDetailsSection';
 
 export const metadata: Metadata = {
   title: 'Checkout',
@@ -232,6 +233,8 @@ export default function CheckoutPage() {
               </div>
             </section>
 
+            <EditingDetailsSection />
+
             <div className="form-errors" id="formErrors" hidden role="alert" aria-live="polite">
               <strong>A few things still missing</strong>
               <ul id="formErrorsList"></ul>
@@ -296,7 +299,9 @@ export default function CheckoutPage() {
 (function(){
   function boot(){
   const cart = JSON.parse(sessionStorage.getItem('wv-cart') || '[]');
-  if (!cart.length) { window.location.href = '/book'; return; }
+  let editing = [];
+  try { editing = JSON.parse(sessionStorage.getItem('wv-editing') || '[]'); } catch(e) {}
+  if (!cart.length && !editing.length) { window.location.href = '/book'; return; }
 
   const list = document.getElementById('summaryList');
   let total = 0;
@@ -309,6 +314,21 @@ export default function CheckoutPage() {
       <div class="step-summary__thumb" style="background-image:url('\${it.img}')"></div>
       <div class="step-summary__name">\${it.name}</div>
       <div class="step-summary__price">\${priceLabel}</div>\`;
+    list.appendChild(row);
+  });
+  // Booking-time virtual-editing picks (priced per room · 1 room = 1 photo).
+  const EDIT_LABELS = {virtual_staging:'Virtual staging',declutter:'Decluttering',day_to_dusk:'Day-to-dusk'};
+  editing.forEach(e => {
+    const p = Number(e.price) || 0;
+    total += p;
+    const label = EDIT_LABELS[e.service] || e.service;
+    const scope = e.mode === 'all' ? 'all rooms' : (e.roomCount + ' room' + (e.roomCount === 1 ? '' : 's'));
+    const priceLabel = p === 0 ? 'POA' : '$' + p.toLocaleString('en-AU');
+    const row = document.createElement('div');
+    row.className = 'step-summary__item';
+    row.innerHTML = '<div class="step-summary__thumb"></div>' +
+      '<div class="step-summary__name">' + label + ' · ' + scope + '</div>' +
+      '<div class="step-summary__price">' + priceLabel + '</div>';
     list.appendChild(row);
   });
   document.getElementById('summaryAmt').textContent = total === 0 ? '$0' : '$' + total.toLocaleString('en-AU');

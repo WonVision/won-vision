@@ -90,6 +90,7 @@ export default function GalleryPage() {
             <button className="filter is-active" data-sub="all">All</button>
             <button className="filter" data-sub="cinematic">Cinematic video</button>
             <button className="filter" data-sub="highlight">Property highlight</button>
+            <button className="filter" data-sub="phototovideo">Photo to video</button>
           </div>
         </div>
       </div>
@@ -286,27 +287,12 @@ export default function GalleryPage() {
             />
           </article>
 
-          {/* Video — cinematic listing film, plays inline */}
+          {/* Video — NEW cinematic listing film (V3), plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Cinematic">
             <video
-              src="/video/cinematic-listing.mp4"
-              poster="/images/cinematic-1-poster.webp"
-              controls
-              preload="metadata"
-              playsInline
-            />
-            <div className="gallery__item__caption">
-              <p className="tags">Cinematic video</p>
-            </div>
-          </article>
-
-          {/* Video — cinematic listing film, plays inline */}
-          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
-                   data-place="Won Vision · Cinematic">
-            <video
-              src="/video/cinematic-listing-2.mp4"
-              poster="/images/cinematic-2-poster.webp"
+              src="/video/cinematic-v3.mp4"
+              poster="/images/cinematic-v3-poster.webp"
               controls
               preload="metadata"
               playsInline
@@ -320,8 +306,23 @@ export default function GalleryPage() {
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
                    data-place="Won Vision · Property highlight">
             <video
-              src="/video/property-highlight.mp4"
-              poster="/images/property-highlight-poster.webp"
+              src="/video/cinematic-listing.mp4"
+              poster="/images/cinematic-1-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/cinematic-listing-2.mp4"
+              poster="/images/cinematic-2-poster.webp"
               controls
               preload="metadata"
               playsInline
@@ -343,6 +344,21 @@ export default function GalleryPage() {
             />
             <div className="gallery__item__caption">
               <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — 3 Nitraria Street, Mickleham (photo-to-video), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="phototovideo"
+                   data-place="Won Vision · Photo to video">
+            <video
+              src="/video/property-highlight.mp4"
+              poster="/images/property-highlight-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Photo to video</p>
             </div>
           </article>
 
