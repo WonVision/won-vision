@@ -57,6 +57,18 @@ const galleries: Record<string, Media[]> = {
       poster: '/images/cinematic-v3-poster.webp',
       caption: 'Cinematic Listing Video',
     },
+    {
+      src: '/video/cinematic-465.mp4',
+      type: 'video',
+      poster: '/images/cinematic-465-poster.webp',
+      caption: 'Cinematic Listing Video',
+    },
+    {
+      src: '/video/cinematic-baden.mp4',
+      type: 'video',
+      poster: '/images/cinematic-baden-poster.webp',
+      caption: 'Cinematic Listing Video',
+    },
   ],
   drone: [
     { src: '/images/drone-set.webp', caption: 'Aerial set' },

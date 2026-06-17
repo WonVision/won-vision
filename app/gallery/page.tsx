@@ -287,12 +287,42 @@ export default function GalleryPage() {
             />
           </article>
 
-          {/* Video — NEW cinematic listing film (V3), plays inline */}
+          {/* Video — cinematic listing film · Bella Real Estate, plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Cinematic">
             <video
               src="/video/cinematic-v3.mp4"
               poster="/images/cinematic-v3-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Cinematic video</p>
+            </div>
+          </article>
+
+          {/* Video — cinematic listing film · 465 Seventh Avenue (Barry Plant), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
+                   data-place="Won Vision · Cinematic">
+            <video
+              src="/video/cinematic-465.mp4"
+              poster="/images/cinematic-465-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Cinematic video</p>
+            </div>
+          </article>
+
+          {/* Video — cinematic listing film · 54 Baden Powell Drive, Tarneit (Harcourts), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
+                   data-place="Won Vision · Cinematic">
+            <video
+              src="/video/cinematic-baden.mp4"
+              poster="/images/cinematic-baden-poster.webp"
               controls
               preload="metadata"
               playsInline
