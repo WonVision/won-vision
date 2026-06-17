@@ -35,12 +35,28 @@ const galleries: Record<string, Media[]> = {
     { src: '/images/wv-exterior-1.webp', caption: 'Exterior' },
     { src: '/images/wv-exterior-2.webp', caption: 'Street view' },
   ],
-  video: [],
-  highlight: [
+  // Photo to Video — mirrors the gallery's "phototovideo" bucket. This is the
+  // 3 Nitraria Street, Mickleham clip (ends on the V Group Real Estate mark).
+  video: [
     {
       src: '/video/property-highlight.mp4',
       type: 'video',
       poster: '/images/property-highlight-poster.webp',
+      caption: 'Photo to Video',
+    },
+  ],
+  // Property Highlight — mirrors the gallery's "highlight" bucket exactly.
+  highlight: [
+    {
+      src: '/video/cinematic-listing.mp4',
+      type: 'video',
+      poster: '/images/cinematic-1-poster.webp',
+      caption: 'Property Highlight Video',
+    },
+    {
+      src: '/video/cinematic-listing-2.mp4',
+      type: 'video',
+      poster: '/images/cinematic-2-poster.webp',
       caption: 'Property Highlight Video',
     },
     {
