@@ -1100,8 +1100,8 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Floorplan Redraw" data-price="30" data-desc="Redraw an existing plan in Won Vision linework. Per page." data-img="">
-              <div className="svc-card__media"><div className="svc-card__media__img"></div></div>
+            <article className="svc-card" data-svc="Floorplan Redraw" data-price="30" data-desc="Redraw an existing plan in Won Vision linework. Per page." data-img="/images/floorplan-redraw-example.webp" data-gallery="floorplanredraw">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/floorplan-redraw-example.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Floorplan Redraw</h4>

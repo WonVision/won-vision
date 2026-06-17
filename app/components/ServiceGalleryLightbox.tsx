@@ -115,6 +115,14 @@ const galleries: Record<string, Media[]> = {
       caption: 'Floor plan',
     },
   ],
+  // Scoped to the Floorplan Redraw card only — before/after of a hand-drawn
+  // plan redrawn in Won Vision linework.
+  floorplanredraw: [
+    {
+      src: '/images/floorplan-redraw-example.webp',
+      caption: 'Floorplan redraw — before & after',
+    },
+  ],
   // Scoped to the Floor Plan + Site Plan bundle card only — shows the real
   // combined deliverable where the site plan sits on the same sheet as the
   // floor plan (not a standalone document).
@@ -135,6 +143,7 @@ const titles: Record<string, string> = {
   staging: 'Virtual staging',
   floorplans: 'Floor plans',
   floorplansingle: 'Floor Plan',
+  floorplanredraw: 'Floorplan Redraw',
   floorplanbundle: 'Floor Plan + Site Plan',
 };
 
