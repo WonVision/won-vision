@@ -103,6 +103,18 @@ const galleries: Record<string, Media[]> = {
   // on the standalone Floor Plan + Redraw cards (handled by the length
   // guard in inject()).
   floorplans: [],
+  // Scoped to the standalone Floor Plan card only. New plan first; the
+  // previous example is kept here so it stays available in Examples.
+  floorplansingle: [
+    {
+      src: '/images/floor-plan-2.webp',
+      caption: 'Floor plan — ground & first floor',
+    },
+    {
+      src: '/images/floor-plan.webp',
+      caption: 'Floor plan',
+    },
+  ],
   // Scoped to the Floor Plan + Site Plan bundle card only — shows the real
   // combined deliverable where the site plan sits on the same sheet as the
   // floor plan (not a standalone document).
@@ -122,6 +134,7 @@ const titles: Record<string, string> = {
   drone: 'Aerial / drone',
   staging: 'Virtual staging',
   floorplans: 'Floor plans',
+  floorplansingle: 'Floor Plan',
   floorplanbundle: 'Floor Plan + Site Plan',
 };
 

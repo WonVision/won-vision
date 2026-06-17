@@ -1063,12 +1063,13 @@ export default function BookPage() {
               data-pkg="floor-plan"
               data-cats="floorplan"
               data-pkg-name="Floor Plan"
-              data-pkg-img="/images/floor-plan.webp"
-              data-tiers='{"floor":{"label":"Floor Plan","cartName":"Floor Plan","title":"Floor Plan","desc":"A clean 2D floor plan with dimensions, room labels and a north arrow.","price":149,"img":"/images/floor-plan.webp","categories":["floorplan"]},"site":{"label":"Site Plan","cartName":"Site Plan","title":"Site Plan","desc":"A standalone site plan with boundaries, orientation and lot dimensions.","price":49,"img":"/images/site-plan.webp","categories":["siteplan"]}}'
+              data-pkg-img="/images/floor-plan-2.webp"
+              data-gallery="floorplansingle"
+              data-tiers='{"floor":{"label":"Floor Plan","cartName":"Floor Plan","title":"Floor Plan","desc":"A clean 2D floor plan with dimensions, room labels and a north arrow.","price":149,"img":"/images/floor-plan-2.webp","categories":["floorplan"]},"site":{"label":"Site Plan","cartName":"Site Plan","title":"Site Plan","desc":"A standalone site plan with boundaries, orientation and lot dimensions.","price":49,"img":"/images/site-plan.webp","categories":["siteplan"]}}'
             >
               <div className="pkg-card__media">
                 <span className="pkg-card__tag" data-pkg-tag>Plan</span>
-                <div className="pkg-card__media__img" data-pkg-media style={{ backgroundImage: "url('/images/floor-plan.webp')" }}></div>
+                <div className="pkg-card__media__img" data-pkg-media style={{ backgroundImage: "url('/images/floor-plan-2.webp')" }}></div>
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name" data-pkg-title>Floor Plan</h4>
