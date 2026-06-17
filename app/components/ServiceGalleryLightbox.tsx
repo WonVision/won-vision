@@ -100,8 +100,18 @@ const galleries: Record<string, Media[]> = {
   ],
   // Floor plan render examples land here once we have delivered assets to
   // showcase. Until then the empty array suppresses the Examples button
-  // on the floor-plan section (handled by the length guard in inject()).
+  // on the standalone Floor Plan + Redraw cards (handled by the length
+  // guard in inject()).
   floorplans: [],
+  // Scoped to the Floor Plan + Site Plan bundle card only — shows the real
+  // combined deliverable where the site plan sits on the same sheet as the
+  // floor plan (not a standalone document).
+  floorplanbundle: [
+    {
+      src: '/images/floor-site-plan-example.webp',
+      caption: 'Floor plan + site plan — one connected sheet',
+    },
+  ],
 };
 
 const titles: Record<string, string> = {
@@ -112,6 +122,7 @@ const titles: Record<string, string> = {
   drone: 'Aerial / drone',
   staging: 'Virtual staging',
   floorplans: 'Floor plans',
+  floorplanbundle: 'Floor Plan + Site Plan',
 };
 
 const ICON_SVG =

@@ -948,8 +948,18 @@ export default function BookPage() {
 
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Photo to Video" data-price="99" data-desc="Turn your listing photos into a short AI-generated video. Subtle motion, cinematic feel, ready for socials and portals — the budget-friendly way to add motion to your listing." data-img="/images/cinematic.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/cinematic.webp')" }}></div></div>
+            <article className="svc-card" data-svc="Photo to Video" data-price="99" data-desc="Turn your listing photos into a short AI-generated video. Subtle motion, cinematic feel, ready for socials and portals — the budget-friendly way to add motion to your listing." data-img="/images/property-highlight-poster.webp">
+              <div className="svc-card__media">
+                <video
+                  src="/video/property-highlight-loop.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.94)' }}
+                />
+              </div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Photo to Video</h4>
@@ -966,7 +976,7 @@ export default function BookPage() {
             <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/cinematic.webp" data-gallery="highlight">
               <div className="svc-card__media">
                 <video
-                  src="/video/property-highlight-loop.mp4"
+                  src="/video/property-highlight-2-loop.mp4"
                   autoPlay
                   loop
                   muted
@@ -1069,12 +1079,12 @@ export default function BookPage() {
               </div>
             </article>
 
-            <article className="svc-card" data-svc="Floor Plan + Site Plan" data-price="189" data-desc="Floor plan and site plan bundled together — full 2D floor plan with dimensions plus boundaries, orientation and lot dimensions." data-img="/images/floor-plan.webp">
-              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/floor-plan.webp')" }}></div></div>
+            <article className="svc-card" data-svc="Floor Plan + Site Plan" data-price="189" data-desc="Floor plan and site plan on one connected sheet — a full 2D floor plan with dimensions, with the site plan (boundaries, orientation and lot dimensions) drawn onto the same plan. The site plan is included with the floor plan here, not a standalone document." data-img="/images/floor-site-plan-example.webp" data-gallery="floorplanbundle">
+              <div className="svc-card__media"><div className="svc-card__media__img" style={{ backgroundImage: "url('/images/floor-site-plan-example.webp')" }}></div></div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
                 <h4 className="svc-card__name">Floor Plan + Site Plan</h4>
-                <p className="svc-card__desc">Both deliverables together — 2D floor plan plus a standalone site plan.</p>
+                <p className="svc-card__desc">Floor plan and site plan on one connected sheet — the site plan is included with the floor plan, not a standalone document.</p>
                 <div className="svc-card__foot"><span className="svc-card__price">$189</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
