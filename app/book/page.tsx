@@ -387,6 +387,16 @@ export default function BookPage() {
     #cat-photography .pkg-card__media{height:clamp(260px, 70vw, 420px)}
   }
 
+  /* Floor plans & site plan: show the WHOLE plan (incl. footer/disclaimer) —
+     contain not cover, so nothing is cropped off the bottom. White letterbox
+     since the plans sit on white. */
+  #cat-floorplans .svc-card__media__img,
+  #cat-floorplans .pkg-card__media__img{
+    background-size:contain;background-repeat:no-repeat;background-color:#fff;
+  }
+  #cat-floorplans .svc-card__media,
+  #cat-floorplans .pkg-card__media{background:#fff}
+
   /* Packages section: pin tiers/price/button to the bottom so they line up across Essential / Signature / Cinematic */
   #cat-packages .pkg-card__body{display:flex;flex-direction:column}
   #cat-packages .pkg-card__tiers{margin-top:auto}
