@@ -302,12 +302,12 @@ export default function GalleryPage() {
             </div>
           </article>
 
-          {/* Video — cinematic listing film · 465 Seventh Avenue (Barry Plant), plays inline */}
+          {/* Video — cinematic listing film, plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Cinematic">
             <video
-              src="/video/cinematic-465.mp4"
-              poster="/images/cinematic-465-poster.webp"
+              src="/video/cinematic-v4.mp4"
+              poster="/images/cinematic-v4-poster.webp"
               controls
               preload="metadata"
               playsInline
@@ -317,9 +317,24 @@ export default function GalleryPage() {
             </div>
           </article>
 
-          {/* Video — cinematic listing film · 54 Baden Powell Drive, Tarneit (Harcourts), plays inline */}
-          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
-                   data-place="Won Vision · Cinematic">
+          {/* Video — property highlight film · 465 Seventh Avenue (Barry Plant), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/cinematic-465.mp4"
+              poster="/images/cinematic-465-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film · 54 Baden Powell Drive, Tarneit (Harcourts), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
             <video
               src="/video/cinematic-baden.mp4"
               poster="/images/cinematic-baden-poster.webp"
@@ -328,7 +343,7 @@ export default function GalleryPage() {
               playsInline
             />
             <div className="gallery__item__caption">
-              <p className="tags">Cinematic video</p>
+              <p className="tags">Property highlight</p>
             </div>
           </article>
 
@@ -368,6 +383,36 @@ export default function GalleryPage() {
             <video
               src="/video/property-highlight-2.mp4"
               poster="/images/property-highlight-2-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-3.mp4"
+              poster="/images/property-highlight-3-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-4.mp4"
+              poster="/images/property-highlight-4-poster.webp"
               controls
               preload="metadata"
               playsInline

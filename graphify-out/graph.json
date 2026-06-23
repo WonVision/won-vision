@@ -6,10 +6,10 @@
     {
       "label": "next-env.d.ts",
       "file_type": "code",
-      "source_file": "/Users/kiranc/Code/won-media/next-env.d.ts",
+      "source_file": "next-env.d.ts",
       "source_location": "L1",
-      "id": "users_kiranc_code_won_media_next_env_d_ts",
-      "community": 23,
+      "id": "next_env_d_ts",
+      "community": 28,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "/Users/kiranc/Code/won-media/playwright.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_playwright_config_ts",
-      "community": 24,
+      "community": 29,
       "norm_label": "playwright.config.ts"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "/Users/kiranc/Code/won-media/drizzle.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_drizzle_config_ts",
-      "community": 25,
+      "community": 30,
       "norm_label": "drizzle.config.ts"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "/Users/kiranc/Code/won-media/vitest.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_vitest_config_ts",
-      "community": 26,
+      "community": 31,
       "norm_label": "vitest.config.ts"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "/Users/kiranc/Code/won-media/next.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_next_config_ts",
-      "community": 27,
+      "community": 32,
       "norm_label": "next.config.ts"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/fonts.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_fonts_ts",
-      "community": 28,
+      "community": 33,
       "norm_label": "fonts.ts"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L1",
       "id": "app_layout_tsx",
-      "community": 13,
+      "community": 17,
       "norm_label": "layout.tsx"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L20",
       "id": "app_layout_rootlayout",
-      "community": 13,
+      "community": 17,
       "norm_label": "rootlayout()"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "app/page.tsx",
       "source_location": "L1",
       "id": "app_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "app/privacy/page.tsx",
       "source_location": "L1",
       "id": "app_privacy_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "app/gallery/page.tsx",
       "source_location": "L1",
       "id": "app_gallery_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "app/terms/page.tsx",
       "source_location": "L1",
       "id": "app_terms_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "app/terms/page.tsx",
       "source_location": "L12",
       "id": "terms_page_termspage",
-      "community": 0,
+      "community": 3,
       "norm_label": "termspage()"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "app/operate/page.tsx",
       "source_location": "L1",
       "id": "app_operate_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -135,34 +135,34 @@
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
       "source_location": "L1",
       "id": "app_components_servicegallerylightbox_tsx",
-      "community": 6,
+      "community": 8,
       "norm_label": "servicegallerylightbox.tsx"
     },
     {
       "label": "inject()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L81",
+      "source_location": "L167",
       "id": "components_servicegallerylightbox_inject",
-      "community": 6,
+      "community": 8,
       "norm_label": "inject()"
     },
     {
       "label": "handler()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L118",
+      "source_location": "L204",
       "id": "components_servicegallerylightbox_handler",
-      "community": 6,
+      "community": 8,
       "norm_label": "handler()"
     },
     {
       "label": "esc()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L128",
+      "source_location": "L214",
       "id": "components_servicegallerylightbox_esc",
-      "community": 6,
+      "community": 8,
       "norm_label": "esc()"
     },
     {
@@ -171,7 +171,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/Wordmark.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_wordmark_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "wordmark.tsx"
     },
     {
@@ -180,7 +180,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/Wordmark.tsx",
       "source_location": "L10",
       "id": "components_wordmark_wordmark",
-      "community": 0,
+      "community": 3,
       "norm_label": "wordmark()"
     },
     {
@@ -189,26 +189,53 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/WonVisionLoader.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_wonvisionloader_tsx",
-      "community": 29,
+      "community": 34,
       "norm_label": "wonvisionloader.tsx"
     },
     {
       "label": "LoaderGate.tsx",
       "file_type": "code",
-      "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
+      "source_file": "app/components/LoaderGate.tsx",
       "source_location": "L1",
-      "id": "users_kiranc_code_won_media_app_components_loadergate_tsx",
+      "id": "app_components_loadergate_tsx",
       "community": 14,
       "norm_label": "loadergate.tsx"
     },
     {
+      "label": "unlockScroll()",
+      "file_type": "code",
+      "source_file": "app/components/LoaderGate.tsx",
+      "source_location": "L10",
+      "id": "components_loadergate_unlockscroll",
+      "community": 14,
+      "norm_label": "unlockscroll()"
+    },
+    {
       "label": "LoaderGate()",
       "file_type": "code",
-      "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
-      "source_location": "L8",
+      "source_file": "app/components/LoaderGate.tsx",
+      "source_location": "L12",
       "id": "components_loadergate_loadergate",
       "community": 14,
       "norm_label": "loadergate()"
+    },
+    {
+      "label": "ClientLogos.tsx",
+      "file_type": "code",
+      "source_file": "app/components/ClientLogos.tsx",
+      "source_location": "L1",
+      "id": "app_components_clientlogos_tsx",
+      "community": 18,
+      "norm_label": "clientlogos.tsx"
+    },
+    {
+      "label": "ClientLogos()",
+      "file_type": "code",
+      "source_file": "app/components/ClientLogos.tsx",
+      "source_location": "L35",
+      "id": "components_clientlogos_clientlogos",
+      "community": 18,
+      "norm_label": "clientlogos()"
     },
     {
       "label": "ServicesEditorial.tsx",
@@ -216,7 +243,7 @@
       "source_file": "app/components/ServicesEditorial.tsx",
       "source_location": "L1",
       "id": "app_components_serviceseditorial_tsx",
-      "community": 30,
+      "community": 35,
       "norm_label": "serviceseditorial.tsx"
     },
     {
@@ -225,7 +252,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L1",
       "id": "app_components_beforeafterslider_tsx",
-      "community": 7,
+      "community": 9,
       "norm_label": "beforeafterslider.tsx"
     },
     {
@@ -234,7 +261,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L41",
       "id": "components_beforeafterslider_onpointerdown",
-      "community": 7,
+      "community": 9,
       "norm_label": "onpointerdown()"
     },
     {
@@ -243,7 +270,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L46",
       "id": "components_beforeafterslider_onpointermove",
-      "community": 7,
+      "community": 9,
       "norm_label": "onpointermove()"
     },
     {
@@ -252,7 +279,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L50",
       "id": "components_beforeafterslider_onpointerup",
-      "community": 7,
+      "community": 9,
       "norm_label": "onpointerup()"
     },
     {
@@ -261,7 +288,7 @@
       "source_file": "app/components/BeforeAfterSlider.tsx",
       "source_location": "L55",
       "id": "components_beforeafterslider_onkeydown",
-      "community": 7,
+      "community": 9,
       "norm_label": "onkeydown()"
     },
     {
@@ -270,7 +297,7 @@
       "source_file": "app/components/OperateHero.tsx",
       "source_location": "L1",
       "id": "app_components_operatehero_tsx",
-      "community": 9,
+      "community": 11,
       "norm_label": "operatehero.tsx"
     },
     {
@@ -279,7 +306,7 @@
       "source_file": "app/components/OperateHero.tsx",
       "source_location": "L1",
       "id": "components_operatehero_operatehero",
-      "community": 9,
+      "community": 11,
       "norm_label": "operatehero()"
     },
     {
@@ -288,16 +315,16 @@
       "source_file": "app/components/ProcessStepper.tsx",
       "source_location": "L1",
       "id": "app_components_processstepper_tsx",
-      "community": 15,
+      "community": 19,
       "norm_label": "processstepper.tsx"
     },
     {
       "label": "ProcessStepper()",
       "file_type": "code",
       "source_file": "app/components/ProcessStepper.tsx",
-      "source_location": "L29",
+      "source_location": "L34",
       "id": "components_processstepper_processstepper",
-      "community": 15,
+      "community": 19,
       "norm_label": "processstepper()"
     },
     {
@@ -306,7 +333,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/WonVisionMark.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_wonvisionmark_tsx",
-      "community": 31,
+      "community": 36,
       "norm_label": "wonvisionmark.tsx"
     },
     {
@@ -315,7 +342,7 @@
       "source_file": "app/components/OperateConveyor.tsx",
       "source_location": "L1",
       "id": "app_components_operateconveyor_tsx",
-      "community": 8,
+      "community": 10,
       "norm_label": "operateconveyor.tsx"
     },
     {
@@ -324,7 +351,7 @@
       "source_file": "app/components/OperateConveyor.tsx",
       "source_location": "L96",
       "id": "components_operateconveyor_onscroll",
-      "community": 8,
+      "community": 10,
       "norm_label": "onscroll()"
     },
     {
@@ -333,7 +360,7 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L1",
       "id": "app_components_spareveal_tsx",
-      "community": 16,
+      "community": 20,
       "norm_label": "spareveal.tsx"
     },
     {
@@ -342,8 +369,44 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L18",
       "id": "components_spareveal_spareveal",
-      "community": 16,
+      "community": 20,
       "norm_label": "spareveal()"
+    },
+    {
+      "label": "EditingDetailsSection.tsx",
+      "file_type": "code",
+      "source_file": "app/book/EditingDetailsSection.tsx",
+      "source_location": "L1",
+      "id": "app_book_editingdetailssection_tsx",
+      "community": 12,
+      "norm_label": "editingdetailssection.tsx"
+    },
+    {
+      "label": "patch()",
+      "file_type": "code",
+      "source_file": "app/book/EditingDetailsSection.tsx",
+      "source_location": "L43",
+      "id": "book_editingdetailssection_patch",
+      "community": 12,
+      "norm_label": "patch()"
+    },
+    {
+      "label": "labelFor()",
+      "file_type": "code",
+      "source_file": "app/book/EditingDetailsSection.tsx",
+      "source_location": "L47",
+      "id": "book_editingdetailssection_labelfor",
+      "community": 12,
+      "norm_label": "labelfor()"
+    },
+    {
+      "label": "pick()",
+      "file_type": "code",
+      "source_file": "app/book/EditingDetailsSection.tsx",
+      "source_location": "L250",
+      "id": "book_editingdetailssection_pick",
+      "community": 12,
+      "norm_label": "pick()"
     },
     {
       "label": "page.tsx",
@@ -351,8 +414,89 @@
       "source_file": "app/book/page.tsx",
       "source_location": "L1",
       "id": "app_book_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
+    },
+    {
+      "label": "VirtualEditingSection.tsx",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L1",
+      "id": "app_book_virtualeditingsection_tsx",
+      "community": 0,
+      "norm_label": "virtualeditingsection.tsx"
+    },
+    {
+      "label": "aud()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L19",
+      "id": "book_virtualeditingsection_aud",
+      "community": 0,
+      "norm_label": "aud()"
+    },
+    {
+      "label": "blankState()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L23",
+      "id": "book_virtualeditingsection_blankstate",
+      "community": 0,
+      "norm_label": "blankstate()"
+    },
+    {
+      "label": "initialState()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L34",
+      "id": "book_virtualeditingsection_initialstate",
+      "community": 0,
+      "norm_label": "initialstate()"
+    },
+    {
+      "label": "syncRooms()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L43",
+      "id": "book_virtualeditingsection_syncrooms",
+      "community": 0,
+      "norm_label": "syncrooms()"
+    },
+    {
+      "label": "patch()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L63",
+      "id": "book_virtualeditingsection_patch",
+      "community": 0,
+      "norm_label": "patch()"
+    },
+    {
+      "label": "setMode()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L67",
+      "id": "book_virtualeditingsection_setmode",
+      "community": 0,
+      "norm_label": "setmode()"
+    },
+    {
+      "label": "bump()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L71",
+      "id": "book_virtualeditingsection_bump",
+      "community": 0,
+      "norm_label": "bump()"
+    },
+    {
+      "label": "toggle()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L78",
+      "id": "book_virtualeditingsection_toggle",
+      "community": 0,
+      "norm_label": "toggle()"
     },
     {
       "label": "page.tsx",
@@ -360,7 +504,7 @@
       "source_file": "app/book/schedule/page.tsx",
       "source_location": "L1",
       "id": "app_book_schedule_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -369,7 +513,7 @@
       "source_file": "app/book/confirmation/page.tsx",
       "source_location": "L1",
       "id": "app_book_confirmation_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -378,7 +522,7 @@
       "source_file": "app/book/checkout/page.tsx",
       "source_location": "L1",
       "id": "app_book_checkout_page_tsx",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -387,79 +531,124 @@
       "source_file": "app/book/cart/page.tsx",
       "source_location": "L1",
       "id": "app_book_cart_page_tsx",
-      "community": 3,
+      "community": 2,
       "norm_label": "page.tsx"
+    },
+    {
+      "label": "editLabel()",
+      "file_type": "code",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L15",
+      "id": "cart_page_editlabel",
+      "community": 2,
+      "norm_label": "editlabel()"
+    },
+    {
+      "label": "editScope()",
+      "file_type": "code",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L18",
+      "id": "cart_page_editscope",
+      "community": 2,
+      "norm_label": "editscope()"
+    },
+    {
+      "label": "readEditing()",
+      "file_type": "code",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L23",
+      "id": "cart_page_readediting",
+      "community": 2,
+      "norm_label": "readediting()"
+    },
+    {
+      "label": "writeEditing()",
+      "file_type": "code",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L32",
+      "id": "cart_page_writeediting",
+      "community": 2,
+      "norm_label": "writeediting()"
     },
     {
       "label": "readCart()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L27",
+      "source_location": "L52",
       "id": "cart_page_readcart",
-      "community": 3,
+      "community": 2,
       "norm_label": "readcart()"
     },
     {
       "label": "writeCart()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L36",
+      "source_location": "L61",
       "id": "cart_page_writecart",
-      "community": 3,
+      "community": 2,
       "norm_label": "writecart()"
     },
     {
       "label": "fmt()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L39",
+      "source_location": "L64",
       "id": "cart_page_fmt",
-      "community": 3,
+      "community": 2,
       "norm_label": "fmt()"
     },
     {
       "label": "PlanIcon()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L41",
+      "source_location": "L66",
       "id": "cart_page_planicon",
-      "community": 3,
+      "community": 2,
       "norm_label": "planicon()"
     },
     {
       "label": "update()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L69",
+      "source_location": "L102",
       "id": "cart_page_update",
-      "community": 3,
+      "community": 2,
       "norm_label": "update()"
     },
     {
       "label": "remove()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L70",
+      "source_location": "L103",
       "id": "cart_page_remove",
-      "community": 3,
+      "community": 2,
       "norm_label": "remove()"
     },
     {
-      "label": "addReel()",
+      "label": "removeEditing()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L82",
-      "id": "cart_page_addreel",
-      "community": 3,
-      "norm_label": "addreel()"
+      "source_location": "L104",
+      "id": "cart_page_removeediting",
+      "community": 2,
+      "norm_label": "removeediting()"
+    },
+    {
+      "label": "addPhotoToVideo()",
+      "file_type": "code",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L118",
+      "id": "cart_page_addphototovideo",
+      "community": 2,
+      "norm_label": "addphototovideo()"
     },
     {
       "label": "addSite()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L83",
+      "source_location": "L119",
       "id": "cart_page_addsite",
-      "community": 3,
+      "community": 2,
       "norm_label": "addsite()"
     },
     {
@@ -468,7 +657,7 @@
       "source_file": "app/api/places/autocomplete/route.ts",
       "source_location": "L1",
       "id": "app_api_places_autocomplete_route_ts",
-      "community": 17,
+      "community": 21,
       "norm_label": "route.ts"
     },
     {
@@ -477,7 +666,7 @@
       "source_file": "app/api/places/autocomplete/route.ts",
       "source_location": "L18",
       "id": "autocomplete_route_get",
-      "community": 17,
+      "community": 21,
       "norm_label": "get()"
     },
     {
@@ -486,7 +675,7 @@
       "source_file": "app/api/places/details/route.ts",
       "source_location": "L1",
       "id": "app_api_places_details_route_ts",
-      "community": 18,
+      "community": 22,
       "norm_label": "route.ts"
     },
     {
@@ -495,8 +684,26 @@
       "source_file": "app/api/places/details/route.ts",
       "source_location": "L6",
       "id": "details_route_get",
-      "community": 18,
+      "community": 22,
       "norm_label": "get()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/book/upload-ref/route.ts",
+      "source_location": "L1",
+      "id": "app_api_book_upload_ref_route_ts",
+      "community": 23,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "app/api/book/upload-ref/route.ts",
+      "source_location": "L9",
+      "id": "upload_ref_route_post",
+      "community": 23,
+      "norm_label": "post()"
     },
     {
       "label": "dropbox-paths.test.ts",
@@ -504,8 +711,26 @@
       "source_file": "tests/dropbox-paths.test.ts",
       "source_location": "L1",
       "id": "tests_dropbox_paths_test_ts",
-      "community": 5,
+      "community": 7,
       "norm_label": "dropbox-paths.test.ts"
+    },
+    {
+      "label": "booking-editing.test.ts",
+      "file_type": "code",
+      "source_file": "tests/booking-editing.test.ts",
+      "source_location": "L1",
+      "id": "tests_booking_editing_test_ts",
+      "community": 0,
+      "norm_label": "booking-editing.test.ts"
+    },
+    {
+      "label": "blank()",
+      "file_type": "code",
+      "source_file": "tests/booking-editing.test.ts",
+      "source_location": "L12",
+      "id": "tests_booking_editing_test_blank",
+      "community": 0,
+      "norm_label": "blank()"
     },
     {
       "label": "editor-adjustments.test.ts",
@@ -513,7 +738,7 @@
       "source_file": "tests/editor-adjustments.test.ts",
       "source_location": "L1",
       "id": "tests_editor_adjustments_test_ts",
-      "community": 32,
+      "community": 37,
       "norm_label": "editor-adjustments.test.ts"
     },
     {
@@ -522,7 +747,7 @@
       "source_file": "tests/editor-variations.test.ts",
       "source_location": "L1",
       "id": "tests_editor_variations_test_ts",
-      "community": 1,
+      "community": 4,
       "norm_label": "editor-variations.test.ts"
     },
     {
@@ -531,7 +756,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/styles.test.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_styles_test_ts",
-      "community": 11,
+      "community": 15,
       "norm_label": "styles.test.ts"
     },
     {
@@ -540,7 +765,7 @@
       "source_file": "tests/fal-prompts.test.ts",
       "source_location": "L1",
       "id": "tests_fal_prompts_test_ts",
-      "community": 1,
+      "community": 4,
       "norm_label": "fal-prompts.test.ts"
     },
     {
@@ -549,7 +774,7 @@
       "source_file": "tests/editor-presets.test.ts",
       "source_location": "L1",
       "id": "tests_editor_presets_test_ts",
-      "community": 12,
+      "community": 16,
       "norm_label": "editor-presets.test.ts"
     },
     {
@@ -558,7 +783,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/admin/auth.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_admin_auth_spec_ts",
-      "community": 33,
+      "community": 38,
       "norm_label": "auth.spec.ts"
     },
     {
@@ -567,7 +792,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/redirects.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_redirects_spec_ts",
-      "community": 34,
+      "community": 39,
       "norm_label": "redirects.spec.ts"
     },
     {
@@ -576,7 +801,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/smoke.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_smoke_spec_ts",
-      "community": 35,
+      "community": 40,
       "norm_label": "smoke.spec.ts"
     },
     {
@@ -585,7 +810,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-confirmation.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_confirmation_spec_ts",
-      "community": 36,
+      "community": 41,
       "norm_label": "book-confirmation.spec.ts"
     },
     {
@@ -594,7 +819,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-schedule.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_schedule_spec_ts",
-      "community": 37,
+      "community": 42,
       "norm_label": "book-schedule.spec.ts"
     },
     {
@@ -603,7 +828,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/home.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_home_spec_ts",
-      "community": 38,
+      "community": 43,
       "norm_label": "home.spec.ts"
     },
     {
@@ -612,7 +837,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-checkout.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_checkout_spec_ts",
-      "community": 39,
+      "community": 44,
       "norm_label": "book-checkout.spec.ts"
     },
     {
@@ -621,7 +846,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/gallery.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_gallery_spec_ts",
-      "community": 40,
+      "community": 45,
       "norm_label": "gallery.spec.ts"
     },
     {
@@ -630,7 +855,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_spec_ts",
-      "community": 41,
+      "community": 46,
       "norm_label": "book.spec.ts"
     },
     {
@@ -639,8 +864,161 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/db/schema.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_db_schema_spec_ts",
-      "community": 42,
+      "community": 47,
       "norm_label": "schema.spec.ts"
+    },
+    {
+      "label": "build_listing_video_scripts.py",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L1",
+      "id": "docs_build_listing_video_scripts_py",
+      "community": 1,
+      "norm_label": "build_listing_video_scripts.py"
+    },
+    {
+      "label": "set_font()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L35",
+      "id": "docs_build_listing_video_scripts_set_font",
+      "community": 1,
+      "norm_label": "set_font()"
+    },
+    {
+      "label": "p()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L55",
+      "id": "docs_build_listing_video_scripts_p",
+      "community": 1,
+      "norm_label": "p()"
+    },
+    {
+      "label": "eyebrow()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L62",
+      "id": "docs_build_listing_video_scripts_eyebrow",
+      "community": 1,
+      "norm_label": "eyebrow()"
+    },
+    {
+      "label": "display()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L70",
+      "id": "docs_build_listing_video_scripts_display",
+      "community": 1,
+      "norm_label": "display()"
+    },
+    {
+      "label": "h2()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L80",
+      "id": "docs_build_listing_video_scripts_h2",
+      "community": 1,
+      "norm_label": "h2()"
+    },
+    {
+      "label": "h3()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L89",
+      "id": "docs_build_listing_video_scripts_h3",
+      "community": 1,
+      "norm_label": "h3()"
+    },
+    {
+      "label": "body()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L97",
+      "id": "docs_build_listing_video_scripts_body",
+      "community": 1,
+      "norm_label": "body()"
+    },
+    {
+      "label": "quote()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L103",
+      "id": "docs_build_listing_video_scripts_quote",
+      "community": 1,
+      "norm_label": "quote()"
+    },
+    {
+      "label": "script_block()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L118",
+      "id": "docs_build_listing_video_scripts_script_block",
+      "community": 1,
+      "norm_label": "script_block()"
+    },
+    {
+      "label": "rule()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L127",
+      "id": "docs_build_listing_video_scripts_rule",
+      "community": 1,
+      "norm_label": "rule()"
+    },
+    {
+      "label": "bullet()",
+      "file_type": "code",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L142",
+      "id": "docs_build_listing_video_scripts_bullet",
+      "community": 1,
+      "norm_label": "bullet()"
+    },
+    {
+      "label": "Build Won Vision \u2014 Listing Video Scripts.docx Branded per docs/BRAND.md: Sora, p",
+      "file_type": "rationale",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L1",
+      "id": "docs_build_listing_video_scripts_rationale_1",
+      "community": 1,
+      "norm_label": "build won vision \u2014 listing video scripts.docx branded per docs/brand.md: sora, p"
+    },
+    {
+      "label": "ALL CAPS Sora 500 \u2014 H1 / brand voice carrier.",
+      "file_type": "rationale",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L71",
+      "id": "docs_build_listing_video_scripts_rationale_71",
+      "community": 1,
+      "norm_label": "all caps sora 500 \u2014 h1 / brand voice carrier."
+    },
+    {
+      "label": "Pull-quote \u2014 for verbatim transcript lines.",
+      "file_type": "rationale",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L104",
+      "id": "docs_build_listing_video_scripts_rationale_104",
+      "community": 1,
+      "norm_label": "pull-quote \u2014 for verbatim transcript lines."
+    },
+    {
+      "label": "Fill-in script \u2014 same indent as quotes, slightly larger.",
+      "file_type": "rationale",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L119",
+      "id": "docs_build_listing_video_scripts_rationale_119",
+      "community": 1,
+      "norm_label": "fill-in script \u2014 same indent as quotes, slightly larger."
+    },
+    {
+      "label": "Black 1px horizontal rule via bottom border.",
+      "file_type": "rationale",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L128",
+      "id": "docs_build_listing_video_scripts_rationale_128",
+      "community": 1,
+      "norm_label": "black 1px horizontal rule via bottom border."
     },
     {
       "label": "build_brand_book.py",
@@ -648,7 +1026,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_docs_build_brand_book_py",
-      "community": 2,
+      "community": 5,
       "norm_label": "build_brand_book.py"
     },
     {
@@ -657,7 +1035,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L26",
       "id": "docs_build_brand_book_shade_cell",
-      "community": 2,
+      "community": 5,
       "norm_label": "shade_cell()"
     },
     {
@@ -666,7 +1044,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L36",
       "id": "docs_build_brand_book_remove_table_borders",
-      "community": 2,
+      "community": 5,
       "norm_label": "remove_table_borders()"
     },
     {
@@ -675,7 +1053,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L50",
       "id": "docs_build_brand_book_set_run_font",
-      "community": 2,
+      "community": 5,
       "norm_label": "set_run_font()"
     },
     {
@@ -684,7 +1062,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L74",
       "id": "docs_build_brand_book_add_para",
-      "community": 2,
+      "community": 5,
       "norm_label": "add_para()"
     },
     {
@@ -693,7 +1071,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L92",
       "id": "docs_build_brand_book_add_eyebrow",
-      "community": 2,
+      "community": 5,
       "norm_label": "add_eyebrow()"
     },
     {
@@ -702,7 +1080,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L98",
       "id": "docs_build_brand_book_add_section_title",
-      "community": 2,
+      "community": 5,
       "norm_label": "add_section_title()"
     },
     {
@@ -711,7 +1089,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L105",
       "id": "docs_build_brand_book_hr",
-      "community": 2,
+      "community": 5,
       "norm_label": "hr()"
     },
     {
@@ -720,7 +1098,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L118",
       "id": "docs_build_brand_book_page_break",
-      "community": 2,
+      "community": 5,
       "norm_label": "page_break()"
     },
     {
@@ -729,7 +1107,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L1",
       "id": "docs_build_brand_book_rationale_1",
-      "community": 2,
+      "community": 5,
       "norm_label": "generates won vision brand book.docx \u2014 a designer-facing brand document with the"
     },
     {
@@ -738,7 +1116,7 @@
       "source_file": "/Users/kiranc/Code/won-media/docs/build_brand_book.py",
       "source_location": "L27",
       "id": "docs_build_brand_book_rationale_27",
-      "community": 2,
+      "community": 5,
       "norm_label": "fill a table cell with a flat colour."
     },
     {
@@ -747,7 +1125,7 @@
       "source_file": "public/script.js",
       "source_location": "L1",
       "id": "public_script_js",
-      "community": 8,
+      "community": 10,
       "norm_label": "script.js"
     },
     {
@@ -756,7 +1134,7 @@
       "source_file": "public/script.js",
       "source_location": "L5",
       "id": "public_script_wvboot",
-      "community": 8,
+      "community": 10,
       "norm_label": "__wvboot()"
     },
     {
@@ -765,7 +1143,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_scripts_seed_editor_ts",
-      "community": 19,
+      "community": 24,
       "norm_label": "seed-editor.ts"
     },
     {
@@ -774,7 +1152,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L3",
       "id": "scripts_seed_editor_main",
-      "community": 19,
+      "community": 24,
       "norm_label": "main()"
     },
     {
@@ -783,7 +1161,7 @@
       "source_file": "scripts/dropbox-bootstrap.ts",
       "source_location": "L1",
       "id": "scripts_dropbox_bootstrap_ts",
-      "community": 10,
+      "community": 13,
       "norm_label": "dropbox-bootstrap.ts"
     },
     {
@@ -792,7 +1170,7 @@
       "source_file": "scripts/dropbox-bootstrap.ts",
       "source_location": "L13",
       "id": "scripts_dropbox_bootstrap_exchangeauthcode",
-      "community": 10,
+      "community": 13,
       "norm_label": "exchangeauthcode()"
     },
     {
@@ -801,7 +1179,7 @@
       "source_file": "scripts/dropbox-bootstrap.ts",
       "source_location": "L25",
       "id": "scripts_dropbox_bootstrap_refreshaccesstoken",
-      "community": 10,
+      "community": 13,
       "norm_label": "refreshaccesstoken()"
     },
     {
@@ -810,7 +1188,7 @@
       "source_file": "scripts/dropbox-bootstrap.ts",
       "source_location": "L37",
       "id": "scripts_dropbox_bootstrap_main",
-      "community": 10,
+      "community": 13,
       "norm_label": "main()"
     },
     {
@@ -819,7 +1197,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/blob.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_lib_blob_ts",
-      "community": 20,
+      "community": 25,
       "norm_label": "blob.ts"
     },
     {
@@ -828,7 +1206,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/blob.ts",
       "source_location": "L4",
       "id": "lib_blob_handleclientblobupload",
-      "community": 20,
+      "community": 25,
       "norm_label": "handleclientblobupload()"
     },
     {
@@ -837,7 +1215,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/styles.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_lib_styles_ts",
-      "community": 11,
+      "community": 15,
       "norm_label": "styles.ts"
     },
     {
@@ -846,8 +1224,53 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/styles.ts",
       "source_location": "L11",
       "id": "lib_styles_isstylepreset",
-      "community": 11,
+      "community": 15,
       "norm_label": "isstylepreset()"
+    },
+    {
+      "label": "booking-editing.ts",
+      "file_type": "code",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L1",
+      "id": "lib_booking_editing_ts",
+      "community": 0,
+      "norm_label": "booking-editing.ts"
+    },
+    {
+      "label": "priceForEditing()",
+      "file_type": "code",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L94",
+      "id": "lib_booking_editing_priceforediting",
+      "community": 0,
+      "norm_label": "priceforediting()"
+    },
+    {
+      "label": "clampRoomCount()",
+      "file_type": "code",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L105",
+      "id": "lib_booking_editing_clamproomcount",
+      "community": 0,
+      "norm_label": "clamproomcount()"
+    },
+    {
+      "label": "buildEditingPayload()",
+      "file_type": "code",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L111",
+      "id": "lib_booking_editing_buildeditingpayload",
+      "community": 0,
+      "norm_label": "buildeditingpayload()"
+    },
+    {
+      "label": "summarizeEditingEntry()",
+      "file_type": "code",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L148",
+      "id": "lib_booking_editing_summarizeeditingentry",
+      "community": 0,
+      "norm_label": "summarizeeditingentry()"
     },
     {
       "label": "qa.ts",
@@ -855,7 +1278,7 @@
       "source_file": "lib/gemini/qa.ts",
       "source_location": "L1",
       "id": "lib_gemini_qa_ts",
-      "community": 21,
+      "community": 26,
       "norm_label": "qa.ts"
     },
     {
@@ -864,7 +1287,7 @@
       "source_file": "lib/gemini/qa.ts",
       "source_location": "L29",
       "id": "gemini_qa_qavariant",
-      "community": 21,
+      "community": 26,
       "norm_label": "qavariant()"
     },
     {
@@ -873,7 +1296,7 @@
       "source_file": "lib/fal/prompts.ts",
       "source_location": "L1",
       "id": "lib_fal_prompts_ts",
-      "community": 1,
+      "community": 4,
       "norm_label": "prompts.ts"
     },
     {
@@ -882,7 +1305,7 @@
       "source_file": "lib/fal/prompts.ts",
       "source_location": "L254",
       "id": "fal_prompts_buildprompt",
-      "community": 1,
+      "community": 4,
       "norm_label": "buildprompt()"
     },
     {
@@ -891,7 +1314,7 @@
       "source_file": "lib/fal/client.ts",
       "source_location": "L1",
       "id": "lib_fal_client_ts",
-      "community": 1,
+      "community": 4,
       "norm_label": "client.ts"
     },
     {
@@ -900,7 +1323,7 @@
       "source_file": "lib/fal/client.ts",
       "source_location": "L20",
       "id": "fal_client_pickmodel",
-      "community": 1,
+      "community": 4,
       "norm_label": "pickmodel()"
     },
     {
@@ -909,7 +1332,7 @@
       "source_file": "lib/fal/client.ts",
       "source_location": "L29",
       "id": "fal_client_generate",
-      "community": 1,
+      "community": 4,
       "norm_label": "generate()"
     },
     {
@@ -918,7 +1341,7 @@
       "source_file": "lib/fal/client.ts",
       "source_location": "L64",
       "id": "fal_client_generatefromhelper",
-      "community": 1,
+      "community": 4,
       "norm_label": "generatefromhelper()"
     },
     {
@@ -927,7 +1350,7 @@
       "source_file": "lib/db/schema.ts",
       "source_location": "L1",
       "id": "lib_db_schema_ts",
-      "community": 43,
+      "community": 48,
       "norm_label": "schema.ts"
     },
     {
@@ -936,7 +1359,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/db/index.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_lib_db_index_ts",
-      "community": 44,
+      "community": 49,
       "norm_label": "index.ts"
     },
     {
@@ -945,7 +1368,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L1",
       "id": "lib_dropbox_client_ts",
-      "community": 4,
+      "community": 6,
       "norm_label": "client.ts"
     },
     {
@@ -954,7 +1377,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L7",
       "id": "dropbox_client_getaccesstoken",
-      "community": 4,
+      "community": 6,
       "norm_label": "getaccesstoken()"
     },
     {
@@ -963,7 +1386,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L24",
       "id": "dropbox_client_rpc",
-      "community": 4,
+      "community": 6,
       "norm_label": "rpc()"
     },
     {
@@ -972,7 +1395,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L35",
       "id": "dropbox_client_ensurefolder",
-      "community": 4,
+      "community": 6,
       "norm_label": "ensurefolder()"
     },
     {
@@ -981,7 +1404,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L45",
       "id": "dropbox_client_uploadfromurl",
-      "community": 4,
+      "community": 6,
       "norm_label": "uploadfromurl()"
     },
     {
@@ -990,7 +1413,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L67",
       "id": "dropbox_client_move",
-      "community": 4,
+      "community": 6,
       "norm_label": "move()"
     },
     {
@@ -999,7 +1422,7 @@
       "source_file": "lib/dropbox/client.ts",
       "source_location": "L71",
       "id": "dropbox_client_gettemporarylink",
-      "community": 4,
+      "community": 6,
       "norm_label": "gettemporarylink()"
     },
     {
@@ -1008,7 +1431,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L1",
       "id": "lib_dropbox_paths_ts",
-      "community": 5,
+      "community": 7,
       "norm_label": "paths.ts"
     },
     {
@@ -1017,7 +1440,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L4",
       "id": "dropbox_paths_slugifyaddress",
-      "community": 5,
+      "community": 7,
       "norm_label": "slugifyaddress()"
     },
     {
@@ -1026,7 +1449,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L13",
       "id": "dropbox_paths_buildintakepath",
-      "community": 5,
+      "community": 7,
       "norm_label": "buildintakepath()"
     },
     {
@@ -1035,7 +1458,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L16",
       "id": "dropbox_paths_buildprocessingpath",
-      "community": 5,
+      "community": 7,
       "norm_label": "buildprocessingpath()"
     },
     {
@@ -1044,7 +1467,7 @@
       "source_file": "lib/dropbox/paths.ts",
       "source_location": "L19",
       "id": "dropbox_paths_buildreviewpath",
-      "community": 5,
+      "community": 7,
       "norm_label": "buildreviewpath()"
     },
     {
@@ -1053,7 +1476,7 @@
       "source_file": "lib/editor/sky-variations.ts",
       "source_location": "L1",
       "id": "lib_editor_sky_variations_ts",
-      "community": 1,
+      "community": 4,
       "norm_label": "sky-variations.ts"
     },
     {
@@ -1062,7 +1485,7 @@
       "source_file": "lib/editor/sky-variations.ts",
       "source_location": "L37",
       "id": "editor_sky_variations_buildskyprompt",
-      "community": 1,
+      "community": 4,
       "norm_label": "buildskyprompt()"
     },
     {
@@ -1071,7 +1494,7 @@
       "source_file": "lib/editor/dusk-variations.ts",
       "source_location": "L1",
       "id": "lib_editor_dusk_variations_ts",
-      "community": 1,
+      "community": 4,
       "norm_label": "dusk-variations.ts"
     },
     {
@@ -1080,7 +1503,7 @@
       "source_file": "lib/editor/dusk-variations.ts",
       "source_location": "L36",
       "id": "editor_dusk_variations_buildduskprompt",
-      "community": 1,
+      "community": 4,
       "norm_label": "buildduskprompt()"
     },
     {
@@ -1089,7 +1512,7 @@
       "source_file": "lib/editor/adjustments.ts",
       "source_location": "L1",
       "id": "lib_editor_adjustments_ts",
-      "community": 22,
+      "community": 27,
       "norm_label": "adjustments.ts"
     },
     {
@@ -1098,7 +1521,7 @@
       "source_file": "lib/editor/adjustments.ts",
       "source_location": "L4",
       "id": "editor_adjustments_slider",
-      "community": 22,
+      "community": 27,
       "norm_label": "slider()"
     },
     {
@@ -1107,7 +1530,7 @@
       "source_file": "lib/editor/staging-styles.ts",
       "source_location": "L1",
       "id": "lib_editor_staging_styles_ts",
-      "community": 45,
+      "community": 50,
       "norm_label": "staging-styles.ts"
     },
     {
@@ -1116,7 +1539,7 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L1",
       "id": "lib_editor_presets_ts",
-      "community": 12,
+      "community": 16,
       "norm_label": "presets.ts"
     },
     {
@@ -1125,15 +1548,60 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L51",
       "id": "editor_presets_getpreset",
-      "community": 12,
+      "community": 16,
       "norm_label": "getpreset()"
+    },
+    {
+      "label": "onSelect()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L249",
+      "community": 0,
+      "norm_label": "onselect()",
+      "id": "book_virtualeditingsection_onselect"
+    },
+    {
+      "label": "pick()",
+      "file_type": "code",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L342",
+      "community": 0,
+      "norm_label": "pick()",
+      "id": "book_virtualeditingsection_pick"
+    },
+    {
+      "label": "LoaderGate.tsx",
+      "file_type": "code",
+      "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
+      "source_location": "L1",
+      "community": 14,
+      "norm_label": "loadergate.tsx",
+      "id": "users_kiranc_code_won_media_app_components_loadergate_tsx"
+    },
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "/Users/kiranc/Code/won-media/next-env.d.ts",
+      "source_location": "L1",
+      "community": 51,
+      "norm_label": "next-env.d.ts",
+      "id": "users_kiranc_code_won_media_next_env_d_ts"
+    },
+    {
+      "label": "addReel()",
+      "file_type": "code",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L83",
+      "community": 2,
+      "norm_label": "addreel()",
+      "id": "cart_page_addreel"
     },
     {
       "label": "ServicesEditorial.tsx",
       "file_type": "code",
       "source_file": "/private/tmp/wv-v3/app/components/ServicesEditorial.tsx",
       "source_location": "L1",
-      "community": 46,
+      "community": 52,
       "norm_label": "serviceseditorial.tsx",
       "id": "private_tmp_wv_v3_app_components_serviceseditorial_tsx"
     },
@@ -1142,7 +1610,7 @@
       "file_type": "code",
       "source_file": "/private/tmp/wv-v3/app/components/ServiceGalleryLightbox.tsx",
       "source_location": "L1",
-      "community": 6,
+      "community": 8,
       "norm_label": "servicegallerylightbox.tsx",
       "id": "private_tmp_wv_v3_app_components_servicegallerylightbox_tsx"
     },
@@ -1151,7 +1619,7 @@
       "file_type": "code",
       "source_file": "app/components/OperateConveyor.tsx",
       "source_location": "L95",
-      "community": 8,
+      "community": 10,
       "norm_label": "update()",
       "id": "components_operateconveyor_update"
     },
@@ -1160,7 +1628,7 @@
       "file_type": "code",
       "source_file": "app/operate/page.tsx",
       "source_location": "L21",
-      "community": 0,
+      "community": 3,
       "norm_label": "operatepage()",
       "id": "operate_page_operatepage"
     },
@@ -1169,7 +1637,7 @@
       "file_type": "code",
       "source_file": "app/components/OperateHero.tsx",
       "source_location": "L18",
-      "community": 9,
+      "community": 11,
       "norm_label": "tick()",
       "id": "components_operatehero_tick"
     },
@@ -1178,7 +1646,7 @@
       "file_type": "code",
       "source_file": "app/components/OperateHero.tsx",
       "source_location": "L34",
-      "community": 9,
+      "community": 11,
       "norm_label": "onscroll()",
       "id": "components_operatehero_onscroll"
     },
@@ -1187,7 +1655,7 @@
       "file_type": "code",
       "source_file": "/private/tmp/wv-v3/app/book/page.tsx",
       "source_location": "L1",
-      "community": 0,
+      "community": 3,
       "norm_label": "page.tsx",
       "id": "private_tmp_wv_v3_app_book_page_tsx"
     }
@@ -1417,12 +1885,42 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/components/LoaderGate.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_components_loadergate_tsx",
+      "target": "components_loadergate_unlockscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/LoaderGate.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_components_loadergate_tsx",
+      "target": "components_loadergate_loadergate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "users_kiranc_code_won_media_app_components_loadergate_tsx",
       "target": "components_loadergate_loadergate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/ClientLogos.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_components_clientlogos_tsx",
+      "target": "components_clientlogos_clientlogos"
     },
     {
       "relation": "contains",
@@ -1535,6 +2033,264 @@
       "target": "components_spareveal_spareveal"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/EditingDetailsSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_editingdetailssection_tsx",
+      "target": "lib_booking_editing_summarizeeditingentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/EditingDetailsSection.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_editingdetailssection_tsx",
+      "target": "book_editingdetailssection_patch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/EditingDetailsSection.tsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_editingdetailssection_tsx",
+      "target": "book_editingdetailssection_labelfor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/EditingDetailsSection.tsx",
+      "source_location": "L250",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_editingdetailssection_tsx",
+      "target": "book_editingdetailssection_pick"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "lib_booking_editing_buildeditingpayload"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "lib_booking_editing_clamproomcount"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "lib_booking_editing_priceforediting"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_aud"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_blankstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_initialstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_syncrooms"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_patch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_setmode"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_bump"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_toggle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L249",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_onselect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L300",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_virtualeditingsection_tsx",
+      "target": "book_virtualeditingsection_pick"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "book_virtualeditingsection_initialstate",
+      "target": "book_virtualeditingsection_blankstate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "book_virtualeditingsection_setmode",
+      "target": "book_virtualeditingsection_patch"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "book_virtualeditingsection_bump",
+      "target": "book_virtualeditingsection_patch"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/VirtualEditingSection.tsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "book_virtualeditingsection_toggle",
+      "target": "book_virtualeditingsection_patch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L251",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_cart_page_tsx",
+      "target": "cart_page_editlabel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L193",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_cart_page_tsx",
+      "target": "cart_page_editscope"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_cart_page_tsx",
+      "target": "cart_page_readediting"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_cart_page_tsx",
+      "target": "cart_page_writeediting"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/book/cart/page.tsx",
@@ -1598,11 +2354,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L82",
+      "source_location": "L104",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_book_cart_page_tsx",
-      "target": "cart_page_addreel"
+      "target": "cart_page_removeediting"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_cart_page_tsx",
+      "target": "cart_page_addphototovideo"
     },
     {
       "relation": "contains",
@@ -1613,6 +2379,49 @@
       "confidence_score": 1.0,
       "source": "app_book_cart_page_tsx",
       "target": "cart_page_addsite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_cart_page_tsx",
+      "target": "cart_page_addreel"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L251",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cart_page_editlabel",
+      "target": "cart_page_editscope"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L193",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cart_page_editscope",
+      "target": "cart_page_fmt"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cart_page_removeediting",
+      "target": "cart_page_writeediting"
     },
     {
       "relation": "calls",
@@ -1641,10 +2450,10 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cart_page_addreel",
+      "source": "cart_page_addphototovideo",
       "target": "cart_page_update"
     },
     {
@@ -1670,6 +2479,17 @@
       "target": "cart_page_update"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cart_page_addreel",
+      "target": "cart_page_update"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/api/places/autocomplete/route.ts",
@@ -1688,6 +2508,16 @@
       "confidence_score": 1.0,
       "source": "app_api_places_details_route_ts",
       "target": "details_route_get"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/book/upload-ref/route.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_book_upload_ref_route_ts",
+      "target": "upload_ref_route_post"
     },
     {
       "relation": "imports",
@@ -1732,6 +2562,60 @@
       "confidence_score": 1.0,
       "source": "tests_dropbox_paths_test_ts",
       "target": "dropbox_paths_buildreviewpath"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/booking-editing.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_booking_editing_test_ts",
+      "target": "lib_booking_editing_clamproomcount"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/booking-editing.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_booking_editing_test_ts",
+      "target": "lib_booking_editing_buildeditingpayload"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/booking-editing.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_booking_editing_test_ts",
+      "target": "lib_booking_editing_summarizeeditingentry"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/booking-editing.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_booking_editing_test_ts",
+      "target": "lib_booking_editing_priceforediting"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/booking-editing.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_booking_editing_test_ts",
+      "target": "tests_booking_editing_test_blank"
     },
     {
       "relation": "imports",
@@ -1787,6 +2671,265 @@
       "confidence_score": 1.0,
       "source": "tests_editor_presets_test_ts",
       "target": "editor_presets_getpreset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_p"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_eyebrow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_display"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_h2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_h3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_body"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_quote"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_script_block"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_rule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L142",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_py",
+      "target": "docs_build_listing_video_scripts_bullet"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_rationale_1",
+      "target": "docs_build_listing_video_scripts_py"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_p",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_eyebrow",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_display",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_h2",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_h3",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_body",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_quote",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_script_block",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_bullet",
+      "target": "docs_build_listing_video_scripts_set_font"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_rationale_71",
+      "target": "docs_build_listing_video_scripts_display"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_rationale_104",
+      "target": "docs_build_listing_video_scripts_quote"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_rationale_119",
+      "target": "docs_build_listing_video_scripts_script_block"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/build_listing_video_scripts.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_build_listing_video_scripts_rationale_128",
+      "target": "docs_build_listing_video_scripts_rule"
     },
     {
       "relation": "contains",
@@ -2034,6 +3177,79 @@
       "confidence_score": 1.0,
       "source": "users_kiranc_code_won_media_lib_styles_ts",
       "target": "lib_styles_isstylepreset"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L94",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_booking_editing_ts",
+      "target": "lib_booking_editing_priceforediting"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_booking_editing_ts",
+      "target": "lib_booking_editing_clamproomcount"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_booking_editing_ts",
+      "target": "lib_booking_editing_buildeditingpayload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_booking_editing_ts",
+      "target": "lib_booking_editing_summarizeeditingentry"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_booking_editing_priceforediting",
+      "target": "lib_booking_editing_clamproomcount"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_booking_editing_buildeditingpayload",
+      "target": "lib_booking_editing_priceforediting"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/booking-editing.ts",
+      "source_location": "L93",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_booking_editing_buildeditingpayload",
+      "target": "lib_booking_editing_clamproomcount"
     },
     {
       "relation": "contains",
@@ -2392,5 +3608,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a332f67037a40026eba995d1625809f1c7015116"
+  "built_at_commit": "6981a831fa77c5e1a219f7d40f40ddc30a6e1225"
 }

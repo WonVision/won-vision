@@ -25,6 +25,11 @@ const clients: Client[] = [
   { name: 'Bella Real Estate', src: '/logos/bella.webp', mono: true },
   { name: 'V Group Real Estate', src: '/logos/vgroup-colour.webp', mono: true },
   { name: 'Pink & Blue Real Estate', src: '/logos/pink-blue.webp' },
+  { name: 'LJ Hooker', src: '/logos/lj-hooker.webp' },
+  { name: 'Century 21', src: '/logos/century-21.webp' },
+  { name: 'CM Realty', src: '/logos/cm-realty.webp' },
+  { name: 'RT Edgar', src: '/logos/rt-edgar.webp', mono: true },
+  { name: 'Area Specialist Rapid', src: '/logos/area-specialist.webp', mono: true },
 ];
 
 export default function ClientLogos() {
