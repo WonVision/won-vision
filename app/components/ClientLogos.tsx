@@ -30,6 +30,7 @@ const clients: Client[] = [
   { name: 'CM Realty', src: '/logos/cm-realty.webp' },
   { name: 'RT Edgar', src: '/logos/rt-edgar.webp', mono: true },
   { name: 'Area Specialist Rapid', src: '/logos/area-specialist.webp', mono: true },
+  { name: 'Buxton', src: '/logos/buxton.webp', mono: true },
 ];
 
 export default function ClientLogos() {

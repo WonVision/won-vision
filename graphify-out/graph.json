@@ -232,7 +232,7 @@
       "label": "ClientLogos()",
       "file_type": "code",
       "source_file": "app/components/ClientLogos.tsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "id": "components_clientlogos_clientlogos",
       "community": 18,
       "norm_label": "clientlogos()"
@@ -3608,5 +3608,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6981a831fa77c5e1a219f7d40f40ddc30a6e1225"
+  "built_at_commit": "36c09a889d90b1ccdfcb986a017f140a27dd7407"
 }

@@ -64,8 +64,8 @@
     "hash": "3d73e290e19dbb424797c264b83aadac"
   },
   "/Users/kiranc/Code/won-vision/app/components/ClientLogos.tsx": {
-    "mtime": 1782180931.2794933,
-    "hash": "ef4a8463eb764ff8995ab31da6f82d40"
+    "mtime": 1782252222.9057689,
+    "hash": "fdd915440bceae6c7efc9ccc631cd3d3"
   },
   "/Users/kiranc/Code/won-vision/app/components/ServicesEditorial.tsx": {
     "mtime": 1780281965.2592192,
@@ -714,6 +714,10 @@
   "/Users/kiranc/Code/won-vision/public/logos/barry-plant.webp": {
     "mtime": 1781434362.2479262,
     "hash": "d68cc8a888b8946077cfc2bfe471b81d"
+  },
+  "/Users/kiranc/Code/won-vision/public/logos/buxton.webp": {
+    "mtime": 1782252215.0401256,
+    "hash": "a5cce8467da5a0c95bc61930aeba65d8"
   },
   "/Users/kiranc/Code/won-vision/public/logos/bella.webp": {
     "mtime": 1781434362.2677166,
