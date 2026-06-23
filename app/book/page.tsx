@@ -86,7 +86,7 @@ export default function BookPage() {
   }
   .svc-card__foot{
     display:flex;justify-content:space-between;align-items:center;
-    margin-top:6px;padding-top:12px;border-top:1px solid rgba(74,74,72,0.12);
+    margin-top:auto;padding-top:12px;border-top:1px solid rgba(74,74,72,0.12);
   }
   .svc-card__price{
     font-family:var(--display);font-weight:500;
