@@ -392,7 +392,7 @@ export default function BookPage() {
      since the plans sit on white. */
   #cat-floorplans .svc-card__media__img,
   #cat-floorplans .pkg-card__media__img{
-    background-size:contain;background-repeat:no-repeat;background-color:#fff;
+    background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#fff;
   }
   #cat-floorplans .svc-card__media,
   #cat-floorplans .pkg-card__media{background:#fff}
@@ -953,15 +953,15 @@ export default function BookPage() {
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
           <div className="cat__head"><h3>Videography</h3><span className="cat__count">3 films</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
-            From a fast Property Highlight to a full Cinematic Listing — every Won Vision film is shot in-house, colour-graded by hand, and scored to a track that fits the home. Add a Photo to Video AI cut from your stills as the budget-friendly option.
+            From a fast Property Highlight to a full Cinematic Listing — every Won Vision film is shot in-house, colour-graded by hand, and scored to a track that fits the home. Add a Virtual staged listing video to place staged furniture into the shots.
           </p>
 
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Photo to Video" data-price="99" data-desc="Turn your listing photos into a short AI-generated video. Subtle motion, cinematic feel, ready for socials and portals — the budget-friendly way to add motion to your listing." data-img="/images/property-highlight-poster.webp">
+            <article className="svc-card" data-svc="Virtual staged listing video" data-price="449" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion, with virtual-staged furniture added into the shots. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/staged-lysanne-poster.webp">
               <div className="svc-card__media">
                 <video
-                  src="/video/property-highlight-loop.mp4"
+                  src="/video/staged-lysanne-loop.mp4"
                   autoPlay
                   loop
                   muted
@@ -972,14 +972,14 @@ export default function BookPage() {
               </div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name">Photo to Video</h4>
+                <h4 className="svc-card__name">Virtual staged listing video</h4>
                 <ul className="pkg-card__incl">
-                  <li>AI-generated motion from your stills</li>
-                  <li>Subtle parallax · cinematic feel</li>
-                  <li>Vertical &amp; 16:9 cuts · socials-ready</li>
-                  <li>Same-day delivery · no extra shoot</li>
+                  <li>30–60s edit · 16:9 cinematic frame</li>
+                  <li>Virtual-staged furniture added into shots</li>
+                  <li>Pure architecture · hand colour-grade</li>
+                  <li>Same-week delivery, in-house</li>
                 </ul>
-                <div className="svc-card__foot"><span className="svc-card__price">$99</span><span className="svc-card__add">Add +</span></div>
+                <div className="svc-card__foot"><span className="svc-card__price">$449</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
@@ -1209,16 +1209,16 @@ export default function BookPage() {
         </div>
       </aside>
 
-      {/* Non-intrusive upsell toast (Photo to Video / Site Plan / Package suggestion) */}
+      {/* Non-intrusive upsell toast (Virtual staged listing video / Site Plan / Package suggestion) */}
       <div className="upsell-toast" id="upsellToast" aria-hidden="true" role="dialog" aria-live="polite">
         <button type="button" className="upsell-toast__close" id="upsellToastClose" aria-label="Dismiss">×</button>
         <div className="upsell-toast__thumb" id="upsellToastThumb" aria-hidden="true"></div>
         <div className="upsell-toast__body">
           <div className="upsell-toast__eyebrow" id="upsellToastEyebrow">Add-on · Recommended</div>
-          <h4 className="upsell-toast__title" id="upsellToastTitle">Add a Photo to Video?</h4>
+          <h4 className="upsell-toast__title" id="upsellToastTitle">Add a virtual staged listing video?</h4>
           <p className="upsell-toast__desc" id="upsellToastDesc"></p>
           <div className="upsell-toast__row">
-            <span className="upsell-toast__price" id="upsellToastPrice">$99</span>
+            <span className="upsell-toast__price" id="upsellToastPrice">$449</span>
             <button type="button" className="upsell-toast__add" id="upsellToastAdd">Add</button>
           </div>
         </div>
@@ -1282,11 +1282,11 @@ export default function BookPage() {
 
   // ---- Upsell catalogue (virtual items + popup triggers) ----
   const PHOTO_TO_VIDEO = {
-    name: 'Photo to Video',
-    price: 99,
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80',
+    name: 'Virtual staged listing video',
+    price: 449,
+    img: '/images/staged-lysanne-poster.webp',
     categories: ['video'],
-    desc: 'Turn your listing photos into a short AI-generated video — subtle motion, cinematic feel, ready for socials and portals.',
+    desc: 'A fast, atmospheric 30–60s film — pure architecture, light and motion, with virtual-staged furniture added into the shots.',
   };
   const SITE_PLAN = {
     name: 'Site Plan',
@@ -1308,7 +1308,7 @@ export default function BookPage() {
     if (/^Property Highlight Video\b/.test(name)) tags.add('video');
     if (/^Listing Video\b/.test(name)) { tags.add('video'); tags.add('listingvideo'); }
     if (/^Cinematic Listing Video\b/.test(name)) { tags.add('video'); tags.add('cinematicvideo'); }
-    if (/^Photo to Video\b/.test(name)) tags.add('video');
+    if (/^Virtual staged listing video\b/.test(name)) tags.add('video');
     return tags;
   }
   function cartComponents(){
@@ -1408,7 +1408,7 @@ export default function BookPage() {
     sessionStorage.setItem('wv-p2v-prompted','1');
     showToast({
       eyebrow: 'Add-on · Recommended',
-      title: 'Add a Photo to Video?',
+      title: 'Add a virtual staged listing video?',
       desc: PHOTO_TO_VIDEO.desc,
       price: '$' + PHOTO_TO_VIDEO.price,
       img: PHOTO_TO_VIDEO.img,

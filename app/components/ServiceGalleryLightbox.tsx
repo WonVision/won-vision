@@ -35,28 +35,28 @@ const galleries: Record<string, Media[]> = {
     { src: '/images/wv-exterior-1.webp', caption: 'Exterior' },
     { src: '/images/wv-exterior-2.webp', caption: 'Street view' },
   ],
-  // Photo to Video — mirrors the gallery's "phototovideo" bucket. This is the
-  // 3 Nitraria Street, Mickleham clip (ends on the V Group Real Estate mark).
+  // Virtual staged listing video — mirrors the gallery's "staged" bucket.
+  // 9 Lysanne Crescent, Berwick.
   video: [
     {
-      src: '/video/property-highlight.mp4',
+      src: '/video/staged-lysanne.mp4',
       type: 'video',
-      poster: '/images/property-highlight-poster.webp',
-      caption: 'Photo to Video',
+      poster: '/images/staged-lysanne-poster.webp',
+      caption: 'Virtual staged listing video',
     },
   ],
   // Property Highlight — mirrors the gallery's "highlight" bucket exactly.
   highlight: [
     {
-      src: '/video/cinematic-listing.mp4',
+      src: '/video/property-highlight-doncaster.mp4',
       type: 'video',
-      poster: '/images/cinematic-1-poster.webp',
+      poster: '/images/property-highlight-doncaster-poster.webp',
       caption: 'Property Highlight Video',
     },
     {
-      src: '/video/cinematic-listing-2.mp4',
+      src: '/video/property-highlight-elwood.mp4',
       type: 'video',
-      poster: '/images/cinematic-2-poster.webp',
+      poster: '/images/property-highlight-elwood-poster.webp',
       caption: 'Property Highlight Video',
     },
     {
@@ -80,9 +80,9 @@ const galleries: Record<string, Media[]> = {
       caption: 'Cinematic Listing Video',
     },
     {
-      src: '/video/cinematic-baden.mp4',
+      src: '/video/cinematic-rt-edgar.mp4',
       type: 'video',
-      poster: '/images/cinematic-baden-poster.webp',
+      poster: '/images/cinematic-rt-edgar-poster.webp',
       caption: 'Cinematic Listing Video',
     },
   ],
@@ -136,7 +136,7 @@ const galleries: Record<string, Media[]> = {
 
 const titles: Record<string, string> = {
   photography: 'Photography',
-  video: 'Video',
+  video: 'Virtual staged listing video',
   highlight: 'Property Highlight Video',
   cinematic: 'Cinematic Listing Video',
   drone: 'Aerial / drone',

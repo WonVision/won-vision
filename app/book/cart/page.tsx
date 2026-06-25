@@ -34,9 +34,9 @@ function writeEditing(items: EditingEntry[]) {
 }
 
 const PHOTO_TO_VIDEO: CartItem = {
-  name: 'Photo to Video',
-  price: 99,
-  img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80',
+  name: 'Virtual staged listing video',
+  price: 449,
+  img: '/images/staged-lysanne-poster.webp',
   categories: ['video'],
 };
 const SITE_PLAN: CartItem = {
@@ -205,10 +205,10 @@ export default function CartPage() {
                       <div className="cart-addons__row">
                         <div className="cart-addons__thumb"><PhoneIcon /></div>
                         <div className="cart-addons__info">
-                          <div className="cart-addons__name">Photo to Video</div>
-                          <div className="cart-addons__desc">Turn your listing photos into a short AI-generated video — subtle motion, cinematic feel, ready for socials and portals.</div>
+                          <div className="cart-addons__name">Virtual staged listing video</div>
+                          <div className="cart-addons__desc">A fast, atmospheric 30–60s film — pure architecture, light and motion, with virtual-staged furniture added into the shots.</div>
                         </div>
-                        <div className="cart-addons__price">$99</div>
+                        <div className="cart-addons__price">$449</div>
                         <button type="button" className="cart-addons__add" onClick={addPhotoToVideo}>Add</button>
                       </div>
                     )}

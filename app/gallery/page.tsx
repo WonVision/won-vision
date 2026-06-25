@@ -90,6 +90,7 @@ export default function GalleryPage() {
             <button className="filter is-active" data-sub="all">All</button>
             <button className="filter" data-sub="cinematic">Cinematic video</button>
             <button className="filter" data-sub="highlight">Property highlight</button>
+            <button className="filter" data-sub="staged">Virtual staged listing video</button>
           </div>
         </div>
       </div>
@@ -316,57 +317,27 @@ export default function GalleryPage() {
             </div>
           </article>
 
+          {/* Video — cinematic listing film · RT Edgar, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
+                   data-place="Won Vision · Cinematic">
+            <video
+              src="/video/cinematic-rt-edgar.mp4"
+              poster="/images/cinematic-rt-edgar-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Cinematic video</p>
+            </div>
+          </article>
+
           {/* Video — property highlight film · 465 Seventh Avenue (Barry Plant), plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
                    data-place="Won Vision · Property highlight">
             <video
               src="/video/cinematic-465.mp4"
               poster="/images/cinematic-465-poster.webp"
-              controls
-              preload="metadata"
-              playsInline
-            />
-            <div className="gallery__item__caption">
-              <p className="tags">Property highlight</p>
-            </div>
-          </article>
-
-          {/* Video — property highlight film · 54 Baden Powell Drive, Tarneit (Harcourts), plays inline */}
-          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
-                   data-place="Won Vision · Property highlight">
-            <video
-              src="/video/cinematic-baden.mp4"
-              poster="/images/cinematic-baden-poster.webp"
-              controls
-              preload="metadata"
-              playsInline
-            />
-            <div className="gallery__item__caption">
-              <p className="tags">Property highlight</p>
-            </div>
-          </article>
-
-          {/* Video — property highlight film, plays inline */}
-          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
-                   data-place="Won Vision · Property highlight">
-            <video
-              src="/video/cinematic-listing.mp4"
-              poster="/images/cinematic-1-poster.webp"
-              controls
-              preload="metadata"
-              playsInline
-            />
-            <div className="gallery__item__caption">
-              <p className="tags">Property highlight</p>
-            </div>
-          </article>
-
-          {/* Video — property highlight film, plays inline */}
-          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
-                   data-place="Won Vision · Property highlight">
-            <video
-              src="/video/cinematic-listing-2.mp4"
-              poster="/images/cinematic-2-poster.webp"
               controls
               preload="metadata"
               playsInline
@@ -418,6 +389,51 @@ export default function GalleryPage() {
             />
             <div className="gallery__item__caption">
               <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film · 16 Village Avenue, Doncaster (Buxton), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-doncaster.mp4"
+              poster="/images/property-highlight-doncaster-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film · 2-68 Spray Street, Elwood (RT Edgar), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-elwood.mp4"
+              poster="/images/property-highlight-elwood-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — virtual staged listing video · 9 Lysanne Crescent, Berwick, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="staged"
+                   data-place="Won Vision · Virtual staged listing video">
+            <video
+              src="/video/staged-lysanne.mp4"
+              poster="/images/staged-lysanne-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Virtual staged listing video</p>
             </div>
           </article>
 
