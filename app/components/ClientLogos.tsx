@@ -33,6 +33,13 @@ const clients: Client[] = [
   { name: 'Buxton', src: '/logos/buxton.svg' },
 ];
 
+/* On mobile the list is split across two marquee lines (top scrolls right,
+   bottom scrolls left) so more of the now-long client roster is on screen at
+   once. On desktop both halves merge back into one centered wrap. */
+const splitAt = Math.ceil(clients.length / 2);
+const rowTop = clients.slice(0, splitAt);
+const rowBottom = clients.slice(splitAt);
+
 export default function ClientLogos() {
   return (
     <section className="clients" aria-label="Clients we work with">
@@ -46,20 +53,20 @@ export default function ClientLogos() {
     display:block;
     margin:0 0 clamp(20px, 3vw, 32px);
   }
+  /* desktop: tickers + rows collapse (display:contents) so every logo lays out
+     as one centered wrap directly in the viewport */
   .clients__viewport{
     max-width:1040px;
     margin-inline:auto;
-  }
-  /* desktop: ticker collapses so the row lays out directly in the viewport */
-  .clients__ticker{display:contents;}
-  .clients__row{
     display:flex;
+    flex-wrap:wrap;
     align-items:center;
     justify-content:center;
     gap:clamp(24px, 4vw, 52px);
-    flex-wrap:wrap;
   }
-  /* duplicate row exists only to seed the mobile marquee loop */
+  .clients__ticker{display:contents;}
+  .clients__row{display:contents;}
+  /* duplicate rows exist only to seed the mobile marquee loop */
   .clients__row--dupe{display:none;}
   /* Uniform bounding box: height- and width-capped + contained, so wide
      wordmarks and square marks all read at one weight. */
@@ -81,13 +88,14 @@ export default function ClientLogos() {
   .clients__logo--mono img{filter:brightness(0);}
 
   @media (prefers-reduced-motion:reduce){
-    .clients__ticker{animation:none;}
+    .clients__ticker{animation:none !important;}
   }
 
-  /* --- mobile: continuous horizontal ticker --- */
+  /* --- mobile: two continuous marquee lines — top → right, bottom → left --- */
   @media (max-width:760px){
     .clients__viewport{
       max-width:100%;
+      display:block;
       overflow:hidden;
       /* feather both edges so logos glide in/out instead of hard-clipping */
       -webkit-mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
@@ -96,7 +104,12 @@ export default function ClientLogos() {
     .clients__ticker{
       display:flex;
       width:max-content;
-      animation:clients-scroll 32s linear infinite;
+    }
+    /* top line drifts right, bottom line drifts left (opposing motion) */
+    .clients__ticker--top{animation:clients-scroll-right 34s linear infinite;}
+    .clients__ticker--bottom{
+      animation:clients-scroll-left 30s linear infinite;
+      margin-top:clamp(18px, 5vw, 28px);
     }
     .clients__row,
     .clients__row--dupe{
@@ -113,23 +126,35 @@ export default function ClientLogos() {
       flex:0 0 auto;
     }
   }
-  @keyframes clients-scroll{
+  /* leftward loop: original → duplicate */
+  @keyframes clients-scroll-left{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
+  }
+  /* rightward loop: start on the duplicate and slide back to the original */
+  @keyframes clients-scroll-right{
+    from{transform:translateX(-50%);}
+    to{transform:translateX(0);}
   }
       `}</style>
 
       <span className="eyebrow clients__label">Trusted by Melbourne&rsquo;s best</span>
 
-      {/* viewport clips the overflow on mobile; the ticker holds two identical
-          rows so the marquee loops seamlessly. On desktop the ticker is
-          display:contents and the duplicate row is hidden — it stays a plain
-          centered wrap. */}
+      {/* Mobile: two marquee lines, each holding two identical rows so the loop
+          is seamless (translateX(-50%)); top scrolls right, bottom scrolls
+          left. Desktop: the tickers/rows are display:contents and the dupes are
+          hidden, so all logos collapse into one centered wrap. */}
       <div className="clients__viewport">
-        <div className="clients__ticker">
-          <div className="clients__row">{clients.map((c) => renderLogo(c))}</div>
+        <div className="clients__ticker clients__ticker--top">
+          <div className="clients__row">{rowTop.map((c) => renderLogo(c))}</div>
           <div className="clients__row clients__row--dupe" aria-hidden="true">
-            {clients.map((c) => renderLogo(c, true))}
+            {rowTop.map((c) => renderLogo(c, true))}
+          </div>
+        </div>
+        <div className="clients__ticker clients__ticker--bottom">
+          <div className="clients__row">{rowBottom.map((c) => renderLogo(c))}</div>
+          <div className="clients__row clients__row--dupe" aria-hidden="true">
+            {rowBottom.map((c) => renderLogo(c, true))}
           </div>
         </div>
       </div>

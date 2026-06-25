@@ -90,7 +90,6 @@ export default function GalleryPage() {
             <button className="filter is-active" data-sub="all">All</button>
             <button className="filter" data-sub="cinematic">Cinematic video</button>
             <button className="filter" data-sub="highlight">Property highlight</button>
-            <button className="filter" data-sub="phototovideo">Photo to video</button>
           </div>
         </div>
       </div>
@@ -407,7 +406,7 @@ export default function GalleryPage() {
             </div>
           </article>
 
-          {/* Video — property highlight film, plays inline */}
+          {/* Video — Century 21 property highlight film, plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
                    data-place="Won Vision · Property highlight">
             <video
@@ -419,21 +418,6 @@ export default function GalleryPage() {
             />
             <div className="gallery__item__caption">
               <p className="tags">Property highlight</p>
-            </div>
-          </article>
-
-          {/* Video — 3 Nitraria Street, Mickleham (photo-to-video), plays inline */}
-          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="phototovideo"
-                   data-place="Won Vision · Photo to video">
-            <video
-              src="/video/property-highlight.mp4"
-              poster="/images/property-highlight-poster.webp"
-              controls
-              preload="metadata"
-              playsInline
-            />
-            <div className="gallery__item__caption">
-              <p className="tags">Photo to video</p>
             </div>
           </article>
 
