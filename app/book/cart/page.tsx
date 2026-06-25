@@ -36,7 +36,7 @@ function writeEditing(items: EditingEntry[]) {
 const PHOTO_TO_VIDEO: CartItem = {
   name: 'Virtual staged listing video',
   price: 449,
-  img: '/images/staged-lysanne-poster.webp',
+  img: '/images/staged-tennyson-g01-poster.webp',
   categories: ['video'],
 };
 const SITE_PLAN: CartItem = {

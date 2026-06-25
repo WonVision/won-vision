@@ -422,12 +422,12 @@ export default function GalleryPage() {
             </div>
           </article>
 
-          {/* Video — virtual staged listing video · 9 Lysanne Crescent, Berwick, plays inline */}
+          {/* Video — virtual staged listing video · 101/73 Tennyson St, Elwood, plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="staged"
                    data-place="Won Vision · Virtual staged listing video">
             <video
-              src="/video/staged-lysanne.mp4"
-              poster="/images/staged-lysanne-poster.webp"
+              src="/video/staged-tennyson-101.mp4"
+              poster="/images/staged-tennyson-101-poster.webp"
               controls
               preload="metadata"
               playsInline

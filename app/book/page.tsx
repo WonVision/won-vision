@@ -958,31 +958,6 @@ export default function BookPage() {
 
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Virtual staged listing video" data-price="449" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion, with virtual-staged furniture added into the shots. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/staged-lysanne-poster.webp">
-              <div className="svc-card__media">
-                <video
-                  src="/video/staged-lysanne-loop.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.94)' }}
-                />
-              </div>
-              <span className="svc-card__badge">In booking</span>
-              <div className="svc-card__body">
-                <h4 className="svc-card__name">Virtual staged listing video</h4>
-                <ul className="pkg-card__incl">
-                  <li>30–60s edit · 16:9 cinematic frame</li>
-                  <li>Virtual-staged furniture added into shots</li>
-                  <li>Pure architecture · hand colour-grade</li>
-                  <li>Same-week delivery, in-house</li>
-                </ul>
-                <div className="svc-card__foot"><span className="svc-card__price">$449</span><span className="svc-card__add">Add +</span></div>
-              </div>
-            </article>
-
             <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/cinematic.webp" data-gallery="highlight">
               <div className="svc-card__media">
                 <video
@@ -1005,6 +980,31 @@ export default function BookPage() {
                   <li>Same-week delivery, in-house</li>
                 </ul>
                 <div className="svc-card__foot"><span className="svc-card__price">$399</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card" data-svc="Virtual staged listing video" data-price="449" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion, with virtual-staged furniture added into the shots. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/staged-tennyson-g01-poster.webp">
+              <div className="svc-card__media">
+                <video
+                  src="/video/staged-tennyson-g01-loop.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.94)' }}
+                />
+              </div>
+              <span className="svc-card__badge">In booking</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Virtual staged listing video</h4>
+                <ul className="pkg-card__incl">
+                  <li>30–60s edit · 16:9 cinematic frame</li>
+                  <li>Virtual-staged furniture added into shots</li>
+                  <li>Pure architecture · hand colour-grade</li>
+                  <li>Same-week delivery, in-house</li>
+                </ul>
+                <div className="svc-card__foot"><span className="svc-card__price">$449</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
@@ -1284,7 +1284,7 @@ export default function BookPage() {
   const PHOTO_TO_VIDEO = {
     name: 'Virtual staged listing video',
     price: 449,
-    img: '/images/staged-lysanne-poster.webp',
+    img: '/images/staged-tennyson-g01-poster.webp',
     categories: ['video'],
     desc: 'A fast, atmospheric 30–60s film — pure architecture, light and motion, with virtual-staged furniture added into the shots.',
   };

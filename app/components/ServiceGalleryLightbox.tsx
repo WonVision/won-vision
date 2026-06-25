@@ -36,12 +36,18 @@ const galleries: Record<string, Media[]> = {
     { src: '/images/wv-exterior-2.webp', caption: 'Street view' },
   ],
   // Virtual staged listing video — mirrors the gallery's "staged" bucket.
-  // 9 Lysanne Crescent, Berwick.
+  // 73 Tennyson St, Elwood — G01 (the card example) and 101.
   video: [
     {
-      src: '/video/staged-lysanne.mp4',
+      src: '/video/staged-tennyson-g01.mp4',
       type: 'video',
-      poster: '/images/staged-lysanne-poster.webp',
+      poster: '/images/staged-tennyson-g01-poster.webp',
+      caption: 'Virtual staged listing video',
+    },
+    {
+      src: '/video/staged-tennyson-101.mp4',
+      type: 'video',
+      poster: '/images/staged-tennyson-101-poster.webp',
       caption: 'Virtual staged listing video',
     },
   ],
