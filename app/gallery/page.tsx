@@ -363,9 +363,9 @@ export default function GalleryPage() {
             </div>
           </article>
 
-          {/* Video — property highlight film · 465 Seventh Avenue (Barry Plant), plays inline */}
-          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
-                   data-place="Won Vision · Property highlight">
+          {/* Video — agent listing film · 465 Seventh Avenue (Barry Plant), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
+                   data-place="Won Vision · Agent listing">
             <video
               src="/video/cinematic-465.mp4"
               poster="/images/cinematic-465-poster.webp"
@@ -374,7 +374,7 @@ export default function GalleryPage() {
               playsInline
             />
             <div className="gallery__item__caption">
-              <p className="tags">Property highlight</p>
+              <p className="tags">Agent listing video</p>
             </div>
           </article>
 
@@ -450,6 +450,21 @@ export default function GalleryPage() {
             />
             <div className="gallery__item__caption">
               <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — virtual staged listing video · G01/73 Tennyson St, Elwood, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="staged"
+                   data-place="Won Vision · Virtual staged listing video">
+            <video
+              src="/video/staged-tennyson-g01.mp4"
+              poster="/images/staged-tennyson-g01-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Virtual staged listing video</p>
             </div>
           </article>
 

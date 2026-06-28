@@ -71,6 +71,18 @@ const galleries: Record<string, Media[]> = {
       poster: '/images/property-highlight-2-poster.webp',
       caption: 'Property Highlight Video',
     },
+    {
+      src: '/video/property-highlight-3.mp4',
+      type: 'video',
+      poster: '/images/property-highlight-3-poster.webp',
+      caption: 'Property Highlight Video',
+    },
+    {
+      src: '/video/property-highlight-4.mp4',
+      type: 'video',
+      poster: '/images/property-highlight-4-poster.webp',
+      caption: 'Property Highlight Video',
+    },
   ],
   cinematic: [
     {
@@ -83,6 +95,12 @@ const galleries: Record<string, Media[]> = {
       src: '/video/cinematic-v3.mp4',
       type: 'video',
       poster: '/images/cinematic-v3-poster.webp',
+      caption: 'Agent Listing Video',
+    },
+    {
+      src: '/video/cinematic-v4.mp4',
+      type: 'video',
+      poster: '/images/cinematic-v4-poster.webp',
       caption: 'Agent Listing Video',
     },
     {

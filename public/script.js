@@ -294,71 +294,60 @@ function __wvBoot(){
   })();
 
   // ---------- GALLERY: two-level filters ----------
+  // Delegated on `document` and bound once per page load. __wvBoot runs only
+  // on the first hard load, so per-button listeners died on Next.js soft
+  // navigation (gallery remounts, no handlers -> "clicking does nothing").
+  // A document-level delegate survives DOM swaps and re-queries on each click.
   (function(){
-    const topRow = document.querySelector('[data-filter-row="top"]');
-    const items = document.querySelectorAll('.gallery__item');
-    const counter = document.querySelector('[data-gallery-count]');
-    const emptyMsg = document.querySelector('[data-gallery-empty]');
-    if(!topRow || !items.length) return;
-
-    const subPanels = document.querySelectorAll('.gallery-controls__sub');
-    let curCat = 'all';
-    let curSub = 'all';
+    if (window.__wvGalleryFiltersBound) return;
+    window.__wvGalleryFiltersBound = true;
 
     function apply(){
+      const items = document.querySelectorAll('.gallery__item');
+      if(!items.length) return;
+      const topRow = document.querySelector('[data-filter-row="top"]');
+      const activeTop = topRow && topRow.querySelector('.filter.is-active');
+      const curCat = activeTop ? (activeTop.dataset.cat || 'all') : 'all';
+      const activePanel = document.querySelector('.gallery-controls__sub:not([hidden])');
+      const activeSub = activePanel && activePanel.querySelector('.filter.is-active');
+      const curSub = activeSub ? (activeSub.dataset.sub || 'all') : 'all';
       let n = 0;
       items.forEach(it => {
-        const cat = it.dataset.cat || '';
-        const sub = it.dataset.sub || '';
-        const catOk = curCat === 'all' || cat === curCat;
-        const subOk = curSub === 'all' || sub === curSub;
+        const catOk = curCat === 'all' || (it.dataset.cat || '') === curCat;
+        const subOk = curSub === 'all' || (it.dataset.sub || '') === curSub;
         const show = catOk && subOk;
         it.classList.toggle('is-hidden', !show);
         if(show) n++;
       });
+      const counter = document.querySelector('[data-gallery-count]');
       if(counter) counter.textContent = String(n).padStart(2,'0');
+      const emptyMsg = document.querySelector('[data-gallery-empty]');
       if(emptyMsg) emptyMsg.hidden = n !== 0;
     }
 
     function showSubPanel(cat){
-      let activePanel = null;
-      subPanels.forEach(p => {
+      document.querySelectorAll('.gallery-controls__sub').forEach(p => {
         const match = p.dataset.subFor === cat;
         p.hidden = !match;
-        if(match) activePanel = p;
+        if(match){
+          // reset the now-visible sub row to its first option (ALL)
+          p.querySelectorAll('.filter').forEach((b, i) => b.classList.toggle('is-active', i === 0));
+        }
       });
-      // reset the visible sub row to ALL
-      if(activePanel){
-        const subBtns = activePanel.querySelectorAll('.filter');
-        subBtns.forEach((b, i) => b.classList.toggle('is-active', i === 0));
-      }
     }
 
-    // top row
-    topRow.querySelectorAll('.filter').forEach(btn => {
-      btn.addEventListener('click', () => {
-        topRow.querySelectorAll('.filter').forEach(x => x.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        curCat = btn.dataset.cat;
-        curSub = 'all';
-        showSubPanel(curCat);
-        apply();
-      });
+    document.addEventListener('click', function(e){
+      const btn = e.target.closest('.gallery-controls .filter');
+      if(!btn) return;
+      const row = btn.closest('[data-filter-row]');
+      if(!row) return;
+      row.querySelectorAll('.filter').forEach(x => x.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      if(row.dataset.filterRow === 'top') showSubPanel(btn.dataset.cat);
+      apply();
     });
 
-    // sub rows (event-delegated so reset stays simple)
-    subPanels.forEach(panel => {
-      panel.querySelectorAll('.filter').forEach(btn => {
-        btn.addEventListener('click', () => {
-          panel.querySelectorAll('.filter').forEach(x => x.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          curSub = btn.dataset.sub;
-          apply();
-        });
-      });
-    });
-
-    apply();
+    apply(); // initial pass when the gallery is present on this load
   })();
 
   // ---------- GALLERY: lightbox ----------
