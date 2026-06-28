@@ -167,6 +167,10 @@ const galleries: Record<string, Media[]> = {
   // floor plan (not a standalone document).
   floorplanbundle: [
     {
+      src: '/images/landscape-floor-site-plan.webp',
+      caption: 'Floor plan + site plan — one connected sheet',
+    },
+    {
       src: '/images/floor-site-plan-example.webp',
       caption: 'Floor plan + site plan — one connected sheet',
     },
