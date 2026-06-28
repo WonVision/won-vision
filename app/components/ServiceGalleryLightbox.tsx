@@ -74,22 +74,37 @@ const galleries: Record<string, Media[]> = {
   ],
   cinematic: [
     {
+      src: '/video/agent-listing-video.mp4',
+      type: 'video',
+      poster: '/images/agent-listing-video-poster.webp',
+      caption: 'Agent Listing Video',
+    },
+    {
       src: '/video/cinematic-v3.mp4',
       type: 'video',
       poster: '/images/cinematic-v3-poster.webp',
-      caption: 'Cinematic Listing Video',
+      caption: 'Agent Listing Video',
     },
     {
       src: '/video/cinematic-465.mp4',
       type: 'video',
       poster: '/images/cinematic-465-poster.webp',
-      caption: 'Cinematic Listing Video',
+      caption: 'Agent Listing Video',
     },
     {
       src: '/video/cinematic-rt-edgar.mp4',
       type: 'video',
       poster: '/images/cinematic-rt-edgar-poster.webp',
-      caption: 'Cinematic Listing Video',
+      caption: 'Agent Listing Video',
+    },
+  ],
+  // Social media reel — vertical 9:16 social cut. Card video + example.
+  socialreel: [
+    {
+      src: '/video/social-media-reel.mp4',
+      type: 'video',
+      poster: '/images/social-media-reel-poster.webp',
+      caption: 'Social media reel',
     },
   ],
   drone: [
@@ -144,7 +159,8 @@ const titles: Record<string, string> = {
   photography: 'Photography',
   video: 'Virtual staged listing video',
   highlight: 'Property Highlight Video',
-  cinematic: 'Cinematic Listing Video',
+  cinematic: 'Agent Listing Video',
+  socialreel: 'Social media reel',
   drone: 'Aerial / drone',
   staging: 'Virtual staging',
   floorplans: 'Floor plans',

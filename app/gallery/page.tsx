@@ -88,9 +88,10 @@ export default function GalleryPage() {
         <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="video" hidden>
           <div className="filters" role="tablist" data-filter-row="sub">
             <button className="filter is-active" data-sub="all">All</button>
-            <button className="filter" data-sub="cinematic">Cinematic video</button>
+            <button className="filter" data-sub="cinematic">Agent listing video</button>
             <button className="filter" data-sub="highlight">Property highlight</button>
             <button className="filter" data-sub="staged">Virtual staged listing video</button>
+            <button className="filter" data-sub="socialreel">Social media reel</button>
           </div>
         </div>
       </div>
@@ -287,9 +288,39 @@ export default function GalleryPage() {
             />
           </article>
 
+          {/* Video — agent listing film (lead), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
+                   data-place="Won Vision · Agent listing">
+            <video
+              src="/video/agent-listing-video.mp4"
+              poster="/images/agent-listing-video-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Agent listing video</p>
+            </div>
+          </article>
+
+          {/* Video — social media reel (vertical 9:16), plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="socialreel"
+                   data-place="Won Vision · Social media reel">
+            <video
+              src="/video/social-media-reel.mp4"
+              poster="/images/social-media-reel-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Social media reel</p>
+            </div>
+          </article>
+
           {/* Video — cinematic listing film · Bella Real Estate, plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
-                   data-place="Won Vision · Cinematic">
+                   data-place="Won Vision · Agent listing">
             <video
               src="/video/cinematic-v3.mp4"
               poster="/images/cinematic-v3-poster.webp"
@@ -298,13 +329,13 @@ export default function GalleryPage() {
               playsInline
             />
             <div className="gallery__item__caption">
-              <p className="tags">Cinematic video</p>
+              <p className="tags">Agent listing video</p>
             </div>
           </article>
 
           {/* Video — cinematic listing film, plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
-                   data-place="Won Vision · Cinematic">
+                   data-place="Won Vision · Agent listing">
             <video
               src="/video/cinematic-v4.mp4"
               poster="/images/cinematic-v4-poster.webp"
@@ -313,13 +344,13 @@ export default function GalleryPage() {
               playsInline
             />
             <div className="gallery__item__caption">
-              <p className="tags">Cinematic video</p>
+              <p className="tags">Agent listing video</p>
             </div>
           </article>
 
           {/* Video — cinematic listing film · RT Edgar, plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
-                   data-place="Won Vision · Cinematic">
+                   data-place="Won Vision · Agent listing">
             <video
               src="/video/cinematic-rt-edgar.mp4"
               poster="/images/cinematic-rt-edgar-poster.webp"
@@ -328,7 +359,7 @@ export default function GalleryPage() {
               playsInline
             />
             <div className="gallery__item__caption">
-              <p className="tags">Cinematic video</p>
+              <p className="tags">Agent listing video</p>
             </div>
           </article>
 

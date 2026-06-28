@@ -102,6 +102,20 @@ export default function BookPage() {
   .svc-card.is-added .svc-card__add{background:var(--steel);color:var(--paper);border-color:var(--steel)}
   .svc-card.is-added .svc-card__add::before{content:'\\2713 '}
 
+  /* Social media reel — locked add-on until a video is in the cart */
+  .svc-card__lock{
+    position:absolute;top:12px;left:12px;z-index:3;
+    display:none;align-items:center;gap:6px;
+    background:var(--ink);color:var(--paper);padding:6px 10px;
+    font-family:var(--body);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;font-weight:600;
+  }
+  .svc-card__lock::before{content:'\\1F512';letter-spacing:0;font-size:11px}
+  .svc-card--reel.is-locked{opacity:0.66;filter:grayscale(0.4)}
+  .svc-card--reel.is-locked:hover{border-color:var(--border)}
+  .svc-card--reel.is-locked .svc-card__lock{display:inline-flex}
+  .svc-card--reel.is-locked .svc-card__add{opacity:0.5}
+  .svc-card--reel.is-locked:hover .svc-card__add{background:transparent;color:var(--ink)}
+
   @media (max-width:1100px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:760px){
     .svc-page{padding:32px var(--gutter) 140px}
@@ -793,14 +807,14 @@ export default function BookPage() {
               </div>
               <div className="pkg-card__body">
                 <h4 className="pkg-card__name">Signature</h4>
-                <p className="pkg-card__desc">Photo + plan + drone + Cinematic Listing Video — agent footage and drone footage included.</p>
+                <p className="pkg-card__desc">Photo + plan + drone + Agent Listing Video — agent footage and drone footage included.</p>
                 <ul className="pkg-card__incl">
                   <li>15 / 20 / 25 HDR photos (by tier)</li>
                   <li>Full HDR retouching</li>
                   <li>Sky replacement included</li>
                   <li>2D floor plan with dimensions</li>
                   <li>Drone set — 5 edited aerials</li>
-                  <li>Cinematic Listing Video · 30–60s</li>
+                  <li>Agent Listing Video · 30–60s</li>
                 </ul>
                 <div className="pkg-card__tiers">
                   <label>Property size</label>
@@ -843,7 +857,7 @@ export default function BookPage() {
                   <li>Sky replacement included</li>
                   <li>2D floor plan with dimensions</li>
                   <li>Drone set — 5 edited aerials</li>
-                  <li>Cinematic Listing Video · 60–90s</li>
+                  <li>Agent Listing Video · 60–90s</li>
                   <li>Director-led shoot · storyboard treatment</li>
                   <li>Extended aerial &amp; gimbal coverage</li>
                 </ul>
@@ -951,7 +965,7 @@ export default function BookPage() {
         {/* VIDEO */}
         {SHOW_VIDEO && (
         <div className="cat" id="cat-video" data-gallery="video" data-cats="video">
-          <div className="cat__head"><h3>Videography</h3><span className="cat__count">3 films</span></div>
+          <div className="cat__head"><h3>Videography</h3><span className="cat__count">4 films</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--graphite)', marginBottom: 18 }}>
             From a fast Property Highlight to a full Cinematic Listing — every Won Vision film is shot in-house, colour-graded by hand, and scored to a track that fits the home. Add a Virtual staged listing video to place staged furniture into the shots.
           </p>
@@ -1010,12 +1024,12 @@ export default function BookPage() {
 
             <article
               className="svc-card svc-card--variants"
-              data-svc="Cinematic Listing Video · 30–60s"
+              data-svc="Agent Listing Video · 30–60s"
               data-price="499"
               data-desc="A cinematic listing film — agent on camera, drone aerials, hand-graded and scored. Choose 30–60s for a polished cut, or 60–90s for extra time on set capturing the aesthetic and mood of the home."
               data-img="/images/cinematic-v3-poster.webp"
               data-gallery="cinematic"
-              data-variants='[{"key":"short","name":"Cinematic Listing Video · 30–60s","price":499,"label":"30–60s","lead":"30–60s cinematic edit · 16:9","b1":"Agent piece-to-camera direction","b2":"Drone aerials + interior coverage","b3":"Hand colour-grade · scored to picture"},{"key":"long","name":"Cinematic Listing Video · 60–90s","price":699,"label":"60–90s","lead":"60–90s flagship cinematic edit","b1":"Extra set time for aesthetic & mood","b2":"Director-led shoot · storyboard treatment","b3":"Extended aerial & gimbal coverage"}]'
+              data-variants='[{"key":"short","name":"Agent Listing Video · 30–60s","price":499,"label":"30–60s","lead":"30–60s cinematic edit · 16:9","b1":"Agent piece-to-camera direction","b2":"Drone aerials + interior coverage","b3":"Hand colour-grade · scored to picture"},{"key":"long","name":"Agent Listing Video · 60–90s","price":699,"label":"60–90s","lead":"60–90s flagship cinematic edit","b1":"Extra set time for aesthetic & mood","b2":"Director-led shoot · storyboard treatment","b3":"Extended aerial & gimbal coverage"}]'
             >
               <div className="svc-card__media">
                 <video
@@ -1030,7 +1044,7 @@ export default function BookPage() {
               </div>
               <span className="svc-card__badge">In booking</span>
               <div className="svc-card__body">
-                <h4 className="svc-card__name" data-variant-name>Cinematic Listing Video · 30–60s</h4>
+                <h4 className="svc-card__name" data-variant-name>Agent Listing Video · 30–60s</h4>
                 <ul className="pkg-card__incl">
                   <li data-variant-lead>30–60s cinematic edit · 16:9</li>
                   <li data-variant-b1>Agent piece-to-camera direction</li>
@@ -1042,6 +1056,32 @@ export default function BookPage() {
                   <button type="button" data-variant="long">60–90s<small>$699</small></button>
                 </div>
                 <div className="svc-card__foot"><span className="svc-card__price" data-variant-price>$499</span><span className="svc-card__add">Add +</span></div>
+              </div>
+            </article>
+
+            <article className="svc-card svc-card--reel is-locked" data-svc="Social media reel" data-price="100" data-desc="A vertical 9:16 social reel cut from your listing footage — built for Instagram Reels, TikTok and Facebook. Punchy pacing, scored to a track." data-img="/images/social-media-reel-poster.webp" data-gallery="socialreel">
+              <div className="svc-card__media">
+                <video
+                  src="/video/social-media-reel-loop.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(0.94)' }}
+                />
+              </div>
+              <span className="svc-card__badge">Add-on</span>
+              <span className="svc-card__lock" aria-hidden="true">Add a video first</span>
+              <div className="svc-card__body">
+                <h4 className="svc-card__name">Social media reel</h4>
+                <ul className="pkg-card__incl">
+                  <li>Vertical 9:16 · Reels · TikTok · Shorts</li>
+                  <li>Cut from your listing video footage</li>
+                  <li>Punchy pacing · scored to a track</li>
+                  <li>Add-on · unlocks once a video is in your booking</li>
+                </ul>
+                <div className="svc-card__foot"><span className="svc-card__price">$100</span><span className="svc-card__add">Add +</span></div>
               </div>
             </article>
 
@@ -1281,12 +1321,13 @@ export default function BookPage() {
   if(!cards.length || !fab) return;
 
   // ---- Upsell catalogue (virtual items + popup triggers) ----
-  const PHOTO_TO_VIDEO = {
-    name: 'Virtual staged listing video',
-    price: 449,
-    img: '/images/staged-tennyson-g01-poster.webp',
-    categories: ['video'],
-    desc: 'A fast, atmospheric 30–60s film — pure architecture, light and motion, with virtual-staged furniture added into the shots.',
+  // Social media reel — add-on that only unlocks once a video is in the cart.
+  const SOCIAL_REEL = {
+    name: 'Social media reel',
+    price: 100,
+    img: '/images/social-media-reel-poster.webp',
+    categories: ['social'],
+    desc: 'A vertical 9:16 social reel cut from your listing footage — built for Instagram Reels, TikTok and Facebook. Punchy pacing, scored to a track.',
   };
   const SITE_PLAN = {
     name: 'Site Plan',
@@ -1307,7 +1348,7 @@ export default function BookPage() {
     if (/^Drone Set\b/.test(name)) tags.add('drone');
     if (/^Property Highlight Video\b/.test(name)) tags.add('video');
     if (/^Listing Video\b/.test(name)) { tags.add('video'); tags.add('listingvideo'); }
-    if (/^Cinematic Listing Video\b/.test(name)) { tags.add('video'); tags.add('cinematicvideo'); }
+    if (/^Agent Listing Video\b/.test(name)) { tags.add('video'); tags.add('cinematicvideo'); }
     if (/^Virtual staged listing video\b/.test(name)) tags.add('video');
     return tags;
   }
@@ -1320,12 +1361,27 @@ export default function BookPage() {
     });
     return all;
   }
-  function cartHasVideo(){
+  // Any video in the cart (Property Highlight, Agent Listing, Virtual staged) —
+  // this is what unlocks the Social media reel add-on. Excludes the reel itself.
+  function cartHasAnyVideo(){
     for (const [name, data] of items) {
-      if (name === PHOTO_TO_VIDEO.name) continue;
+      if (name === SOCIAL_REEL.name) continue;
       if (Array.isArray(data.categories) && data.categories.includes('video')) return true;
     }
     return false;
+  }
+  // Re-lock the reel card when no video remains, and auto-drop it if it was added.
+  function enforceReelGate(){
+    const hasVideo = cartHasAnyVideo();
+    document.querySelectorAll('.svc-card--reel').forEach(c => {
+      const locked = !hasVideo;
+      c.classList.toggle('is-locked', locked);
+      const svc = c.getAttribute('data-svc');
+      if (locked && svc && items.has(svc)) {
+        items.delete(svc);
+        c.classList.remove('is-added');
+      }
+    });
   }
   function cartHasPackageInProgress(){
     for (const name of items.keys()) { if (name.includes(' — ')) return true; }
@@ -1343,8 +1399,11 @@ export default function BookPage() {
 
   // Add-ons live on the /book/cart page now, not the overlay — nothing to sync here.
   function syncAddons(){ /* no-op in overlay; cart page renders its own add-ons */ }
-  function addPhotoToVideo(){
-    items.set(PHOTO_TO_VIDEO.name, { price: String(PHOTO_TO_VIDEO.price), img: PHOTO_TO_VIDEO.img, categories: PHOTO_TO_VIDEO.categories.slice() });
+  function addSocialReel(){
+    if (!cartHasAnyVideo()) return; // gate: only with a video in the cart
+    items.set(SOCIAL_REEL.name, { price: String(SOCIAL_REEL.price), img: SOCIAL_REEL.img, categories: SOCIAL_REEL.categories.slice() });
+    const card = findCard(SOCIAL_REEL.name);
+    if (card) card.classList.add('is-added');
     render(); openCart({auto:true});
   }
   function addSitePlan(){
@@ -1400,20 +1459,34 @@ export default function BookPage() {
   }
   if (toastClose) toastClose.addEventListener('click', hideToast);
 
-  function maybePromptPhotoToVideo(addedCategories){
+  // Pops when any video is added — offers the social media reel add-on (once/session).
+  function maybePromptReel(addedCategories){
     if (!toast) return;
     if (!Array.isArray(addedCategories) || !addedCategories.includes('video')) return;
-    if (items.has(PHOTO_TO_VIDEO.name)) return;
-    if (sessionStorage.getItem('wv-p2v-prompted') === '1') return;
-    sessionStorage.setItem('wv-p2v-prompted','1');
+    if (items.has(SOCIAL_REEL.name)) return;
+    if (sessionStorage.getItem('wv-reel-prompted') === '1') return;
+    sessionStorage.setItem('wv-reel-prompted','1');
     showToast({
       eyebrow: 'Add-on · Recommended',
-      title: 'Add a virtual staged listing video?',
-      desc: PHOTO_TO_VIDEO.desc,
-      price: '$' + PHOTO_TO_VIDEO.price,
-      img: PHOTO_TO_VIDEO.img,
-      addLabel: 'Add · $' + PHOTO_TO_VIDEO.price,
-      onAdd: addPhotoToVideo,
+      title: 'Add a social media reel?',
+      desc: SOCIAL_REEL.desc,
+      price: '$' + SOCIAL_REEL.price,
+      img: SOCIAL_REEL.img,
+      addLabel: 'Add · $' + SOCIAL_REEL.price,
+      onAdd: addSocialReel,
+    });
+  }
+  // Shown when someone taps the locked reel card before any video is chosen.
+  function showReelLockedNudge(){
+    if (!toast) return;
+    showToast({
+      eyebrow: 'Locked add-on',
+      title: 'Add a video first',
+      desc: 'The social media reel is cut from your listing video footage — add a Property Highlight, Agent Listing or Virtual staged video to unlock it.',
+      price: '$' + SOCIAL_REEL.price,
+      img: SOCIAL_REEL.img,
+      addLabel: 'Got it',
+      onAdd: function(){},
     });
   }
   function maybePromptSitePlan(addedPkgName, addedPkgBundles){
@@ -1516,6 +1589,7 @@ export default function BookPage() {
   function fmt(n){ return '$' + Number(n).toLocaleString('en-AU'); }
 
   function render(){
+    enforceReelGate(); // re-lock / auto-drop the reel before drawing the cart
     let editing = [];
     try { editing = JSON.parse(sessionStorage.getItem('wv-editing') || '[]'); } catch (_) {}
     const editingCount = editing.length;
@@ -1572,6 +1646,11 @@ export default function BookPage() {
     const card = findCard(name);
     const isAdded = items.has(name);
     const nextState = (typeof force === 'boolean') ? force : !isAdded;
+    // Reel is locked until a video is in the cart — tapping it just nudges.
+    if(nextState && card && card.classList.contains('svc-card--reel') && !cartHasAnyVideo()){
+      showReelLockedNudge();
+      return;
+    }
     if(nextState && card){
       const cats = readCats(card);
       items.set(name, {
@@ -1581,7 +1660,7 @@ export default function BookPage() {
       });
       card.classList.add('is-added');
       openCart({auto:true});
-      maybePromptPhotoToVideo(cats);
+      maybePromptReel(cats);
       maybePromptPackage();
     } else {
       items.delete(name);
@@ -1598,7 +1677,7 @@ export default function BookPage() {
   // re-render so the cart reflects editing picks + opens to confirm the change.
   window.addEventListener('wv-editing-changed', () => { render(); openCart({auto:true}); });
 
-  // ---- Variant pickers on svc-cards (e.g. Cinematic Listing Video 30–60s / 60–90s) ----
+  // ---- Variant pickers on svc-cards (e.g. Agent Listing Video 30–60s / 60–90s) ----
   document.querySelectorAll('.svc-card--variants').forEach(card => {
     let variants = [];
     try { variants = JSON.parse(card.dataset.variants || '[]'); } catch (_) {}
@@ -1750,7 +1829,7 @@ export default function BookPage() {
             categories: cats,
           });
           const bundles = card.getAttribute('data-pkg-bundles') || '';
-          maybePromptPhotoToVideo(cats);
+          maybePromptReel(cats);
           maybePromptSitePlan(pkgName, bundles);
           render();
           openCart({auto:true});
