@@ -31,6 +31,8 @@ const clients: Client[] = [
   { name: 'RT Edgar', src: '/logos/rt-edgar.webp', mono: true },
   { name: 'Area Specialist Rapid', src: '/logos/area-specialist.webp', mono: true },
   { name: 'Buxton', src: '/logos/buxton.svg' },
+  { name: 'Anna Grace', src: '/logos/anna-grace.webp' },
+  { name: 'Professionals Real Estate', src: '/logos/professionals.webp' },
 ];
 
 /* On mobile the list is split across two marquee lines (top scrolls right,
