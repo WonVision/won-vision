@@ -77,6 +77,18 @@ export function StrataUpload() {
 
   return (
     <section>
+      {/* .wv-drop / .wv-imgchip live in the cart + editing components' style
+          blocks, which aren't mounted on the schedule page — scope them here
+          so the box matches the booking aesthetic. The rest (section/h3/.row/
+          label/.hint) comes from globals.css. */}
+      <style>{`
+        .wv-drop{display:flex;align-items:center;gap:8px;width:100%;border:1px dashed var(--steel);padding:10px 12px;font-size:11.5px;color:var(--steel);background:var(--paper);cursor:pointer;font-family:var(--body);text-align:left}
+        .wv-drop svg{width:15px;height:15px;flex:0 0 15px}
+        .wv-drop:disabled{opacity:.6;cursor:default}
+        .wv-imgchip{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+        .wv-imgchip__nme{font-size:11.5px;color:var(--graphite);flex:1;word-break:break-all}
+        .wv-imgchip__rm{font-size:14px;color:var(--steel);background:none;border:0;cursor:pointer}
+      `}</style>
       <h3>Strata plans</h3>
       <div className="row">
         <label htmlFor="strataUpload">Have a strata plan? (optional)</label>
