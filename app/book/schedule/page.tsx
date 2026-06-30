@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
 import { Wordmark } from '../../components/Wordmark';
+import { StrataUpload } from '../StrataUpload';
 
 export const metadata: Metadata = {
   title: 'Schedule',
@@ -198,6 +199,8 @@ export default function SchedulePage() {
                 <small className="hint" id="accessNotesHint">Anything our shooter should know — gates, parking, pets, alarms.</small>
               </div>
             </section>
+
+            <StrataUpload />
 
             <section>
               <h3>Promo code</h3>

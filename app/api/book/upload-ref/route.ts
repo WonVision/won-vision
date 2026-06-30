@@ -13,7 +13,8 @@ export async function POST(request: Request): Promise<NextResponse> {
       body,
       request,
       onBeforeGenerateToken: async (pathname) => ({
-        allowedContentTypes: ['image/jpeg', 'image/png', 'image/heic', 'image/webp'],
+        // image/* for editing references; application/pdf for strata plans.
+        allowedContentTypes: ['image/jpeg', 'image/png', 'image/heic', 'image/webp', 'application/pdf'],
         addRandomSuffix: true,
         maximumSizeInBytes: 20 * 1024 * 1024, // 20MB
         tokenPayload: JSON.stringify({ scope: 'booking-ref', pathname }),
