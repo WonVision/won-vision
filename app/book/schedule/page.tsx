@@ -343,6 +343,27 @@ export default function SchedulePage() {
   const cart = JSON.parse(sessionStorage.getItem('wv-cart') || '[]');
   const details = JSON.parse(sessionStorage.getItem('wv-details') || '{}');
   if (!cart.length) { window.location.href = '/book'; return; }
+
+  // On-site shoot duration from the cart's service categories — mirrors
+  // booking-submit.js so the slots shown match the time we actually block.
+  // One site visit = sum of UNIQUE categories; off-site work adds 0.
+  // Keep in sync with booking-submit.js + tests/shoot-duration.test.ts.
+  function shootDurationMins(cats){
+    var MINS = { photography: 45, photo: 45, video: 150, floorplan: 15, siteplan: 15, drone: 15 };
+    var seen = {};
+    (cats || []).forEach(function(c){
+      c = String(c).toLowerCase();
+      if (c === 'photo') c = 'photography';
+      if (c === 'siteplan') c = 'floorplan';
+      seen[c] = MINS[c] || 0;
+    });
+    var total = 0;
+    Object.keys(seen).forEach(function(k){ total += seen[k]; });
+    return Math.max(15, total);
+  }
+  var shootCats = [];
+  cart.forEach(function(it){ if (Array.isArray(it.categories)) shootCats = shootCats.concat(it.categories); });
+  var shootMins = shootDurationMins(shootCats);
   if (!details.email) { window.location.href = '/book/checkout'; return; }
 
   const list = document.getElementById('summaryList');
@@ -646,7 +667,7 @@ export default function SchedulePage() {
     try {
       const url = OPS_BASE + '/api/public/' + encodeURIComponent(TENANT_SLUG) +
         '/availability/slots?date=' + encodeURIComponent(date) +
-        '&duration=60' +
+        '&duration=' + shootMins +
         '&address=' + encodeURIComponent(details.address || '') +
         '&suburb='  + encodeURIComponent(details.suburb || '');
       const r = await fetch(url, { credentials: 'omit' });
