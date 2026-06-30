@@ -592,12 +592,13 @@ export default function BookPage() {
     display:flex;gap:14px;align-items:stretch;
   }
   .upsell-toast__thumb{
-    flex:0 0 auto;
-    width:74px;align-self:stretch;
+    flex:0 0 90px;
+    width:90px;height:90px;align-self:center;aspect-ratio:1;
     background:var(--soft) center/cover no-repeat;
     border:1px solid rgba(74,74,72,0.14);
-    min-height:90px;
   }
+  /* Social media reel is a vertical 9:16 video — show the whole frame, don't crop. */
+  .upsell-toast__thumb.is-contain{background-size:contain}
   .upsell-toast__body{flex:1;min-width:0;display:flex;flex-direction:column}
   .upsell-toast.is-open{opacity:1;transform:translateY(0);pointer-events:auto}
   .upsell-toast__close{
@@ -1332,7 +1333,7 @@ export default function BookPage() {
   const SITE_PLAN = {
     name: 'Site Plan',
     price: 49,
-    img: '/images/floor-plan.webp',
+    img: '/images/site-plan.webp',
     categories: ['floorplan','siteplan'],
     desc: 'Standalone site plan with boundaries, orientation and lot dimensions — add it to round out the package.',
   };
@@ -1436,7 +1437,11 @@ export default function BookPage() {
     if (toastTitle)   toastTitle.textContent   = opts.title;
     if (toastDesc)    toastDesc.textContent    = opts.desc;
     if (toastPrice)   toastPrice.textContent   = opts.price;
-    if (toastThumb)   toastThumb.style.backgroundImage = opts.img ? "url('" + opts.img + "')" : 'none';
+    if (toastThumb) {
+      toastThumb.style.backgroundImage = opts.img ? "url('" + opts.img + "')" : 'none';
+      // Reel/video posters are vertical — contain so the whole frame shows.
+      toastThumb.classList.toggle('is-contain', /reel|video/i.test(opts.img || ''));
+    }
     if (toastAdd) {
       toastAdd.textContent = opts.addLabel || 'Add';
       toastAdd.onclick = function(){ try { opts.onAdd && opts.onAdd(); } finally { hideToast(); } };

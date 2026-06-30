@@ -89,9 +89,9 @@ export function StrataUpload() {
         .wv-imgchip__nme{font-size:11.5px;color:var(--graphite);flex:1;word-break:break-all}
         .wv-imgchip__rm{font-size:14px;color:var(--steel);background:none;border:0;cursor:pointer}
       `}</style>
-      <h3>Strata plans</h3>
+      <h3>Floor plan / site plan</h3>
       <div className="row">
-        <label htmlFor="strataUpload">Have a strata plan? (optional)</label>
+        <label htmlFor="strataUpload">Have a strata / lot plan? (optional)</label>
         {plans.map((p, i) => (
           <div className="wv-imgchip" key={p.url}>
             <span className="wv-imgchip__nme">{p.name}</span>

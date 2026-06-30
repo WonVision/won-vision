@@ -171,7 +171,7 @@ export default function ConfirmationPage() {
             <h4>Your client portal</h4>
             <p id="portalCopy">Track shoot status, download files when ready, and message the studio — all from a single page tied to this booking.</p>
             <a id="portalLink" target="_blank" rel="noopener noreferrer" hidden>Open client portal →</a>
-            <p id="portalPending" style={{ fontSize: 13, color: '#737373', margin: 0 }}>We&apos;ll email your portal link to <strong id="portalPendingEmail" style={{ color: '#000' }}>your address</strong> shortly.</p>
+            <p id="portalPending" style={{ fontSize: 13, color: '#737373', margin: 0, textAlign: 'center' }}>We&apos;ll email your portal link to <strong id="portalPendingEmail" style={{ color: '#000' }}>your address</strong> shortly.</p>
           </div>
 
           <div className="confirm-map" id="confirmMap" hidden>

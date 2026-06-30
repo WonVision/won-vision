@@ -220,7 +220,7 @@ export default function CheckoutPage() {
                 <small className="hint">So your shoots, invoices and delivered galleries all sit under the right brand — and your teammates can find them too. Start typing and pick yours, or add a new one.</small>
               </div>
               <div className="row" style={{ position: 'relative' }}>
-                <label htmlFor="agencyOffice">Agency office location</label>
+                <label htmlFor="agencyOffice">Agency office location (optional)</label>
                 <input id="agencyOffice" name="agencyOffice" type="text" placeholder="Office address or suburb (e.g. Acme Realty Northside)"
                        autoComplete="off" autoCorrect="off" spellCheck="false" />
                 <ul id="officeTypeahead"
