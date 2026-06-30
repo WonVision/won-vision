@@ -33,21 +33,20 @@ function writeEditing(items: EditingEntry[]) {
   try { sessionStorage.setItem('wv-editing', JSON.stringify(items)); } catch (_) {}
 }
 
-const PHOTO_TO_VIDEO: CartItem = {
-  name: 'Virtual staged listing video',
-  price: 449,
-  img: '/images/staged-tennyson-g01-poster.webp',
-  categories: ['video'],
-};
 const SITE_PLAN: CartItem = {
   name: 'Site Plan',
   price: 49,
   img: '/images/site-plan.webp',
   categories: ['siteplan'],
 };
+const SOCIAL_REEL: CartItem = {
+  name: 'Social media reel',
+  price: 100,
+  img: '/images/social-media-reel-poster.webp',
+  categories: ['social'],
+};
 
 const PACKAGE_PREFIXES = ['Essential —', 'Signature —', 'Cinematic —'];
-const PACKAGES_WITHOUT_SITEPLAN = ['Essential —'];
 
 function readCart(): CartItem[] {
   if (typeof window === 'undefined') return [];
@@ -107,15 +106,17 @@ export default function CartPage() {
     writeEditing(next);
   }
 
-  const hasVideo = items.some(i => i.name !== PHOTO_TO_VIDEO.name && Array.isArray(i.categories) && i.categories.includes('video'));
-  const hasPhotoToVideo = items.some(i => i.name === PHOTO_TO_VIDEO.name);
+  // Recommend the counterpart upsells: a floor plan in the cart → Site Plan;
+  // a video in the cart → Social media reel. Show whichever isn't there yet.
+  const hasFloorplan = items.some(i => Array.isArray(i.categories) && i.categories.includes('floorplan'));
+  const hasVideo = items.some(i => Array.isArray(i.categories) && i.categories.includes('video'));
   const hasSite = items.some(i => i.name === SITE_PLAN.name || i.name === 'Floor Plan + Site Plan' || (Array.isArray(i.categories) && i.categories.includes('siteplan')));
-  const hasEssentialPackage = items.some(i => PACKAGES_WITHOUT_SITEPLAN.some(p => i.name.startsWith(p)));
+  const hasReel = items.some(i => i.name === SOCIAL_REEL.name || (Array.isArray(i.categories) && i.categories.includes('social')));
 
-  const showPhotoToVideoAddon = hasVideo && !hasPhotoToVideo;
-  const showSiteAddon = hasEssentialPackage && !hasSite;
+  const showSiteAddon = hasFloorplan && !hasSite;
+  const showReelAddon = hasVideo && !hasReel;
 
-  function addPhotoToVideo() { update([...items, PHOTO_TO_VIDEO]); }
+  function addReel() { update([...items, SOCIAL_REEL]); }
   function addSite() { update([...items, SITE_PLAN]); }
 
   return (
@@ -198,29 +199,29 @@ export default function CartPage() {
                   </ul>
                 </section>
 
-                {(showPhotoToVideoAddon || showSiteAddon) && (
+                {(showSiteAddon || showReelAddon) && (
                   <section className="cart-addons">
                     <h3>Recommended add-ons</h3>
-                    {showPhotoToVideoAddon && (
-                      <div className="cart-addons__row">
-                        <div className="cart-addons__thumb"><PhoneIcon /></div>
-                        <div className="cart-addons__info">
-                          <div className="cart-addons__name">Virtual staged listing video</div>
-                          <div className="cart-addons__desc">A fast, atmospheric 30–60s film — pure architecture, light and motion, with virtual-staged furniture added into the shots.</div>
-                        </div>
-                        <div className="cart-addons__price">$449</div>
-                        <button type="button" className="cart-addons__add" onClick={addPhotoToVideo}>Add</button>
-                      </div>
-                    )}
                     {showSiteAddon && (
                       <div className="cart-addons__row">
                         <div className="cart-addons__thumb"><PlanIcon /></div>
                         <div className="cart-addons__info">
                           <div className="cart-addons__name">Site Plan</div>
-                          <div className="cart-addons__desc">Standalone site plan with boundaries, orientation and lot dimensions — round out your package.</div>
+                          <div className="cart-addons__desc">Standalone site plan with boundaries, orientation and lot dimensions — pairs with your floor plan.</div>
                         </div>
                         <div className="cart-addons__price">$49</div>
                         <button type="button" className="cart-addons__add" onClick={addSite}>Add</button>
+                      </div>
+                    )}
+                    {showReelAddon && (
+                      <div className="cart-addons__row">
+                        <div className="cart-addons__thumb"><PhoneIcon /></div>
+                        <div className="cart-addons__info">
+                          <div className="cart-addons__name">Social media reel</div>
+                          <div className="cart-addons__desc">A vertical 9:16 reel cut from your listing footage — built for Instagram Reels, TikTok and Facebook.</div>
+                        </div>
+                        <div className="cart-addons__price">$100</div>
+                        <button type="button" className="cart-addons__add" onClick={addReel}>Add</button>
                       </div>
                     )}
                   </section>
