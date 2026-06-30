@@ -128,7 +128,7 @@ export function StrataUpload() {
             e.target.value = '';
           }}
         />
-        <small className="hint">Optional — attach the strata/lot plan and we&apos;ll add it to your job.</small>
+        <small className="hint">Optional — but sending your strata/lot plan now speeds up your floor plan delivery.</small>
       </div>
     </section>
   );
