@@ -9,7 +9,7 @@ import ClientLogos from './components/ClientLogos';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Won Vision — Same day turn around.',
+    absolute: 'Won Vision — Same day photo turn around.',
   },
   description:
     'Melbourne real estate photography by Won Vision — a property media studio offering listing photography, video, drone, floor plans, virtual staging, agent headshots and day-to-dusk conversions. Flexible packages and add-ons built to sell premium property faster.',
@@ -34,7 +34,7 @@ export default function HomePage() {
       <LoaderGate />
 
       <style>{`
-  /* ---------- Hero: Won Vision ⇄ Same day turn around morph loop ---------- */
+  /* ---------- Hero: Won Vision ⇄ Same day photo turn around morph loop ---------- */
   .hero__morph{
     position:relative;
     display:flex;align-items:center;justify-content:center;
@@ -506,7 +506,7 @@ export default function HomePage() {
           <div className="home-faq__head reveal">
             <span className="eyebrow">FAQ</span>
             <h2>The <em>quick</em> answers.</h2>
-            <p>Anything not covered, email <a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a> or <a href="/book">book a shoot</a> — the form walks you through the rest.</p>
+            <p>Anything not covered, email <a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a> or <a href="/book">book a shoot</a> — the form walks you through the rest.</p>
           </div>
 
           <div className="home-faq__list reveal-stagger">
@@ -603,7 +603,7 @@ export default function HomePage() {
           <div className="foot__top reveal-stagger">
             <div>
               <a href="#top" data-home aria-label="Won Vision"><Wordmark /></a>
-              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day turn around.</p>
+              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day photo turn around.</p>
             </div>
             <div>
               <h4>Studio</h4>
@@ -617,7 +617,7 @@ export default function HomePage() {
             <div>
               <h4>Contact</h4>
               <ul>
-                <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
+                <li><a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a></li>
                 <li><a href="tel:+61493714609">0493 714 609</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
@@ -634,7 +634,7 @@ export default function HomePage() {
           <div className="foot__rule"></div>
           <div className="foot__bot">
             <span>© 2026 Won Vision Pty Ltd</span>
-            <span>Same day turn around.</span>
+            <span>Same day photo turn around.</span>
             <span>Melbourne · Made in-house</span>
           </div>
         </div>

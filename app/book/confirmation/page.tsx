@@ -224,7 +224,7 @@ export default function ConfirmationPage() {
               <li><Link href="/book">Book now</Link></li>
             </ul></div>
             <div><h4>Contact</h4><ul>
-              <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
+              <li><a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a></li>
               <li><a href="tel:+61493714609">0493 714 609</a></li>
             </ul></div>
             <div><h4>Operations</h4><ul>
@@ -236,7 +236,7 @@ export default function ConfirmationPage() {
           <div className="foot__rule"></div>
           <div className="foot__bot">
             <span>© 2026 Won Vision Pty Ltd</span>
-            <span>Same day turn around.</span>
+            <span>Same day photo turn around.</span>
             <span>Melbourne · Made in-house</span>
           </div>
         </div>
@@ -363,7 +363,7 @@ export default function ConfirmationPage() {
       const endLocal = ymd + 'T' + plus90(hhmm);
       const text = 'Won Vision shoot — ' + ((cart || []).map(function(it){ return it.name; }).join(' · ') || 'Property shoot');
       const fullAddress = [details.address, details.suburb, details.state, details.postcode].filter(Boolean).join(', ');
-      const detailsText = 'Booking ref: ' + fallbackRef + '\\n\\nProperty: ' + fullAddress + '\\nContact studio: 0493 714 609 · hello@wonvision.com.au';
+      const detailsText = 'Booking ref: ' + fallbackRef + '\\n\\nProperty: ' + fullAddress + '\\nContact studio: 0493 714 609 · main@wonvision.com.au';
       const url = 'https://www.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent(text)
         + '&dates=' + startLocal + '/' + endLocal

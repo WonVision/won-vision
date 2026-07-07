@@ -86,7 +86,7 @@ export default function PrivacyPage() {
           <h2>5. Contact</h2>
           <p>
             For any privacy request or question, contact us at{' '}
-            <a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a> or{' '}
+            <a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a> or{' '}
             <a href="tel:+61493714609">0493 714 609</a>.
           </p>
         </article>
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
           <div className="foot__top">
             <div>
               <Link href="/#top" aria-label="Won Vision — home"><Wordmark /></Link>
-              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day turn around.</p>
+              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day photo turn around.</p>
             </div>
             <div>
               <h4>Studio</h4>
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
             <div>
               <h4>Contact</h4>
               <ul>
-                <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
+                <li><a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a></li>
                 <li><a href="tel:+61493714609">0493 714 609</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
@@ -127,7 +127,7 @@ export default function PrivacyPage() {
           <div className="foot__rule"></div>
           <div className="foot__bot">
             <span>© 2026 Won Vision Pty Ltd</span>
-            <span>Same day turn around.</span>
+            <span>Same day photo turn around.</span>
             <span>Melbourne · Made in-house</span>
           </div>
         </div>

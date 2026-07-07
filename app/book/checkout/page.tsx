@@ -263,7 +263,7 @@ export default function CheckoutPage() {
           <div className="foot__top">
             <div>
               <Link href="/#top" data-home aria-label="Won Vision — home"><Wordmark /></Link>
-              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day turn around.</p>
+              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day photo turn around.</p>
             </div>
             <div><h4>Studio</h4><ul>
               <li><Link href="/#services">Services</Link></li>
@@ -271,7 +271,7 @@ export default function CheckoutPage() {
               <li><Link href="/book">Book now</Link></li>
             </ul></div>
             <div><h4>Contact</h4><ul>
-              <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
+              <li><a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a></li>
               <li><a href="tel:+61493714609">0493 714 609</a></li>
             </ul></div>
             <div><h4>Operations</h4><ul>
@@ -283,7 +283,7 @@ export default function CheckoutPage() {
           <div className="foot__rule"></div>
           <div className="foot__bot">
             <span>© 2026 Won Vision Pty Ltd</span>
-            <span>Same day turn around.</span>
+            <span>Same day photo turn around.</span>
             <span>Melbourne · Made in-house</span>
           </div>
         </div>

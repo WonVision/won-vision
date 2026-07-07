@@ -79,7 +79,7 @@ export default function OperatePage() {
           <div className="foot__top reveal-stagger">
             <div>
               <Link href="/#top" aria-label="Won Vision"><Wordmark /></Link>
-              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day turn around.</p>
+              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day photo turn around.</p>
             </div>
             <div>
               <h4>Studio</h4>
@@ -93,7 +93,7 @@ export default function OperatePage() {
             <div>
               <h4>Contact</h4>
               <ul>
-                <li><a href="mailto:hello@wonvision.com.au">hello@wonvision.com.au</a></li>
+                <li><a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a></li>
                 <li><a href="tel:+61493714609">0493 714 609</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
@@ -110,7 +110,7 @@ export default function OperatePage() {
           <div className="foot__rule"></div>
           <div className="foot__bot">
             <span>© 2026 Won Vision Pty Ltd</span>
-            <span>Same day turn around.</span>
+            <span>Same day photo turn around.</span>
             <span>Melbourne · Made in-house</span>
           </div>
         </div>
