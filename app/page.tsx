@@ -60,17 +60,17 @@ export default function HomePage() {
     box-sizing:border-box;
     padding-inline:clamp(16px, 5vw, 40px);
     font-family:var(--display);font-weight:500;
-    /* Slogan-only fluid scale. Floor lowered to 26px so the longest
-       single line ("delivered same day.") fits without wrap on a
-       ~360px phone; cap kept at 78px for desktop confidence. */
-    font-size:clamp(26px, 6.2vw, 78px);
+    /* Slogan-only fluid scale. Floor at 24px so the longest single
+       line ("Photos shot, edited", 19ch) fits without wrap or clip
+       down to a 320px phone; cap kept at 78px for desktop confidence. */
+    font-size:clamp(24px, 6.2vw, 78px);
     line-height:1.18;letter-spacing:0.005em;color:var(--paper);
     text-wrap:balance;
     overflow-wrap:break-word;
   }
-  /* Must NOT be a non-wrapping inline-block: on a narrow viewport the
-     long line ("Shot, edited and delivered") would extrude past the
-     screen edge and clip. Allow it to wrap within the container. */
+  /* Base line box. Each slogan line is short enough to sit on one
+     visual line; the --nowrap modifier below pins them and the fluid
+     clamp shrinks the type to fit rather than wrapping. */
   .hero__morph__line{
     display:block;
     max-width:100%;
@@ -78,10 +78,10 @@ export default function HomePage() {
     overflow-wrap:break-word;
     text-wrap:balance;
   }
-  /* Slogan line 3 ("delivered same day.") must sit on ONE visual line —
-     no wrap. The lowered B clamp floor (26px) lets it still fit without
-     horizontal clipping down to ~360px; it shrinks with the fluid scale
-     rather than wrapping. Lines 1 & 2 keep normal wrapping. */
+  /* All three slogan lines sit on ONE visual line each — no wrap. The
+     26px B clamp floor lets the longest ("Photos shot, edited") still
+     fit without horizontal clipping down to ~360px; it shrinks with the
+     fluid scale rather than wrapping. */
   .hero__morph__line--nowrap{
     white-space:nowrap;
     overflow-wrap:normal;
@@ -317,10 +317,10 @@ export default function HomePage() {
               </h1>
               <p className="hero__morph__b" aria-hidden="true">
                 {/* Three tight lines. --i continuous across all lines
-                    (L1 0..11, L2 12..14, L3 15..33) so the left to right
+                    (L1 0..18, L2 19..31, L3 32..40) so the left to right
                     cascade flows unbroken through the whole phrase. */}
-                <span className="hero__morph__line">
-                  {['S', 'h', 'o', 't', ',', ' ', 'e', 'd', 'i', 't', 'e', 'd'].map(
+                <span className="hero__morph__line hero__morph__line--nowrap">
+                  {['P', 'h', 'o', 't', 'o', 's', ' ', 's', 'h', 'o', 't', ',', ' ', 'e', 'd', 'i', 't', 'e', 'd'].map(
                     (c, i) => (
                       <span key={i} className="ch" style={{ ['--i' as never]: i }}>
                         {c === ' ' ? ' ' : c}
@@ -328,25 +328,20 @@ export default function HomePage() {
                     ),
                   )}
                 </span>
-                <span className="hero__morph__line">
-                  {['a', 'n', 'd'].map((c, j) => (
-                    <span key={j} className="ch" style={{ ['--i' as never]: 12 + j }}>
-                      {c}
+                <span className="hero__morph__line hero__morph__line--nowrap">
+                  {['a', 'n', 'd', ' ', 'd', 'e', 'l', 'i', 'v', 'e', 'r', 'e', 'd'].map((c, j) => (
+                    <span key={j} className="ch" style={{ ['--i' as never]: 19 + j }}>
+                      {c === ' ' ? ' ' : c}
                     </span>
                   ))}
                 </span>
                 <span className="hero__morph__line hero__morph__line--nowrap">
-                  {['d', 'e', 'l', 'i', 'v', 'e', 'r', 'e', 'd', ' '].map((c, k) => (
-                    <span key={k} className="ch" style={{ ['--i' as never]: 15 + k }}>
-                      {c === ' ' ? ' ' : c}
-                    </span>
-                  ))}
                   <span className="hero__morph__line--em">
                     {['s', 'a', 'm', 'e', ' ', 'd', 'a', 'y', '.'].map((c, m) => (
                       <span
                         key={m}
                         className="ch"
-                        style={{ ['--i' as never]: 25 + m }}
+                        style={{ ['--i' as never]: 32 + m }}
                       >
                         {c === ' ' ? ' ' : c}
                       </span>
