@@ -268,10 +268,70 @@ export default function GalleryPage() {
             />
           </article>
 
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="staging">
+            <BeforeAfterSlider
+              beforeSrc="/images/staging-bedroom-before.webp"
+              afterSrc="/images/staging-bedroom-after.webp"
+              beforeAlt="Bedroom before virtual staging"
+              afterAlt="Bedroom after virtual staging"
+              label="Virtual staging"
+            />
+          </article>
+
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="staging">
+            <BeforeAfterSlider
+              beforeSrc="/images/staging-living-before.webp"
+              afterSrc="/images/staging-living-after.webp"
+              beforeAlt="Living room before virtual staging"
+              afterAlt="Living room after virtual staging"
+              label="Virtual staging"
+            />
+          </article>
+
           <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="declutter">
             <BeforeAfterSlider
               beforeSrc="/images/declutter-before.webp"
               afterSrc="/images/declutter-after.webp"
+              beforeAlt="Cluttered room before decluttering"
+              afterAlt="Room after decluttering"
+              label="Decluttering"
+            />
+          </article>
+
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="declutter">
+            <BeforeAfterSlider
+              beforeSrc="/images/declutter-living-before.webp"
+              afterSrc="/images/declutter-living-after.webp"
+              beforeAlt="Cluttered living room before decluttering"
+              afterAlt="Living room after decluttering"
+              label="Decluttering"
+            />
+          </article>
+
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="declutter">
+            <BeforeAfterSlider
+              beforeSrc="/images/declutter-kitchen-before.webp"
+              afterSrc="/images/declutter-kitchen-after.webp"
+              beforeAlt="Cluttered kitchen before decluttering"
+              afterAlt="Kitchen after decluttering"
+              label="Decluttering"
+            />
+          </article>
+
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="declutter">
+            <BeforeAfterSlider
+              beforeSrc="/images/declutter-garage-before.webp"
+              afterSrc="/images/declutter-garage-after.webp"
+              beforeAlt="Cluttered garage before decluttering"
+              afterAlt="Garage after decluttering"
+              label="Decluttering"
+            />
+          </article>
+
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="declutter">
+            <BeforeAfterSlider
+              beforeSrc="/images/declutter-room-before.webp"
+              afterSrc="/images/declutter-room-after.webp"
               beforeAlt="Cluttered room before decluttering"
               afterAlt="Room after decluttering"
               label="Decluttering"
