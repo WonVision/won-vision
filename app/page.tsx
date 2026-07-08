@@ -331,7 +331,7 @@ export default function HomePage() {
                 <span className="hero__morph__line hero__morph__line--nowrap">
                   {['a', 'n', 'd', ' ', 'd', 'e', 'l', 'i', 'v', 'e', 'r', 'e', 'd'].map((c, j) => (
                     <span key={j} className="ch" style={{ ['--i' as never]: 19 + j }}>
-                      {c === ' ' ? ' ' : c}
+                      {c === ' ' ? ' ' : c}
                     </span>
                   ))}
                 </span>
