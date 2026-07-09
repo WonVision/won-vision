@@ -348,6 +348,26 @@ export default function GalleryPage() {
             />
           </article>
 
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="dusk">
+            <BeforeAfterSlider
+              beforeSrc="/images/dusk-corner-before.webp"
+              afterSrc="/images/dusk-corner-after.webp"
+              beforeAlt="Daytime corner exterior before day-to-dusk"
+              afterAlt="Corner exterior after day-to-dusk conversion"
+              label="Day to dusk"
+            />
+          </article>
+
+          <article className="gallery__item gallery__item--slider s6" data-cat="virtual-editing" data-sub="dusk">
+            <BeforeAfterSlider
+              beforeSrc="/images/dusk-outside-before.webp"
+              afterSrc="/images/dusk-outside-after.webp"
+              beforeAlt="Daytime backyard before day-to-dusk"
+              afterAlt="Backyard after day-to-dusk conversion"
+              label="Day to dusk"
+            />
+          </article>
+
           {/* Video — agent listing film (lead), plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Agent listing">
