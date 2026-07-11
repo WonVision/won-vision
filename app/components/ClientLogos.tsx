@@ -32,6 +32,7 @@ const clients: Client[] = [
   { name: 'Buxton', src: '/logos/buxton.svg' },
   { name: 'Anna Grace', src: '/logos/anna-grace.webp' },
   { name: 'Professionals Real Estate', src: '/logos/professionals.webp' },
+  { name: 'CHN', src: '/logos/chn.webp' },
 ];
 
 /* On mobile the list is split across two marquee lines (top scrolls right,
