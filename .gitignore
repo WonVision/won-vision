@@ -13,3 +13,7 @@ test-results
 .env.*
 !.env.example
 .gstack/
+.env*
+
+# Videos live in Vercel Blob (npm run blob:push), not git — see next.config.ts
+public/video/*.mp4

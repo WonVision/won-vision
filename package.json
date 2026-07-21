@@ -11,7 +11,8 @@
     "test:watch": "vitest",
     "test:visual": "playwright test",
     "seed:editor": "dotenv -e .env.local -- tsx scripts/seed-editor.ts",
-    "dropbox:bootstrap": "dotenv -e .env.local -- tsx scripts/dropbox-bootstrap.ts"
+    "dropbox:bootstrap": "dotenv -e .env.local -- tsx scripts/dropbox-bootstrap.ts",
+    "blob:push": "./scripts/blob-push.sh"
   },
   "dependencies": {
     "@fal-ai/client": "^1.10.1",
