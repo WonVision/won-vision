@@ -6,10 +6,10 @@
     {
       "label": "next-env.d.ts",
       "file_type": "code",
-      "source_file": "next-env.d.ts",
+      "source_file": "/Users/kiranc/Code/won-media/next-env.d.ts",
       "source_location": "L1",
-      "id": "next_env_d_ts",
-      "community": 28,
+      "id": "users_kiranc_code_won_media_next_env_d_ts",
+      "community": 30,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "/Users/kiranc/Code/won-media/playwright.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_playwright_config_ts",
-      "community": 29,
+      "community": 31,
       "norm_label": "playwright.config.ts"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "/Users/kiranc/Code/won-media/drizzle.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_drizzle_config_ts",
-      "community": 30,
+      "community": 32,
       "norm_label": "drizzle.config.ts"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "/Users/kiranc/Code/won-media/vitest.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_vitest_config_ts",
-      "community": 31,
+      "community": 33,
       "norm_label": "vitest.config.ts"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "/Users/kiranc/Code/won-media/next.config.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_next_config_ts",
-      "community": 32,
+      "community": 34,
       "norm_label": "next.config.ts"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/fonts.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_fonts_ts",
-      "community": 33,
+      "community": 35,
       "norm_label": "fonts.ts"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L1",
       "id": "app_layout_tsx",
-      "community": 17,
+      "community": 18,
       "norm_label": "layout.tsx"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L20",
       "id": "app_layout_rootlayout",
-      "community": 17,
+      "community": 18,
       "norm_label": "rootlayout()"
     },
     {
@@ -142,7 +142,7 @@
       "label": "inject()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L167",
+      "source_location": "L211",
       "id": "components_servicegallerylightbox_inject",
       "community": 8,
       "norm_label": "inject()"
@@ -151,7 +151,7 @@
       "label": "handler()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L204",
+      "source_location": "L248",
       "id": "components_servicegallerylightbox_handler",
       "community": 8,
       "norm_label": "handler()"
@@ -160,7 +160,7 @@
       "label": "esc()",
       "file_type": "code",
       "source_file": "app/components/ServiceGalleryLightbox.tsx",
-      "source_location": "L214",
+      "source_location": "L258",
       "id": "components_servicegallerylightbox_esc",
       "community": 8,
       "norm_label": "esc()"
@@ -189,7 +189,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/WonVisionLoader.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_wonvisionloader_tsx",
-      "community": 34,
+      "community": 36,
       "norm_label": "wonvisionloader.tsx"
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "app/components/LoaderGate.tsx",
       "source_location": "L1",
       "id": "app_components_loadergate_tsx",
-      "community": 14,
+      "community": 15,
       "norm_label": "loadergate.tsx"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "app/components/LoaderGate.tsx",
       "source_location": "L10",
       "id": "components_loadergate_unlockscroll",
-      "community": 14,
+      "community": 15,
       "norm_label": "unlockscroll()"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "app/components/LoaderGate.tsx",
       "source_location": "L12",
       "id": "components_loadergate_loadergate",
-      "community": 14,
+      "community": 15,
       "norm_label": "loadergate()"
     },
     {
@@ -225,16 +225,16 @@
       "source_file": "app/components/ClientLogos.tsx",
       "source_location": "L1",
       "id": "app_components_clientlogos_tsx",
-      "community": 18,
+      "community": 19,
       "norm_label": "clientlogos.tsx"
     },
     {
       "label": "ClientLogos()",
       "file_type": "code",
       "source_file": "app/components/ClientLogos.tsx",
-      "source_location": "L36",
+      "source_location": "L45",
       "id": "components_clientlogos_clientlogos",
-      "community": 18,
+      "community": 19,
       "norm_label": "clientlogos()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "app/components/ServicesEditorial.tsx",
       "source_location": "L1",
       "id": "app_components_serviceseditorial_tsx",
-      "community": 35,
+      "community": 37,
       "norm_label": "serviceseditorial.tsx"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "app/components/ProcessStepper.tsx",
       "source_location": "L1",
       "id": "app_components_processstepper_tsx",
-      "community": 19,
+      "community": 20,
       "norm_label": "processstepper.tsx"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "app/components/ProcessStepper.tsx",
       "source_location": "L34",
       "id": "components_processstepper_processstepper",
-      "community": 19,
+      "community": 20,
       "norm_label": "processstepper()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "/Users/kiranc/Code/won-media/app/components/WonVisionMark.tsx",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_app_components_wonvisionmark_tsx",
-      "community": 36,
+      "community": 38,
       "norm_label": "wonvisionmark.tsx"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L1",
       "id": "app_components_spareveal_tsx",
-      "community": 20,
+      "community": 21,
       "norm_label": "spareveal.tsx"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "app/components/SpaReveal.tsx",
       "source_location": "L18",
       "id": "components_spareveal_spareveal",
-      "community": 20,
+      "community": 21,
       "norm_label": "spareveal()"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "app/book/EditingDetailsSection.tsx",
       "source_location": "L1",
       "id": "app_book_editingdetailssection_tsx",
-      "community": 12,
+      "community": 13,
       "norm_label": "editingdetailssection.tsx"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "app/book/EditingDetailsSection.tsx",
       "source_location": "L43",
       "id": "book_editingdetailssection_patch",
-      "community": 12,
+      "community": 13,
       "norm_label": "patch()"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "app/book/EditingDetailsSection.tsx",
       "source_location": "L47",
       "id": "book_editingdetailssection_labelfor",
-      "community": 12,
+      "community": 13,
       "norm_label": "labelfor()"
     },
     {
@@ -405,6 +405,42 @@
       "source_file": "app/book/EditingDetailsSection.tsx",
       "source_location": "L250",
       "id": "book_editingdetailssection_pick",
+      "community": 13,
+      "norm_label": "pick()"
+    },
+    {
+      "label": "StrataUpload.tsx",
+      "file_type": "code",
+      "source_file": "app/book/StrataUpload.tsx",
+      "source_location": "L1",
+      "id": "app_book_strataupload_tsx",
+      "community": 12,
+      "norm_label": "strataupload.tsx"
+    },
+    {
+      "label": "cartHasPlan()",
+      "file_type": "code",
+      "source_file": "app/book/StrataUpload.tsx",
+      "source_location": "L17",
+      "id": "book_strataupload_carthasplan",
+      "community": 12,
+      "norm_label": "carthasplan()"
+    },
+    {
+      "label": "persist()",
+      "file_type": "code",
+      "source_file": "app/book/StrataUpload.tsx",
+      "source_location": "L47",
+      "id": "book_strataupload_persist",
+      "community": 12,
+      "norm_label": "persist()"
+    },
+    {
+      "label": "pick()",
+      "file_type": "code",
+      "source_file": "app/book/StrataUpload.tsx",
+      "source_location": "L56",
+      "id": "book_strataupload_pick",
       "community": 12,
       "norm_label": "pick()"
     },
@@ -574,7 +610,7 @@
       "label": "readCart()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L52",
+      "source_location": "L51",
       "id": "cart_page_readcart",
       "community": 2,
       "norm_label": "readcart()"
@@ -583,7 +619,7 @@
       "label": "writeCart()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L61",
+      "source_location": "L60",
       "id": "cart_page_writecart",
       "community": 2,
       "norm_label": "writecart()"
@@ -592,7 +628,7 @@
       "label": "fmt()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L64",
+      "source_location": "L63",
       "id": "cart_page_fmt",
       "community": 2,
       "norm_label": "fmt()"
@@ -601,7 +637,7 @@
       "label": "PlanIcon()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L66",
+      "source_location": "L65",
       "id": "cart_page_planicon",
       "community": 2,
       "norm_label": "planicon()"
@@ -610,7 +646,7 @@
       "label": "update()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L102",
+      "source_location": "L101",
       "id": "cart_page_update",
       "community": 2,
       "norm_label": "update()"
@@ -619,7 +655,7 @@
       "label": "remove()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L103",
+      "source_location": "L102",
       "id": "cart_page_remove",
       "community": 2,
       "norm_label": "remove()"
@@ -628,25 +664,25 @@
       "label": "removeEditing()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L104",
+      "source_location": "L103",
       "id": "cart_page_removeediting",
       "community": 2,
       "norm_label": "removeediting()"
     },
     {
-      "label": "addPhotoToVideo()",
+      "label": "addReel()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L118",
-      "id": "cart_page_addphototovideo",
+      "source_location": "L119",
+      "id": "cart_page_addreel",
       "community": 2,
-      "norm_label": "addphototovideo()"
+      "norm_label": "addreel()"
     },
     {
       "label": "addSite()",
       "file_type": "code",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L119",
+      "source_location": "L120",
       "id": "cart_page_addsite",
       "community": 2,
       "norm_label": "addsite()"
@@ -657,7 +693,7 @@
       "source_file": "app/api/places/autocomplete/route.ts",
       "source_location": "L1",
       "id": "app_api_places_autocomplete_route_ts",
-      "community": 21,
+      "community": 22,
       "norm_label": "route.ts"
     },
     {
@@ -666,7 +702,7 @@
       "source_file": "app/api/places/autocomplete/route.ts",
       "source_location": "L18",
       "id": "autocomplete_route_get",
-      "community": 21,
+      "community": 22,
       "norm_label": "get()"
     },
     {
@@ -675,7 +711,7 @@
       "source_file": "app/api/places/details/route.ts",
       "source_location": "L1",
       "id": "app_api_places_details_route_ts",
-      "community": 22,
+      "community": 23,
       "norm_label": "route.ts"
     },
     {
@@ -684,7 +720,7 @@
       "source_file": "app/api/places/details/route.ts",
       "source_location": "L6",
       "id": "details_route_get",
-      "community": 22,
+      "community": 23,
       "norm_label": "get()"
     },
     {
@@ -693,7 +729,7 @@
       "source_file": "app/api/book/upload-ref/route.ts",
       "source_location": "L1",
       "id": "app_api_book_upload_ref_route_ts",
-      "community": 23,
+      "community": 24,
       "norm_label": "route.ts"
     },
     {
@@ -702,7 +738,7 @@
       "source_file": "app/api/book/upload-ref/route.ts",
       "source_location": "L9",
       "id": "upload_ref_route_post",
-      "community": 23,
+      "community": 24,
       "norm_label": "post()"
     },
     {
@@ -738,8 +774,26 @@
       "source_file": "tests/editor-adjustments.test.ts",
       "source_location": "L1",
       "id": "tests_editor_adjustments_test_ts",
-      "community": 37,
+      "community": 39,
       "norm_label": "editor-adjustments.test.ts"
+    },
+    {
+      "label": "shoot-duration.test.ts",
+      "file_type": "code",
+      "source_file": "tests/shoot-duration.test.ts",
+      "source_location": "L1",
+      "id": "tests_shoot_duration_test_ts",
+      "community": 25,
+      "norm_label": "shoot-duration.test.ts"
+    },
+    {
+      "label": "shootDurationMins()",
+      "file_type": "code",
+      "source_file": "tests/shoot-duration.test.ts",
+      "source_location": "L7",
+      "id": "tests_shoot_duration_test_shootdurationmins",
+      "community": 25,
+      "norm_label": "shootdurationmins()"
     },
     {
       "label": "editor-variations.test.ts",
@@ -756,7 +810,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/styles.test.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_styles_test_ts",
-      "community": 15,
+      "community": 16,
       "norm_label": "styles.test.ts"
     },
     {
@@ -774,7 +828,7 @@
       "source_file": "tests/editor-presets.test.ts",
       "source_location": "L1",
       "id": "tests_editor_presets_test_ts",
-      "community": 16,
+      "community": 17,
       "norm_label": "editor-presets.test.ts"
     },
     {
@@ -783,7 +837,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/admin/auth.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_admin_auth_spec_ts",
-      "community": 38,
+      "community": 40,
       "norm_label": "auth.spec.ts"
     },
     {
@@ -792,7 +846,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/redirects.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_redirects_spec_ts",
-      "community": 39,
+      "community": 41,
       "norm_label": "redirects.spec.ts"
     },
     {
@@ -801,7 +855,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/smoke.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_smoke_spec_ts",
-      "community": 40,
+      "community": 42,
       "norm_label": "smoke.spec.ts"
     },
     {
@@ -810,7 +864,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-confirmation.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_confirmation_spec_ts",
-      "community": 41,
+      "community": 43,
       "norm_label": "book-confirmation.spec.ts"
     },
     {
@@ -819,7 +873,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-schedule.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_schedule_spec_ts",
-      "community": 42,
+      "community": 44,
       "norm_label": "book-schedule.spec.ts"
     },
     {
@@ -828,7 +882,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/home.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_home_spec_ts",
-      "community": 43,
+      "community": 45,
       "norm_label": "home.spec.ts"
     },
     {
@@ -837,7 +891,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book-checkout.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_checkout_spec_ts",
-      "community": 44,
+      "community": 46,
       "norm_label": "book-checkout.spec.ts"
     },
     {
@@ -846,7 +900,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/gallery.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_gallery_spec_ts",
-      "community": 45,
+      "community": 47,
       "norm_label": "gallery.spec.ts"
     },
     {
@@ -855,7 +909,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/visual/book.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_visual_book_spec_ts",
-      "community": 46,
+      "community": 48,
       "norm_label": "book.spec.ts"
     },
     {
@@ -864,7 +918,7 @@
       "source_file": "/Users/kiranc/Code/won-media/tests/db/schema.spec.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_tests_db_schema_spec_ts",
-      "community": 47,
+      "community": 49,
       "norm_label": "schema.spec.ts"
     },
     {
@@ -1143,7 +1197,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_scripts_seed_editor_ts",
-      "community": 24,
+      "community": 26,
       "norm_label": "seed-editor.ts"
     },
     {
@@ -1152,7 +1206,7 @@
       "source_file": "/Users/kiranc/Code/won-media/scripts/seed-editor.ts",
       "source_location": "L3",
       "id": "scripts_seed_editor_main",
-      "community": 24,
+      "community": 26,
       "norm_label": "main()"
     },
     {
@@ -1161,7 +1215,7 @@
       "source_file": "scripts/dropbox-bootstrap.ts",
       "source_location": "L1",
       "id": "scripts_dropbox_bootstrap_ts",
-      "community": 13,
+      "community": 14,
       "norm_label": "dropbox-bootstrap.ts"
     },
     {
@@ -1170,7 +1224,7 @@
       "source_file": "scripts/dropbox-bootstrap.ts",
       "source_location": "L13",
       "id": "scripts_dropbox_bootstrap_exchangeauthcode",
-      "community": 13,
+      "community": 14,
       "norm_label": "exchangeauthcode()"
     },
     {
@@ -1179,7 +1233,7 @@
       "source_file": "scripts/dropbox-bootstrap.ts",
       "source_location": "L25",
       "id": "scripts_dropbox_bootstrap_refreshaccesstoken",
-      "community": 13,
+      "community": 14,
       "norm_label": "refreshaccesstoken()"
     },
     {
@@ -1188,7 +1242,7 @@
       "source_file": "scripts/dropbox-bootstrap.ts",
       "source_location": "L37",
       "id": "scripts_dropbox_bootstrap_main",
-      "community": 13,
+      "community": 14,
       "norm_label": "main()"
     },
     {
@@ -1197,7 +1251,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/blob.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_lib_blob_ts",
-      "community": 25,
+      "community": 27,
       "norm_label": "blob.ts"
     },
     {
@@ -1206,7 +1260,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/blob.ts",
       "source_location": "L4",
       "id": "lib_blob_handleclientblobupload",
-      "community": 25,
+      "community": 27,
       "norm_label": "handleclientblobupload()"
     },
     {
@@ -1215,7 +1269,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/styles.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_lib_styles_ts",
-      "community": 15,
+      "community": 16,
       "norm_label": "styles.ts"
     },
     {
@@ -1224,7 +1278,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/styles.ts",
       "source_location": "L11",
       "id": "lib_styles_isstylepreset",
-      "community": 15,
+      "community": 16,
       "norm_label": "isstylepreset()"
     },
     {
@@ -1278,7 +1332,7 @@
       "source_file": "lib/gemini/qa.ts",
       "source_location": "L1",
       "id": "lib_gemini_qa_ts",
-      "community": 26,
+      "community": 28,
       "norm_label": "qa.ts"
     },
     {
@@ -1287,7 +1341,7 @@
       "source_file": "lib/gemini/qa.ts",
       "source_location": "L29",
       "id": "gemini_qa_qavariant",
-      "community": 26,
+      "community": 28,
       "norm_label": "qavariant()"
     },
     {
@@ -1350,7 +1404,7 @@
       "source_file": "lib/db/schema.ts",
       "source_location": "L1",
       "id": "lib_db_schema_ts",
-      "community": 48,
+      "community": 50,
       "norm_label": "schema.ts"
     },
     {
@@ -1359,7 +1413,7 @@
       "source_file": "/Users/kiranc/Code/won-media/lib/db/index.ts",
       "source_location": "L1",
       "id": "users_kiranc_code_won_media_lib_db_index_ts",
-      "community": 49,
+      "community": 51,
       "norm_label": "index.ts"
     },
     {
@@ -1512,7 +1566,7 @@
       "source_file": "lib/editor/adjustments.ts",
       "source_location": "L1",
       "id": "lib_editor_adjustments_ts",
-      "community": 27,
+      "community": 29,
       "norm_label": "adjustments.ts"
     },
     {
@@ -1521,7 +1575,7 @@
       "source_file": "lib/editor/adjustments.ts",
       "source_location": "L4",
       "id": "editor_adjustments_slider",
-      "community": 27,
+      "community": 29,
       "norm_label": "slider()"
     },
     {
@@ -1530,7 +1584,7 @@
       "source_file": "lib/editor/staging-styles.ts",
       "source_location": "L1",
       "id": "lib_editor_staging_styles_ts",
-      "community": 50,
+      "community": 52,
       "norm_label": "staging-styles.ts"
     },
     {
@@ -1539,7 +1593,7 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L1",
       "id": "lib_editor_presets_ts",
-      "community": 16,
+      "community": 17,
       "norm_label": "presets.ts"
     },
     {
@@ -1548,8 +1602,26 @@
       "source_file": "lib/editor/presets.ts",
       "source_location": "L51",
       "id": "editor_presets_getpreset",
-      "community": 16,
+      "community": 17,
       "norm_label": "getpreset()"
+    },
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "next-env.d.ts",
+      "source_location": "L1",
+      "community": 53,
+      "norm_label": "next-env.d.ts",
+      "id": "next_env_d_ts"
+    },
+    {
+      "label": "addPhotoToVideo()",
+      "file_type": "code",
+      "source_file": "app/book/cart/page.tsx",
+      "source_location": "L118",
+      "community": 2,
+      "norm_label": "addphototovideo()",
+      "id": "cart_page_addphototovideo"
     },
     {
       "label": "onSelect()",
@@ -1574,34 +1646,16 @@
       "file_type": "code",
       "source_file": "/Users/kiranc/Code/won-media/app/components/LoaderGate.tsx",
       "source_location": "L1",
-      "community": 14,
+      "community": 15,
       "norm_label": "loadergate.tsx",
       "id": "users_kiranc_code_won_media_app_components_loadergate_tsx"
-    },
-    {
-      "label": "next-env.d.ts",
-      "file_type": "code",
-      "source_file": "/Users/kiranc/Code/won-media/next-env.d.ts",
-      "source_location": "L1",
-      "community": 51,
-      "norm_label": "next-env.d.ts",
-      "id": "users_kiranc_code_won_media_next_env_d_ts"
-    },
-    {
-      "label": "addReel()",
-      "file_type": "code",
-      "source_file": "app/book/cart/page.tsx",
-      "source_location": "L83",
-      "community": 2,
-      "norm_label": "addreel()",
-      "id": "cart_page_addreel"
     },
     {
       "label": "ServicesEditorial.tsx",
       "file_type": "code",
       "source_file": "/private/tmp/wv-v3/app/components/ServicesEditorial.tsx",
       "source_location": "L1",
-      "community": 52,
+      "community": 54,
       "norm_label": "serviceseditorial.tsx",
       "id": "private_tmp_wv_v3_app_components_serviceseditorial_tsx"
     },
@@ -2074,6 +2128,47 @@
       "target": "book_editingdetailssection_pick"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/StrataUpload.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_strataupload_tsx",
+      "target": "book_strataupload_carthasplan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/StrataUpload.tsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_strataupload_tsx",
+      "target": "book_strataupload_persist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/StrataUpload.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_book_strataupload_tsx",
+      "target": "book_strataupload_pick"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/book/StrataUpload.tsx",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "book_strataupload_pick",
+      "target": "book_strataupload_persist"
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -2364,11 +2459,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L83",
+      "source_location": "L82",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_book_cart_page_tsx",
-      "target": "cart_page_addphototovideo"
+      "target": "cart_page_addreel"
     },
     {
       "relation": "contains",
@@ -2384,11 +2479,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_book_cart_page_tsx",
-      "target": "cart_page_addreel"
+      "target": "cart_page_addphototovideo"
     },
     {
       "relation": "calls",
@@ -2450,10 +2545,10 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L83",
+      "source_location": "L82",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cart_page_addphototovideo",
+      "source": "cart_page_addreel",
       "target": "cart_page_update"
     },
     {
@@ -2483,10 +2578,10 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/book/cart/page.tsx",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cart_page_addreel",
+      "source": "cart_page_addphototovideo",
       "target": "cart_page_update"
     },
     {
@@ -2616,6 +2711,16 @@
       "confidence_score": 1.0,
       "source": "tests_booking_editing_test_ts",
       "target": "tests_booking_editing_test_blank"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/shoot-duration.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_shoot_duration_test_ts",
+      "target": "tests_shoot_duration_test_shootdurationmins"
     },
     {
       "relation": "imports",
@@ -3608,5 +3713,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "151c2ff8d7e7318931e192271e2bb03c26d403c9"
+  "built_at_commit": "52ba91e549e5500382253a2dce517910cd66072d"
 }

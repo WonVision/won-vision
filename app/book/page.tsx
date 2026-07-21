@@ -973,10 +973,10 @@ export default function BookPage() {
 
           <div className="svc-grid">
 
-            <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/cinematic.webp" data-gallery="highlight">
+            <article className="svc-card" data-svc="Property Highlight Video" data-price="399" data-desc="A fast, atmospheric 30–60s film — pure architecture, light and motion. No agent on camera. 16:9, cinematic grade, music-bedded." data-img="/images/property-highlight-hilton-poster.webp" data-gallery="highlight">
               <div className="svc-card__media">
                 <video
-                  src="/video/property-highlight-2-loop.mp4"
+                  src="/video/property-highlight-hilton-loop.mp4"
                   autoPlay
                   loop
                   muted
@@ -1028,13 +1028,13 @@ export default function BookPage() {
               data-svc="Agent Listing Video · 30–60s"
               data-price="499"
               data-desc="A cinematic listing film — agent on camera, drone aerials, hand-graded and scored. Choose 30–60s for a polished cut, or 60–90s for extra time on set capturing the aesthetic and mood of the home."
-              data-img="/images/cinematic-v3-poster.webp"
+              data-img="/images/agent-listing-noble-park-poster.webp"
               data-gallery="cinematic"
               data-variants='[{"key":"short","name":"Agent Listing Video · 30–60s","price":499,"label":"30–60s","lead":"30–60s cinematic edit · 16:9","b1":"Agent piece-to-camera direction","b2":"Drone aerials + interior coverage","b3":"Hand colour-grade · scored to picture"},{"key":"long","name":"Agent Listing Video · 60–90s","price":699,"label":"60–90s","lead":"60–90s flagship cinematic edit","b1":"Extra set time for aesthetic & mood","b2":"Director-led shoot · storyboard treatment","b3":"Extended aerial & gimbal coverage"}]'
             >
               <div className="svc-card__media">
                 <video
-                  src="/video/cinematic-v3-loop.mp4"
+                  src="/video/agent-listing-noble-park-loop.mp4"
                   autoPlay
                   loop
                   muted

@@ -43,7 +43,7 @@ const allServices: Service[] = [
     name: 'Floor plans',
     meta: '2D · 3D',
     href: '/book#cat-floorplans',
-    img: '/images/floor-plan.webp',
+    img: '/images/floor-plan-3.webp',
     caption: 'Floor plans',
   },
   {

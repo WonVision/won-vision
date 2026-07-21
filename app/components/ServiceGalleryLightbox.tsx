@@ -52,7 +52,32 @@ const galleries: Record<string, Media[]> = {
     },
   ],
   // Property Highlight — mirrors the gallery's "highlight" bucket exactly.
+  // New films first (25 Hilton = the card), older ones kept below.
   highlight: [
+    {
+      src: '/video/property-highlight-hilton.mp4',
+      type: 'video',
+      poster: '/images/property-highlight-hilton-poster.webp',
+      caption: 'Property Highlight Video',
+    },
+    {
+      src: '/video/property-highlight-berkeley.mp4',
+      type: 'video',
+      poster: '/images/property-highlight-berkeley-poster.webp',
+      caption: 'Property Highlight Video',
+    },
+    {
+      src: '/video/property-highlight-bartlett.mp4',
+      type: 'video',
+      poster: '/images/property-highlight-bartlett-poster.webp',
+      caption: 'Property Highlight Video',
+    },
+    {
+      src: '/video/property-highlight-domain.mp4',
+      type: 'video',
+      poster: '/images/property-highlight-domain-poster.webp',
+      caption: 'Property Highlight Video',
+    },
     {
       src: '/video/property-highlight-doncaster.mp4',
       type: 'video',
@@ -85,6 +110,12 @@ const galleries: Record<string, Media[]> = {
     },
   ],
   cinematic: [
+    {
+      src: '/video/agent-listing-noble-park.mp4',
+      type: 'video',
+      poster: '/images/agent-listing-noble-park-poster.webp',
+      caption: 'Agent Listing Video',
+    },
     {
       src: '/video/agent-listing-video.mp4',
       type: 'video',
@@ -145,6 +176,10 @@ const galleries: Record<string, Media[]> = {
   // Scoped to the standalone Floor Plan card only. New plan first; the
   // previous example is kept here so it stays available in Examples.
   floorplansingle: [
+    {
+      src: '/images/floor-plan-3.webp',
+      caption: 'Floor plan — 4/33 Byron Street, Elwood',
+    },
     {
       src: '/images/floor-plan-2.webp',
       caption: 'Floor plan — ground & first floor',

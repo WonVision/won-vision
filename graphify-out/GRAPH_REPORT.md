@@ -1,16 +1,16 @@
-# Graph Report - won-vision  (2026-06-24)
+# Graph Report - won-vision  (2026-07-11)
 
 ## Corpus Check
-- 76 files · ~436,117 words
+- 78 files · ~560,407 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 184 nodes · 187 edges · 53 communities (48 shown, 5 thin omitted)
+- 190 nodes · 192 edges · 55 communities (49 shown, 6 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `151c2ff8`
+- Built from commit: `52ba91e5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -25,10 +25,11 @@
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
 - [[_COMMUNITY_Community 10|Community 10]]
-- [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 17|Community 17]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Wordmark()` - 12 edges
@@ -54,7 +55,7 @@
 - `generateFromHelper()` --calls--> `buildPrompt()`  [INFERRED]
   lib/fal/client.ts → lib/fal/prompts.ts
 
-## Communities (53 total, 5 thin omitted)
+## Communities (55 total, 6 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.19
@@ -88,22 +89,22 @@ Nodes (4): buildIntakePath(), buildProcessingPath(), buildReviewPath(), slugifyA
 Cohesion: 0.6
 Nodes (3): esc(), handler(), inject()
 
-### Community 13 - "Community 13"
+### Community 14 - "Community 14"
 Cohesion: 0.83
 Nodes (3): exchangeAuthCode(), main(), refreshAccessToken()
 
 ## Knowledge Gaps
 - **7 isolated node(s):** `Build Won Vision — Listing Video Scripts.docx Branded per docs/BRAND.md: Sora, p`, `ALL CAPS Sora 500 — H1 / brand voice carrier.`, `Pull-quote — for verbatim transcript lines.`, `Fill-in script — same indent as quotes, slightly larger.`, `Black 1px horizontal rule via bottom border.` (+2 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Wordmark()` connect `Community 3` to `Community 2`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **Why does `update()` connect `Community 2` to `Community 10`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Why does `__wvBoot()` connect `Community 10` to `Community 2`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `buildPrompt()` (e.g. with `buildDuskPrompt()` and `buildSkyPrompt()`) actually correct?**

@@ -368,7 +368,22 @@ export default function GalleryPage() {
             />
           </article>
 
-          {/* Video — agent listing film (lead), plays inline */}
+          {/* Video — agent listing film (lead) · 35a Comber St, Noble Park, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
+                   data-place="Won Vision · Agent listing">
+            <video
+              src="/video/agent-listing-noble-park.mp4"
+              poster="/images/agent-listing-noble-park-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Agent listing video</p>
+            </div>
+          </article>
+
+          {/* Video — agent listing film (previous lead), plays inline */}
           <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="cinematic"
                    data-place="Won Vision · Agent listing">
             <video
@@ -455,6 +470,66 @@ export default function GalleryPage() {
             />
             <div className="gallery__item__caption">
               <p className="tags">Agent listing video</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film (lead) · 25 Hilton St, Mount Waverley, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-hilton.mp4"
+              poster="/images/property-highlight-hilton-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film · 1 Berkeley Close, Broadmeadows, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-berkeley.mp4"
+              poster="/images/property-highlight-berkeley-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film · 5 Bartlett Avenue, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-bartlett.mp4"
+              poster="/images/property-highlight-bartlett-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
+            </div>
+          </article>
+
+          {/* Video — property highlight film · 77B Domain St, plays inline */}
+          <article className="gallery__item gallery__item--video s6" data-cat="video" data-sub="highlight"
+                   data-place="Won Vision · Property highlight">
+            <video
+              src="/video/property-highlight-domain.mp4"
+              poster="/images/property-highlight-domain-poster.webp"
+              controls
+              preload="metadata"
+              playsInline
+            />
+            <div className="gallery__item__caption">
+              <p className="tags">Property highlight</p>
             </div>
           </article>
 
