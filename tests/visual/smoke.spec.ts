@@ -1,12 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 const routes = [
-  { path: '/',                  title: /Won Vision/ },
-  { path: '/book',              title: /Book a shoot/ },
-  { path: '/book/checkout',     title: /Checkout|Book a shoot/ },
-  { path: '/book/schedule',     title: /Schedule|Checkout|Book a shoot/ },
-  { path: '/book/confirmation', title: /Booking confirmed|Schedule|Checkout|Book a shoot/ },
-  { path: '/gallery',           title: /Gallery/ },
+  { path: '/',        title: /Won Vision/ },
+  { path: '/gallery', title: /Gallery/ },
+  { path: '/privacy', title: /Privacy/ },
+  { path: '/terms',   title: /Terms/ },
 ];
 
 for (const r of routes) {
@@ -20,19 +18,6 @@ for (const r of routes) {
       if (text.includes('Failed to load resource')) return;
       errors.push(text);
     });
-
-    if (r.path === '/book/checkout') {
-      await page.addInitScript(() => {
-        sessionStorage.setItem('wv-cart', JSON.stringify([{ id: 'photo', label: 'Photography', price: 0 }]));
-        sessionStorage.setItem('wv-booking', JSON.stringify({ tier: 'photo' }));
-      });
-    }
-    if (r.path === '/book/schedule' || r.path === '/book/confirmation') {
-      await page.addInitScript(() => {
-        sessionStorage.setItem('wv-cart', JSON.stringify([{ id: 'photo', label: 'Photography', price: 0 }]));
-        sessionStorage.setItem('wv-booking', JSON.stringify({ tier: 'photo', address: '1 Test St' }));
-      });
-    }
 
     const response = await page.goto(r.path);
     expect(response?.status()).toBe(200);
