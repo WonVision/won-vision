@@ -3,7 +3,6 @@ import Script from 'next/script';
 import { Wordmark } from './components/Wordmark';
 import LoaderGate from './components/LoaderGate';
 import ServicesEditorial from './components/ServicesEditorial';
-import ProcessStepper from './components/ProcessStepper';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import ClientLogos from './components/ClientLogos';
 
@@ -272,7 +271,7 @@ export default function HomePage() {
           <a href="/operate">How we operate</a>
         </nav>
         <div className="nav__right">
-          <a href="/book" className="nav__cta">Book now</a>
+          <a href="https://portal.wonvision.com.au/book" className="nav__cta">Book now</a>
         </div>
         <button className="nav__burger" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -284,7 +283,7 @@ export default function HomePage() {
           <li><a href="#contact">Contact</a></li>
           <li><a href="/gallery"><em>Gallery</em></a></li>
           <li><a href="/operate">How we operate</a></li>
-          <li><a href="/book" className="drawer-cta">Book now →</a></li>
+          <li><a href="https://portal.wonvision.com.au/book" className="drawer-cta">Book now →</a></li>
         </ul>
         <div className="nav__drawer__foot">
           <span>Won Vision</span><span>Melbourne · 2026</span>
@@ -359,12 +358,8 @@ export default function HomePage() {
       {/* CLIENTS — mono logo row directly under the hero */}
       <ClientLogos />
 
-      {/* SERVICES + PROCESS — wrapper lets us flip the order on mobile so
-          the four-step explainer sits above the services list on phones */}
-      <div className="services-process-block">
-        <ServicesEditorial />
-        <ProcessStepper />
-      </div>
+      {/* SERVICES */}
+      <ServicesEditorial />
 
       {/* SELECTED WORK */}
       <section id="work" className="section work">
@@ -402,7 +397,7 @@ export default function HomePage() {
 
           <div className="work__cta reveal" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
             <a href="/gallery" className="nav__cta nav__cta--ghost" style={{ padding: '16px 32px', fontSize: 12 }}>View the full gallery →</a>
-            <a href="/book" className="nav__cta" style={{ padding: '16px 32px', fontSize: 12 }}>Book now</a>
+            <a href="https://portal.wonvision.com.au/book" className="nav__cta" style={{ padding: '16px 32px', fontSize: 12 }}>Book now</a>
           </div>
         </div>
       </section>
@@ -418,75 +413,50 @@ export default function HomePage() {
           </div>
 
           <div className="home-pkgs__grid reveal-stagger">
-            <a className="home-pkg" href="/book?package=showcase#cat-packages">
+            <a className="home-pkg" href="https://portal.wonvision.com.au/book">
               <div className="home-pkg__media">
                 <span className="home-pkg__tag">Most booked</span>
                 <div className="home-pkg__media__img" style={{ backgroundImage: "url('/images/showcase.webp')" }}></div>
               </div>
               <div className="home-pkg__body">
-                <h3 className="home-pkg__name">Essential</h3>
-                <p className="home-pkg__desc">Photos, floor plan, and aerial context in one shoot — the standard suburban listing bundle.</p>
-                <ul className="home-pkg__incl">
-                  <li>15 / 20 / 25 HDR photos (by tier)</li>
-                  <li>Sky replacement included</li>
-                  <li>2D floor plan with dimensions</li>
-                  <li>Drone set — 5 edited images</li>
-                  <li>Next-business-day delivery</li>
-                </ul>
+                <h3 className="home-pkg__name">Essentials Package</h3>
+                <p className="home-pkg__desc">Sales Photography, Floorplan or Drone</p>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$399<span className="home-pkg__total">$483 total cost</span></span>
-                  <span className="home-pkg__cta">Pick size →</span>
+                  <span className="home-pkg__price"><small>Price</small>$299.00+</span>
+                  <span className="home-pkg__cta">Book now →</span>
                 </div>
               </div>
             </a>
 
             {SHOW_VIDEO && (
-            <a className="home-pkg home-pkg--featured" href="/book?package=signature#cat-packages">
+            <a className="home-pkg home-pkg--featured" href="https://portal.wonvision.com.au/book">
               <div className="home-pkg__media">
                 <span className="home-pkg__tag">Complete deliverable</span>
                 <div className="home-pkg__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85')" }}></div>
               </div>
               <div className="home-pkg__body">
-                <h3 className="home-pkg__name">Signature</h3>
-                <p className="home-pkg__desc">Photo + plan + drone + Standard Listing Video — agent footage and drone footage included.</p>
-                <ul className="home-pkg__incl">
-                  <li>15 / 20 / 25 HDR photos (by tier)</li>
-                  <li>Full HDR retouching</li>
-                  <li>Sky replacement included</li>
-                  <li>2D floor plan with dimensions</li>
-                  <li>Drone set — 5 edited aerials</li>
-                  <li>Standard Listing Video · 30–60s</li>
-                </ul>
+                <h3 className="home-pkg__name">Signature Package</h3>
+                <p className="home-pkg__desc">Sales Photography, FLOORPLANS &amp; SITE PLANS, Aerial / Drone Photography</p>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>From</small>$649<span className="home-pkg__total">$1,051 total cost</span></span>
-                  <span className="home-pkg__cta">Pick size →</span>
+                  <span className="home-pkg__price"><small>Price</small>$399.00+</span>
+                  <span className="home-pkg__cta">Book now →</span>
                 </div>
               </div>
             </a>
             )}
 
             {SHOW_VIDEO && (
-            <a className="home-pkg" href="/book?package=cinematic#cat-packages">
+            <a className="home-pkg" href="https://portal.wonvision.com.au/book">
               <div className="home-pkg__media">
                 <span className="home-pkg__tag">Flagship</span>
                 <div className="home-pkg__media__img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85')" }}></div>
               </div>
               <div className="home-pkg__body">
-                <h3 className="home-pkg__name">Cinematic</h3>
-                <p className="home-pkg__desc">Photo + plan + drone + Premium Listing Video — the flagship luxury deliverable.</p>
-                <ul className="home-pkg__incl">
-                  <li>25+ photos</li>
-                  <li>Full HDR retouching</li>
-                  <li>Sky replacement included</li>
-                  <li>2D floor plan with dimensions</li>
-                  <li>Drone set — 5 edited aerials</li>
-                  <li>Cinematic Listing Video · 60–90s</li>
-                  <li>Director-led shoot · storyboard treatment</li>
-                  <li>Extended aerial &amp; gimbal coverage</li>
-                </ul>
+                <h3 className="home-pkg__name">Cinematic Package</h3>
+                <p className="home-pkg__desc">Sales Photography, FLOORPLANS &amp; SITE PLANS, Aerial / Drone Photography, Listing Video</p>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price">$999<span className="home-pkg__total">$1,350 total cost</span></span>
-                  <span className="home-pkg__cta">Pick size →</span>
+                  <span className="home-pkg__price"><small>Price</small>$750.00+</span>
+                  <span className="home-pkg__cta">Book now →</span>
                 </div>
               </div>
             </a>
@@ -501,7 +471,7 @@ export default function HomePage() {
           <div className="home-faq__head reveal">
             <span className="eyebrow">FAQ</span>
             <h2>The <em>quick</em> answers.</h2>
-            <p>Anything not covered, email <a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a> or <a href="/book">book a shoot</a> — the form walks you through the rest.</p>
+            <p>Anything not covered, email <a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a> or <a href="https://portal.wonvision.com.au/book">book a shoot</a> — the form walks you through the rest.</p>
           </div>
 
           <div className="home-faq__list reveal-stagger">
@@ -588,7 +558,7 @@ export default function HomePage() {
             <h2 className="cta-c__h">Bring your <em>next listing</em> to the studio.</h2>
           </div>
           <div className="cta-c__act">
-            <a href="/book" className="cta-c__btn cta-c__btn--solid">Book a shoot →</a>
+            <a href="https://portal.wonvision.com.au/book" className="cta-c__btn cta-c__btn--solid">Book a shoot →</a>
           </div>
         </div>
       </section>
@@ -598,7 +568,7 @@ export default function HomePage() {
           <div className="foot__top reveal-stagger">
             <div>
               <a href="#top" data-home aria-label="Won Vision"><Wordmark /></a>
-              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day photo turn around.</p>
+              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging.</p>
             </div>
             <div>
               <h4>Studio</h4>
@@ -606,14 +576,14 @@ export default function HomePage() {
                 <li><a href="#services">Services</a></li>
                 <li><a href="/gallery">Gallery</a></li>
                 <li><a href="/operate">How we operate</a></li>
-                <li><a href="/book">Book now</a></li>
+                <li><a href="https://portal.wonvision.com.au/book">Book now</a></li>
               </ul>
             </div>
             <div>
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a></li>
-                <li><a href="tel:+61493714609">0493 714 609</a></li>
+                <li><a href="tel:+61416894541">0416 894 541</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>

@@ -695,7 +695,7 @@ export default function BookPage() {
           <Link href="/operate">How we operate</Link>
         </nav>
         <div className="nav__right">
-          <Link href="/book" className="nav__cta">Book now</Link>
+          <Link href="https://portal.wonvision.com.au/book" className="nav__cta">Book now</Link>
         </div>
         <button className="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
       </header>
@@ -705,7 +705,7 @@ export default function BookPage() {
           <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="/gallery"><em>Gallery</em></Link></li>
           <li><Link href="/operate">How we operate</Link></li>
-          <li><Link href="/book" className="drawer-cta">Book now →</Link></li>
+          <li><Link href="https://portal.wonvision.com.au/book" className="drawer-cta">Book now →</Link></li>
         </ul>
       </aside>
 
@@ -1270,21 +1270,21 @@ export default function BookPage() {
           <div className="foot__top">
             <div>
               <Link href="/#top" data-home aria-label="Won Vision — home"><Wordmark /></Link>
-              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day photo turn around.</p>
+              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging.</p>
             </div>
             <div>
               <h4>Studio</h4>
               <ul>
                 <li><Link href="/#services">Services</Link></li>
                 <li><Link href="/gallery">Gallery</Link></li>
-                <li><Link href="/book">Book now</Link></li>
+                <li><Link href="https://portal.wonvision.com.au/book">Book now</Link></li>
               </ul>
             </div>
             <div>
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a></li>
-                <li><a href="tel:+61493714609">0493 714 609</a></li>
+                <li><a href="tel:+61416894541">0416 894 541</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>

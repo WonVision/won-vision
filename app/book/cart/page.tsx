@@ -132,7 +132,7 @@ export default function CartPage() {
           <Link href="/operate">How we operate</Link>
         </nav>
         <div className="nav__right">
-          <Link href="/book" className="nav__cta">Book now</Link>
+          <Link href="https://portal.wonvision.com.au/book" className="nav__cta">Book now</Link>
         </div>
         <button className="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
       </header>
@@ -142,7 +142,7 @@ export default function CartPage() {
           <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="/gallery"><em>Gallery</em></Link></li>
           <li><Link href="/operate">How we operate</Link></li>
-          <li><Link href="/book" className="drawer-cta">Book now →</Link></li>
+          <li><Link href="https://portal.wonvision.com.au/book" className="drawer-cta">Book now →</Link></li>
         </ul>
         <div className="nav__drawer__foot"><span>Won Vision</span><span>Melbourne · 2026</span></div>
       </aside>

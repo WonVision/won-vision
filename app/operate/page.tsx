@@ -34,7 +34,7 @@ export default function OperatePage() {
           <Link href="/operate" aria-current="page">How we operate</Link>
         </nav>
         <div className="nav__right">
-          <Link href="/book" className="nav__cta">Book now</Link>
+          <Link href="https://portal.wonvision.com.au/book" className="nav__cta">Book now</Link>
         </div>
         <button className="nav__burger" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -46,7 +46,7 @@ export default function OperatePage() {
           <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="/gallery">Gallery</Link></li>
           <li><Link href="/operate"><em>How we operate</em></Link></li>
-          <li><Link href="/book" className="drawer-cta">Book now →</Link></li>
+          <li><Link href="https://portal.wonvision.com.au/book" className="drawer-cta">Book now →</Link></li>
         </ul>
         <div className="nav__drawer__foot">
           <span>Won Vision</span><span>Melbourne · 2026</span>
@@ -68,7 +68,7 @@ export default function OperatePage() {
               <h2 className="cta-c__h">Bring your <em>next listing</em> to the studio.</h2>
             </div>
             <div className="cta-c__act">
-              <Link href="/book" className="cta-c__btn cta-c__btn--solid">Book a shoot →</Link>
+              <Link href="https://portal.wonvision.com.au/book" className="cta-c__btn cta-c__btn--solid">Book a shoot →</Link>
             </div>
           </div>
         </section>
@@ -79,7 +79,7 @@ export default function OperatePage() {
           <div className="foot__top reveal-stagger">
             <div>
               <Link href="/#top" aria-label="Won Vision"><Wordmark /></Link>
-              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging. Same day photo turn around.</p>
+              <p>A Melbourne property media studio. Photography, video, drone, floor plans, virtual staging.</p>
             </div>
             <div>
               <h4>Studio</h4>
@@ -87,14 +87,14 @@ export default function OperatePage() {
                 <li><Link href="/#services">Services</Link></li>
                 <li><Link href="/gallery">Gallery</Link></li>
                 <li><Link href="/operate">How we operate</Link></li>
-                <li><Link href="/book">Book now</Link></li>
+                <li><Link href="https://portal.wonvision.com.au/book">Book now</Link></li>
               </ul>
             </div>
             <div>
               <h4>Contact</h4>
               <ul>
                 <li><a href="mailto:main@wonvision.com.au">main@wonvision.com.au</a></li>
-                <li><a href="tel:+61493714609">0493 714 609</a></li>
+                <li><a href="tel:+61416894541">0416 894 541</a></li>
                 <li><a href="https://www.instagram.com/won.vision/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>
