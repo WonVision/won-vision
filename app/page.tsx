@@ -268,7 +268,6 @@ export default function HomePage() {
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
           <a href="/gallery">Gallery</a>
-          <a href="/operate">How we operate</a>
         </nav>
         <div className="nav__right">
           <a href="https://portal.wonvision.com.au/book" className="nav__cta">Book now</a>
@@ -282,7 +281,6 @@ export default function HomePage() {
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="/gallery"><em>Gallery</em></a></li>
-          <li><a href="/operate">How we operate</a></li>
           <li><a href="https://portal.wonvision.com.au/book" className="drawer-cta">Book now →</a></li>
         </ul>
         <div className="nav__drawer__foot">
@@ -420,9 +418,16 @@ export default function HomePage() {
               </div>
               <div className="home-pkg__body">
                 <h3 className="home-pkg__name">Essentials Package</h3>
-                <p className="home-pkg__desc">Sales Photography, Floorplan or Drone</p>
+                <p className="home-pkg__desc">Sales photography plus your choice of floor plan or drone — the standard listing bundle.</p>
+                <ul className="home-pkg__incl">
+                  <li>Sales Photography</li>
+                  <li>Floorplan or Drone</li>
+                  <li>Full HDR retouching</li>
+                  <li>Sky replacement included</li>
+                  <li>Next-business-day delivery</li>
+                </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>Price</small>$299.00+</span>
+                  <span className="home-pkg__price"><small>From</small>$299<span className="home-pkg__total">$409 total cost</span></span>
                   <span className="home-pkg__cta">Book now →</span>
                 </div>
               </div>
@@ -436,9 +441,16 @@ export default function HomePage() {
               </div>
               <div className="home-pkg__body">
                 <h3 className="home-pkg__name">Signature Package</h3>
-                <p className="home-pkg__desc">Sales Photography, FLOORPLANS &amp; SITE PLANS, Aerial / Drone Photography</p>
+                <p className="home-pkg__desc">Photography, floor plans and site plans, plus aerial drone coverage in one shoot.</p>
+                <ul className="home-pkg__incl">
+                  <li>Sales Photography</li>
+                  <li>Floorplans &amp; site plans</li>
+                  <li>Aerial / drone photography</li>
+                  <li>Full HDR retouching</li>
+                  <li>Sky replacement included</li>
+                </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>Price</small>$399.00+</span>
+                  <span className="home-pkg__price"><small>From</small>$399<span className="home-pkg__total">$568 total cost</span></span>
                   <span className="home-pkg__cta">Book now →</span>
                 </div>
               </div>
@@ -453,9 +465,17 @@ export default function HomePage() {
               </div>
               <div className="home-pkg__body">
                 <h3 className="home-pkg__name">Cinematic Package</h3>
-                <p className="home-pkg__desc">Sales Photography, FLOORPLANS &amp; SITE PLANS, Aerial / Drone Photography, Listing Video</p>
+                <p className="home-pkg__desc">The full deliverable — photography, plans, drone and a listing video.</p>
+                <ul className="home-pkg__incl">
+                  <li>Sales Photography</li>
+                  <li>Floorplans &amp; site plans</li>
+                  <li>Aerial / drone photography</li>
+                  <li>Listing Video</li>
+                  <li>Full HDR retouching</li>
+                  <li>Sky replacement included</li>
+                </ul>
                 <div className="home-pkg__foot">
-                  <span className="home-pkg__price"><small>Price</small>$750.00+</span>
+                  <span className="home-pkg__price"><small>From</small>$750<span className="home-pkg__total">$1,080 total cost</span></span>
                   <span className="home-pkg__cta">Book now →</span>
                 </div>
               </div>
@@ -480,22 +500,6 @@ export default function HomePage() {
               <div>
                 <p>Won Vision operates within a 100 km radius of the Melbourne CBD as standard — Greater Melbourne, the Mornington and Bellarine peninsulas, the Yarra Valley and the Macedon Ranges.</p>
                 <p>Properties beyond 20 km from the CBD attract a distance surcharge of $20 per 5 km block. Visits further afield across Victoria are available by appointment.</p>
-              </div>
-            </details>
-
-            <details className="home-faq__item">
-              <summary>Do you offer an intro promo?</summary>
-              <div>
-                <p>There's no automatic discount. We hand out an intro promo manually to new clients — it applies to your first 3 jobs only. Ask us for a code and enter it at checkout.</p>
-                <p>Volume discounts on virtual staging still apply on their own.</p>
-              </div>
-            </details>
-
-            <details className="home-faq__item">
-              <summary>How fast is delivery?</summary>
-              <div>
-                <p>Standard delivery is next business day for photos and 2 business days for video. Floor plans deliver in 1–2 business days.</p>
-                <p>Same-day rush is available on photos for +$100 (order before 11am).</p>
               </div>
             </details>
 
@@ -575,7 +579,6 @@ export default function HomePage() {
               <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/operate">How we operate</a></li>
                 <li><a href="https://portal.wonvision.com.au/book">Book now</a></li>
               </ul>
             </div>

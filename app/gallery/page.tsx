@@ -23,7 +23,6 @@ export default function GalleryPage() {
           <Link href="/#services">Services</Link>
           <Link href="/#contact">Contact</Link>
           <Link href="/gallery" aria-current="page">Gallery</Link>
-          <Link href="/operate">How we operate</Link>
         </nav>
         <div className="nav__right">
           <Link href="https://portal.wonvision.com.au/book" className="nav__cta">Book now</Link>
@@ -37,7 +36,6 @@ export default function GalleryPage() {
           <li><Link href="/#services">Services</Link></li>
           <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="/gallery"><em>Gallery</em></Link></li>
-          <li><Link href="/operate">How we operate</Link></li>
           <li><Link href="https://portal.wonvision.com.au/book" className="drawer-cta">Book now →</Link></li>
         </ul>
         <div className="nav__drawer__foot">
