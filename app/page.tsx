@@ -424,7 +424,6 @@ export default function HomePage() {
                   <li>Floorplan or Drone</li>
                   <li>Full HDR retouching</li>
                   <li>Sky replacement included</li>
-                  <li>Next-business-day delivery</li>
                 </ul>
                 <div className="home-pkg__foot">
                   <span className="home-pkg__price"><small>From</small>$299<span className="home-pkg__total">$409 total cost</span></span>
