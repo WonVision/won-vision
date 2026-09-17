@@ -20,8 +20,8 @@ export default function TermsPage() {
         </div>
         <nav className="nav__links">
           <Link href="/#services">Services</Link>
-          <Link href="/#contact">Contact</Link>
           <Link href="/gallery">Gallery</Link>
+          <Link href="/#contact">Contact</Link>
         </nav>
         <div className="nav__right">
           <Link href="https://portal.wonvision.com.au/book" className="nav__cta">Book now</Link>
@@ -33,8 +33,8 @@ export default function TermsPage() {
       <aside className="nav__drawer" aria-hidden="true">
         <ul>
           <li><Link href="/#services">Services</Link></li>
-          <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="/gallery">Gallery</Link></li>
+          <li><Link href="/#contact">Contact</Link></li>
           <li><Link href="https://portal.wonvision.com.au/book" className="drawer-cta">Book now →</Link></li>
         </ul>
         <div className="nav__drawer__foot">

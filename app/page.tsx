@@ -266,8 +266,8 @@ export default function HomePage() {
         </div>
         <nav className="nav__links">
           <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
           <a href="/gallery">Gallery</a>
+          <a href="#contact">Contact</a>
         </nav>
         <div className="nav__right">
           <a href="https://portal.wonvision.com.au/book" className="nav__cta">Book now</a>
@@ -279,8 +279,8 @@ export default function HomePage() {
       <aside className="nav__drawer" aria-hidden="true">
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
           <li><a href="/gallery"><em>Gallery</em></a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="https://portal.wonvision.com.au/book" className="drawer-cta">Book now →</a></li>
         </ul>
         <div className="nav__drawer__foot">
