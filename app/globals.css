@@ -1495,6 +1495,24 @@ body.is-loading > :not(.loader){visibility:hidden}
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;display:block;background:var(--ink);
 }
+.gallery__yt{
+  position:absolute;inset:0;width:100%;height:100%;
+  padding:0;border:0;background:var(--ink);cursor:pointer;display:block;
+}
+.gallery__yt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.gallery__yt:hover img{transform:scale(1.03)}
+.gallery__yt__play{
+  /* bottom-left, so it never sits over the agency branding on the cover */
+  position:absolute;left:20px;bottom:20px;width:56px;height:56px;
+  border-radius:50%;background:rgba(10,10,10,0.55);border:1px solid rgba(255,255,255,0.7);
+  transition:background .25s var(--ease);
+}
+.gallery__yt__play::after{
+  content:'';position:absolute;left:22px;top:17px;
+  border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff;
+}
+.gallery__yt:hover .gallery__yt__play{background:rgba(10,10,10,0.8)}
+.gallery__item--video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 /* Label must never intercept clicks on the native video controls, and
    sits at the top so it doesn't fight the control bar. */
 .gallery__item--video .gallery__item__caption{

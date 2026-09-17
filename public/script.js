@@ -350,6 +350,30 @@ function __wvBoot(){
     apply(); // initial pass when the gallery is present on this load
   })();
 
+  // ---------- GALLERY: YouTube tiles ----------
+  // Swap the cover for the real player on press, so YouTube only loads for
+  // videos someone actually watches. Once playing, hide the caption so it
+  // doesn't sit over YouTube's own title bar.
+  (function(){
+    if (window.__wvYouTubeBound) return;
+    window.__wvYouTubeBound = true;
+    document.addEventListener('click', function(e){
+      const btn = e.target.closest('.gallery__yt[data-yt]');
+      if(!btn) return;
+      const frame = document.createElement('iframe');
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(btn.dataset.yt) + '?autoplay=1&rel=0&playsinline=1';
+      frame.title = btn.getAttribute('aria-label') || 'Video';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      frame.allowFullscreen = true;
+      // YouTube refuses to play (error 153) without knowing the embedding site.
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      const tile = btn.closest('.gallery__item');
+      const caption = tile && tile.querySelector('.gallery__item__caption');
+      if(caption) caption.style.display = 'none';
+      btn.replaceWith(frame);
+    });
+  })();
+
   // ---------- GALLERY: lightbox ----------
   (function(){
     // slider + video tiles are interactive in-place — exclude from lightbox

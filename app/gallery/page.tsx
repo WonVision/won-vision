@@ -357,6 +357,24 @@ export default function GalleryPage() {
             />
           </article>
 
+          {/* Videos are YouTube embeds. Each tile shows our own cover and only
+              loads the YouTube player once the visitor presses play. */}
+          {[
+            { id: '0xVDmWxx7IA', title: '39 Avonhurst Drive, Glen Waverley', poster: '/images/avonhurst-drive-glen-waverley-poster.webp' },
+            { id: 'ilRur8kb2BQ', title: '27 Rob Roy Street, Glen Waverley', poster: '/images/rob-roy-street-glen-waverley-poster.webp' },
+          ].map((v) => (
+            <article key={v.id} className="gallery__item gallery__item--video s6" data-cat="video"
+                     data-place={`Won Vision · ${v.title}`}>
+              <button type="button" className="gallery__yt" data-yt={v.id} aria-label={`Play video: ${v.title}`}>
+                <img src={v.poster} alt="" loading="lazy" />
+                <span className="gallery__yt__play" aria-hidden="true" />
+              </button>
+              <div className="gallery__item__caption">
+                <p className="tags">{v.title}</p>
+              </div>
+            </article>
+          ))}
+
         </div>
         <p className="gallery__empty" data-gallery-empty hidden>Work coming soon.</p>
       </section>
