@@ -83,14 +83,6 @@ export default function GalleryPage() {
             <button className="filter" data-sub="dusk">Day to dusk</button>
           </div>
         </div>
-        <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="video" hidden>
-          <div className="filters" role="tablist" data-filter-row="sub">
-            <button className="filter is-active" data-sub="all">All</button>
-            <button className="filter" data-sub="cinematic">Agent listing video</button>
-            <button className="filter" data-sub="highlight">Property highlight</button>
-            <button className="filter" data-sub="staged">Virtual staged listing video</button>
-          </div>
-        </div>
       </div>
 
       {/* GALLERY GRID */}
