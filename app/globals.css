@@ -1578,6 +1578,8 @@ body.is-loading > :not(.loader){visibility:hidden}
 .gallery__item.s12{grid-column:span 12;aspect-ratio:12/5}
 
 .gallery__item.is-hidden{display:none}
+/* Video tiles match the 16:9 player, so YouTube never letterboxes. */
+.gallery__item.gallery__item--video{aspect-ratio:16/9;align-self:start}
 
 /* lightbox */
 .lightbox{
@@ -1746,6 +1748,8 @@ body.is-loading > :not(.loader){visibility:hidden}
 
   .gallery__grid{grid-template-columns:repeat(2, 1fr);gap:10px}
   .gallery__item.s12, .gallery__item.s8, .gallery__item.s6, .gallery__item.s5, .gallery__item.s4, .gallery__item.s3{grid-column:span 1;aspect-ratio:1/1}
+  /* half-width 16:9 is too small to watch on a phone: give videos the full row */
+  .gallery__item.gallery__item--video{grid-column:1 / -1;aspect-ratio:16/9}
   .gallery__item__caption{opacity:1;background:linear-gradient(to top, rgba(10,10,10,0.7) 0%, transparent 60%);padding:14px}
   .gallery__item__caption .place{font-size:16px}
   .gallery__item__caption .tags{font-size:9px}
