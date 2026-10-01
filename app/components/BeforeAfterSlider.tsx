@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useId, useRef, useState } from 'react';
+import Image from 'next/image';
 
 type Props = {
   beforeSrc: string;
@@ -18,6 +19,9 @@ type Props = {
  * NOTE: images are placeholder Unsplash photos — swap via the props above
  * once final before/after assets are provided.
  */
+/* Sliders sit half-width on desktop and full-width on phones. */
+const SIZES = '(max-width:768px) 100vw, 50vw';
+
 export default function BeforeAfterSlider({
   beforeSrc,
   afterSrc,
@@ -81,24 +85,26 @@ export default function BeforeAfterSlider({
         aria-labelledby={`${sliderId}-label`}
       >
         {/* AFTER (full underneath) */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={afterSrc}
           alt={afterAlt}
           className="ba-slider__img ba-slider__img--after"
           draggable={false}
+          fill
+          sizes={SIZES}
         />
         {/* BEFORE (clipped to the left of the divider) */}
         <div
           className="ba-slider__before-clip"
           style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={beforeSrc}
             alt={beforeAlt}
             className="ba-slider__img"
             draggable={false}
+            fill
+            sizes={SIZES}
           />
         </div>
 

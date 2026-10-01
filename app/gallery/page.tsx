@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
+import Image from 'next/image';
 import { Wordmark } from '../components/Wordmark';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
@@ -92,7 +93,7 @@ export default function GalleryPage() {
           <article className="gallery__item s8" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/showcase.webp">
-            <img src="/images/showcase.webp" alt="Listing bedroom" />
+            <Image src="/images/showcase.webp" alt="Listing bedroom" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -101,7 +102,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-compact.webp">
-            <img src="/images/rental-compact.webp" alt="Listing living room" />
+            <Image src="/images/rental-compact.webp" alt="Listing living room" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -110,7 +111,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-standard.webp">
-            <img src="/images/rental-standard.webp" alt="Listing living and dining" />
+            <Image src="/images/rental-standard.webp" alt="Listing living and dining" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -119,7 +120,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/rental-large.webp">
-            <img src="/images/rental-large.webp" alt="Listing bedroom" />
+            <Image src="/images/rental-large.webp" alt="Listing bedroom" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -128,7 +129,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-compact.webp">
-            <img src="/images/sales-compact.webp" alt="Listing kitchen and dining" />
+            <Image src="/images/sales-compact.webp" alt="Listing kitchen and dining" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -137,7 +138,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-standard.webp">
-            <img src="/images/sales-standard.webp" alt="Listing living room" />
+            <Image src="/images/sales-standard.webp" alt="Listing living room" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -146,7 +147,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/sales-premium.webp">
-            <img src="/images/sales-premium.webp" alt="Listing bedroom" />
+            <Image src="/images/sales-premium.webp" alt="Listing bedroom" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -155,7 +156,7 @@ export default function GalleryPage() {
           <article className="gallery__item s4" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/additional-photos.webp">
-            <img src="/images/additional-photos.webp" alt="Listing bedroom detail" />
+            <Image src="/images/additional-photos.webp" alt="Listing bedroom detail" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -165,7 +166,7 @@ export default function GalleryPage() {
           <article className="gallery__item s8" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-photo-1.webp">
-            <img src="/images/henry-st-photo-1.webp" alt="Listing living and kitchen" />
+            <Image src="/images/henry-st-photo-1.webp" alt="Listing living and kitchen" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -174,7 +175,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-photo-2.webp">
-            <img src="/images/henry-st-photo-2.webp" alt="Listing kitchen" />
+            <Image src="/images/henry-st-photo-2.webp" alt="Listing kitchen" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -183,7 +184,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-photo-3.webp">
-            <img src="/images/henry-st-photo-3.webp" alt="Listing twilight exterior" />
+            <Image src="/images/henry-st-photo-3.webp" alt="Listing twilight exterior" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -192,7 +193,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/wv-exterior-1.webp">
-            <img src="/images/wv-exterior-1.webp" alt="Listing exterior" />
+            <Image src="/images/wv-exterior-1.webp" alt="Listing exterior" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -201,7 +202,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="day"
                    data-place="Won Vision · Selected work"
                    data-full="/images/wv-exterior-2.webp">
-            <img src="/images/wv-exterior-2.webp" alt="Listing street view" />
+            <Image src="/images/wv-exterior-2.webp" alt="Listing street view" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Day photography</p>
             </div>
@@ -211,7 +212,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="aerial"
                    data-place="Won Vision · Selected work"
                    data-full="/images/henry-st-aerial-1.webp">
-            <img src="/images/henry-st-aerial-1.webp" alt="Listing aerial" />
+            <Image src="/images/henry-st-aerial-1.webp" alt="Listing aerial" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Aerials</p>
             </div>
@@ -220,7 +221,7 @@ export default function GalleryPage() {
           <article className="gallery__item s6" data-cat="photography" data-sub="aerial"
                    data-place="Won Vision · Selected work"
                    data-full="/images/wv-aerial-plot.webp">
-            <img src="/images/wv-aerial-plot.webp" alt="Listing aerial plot overview" />
+            <Image src="/images/wv-aerial-plot.webp" alt="Listing aerial plot overview" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
             <div className="gallery__item__caption">
               <p className="tags">Aerials</p>
             </div>
@@ -366,7 +367,7 @@ export default function GalleryPage() {
             <article key={v.id} className="gallery__item gallery__item--video s6" data-cat="video"
                      data-place={`Won Vision · ${v.title}`}>
               <button type="button" className="gallery__yt" data-yt={v.id} aria-label={`Play video: ${v.title}`}>
-                <img src={v.poster} alt="" loading="lazy" />
+                <Image src={v.poster} alt="" fill sizes="(max-width:768px) 100vw, 50vw" />
                 <span className="gallery__yt__play" aria-hidden="true" />
               </button>
               <div className="gallery__item__caption">

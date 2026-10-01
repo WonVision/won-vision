@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import Image from 'next/image';
 import { Wordmark } from './components/Wordmark';
 import LoaderGate from './components/LoaderGate';
 import ServicesEditorial from './components/ServicesEditorial';
@@ -179,7 +180,6 @@ export default function HomePage() {
   }
   .home-pkg:hover{transform:translateY(-3px);border-color:var(--ink)}
   .home-pkg__media{aspect-ratio:1/1;background:#f3f3ef;position:relative;overflow:hidden}
-  .home-pkg--featured .home-pkg__media{aspect-ratio:1/1}
   .home-pkg__media__img{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(0.94);transition:filter .35s ease, transform .8s var(--ease,cubic-bezier(.2,.7,.2,1))}
   .home-pkg:hover .home-pkg__media__img{filter:saturate(1.05);transform:scale(1.03)}
   .home-pkg__tag{
@@ -189,12 +189,11 @@ export default function HomePage() {
     font-family:var(--body);font-size:9px;letter-spacing:0.32em;text-transform:uppercase;font-weight:600;
   }
   .home-pkg__body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
-  .home-pkg--featured .home-pkg__body{padding:22px 24px 24px;gap:14px}
   .home-pkg__desc{margin-bottom:6px}
   .home-pkg__name{font-family:var(--display);font-weight:500;font-size:22px;line-height:1.05;color:var(--ink);letter-spacing:-0.008em}
-  .home-pkg--featured .home-pkg__name{font-size:28px}
   .home-pkg__desc{font-family:var(--body);font-size:12px;line-height:1.55;color:var(--graphite,#4A4A48)}
   .home-pkg__incl{font-family:var(--body);font-size:11.5px;line-height:1.55;color:var(--ink);margin:0;padding:0;list-style:none}
+  .home-pkg__incl{flex:1}
   .home-pkg__foot{margin-top:auto}
   .home-pkg__incl li{padding:6px 0;border-top:1px solid rgba(0,0,0,0.08);display:flex;gap:8px;align-items:flex-start}
   .home-pkg__incl li:first-child{border-top:none}
@@ -204,13 +203,11 @@ export default function HomePage() {
     margin-top:4px;padding-top:12px;border-top:1px solid rgba(0,0,0,0.12);
   }
   .home-pkg__price{font-family:var(--display);font-weight:500;font-size:24px;color:var(--ink);letter-spacing:-0.01em;line-height:1}
-  .home-pkg--featured .home-pkg__price{font-size:30px}
   .home-pkg__price small{font-family:var(--body);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--graphite,#4A4A48);font-weight:500;display:block;margin-bottom:3px}
   .home-pkg__total{font-family:var(--body);font-size:11px;color:var(--graphite,#4A4A48);font-weight:500;text-decoration:line-through;margin-top:6px;display:block}
   .home-pkg__cta{font-family:var(--body);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);font-weight:500;white-space:nowrap}
   @media (max-width:1100px){
     .home-pkgs__grid{grid-template-columns:repeat(2,1fr);align-items:stretch}
-    .home-pkg--featured .home-pkg__media{aspect-ratio:1/1}
   }
   @media (max-width:760px){
     .home-pkgs{padding:48px var(--gutter) 12px}
@@ -371,11 +368,11 @@ export default function HomePage() {
 
           <div className="work__grid reveal-stagger">
             <a className="work__item a" href="/gallery">
-              <img src="/images/showcase.webp" alt="Listing living room" />
+              <Image src="/images/showcase.webp" alt="Listing living room" fill sizes="(max-width:760px) 100vw, 50vw" />
               <div className="work__item__caption"><span><b>Photography</b></span></div>
             </a>
             <a className="work__item b" href="/gallery">
-              <img src="/images/sales-standard.webp" alt="Listing interior" />
+              <Image src="/images/sales-standard.webp" alt="Listing interior" fill sizes="(max-width:760px) 100vw, 50vw" />
               <div className="work__item__caption"><span><b>Photography</b></span></div>
             </a>
             <article className="work__item c work__item--slider">
@@ -388,7 +385,7 @@ export default function HomePage() {
               />
             </article>
             <a className="work__item d" href="/gallery">
-              <img src="/images/sales-premium.webp" alt="Listing bedroom" />
+              <Image src="/images/sales-premium.webp" alt="Listing bedroom" fill sizes="(max-width:760px) 100vw, 50vw" />
               <div className="work__item__caption"><span><b>Photography</b></span></div>
             </a>
           </div>

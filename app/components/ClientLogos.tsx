@@ -1,7 +1,7 @@
-/* Clients Won Vision shoots for. Logos are normalised to a uniform optical
-   HEIGHT (a fixed box + object-fit:contain), so different source aspect ratios
-   all read at one visual weight. Every logo shows in its real brand colour —
-   no hover interaction.
+/* Clients Won Vision shoots for, as one slow sliding belt. Logos are
+   normalised to a uniform optical HEIGHT (a fixed box + object-fit:contain),
+   so different source aspect ratios all read at one visual weight. The belt
+   is greyscale and the logo under the cursor returns to full brand colour.
 
    The one exception: logos whose artwork is white (designed for dark
    backgrounds) would be invisible on the white paper. Those are flagged `mono`
@@ -35,12 +35,9 @@ const clients: Client[] = [
   { name: 'CHN', src: '/logos/chn.webp' },
 ];
 
-/* On mobile the list is split across two marquee lines (top scrolls right,
-   bottom scrolls left) so more of the now-long client roster is on screen at
-   once. On desktop both halves merge back into one centered wrap. */
-const splitAt = Math.ceil(clients.length / 2);
-const rowTop = clients.slice(0, splitAt);
-const rowBottom = clients.slice(splitAt);
+/* One continuous marquee on every screen size. The row is rendered twice so
+   the loop can translate by -50% and land the copy exactly on the original,
+   with no visible seam. */
 
 export default function ClientLogos() {
   return (
@@ -48,115 +45,82 @@ export default function ClientLogos() {
       <style>{`
   .clients{
     background:var(--paper);
-    padding:clamp(40px, 6vw, 72px) clamp(16px, 5vw, 40px);
+    padding:clamp(40px, 6vw, 72px) 0;
     text-align:center;
   }
   .clients__label{
     display:block;
     margin:0 0 clamp(20px, 3vw, 32px);
   }
-  /* desktop: tickers + rows collapse (display:contents) so every logo lays out
-     as one centered wrap directly in the viewport */
   .clients__viewport{
-    max-width:1040px;
-    margin-inline:auto;
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:center;
-    gap:clamp(24px, 4vw, 52px);
+    overflow:hidden;
+    /* feather both edges so logos glide in and out instead of hard-clipping */
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+            mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   }
-  .clients__ticker{display:contents;}
-  .clients__row{display:contents;}
-  /* duplicate rows exist only to seed the mobile marquee loop */
-  .clients__row--dupe{display:none;}
+  .clients__ticker{
+    display:flex;
+    width:max-content;
+    animation:clients-scroll-left 60s linear infinite;
+  }
+  /* Hold the belt still while someone is reading it, so the logo they want to
+     hover doesn't slide out from under the cursor. */
+  .clients__viewport:hover .clients__ticker{animation-play-state:paused;}
+  .clients__row{
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    width:max-content;
+  }
   /* Uniform bounding box: height- and width-capped + contained, so wide
-     wordmarks and square marks all read at one weight. */
+     wordmarks and square marks all read at one weight. The trailing margin
+     sits on every cell (incl. the last) so both copies measure the same and
+     translateX(-50%) stays seamless. */
   .clients__logo{
     position:relative;
-    flex:0 1 auto;
     box-sizing:border-box;
-    width:clamp(80px, 15vw, 150px);
-    height:clamp(34px, 5.5vw, 50px);
+    flex:0 0 auto;
+    width:clamp(104px, 11vw, 150px);
+    height:clamp(38px, 4.4vw, 50px);
+    margin-right:clamp(32px, 5vw, 64px);
   }
   .clients__logo img{
     width:100%;
     height:100%;
     object-fit:contain;
     object-position:center;
+    /* Grey by default; the one under the cursor returns to brand colour. */
+    filter:grayscale(1);
+    opacity:0.55;
+    transition:filter .3s ease, opacity .3s ease;
   }
-
-  /* White/reverse artwork → rendered solid black so it reads on white paper */
-  .clients__logo--mono img{filter:brightness(0);}
+  .clients__logo:hover img{
+    filter:none;
+    opacity:1;
+  }
+  /* White/reverse artwork has no visible brand colour on white paper, so it
+     stays solid black and only lifts in contrast on hover. */
+  .clients__logo--mono img{filter:brightness(0);opacity:0.45;}
+  .clients__logo--mono:hover img{filter:brightness(0);opacity:1;}
 
   @media (prefers-reduced-motion:reduce){
-    .clients__ticker{animation:none !important;}
+    .clients__ticker{animation:none;}
+    .clients__viewport{overflow-x:auto;}
   }
 
-  /* --- mobile: two continuous marquee lines — top → right, bottom → left --- */
-  @media (max-width:760px){
-    .clients__viewport{
-      max-width:100%;
-      display:block;
-      overflow:hidden;
-      /* feather both edges so logos glide in/out instead of hard-clipping */
-      -webkit-mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-              mask-image:linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-    }
-    .clients__ticker{
-      display:flex;
-      width:max-content;
-    }
-    /* top line drifts right, bottom line drifts left (opposing motion) */
-    .clients__ticker--top{animation:clients-scroll-right 34s linear infinite;}
-    .clients__ticker--bottom{
-      animation:clients-scroll-left 30s linear infinite;
-      margin-top:clamp(18px, 5vw, 28px);
-    }
-    .clients__row,
-    .clients__row--dupe{
-      display:flex;
-      flex-wrap:nowrap;
-      justify-content:flex-start;
-      gap:0;
-      width:max-content;
-    }
-    /* trailing margin on every cell (incl. the last) keeps each copy the same
-       width, so translateX(-50%) lands the duplicate exactly on the original */
-    .clients__logo{
-      margin-right:clamp(28px, 9vw, 44px);
-      flex:0 0 auto;
-    }
-  }
-  /* leftward loop: original → duplicate */
   @keyframes clients-scroll-left{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
-  }
-  /* rightward loop: start on the duplicate and slide back to the original */
-  @keyframes clients-scroll-right{
-    from{transform:translateX(-50%);}
-    to{transform:translateX(0);}
   }
       `}</style>
 
       <span className="eyebrow clients__label">Trusted by Melbourne&rsquo;s best</span>
 
-      {/* Mobile: two marquee lines, each holding two identical rows so the loop
-          is seamless (translateX(-50%)); top scrolls right, bottom scrolls
-          left. Desktop: the tickers/rows are display:contents and the dupes are
-          hidden, so all logos collapse into one centered wrap. */}
       <div className="clients__viewport">
-        <div className="clients__ticker clients__ticker--top">
-          <div className="clients__row">{rowTop.map((c) => renderLogo(c))}</div>
-          <div className="clients__row clients__row--dupe" aria-hidden="true">
-            {rowTop.map((c) => renderLogo(c, true))}
-          </div>
-        </div>
-        <div className="clients__ticker clients__ticker--bottom">
-          <div className="clients__row">{rowBottom.map((c) => renderLogo(c))}</div>
-          <div className="clients__row clients__row--dupe" aria-hidden="true">
-            {rowBottom.map((c) => renderLogo(c, true))}
+        <div className="clients__ticker">
+          <div className="clients__row">{clients.map((c) => renderLogo(c))}</div>
+          <div className="clients__row" aria-hidden="true">
+            {clients.map((c) => renderLogo(c, true))}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 type Service = {
   num: string;
@@ -90,7 +91,7 @@ export default function ServicesEditorial() {
             key={s.num}
             className={'se__fig' + (i === active ? ' is-active' : '')}
           >
-            {s.img && <img src={s.img} alt="" />}
+            {s.img && <Image src={s.img} alt="" fill sizes="(max-width:900px) 100vw, 50vw" />}
             <figcaption>{s.caption}</figcaption>
           </figure>
         ))}
@@ -100,7 +101,7 @@ export default function ServicesEditorial() {
       <div className="se__tiles">
         {services.map((s) => (
           <a key={s.num} href={s.href} className="se__tile" aria-label={`Book ${s.name}`}>
-            {s.img && <img src={s.img} alt="" />}
+            {s.img && <Image src={s.img} alt="" fill sizes="(max-width:900px) 100vw, 50vw" />}
             <span className="se__tile__veil" aria-hidden="true" />
             <div className="se__tile__label">
               <div>
