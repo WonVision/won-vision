@@ -37,12 +37,10 @@ export default function HomePage() {
   /* ---------- Hero: Won Vision ⇄ Same day photo turn around morph loop ---------- */
   .hero__morph{
     position:relative;
-    display:flex;align-items:center;justify-content:center;
-    text-align:center;
+    display:flex;align-items:center;justify-content:flex-start;
+    text-align:left;
     box-sizing:border-box;
-    width:100%;max-width:min(1100px, 92vw);
-    margin-inline:auto;
-    padding-inline:clamp(16px, 5vw, 40px);
+    width:100%;
     /* Reserve exactly enough height for B's 3 tight lines (line-height
        1.18 × 3 ≈ 3.54em) without opening a vertical gap. Phrase B never
        gets vertically clipped on narrow screens. */
@@ -58,13 +56,14 @@ export default function HomePage() {
     position:absolute;left:0;right:0;top:50%;
     transform:translateY(-50%);
     box-sizing:border-box;
-    padding-inline:clamp(16px, 5vw, 40px);
     font-family:var(--display);font-weight:500;
-    /* Slogan-only fluid scale. Floor at 24px so the longest single
-       line ("Photos shot, edited", 19ch) fits without wrap or clip
-       down to a 320px phone; cap kept at 78px for desktop confidence. */
-    font-size:clamp(24px, 6.2vw, 78px);
+    /* Slogan-only fluid scale. Floor at 20px so the longest single line
+       ("Photos shot, edited", 19ch) still fits without wrap or clip on a
+       320px phone; the cap is deliberately modest so the headline leaves
+       room for the lede, the Book now button and the stat strip below. */
+    font-size:clamp(20px, 3.6vw, 46px);
     line-height:1.18;letter-spacing:0.005em;color:var(--paper);
+    text-align:left;
     text-wrap:balance;
     overflow-wrap:break-word;
   }
@@ -344,6 +343,22 @@ export default function HomePage() {
                 </span>
               </p>
             </div>
+
+            <p className="hero__lede">
+              Professional photography, video, drone, floor plans and virtual staging
+              for Melbourne real estate agents.
+            </p>
+
+            <div className="hero__actions">
+              <a href="https://portal.wonvision.com.au/book" className="hero__btn">Book now</a>
+              <a href="/gallery" className="hero__btn hero__btn--ghost">View gallery</a>
+            </div>
+
+            <ul className="hero__stats">
+              <li><b>Same day</b><span>Photo turnaround</span></li>
+              <li><b>18 agencies</b><span>Across Melbourne</span></li>
+              <li><b>100 km</b><span>From the CBD</span></li>
+            </ul>
           </div>
         </div>
 
