@@ -357,7 +357,7 @@ export default function HomePage() {
             <ul className="hero__stats">
               <li><b>Same day</b><span>Photo turnaround</span></li>
               <li><b>18 agencies</b><span>Across Melbourne</span></li>
-              <li><b>100 km</b><span>From the CBD</span></li>
+              <li><b>Fast turnaround</b><span>On every shoot</span></li>
             </ul>
           </div>
         </div>
