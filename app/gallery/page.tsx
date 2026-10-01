@@ -65,15 +65,9 @@ export default function GalleryPage() {
           <div className="filters" role="tablist" data-filter-row="top">
             <button className="filter is-active" data-cat="all">All</button>
             <button className="filter" data-cat="photography">Photography</button>
+            <button className="filter" data-cat="editorial">Editorial photography</button>
             <button className="filter" data-cat="virtual-editing">Virtual editing</button>
             <button className="filter" data-cat="video">Video</button>
-          </div>
-        </div>
-        <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="photography" hidden>
-          <div className="filters" role="tablist" data-filter-row="sub">
-            <button className="filter is-active" data-sub="all">All</button>
-            <button className="filter" data-sub="day">Day photography</button>
-            <button className="filter" data-sub="aerial">Aerials</button>
           </div>
         </div>
         <div className="gallery-controls__inner gallery-controls__sub" data-sub-for="virtual-editing" hidden>
@@ -89,124 +83,6 @@ export default function GalleryPage() {
       {/* GALLERY GRID */}
       <section className="gallery">
         <div className="gallery__grid">
-
-          <article className="gallery__item s8" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/showcase.webp">
-            <Image src="/images/showcase.webp" alt="Listing bedroom" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s4" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/rental-compact.webp">
-            <Image src="/images/rental-compact.webp" alt="Listing living room" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s4" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/rental-standard.webp">
-            <Image src="/images/rental-standard.webp" alt="Listing living and dining" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s4" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/rental-large.webp">
-            <Image src="/images/rental-large.webp" alt="Listing bedroom" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s4" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/sales-compact.webp">
-            <Image src="/images/sales-compact.webp" alt="Listing kitchen and dining" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/sales-standard.webp">
-            <Image src="/images/sales-standard.webp" alt="Listing living room" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/sales-premium.webp">
-            <Image src="/images/sales-premium.webp" alt="Listing bedroom" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s4" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/additional-photos.webp">
-            <Image src="/images/additional-photos.webp" alt="Listing bedroom detail" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          {/* Selected day photography */}
-          <article className="gallery__item s8" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/henry-st-photo-1.webp">
-            <Image src="/images/henry-st-photo-1.webp" alt="Listing living and kitchen" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/henry-st-photo-2.webp">
-            <Image src="/images/henry-st-photo-2.webp" alt="Listing kitchen" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/henry-st-photo-3.webp">
-            <Image src="/images/henry-st-photo-3.webp" alt="Listing twilight exterior" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/wv-exterior-1.webp">
-            <Image src="/images/wv-exterior-1.webp" alt="Listing exterior" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
-
-          <article className="gallery__item s6" data-cat="photography" data-sub="day"
-                   data-place="Won Vision · Selected work"
-                   data-full="/images/wv-exterior-2.webp">
-            <Image src="/images/wv-exterior-2.webp" alt="Listing street view" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
-            <div className="gallery__item__caption">
-              <p className="tags">Day photography</p>
-            </div>
-          </article>
 
           {/* Selected aerials */}
           <article className="gallery__item s6" data-cat="photography" data-sub="aerial"
@@ -356,6 +232,107 @@ export default function GalleryPage() {
               afterAlt="Backyard after day-to-dusk conversion"
               label="Day to dusk"
             />
+          </article>
+
+
+          {/* Editorial photography — the new premium stills service */}
+          <article className="gallery__item s6" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-01.webp">
+            <Image src="/images/editorial-01.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-02.webp">
+            <Image src="/images/editorial-02.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s8" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-03.webp">
+            <Image src="/images/editorial-03.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-04.webp">
+            <Image src="/images/editorial-04.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-05.webp">
+            <Image src="/images/editorial-05.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-06.webp">
+            <Image src="/images/editorial-06.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-07.webp">
+            <Image src="/images/editorial-07.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-08.webp">
+            <Image src="/images/editorial-08.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s4" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-09.webp">
+            <Image src="/images/editorial-09.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-10.webp">
+            <Image src="/images/editorial-10.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
+          </article>
+
+          <article className="gallery__item s6" data-cat="editorial"
+                   data-place="Won Vision · Editorial photography"
+                   data-full="/images/editorial-11.webp">
+            <Image src="/images/editorial-11.webp" alt="Editorial interior photography" fill sizes="(max-width:768px) 50vw, (max-width:1100px) 50vw, 33vw" />
+            <div className="gallery__item__caption">
+              <p className="tags">Editorial photography</p>
+            </div>
           </article>
 
           {/* Videos are YouTube embeds. Each tile shows our own cover and only
