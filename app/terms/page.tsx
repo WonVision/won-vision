@@ -80,8 +80,9 @@ export default function TermsPage() {
 
           <h2>4. Delivery timeframes</h2>
           <p>
-            Standard photography is generally delivered the same day the property is shot. Aerial
-            work, floor plans, and virtual editing services may require additional turnaround.
+            Standard photography is generally delivered within 24 hours of the shoot, and video
+            within 48 hours. Aerial work, floor plans, and virtual editing services may require
+            additional turnaround.
             Quoted timeframes are targets made in good faith and may be affected by weather,
             access, or factors outside our control.
           </p>
@@ -163,7 +164,7 @@ export default function TermsPage() {
           <div className="foot__rule"></div>
           <div className="foot__bot">
             <span>© 2026 Won Vision Pty Ltd</span>
-            <span>Same day photo turn around.</span>
+            <span>24 hour photo turnaround.</span>
             <span>Melbourne · Made in-house</span>
           </div>
         </div>

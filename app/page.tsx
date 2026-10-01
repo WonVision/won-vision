@@ -9,7 +9,7 @@ import ClientLogos from './components/ClientLogos';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Won Vision — Same day photo turn around.',
+    absolute: 'Won Vision — 24 hour photo turnaround.',
   },
   description:
     'Melbourne real estate photography by Won Vision — a property media studio offering listing photography, video, drone, floor plans, virtual staging, agent headshots and day-to-dusk conversions. Flexible packages and add-ons built to sell premium property faster.',
@@ -34,7 +34,7 @@ export default function HomePage() {
       <LoaderGate />
 
       <style>{`
-  /* ---------- Hero: Won Vision ⇄ Same day photo turn around morph loop ---------- */
+  /* ---------- Hero: Won Vision ⇄ 24 hour turnaround morph loop ---------- */
   .hero__morph{
     position:relative;
     display:flex;align-items:center;justify-content:flex-start;
@@ -330,7 +330,7 @@ export default function HomePage() {
                 </span>
                 <span className="hero__morph__line hero__morph__line--nowrap">
                   <span className="hero__morph__line--em">
-                    {['s', 'a', 'm', 'e', ' ', 'd', 'a', 'y', '.'].map((c, m) => (
+                    {['i', 'n', ' ', '2', '4', ' ', 'h', 'o', 'u', 'r', 's', '.'].map((c, m) => (
                       <span
                         key={m}
                         className="ch"
@@ -355,8 +355,8 @@ export default function HomePage() {
             </div>
 
             <ul className="hero__stats">
-              <li><b>Same day</b><span>Photo turnaround</span></li>
-              <li><b>18 agencies</b><span>Across Melbourne</span></li>
+              <li><b>24 hours</b><span>Photo delivery</span></li>
+              <li><b>48 hours</b><span>Video delivery</span></li>
               <li><b>Fast turnaround</b><span>On every shoot</span></li>
             </ul>
           </div>
@@ -613,7 +613,7 @@ export default function HomePage() {
           <div className="foot__rule"></div>
           <div className="foot__bot">
             <span>© 2026 Won Vision Pty Ltd</span>
-            <span>Same day photo turn around.</span>
+            <span>24 hour photo turnaround.</span>
             <span>Melbourne · Made in-house</span>
           </div>
         </div>

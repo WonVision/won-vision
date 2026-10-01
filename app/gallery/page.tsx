@@ -428,7 +428,7 @@ export default function GalleryPage() {
           <div className="foot__rule"></div>
           <div className="foot__bot">
             <span>© 2026 Won Vision Pty Ltd</span>
-            <span>Same day photo turn around.</span>
+            <span>24 hour photo turnaround.</span>
             <span>Melbourne · Made in-house</span>
           </div>
         </div>
